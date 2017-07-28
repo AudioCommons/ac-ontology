@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "http://audiocommons.org/ns/audiocommons#",
+    "ac": "http://audiocommons.org/ns/audiocommons#",
+
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+
+    "superClassOf": {"@reverse": "owl:subClassOf"},
+    "superPropertyOf": {"@reverse": "owl:subPropertyOf"},
+    "domain": {"@id": "rdfs:domain", "@type": "@id"},
+    "domainOf": {"@reverse": "rdfs:domain"},
+    "range": {"@id": "rdfs:range", "@type": "@id"},
+    "rangeOf": {"@reverse": "rdfs:range"}
+  },
+  "@type": "owl:Ontology",
+  "dcterms:created": "2017/07/27 11:09:00",
+  "dcterms:date": "2017/07/28 08:45:00",
+  "dcterms:description": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.",
+  "dcterms:title": "The Audio Commons Ontology",
+  "owl:versionInfo": "Revision: 0.0.0",
+  "foaf:maker": [
+    {"foaf:name": "Miguel Ceriani"},
+    {"foaf:name": "George Fazekas"}
+  ]
+}

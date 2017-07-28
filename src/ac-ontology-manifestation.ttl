@@ -1,0 +1,84 @@
+@prefix ac:      <http://audiocommons.org/ns/audiocommons#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix wot:     <http://xmlns.com/wot/0.1/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+ac:homepage
+    a owl:ObjectProperty;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "homepage";
+    rdfs:comment "Links an audio resource to a corresponding web page" ;
+    rdfs:subPropertyOf foaf:isPrimaryTopicOf;
+# The domain ac:AudioManifestation is too strict in respect with sub-property
+# mo:homepage, whose domain is owl:unionOf (mo:MusicalWork mo:MusicArtist
+# mo:MusicalExpression mo:MusicalManifestation mo:MusicalItem).
+# Maybe is better to use directly foaf:isPrimaryTopicOf or foaf:homepage?
+#
+#    rdfs:domain ac:AudioManifestation;
+    rdfs:range foaf:Document.
+mo:homepage rdfs:subPropertyOf ac:homepage.
+
+ac:image
+    a owl:ObjectProperty;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "image";
+    rdfs:comment """
+        Indicates a pictorial image (JPEG, GIF, PNG, Etc.) of an audio resource.""";
+    rdfs:subPropertyOf foaf:depiction;
+# The domain ac:AudioManifestation is too strict in respect with sub-property
+# mo:image, whose domain is owl:unionOf (mo:MusicalWork mo:MusicArtist
+# mo:MusicalExpression mo:MusicalManifestation mo:MusicalItem).
+# Maybe is better to use directly foaf:depiction?
+#
+#    rdfs:domain ac:AudioManifestation;
+    rdfs:range foaf:Image.
+mo:image rdfs:subPropertyOf ac:image.
+
+# Is this the best way to represent authorship in this model?
+ac:compiled
+    a owl:ObjectProperty;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "compiler";
+    rdfs:comment """
+        Used to relate a person or a group of people who created/compiled an
+        audio manifestation." ;
+    rdfs:domain foaf:Agent;
+    rdfs:range ac:AudioManifestation.
+mo:compiled rdfs:subPropertyOf ac:compiled.
+
+ac:published
+    a owl:ObjectProperty;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "published";
+    rdfs:comment """
+        Used to relate a person or a group of people who published an audio
+        manifestation." ;
+    rdfs:domain foaf:Agent;
+    rdfs:range ac:AudioManifestation.
+mo:published rdfs:subPropertyOf ac:published.
+
+ac:AudioClip
+    a owl:Class;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "Audio clip";
+    rdfs:subClassOf ac:AudioManifestation.
+mo:Track rdfs:subClassOf ac:AudioClip.
+
+ac:duration
+    a owl:DatatypeProperty;
+    rdfs:isDefinedBy ac:;
+    rdfs:label "duration in ms";
+    rdfs:subPropertyOf mo:duration;
+    rdfs:domain ac:AudioClip;
+    rdfs:range xsd:int.

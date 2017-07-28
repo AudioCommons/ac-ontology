@@ -1,0 +1,96 @@
+'@context':
+  '@base': http://audiocommons.org/ns/audiocommons#
+  ac: http://audiocommons.org/ns/audiocommons#
+
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  owl: http://www.w3.org/2002/07/owl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+  foaf: http://xmlns.com/foaf/0.1/
+  dc: http://purl.org/dc/elements/1.1/
+  dcterms: http://purl.org/dc/terms/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+  id: '@id'
+  type: '@type'
+  subClassOf: {'@id': owl:subClassOf, '@type': '@id'}
+  superClassOf: {'@reverse': owl:subClassOf }
+  subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
+  superPropertyOf: {'@reverse': owl:subPropertyOf}
+  domain: {'@id': rdfs:domain, '@type': '@id'}
+  domainOf: {'@reverse': rdfs:domain}
+  range: {'@id': rdfs:range, '@type': '@id'}
+  rangeOf: {'@reverse': rdfs:range}
+
+  versionInfo: owl:versionInfo
+  maker: foaf:maker
+  name: foaf:name
+
+  label: rdfs:label
+  comment: rdfs:comment
+  descr: dcterms:description
+  title: dcterms:title
+  created: dcterms:created
+  date: dcterms:date
+
+id: ''
+type: owl:Ontology
+created: 2017/07/27 11:09:00
+date: 2017/07/27 11:09:00
+descr: >
+  The Audio Commons Ontology provides main concepts and properties for
+  describing audio content, both musical and non-musical, on the Semantic Web.
+title: The Audio Commons Ontology
+versionInfo: 'Revision: 0.0.0'
+maker:
+  - {name: Miguel Ceriani}
+  - {name: George Fazekas}
+defines:
+
+  - id: ac:AudioExpression
+    label: Audio expression
+    subClassOf: frbr:Expression
+    superClassOf: [mo:MusicalExpression, ac:DigitalSignal, ac:Sound]
+
+  - id: ac:DigitalSignal
+    label: Digital signal
+    superClassOf: mo:DigitalSignal
+
+  - id: ac:Sound
+    label: Physical sound
+    superClassOf: mo:Sound
+
+  - id: ac:AudioManifestation
+    label: Audio manifestation
+    subClassOf: frbr:Manifestation
+    superClassOf: [mo:MusicalManifestation, ac:AudioClip, ac:AudioCollection]
+
+  - id: ac:AudioClip
+    label: Audio clip
+    superClassOf: mo:Track
+
+  - id: ac:AudioCollection
+    label: Audio collection
+    superClassOf: [mo:Record, ac:Release]
+
+  - id: ac:AudioCollectionNode
+    label: Audio collection
+    superClassOf: [mo:Record, ac:Release]
+    domainOf:
+      - {id: ac:nodeContent, range: ac:AudioManifestation}
+      - {id: ac:nodeIndex, range: ac:AudioCollectionNode}
+
+  - id: ac:AudioItem
+    label: Audio item
+    subClassOf: frbr:Item
+    superClassOf: [mo:MusicalItem, ac:AudioFile]
+
+  - id: ac:AudioFile
+    label: Audio file
+    subClassOf: ebu:
+    superClassOf: mo:AudioFile
+
+  - id: ac:AudioCategory
+    label: Audio category
+    subClassOf: frbr:Concept
+    superClassOf: [mo:Genre, ac:Instrument]
