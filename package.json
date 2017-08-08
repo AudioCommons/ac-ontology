@@ -1,0 +1,23 @@
+{
+  "name": "ac-ontology",
+  "version": "0.0.1",
+  "description": "The Audio Commons ontology (http://www.audiocommons.org/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudioCommons/ac-ontology.git"
+  },
+  "author": "miguel.ceriani@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AudioCommons/ac-ontology/issues"
+  },
+  "homepage": "https://github.com/AudioCommons/ac-ontology#readme",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}

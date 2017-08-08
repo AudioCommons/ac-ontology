@@ -1,4 +1,4 @@
-@prefix ac:      <http://audiocommons.org/ns/audiocommons#> .
+@prefix ac:      <#> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 @prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
@@ -30,7 +30,7 @@ ac:memberNode
     rdfs:range: ac:AudioCollectionNode.
 
 ac:firstNode
-    a owl:ObjectProperty;
+    a owl:ObjectProperty, owl:FunctionalProperty;
     rdfs:isDefinedBy ac:;
     rdfs:label "first node";
     rdfs:subPropertyOf ac:memberNode;
@@ -38,7 +38,7 @@ ac:firstNode
     rdfs:range: ac:AudioCollectionFirstNode.
 
 ac:lastNode
-    a owl:ObjectProperty;
+    a owl:ObjectProperty, owl:FunctionalProperty;
     rdfs:isDefinedBy ac:;
     rdfs:label "first node";
     rdfs:subPropertyOf ac:memberNode;
@@ -50,6 +50,11 @@ ac:AudioCollectionNode
     rdfs:isDefinedBy ac:;
     rdfs:label "Audio collection node";
     rdfs:subClassOf rdf:List;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction;
+        owl:onProperty rdf:rest;
+        owl:onClass rdf:List;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ].
     owl:disjointUnionOf
         (ac:AudioCollectionFirstNode ac:AudioCollectionNonFirstNode),
         (ac:AudioCollectionLastNode ac:AudioCollectionNonLastNode).
@@ -64,24 +69,49 @@ ac:AudioCollectionLastNode
     a owl:Class;
     rdfs:isDefinedBy ac:;
     rdfs:label "Last node of an audio collection";
-    rdfs:subClassOf ac:AudioCollectionNode.
+    owl:intersectionOf(
+        ac:AudioCollectionNode
+        [ rdf:type owl:Restriction;
+          owl:onProperty rdf:rest;
+          owl:hasValue rdf:nil ] ).
+
+rdf:nil a [ rdf:type owl:Restriction;
+            owl:onProperty rdf:rest;
+            owl:onClass rdf:List;
+            owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ].
 
 ac:AudioCollectionNonFirstNode
     a owl:Class;
     rdfs:isDefinedBy ac:;
     rdfs:label "Any node of an audio collection but the first";
-    rdfs:subClassOf ac:AudioCollectionNode.
+    rdfs:subClassOf ac:AudioCollectionNode;
+    owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty ac:previousNode;
+        owl:someValuesFrom ac:AudioCollectionNode ].
 
 ac:AudioCollectionNonLastNode
     a owl:Class;
     rdfs:isDefinedBy ac:;
     rdfs:label "Any node of an audio collection but the last";
-    rdfs:subClassOf ac:AudioCollectionNode.
+    rdfs:subClassOf ac:AudioCollectionNode;
+    owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty ac:nextNode;
+        owl:someValuesFrom ac:AudioCollectionNode ].
+
+[ rdf:type owl:Restriction;
+  owl:onProperty rdf:rest;
+  owl:someValuesFrom rdf:List ]
+      owl:disjointUnionOf (
+          ac:AudioCollectionNonLastNode
+          _:otherList ).
 
 ac:nodeContent
-    a owl:ObjectProperty;
+    a owl:ObjectProperty, owl:FunctionalProperty;
     rdfs:isDefinedBy ac:;
     rdfs:label "node content";
+    rdfs:subPropertyOf rdf:first;
     rdfs:domain ac:AudioCollectionNode;
     rdfs:range: ac:AudioManifestation.
 
@@ -93,15 +123,16 @@ ac:nodeIndex
     rdfs:range: xsd:int.
 
 ac:nextNode
-    a owl:ObjectProperty;
+    a owl:ObjectProperty, owl:FunctionalProperty;
     rdfs:isDefinedBy ac:;
     rdfs:label "next node";
+    rdfs:subPropertyOf rdf:rest;
     owl:inverseOf ac:previousNode;
     rdfs:domain ac:AudioCollectionNonLastNode;
     rdfs:range: ac:AudioCollectionNonFirstNode.
 
 ac:previousNode
-    a owl:ObjectProperty;
+    a owl:ObjectProperty, owl:FunctionalProperty;
     rdfs:isDefinedBy ac:;
     rdfs:label "previous node";
     owl:inverseOf ac:nextNode;
