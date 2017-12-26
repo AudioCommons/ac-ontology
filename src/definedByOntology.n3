@@ -1,0 +1,9 @@
+@base            <http://audiocommons.org/ns/audiocommons> .
+@prefix ac:      <http://audiocommons.org/ns/audiocommons#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+{?ontologyTerm rdfs:isDefinedBy <> . ?ontologyTerm ?p ?o. } => {?ontologyTerm ?p ?o}.
+
+{<> ?p1 ?o1} => {<> ?p1 ?o1}.
+
+{<> ?p1 ?o1. ?o1 ?p2 ?o2} => {<> ?p1 ?o1. ?o1 ?p2 ?o2}.

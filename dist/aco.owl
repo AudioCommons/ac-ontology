@@ -1,0 +1,107 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:terms="http://purl.org/dc/terms/"
+ xmlns:n0="http://xmlns.com/foaf/0.1/">
+    <rdf:Description rdf:about="#AudioCategory">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio category</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioClip">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio clip</rdfs:label>
+        <owl:subClassOf rdf:resource="#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio collection</rdfs:label>
+        <owl:subClassOf rdf:resource="#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioCollectionNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio collection</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio expression</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Expression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioFile">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio file</rdfs:label>
+        <owl:subClassOf rdf:resource="ebu:MediaResource"/>
+        <owl:subClassOf rdf:resource="#AudioItem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioItem">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio item</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Item"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AudioManifestation">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio manifestation</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Manifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DigitalSignal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Digital signal</rdfs:label>
+        <owl:subClassOf rdf:resource="#AudioExpression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#nodeContent">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="#AudioCollectionNode"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:range rdf:resource="#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#nodeIndex">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="#AudioCollectionNode"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:range rdf:resource="#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Sound">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Physical sound</rdfs:label>
+        <owl:subClassOf rdf:resource="#AudioExpression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="">
+        <terms:created>2017/07/27 11:09:00</terms:created>
+        <terms:date>2017/07/27 11:09:00</terms:date>
+        <terms:description>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
+</terms:description>
+        <terms:title>The Audio Commons Ontology</terms:title>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <owl:versionInfo>Revision: 0.0.0</owl:versionInfo>
+        <n0:maker rdf:parseType="Resource">
+           <rdf:Description><n0:name>George Fazekas</n0:name></rdf:Description>
+        </n0:maker>
+        <n0:maker rdf:parseType="Resource">
+           <rdf:Description><n0:name>Miguel Ceriani</n0:name></rdf:Description>
+        </n0:maker>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Ontology">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+</rdf:RDF>

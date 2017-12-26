@@ -1,5 +1,5 @@
 '@context':
-  '@base': http://audiocommons.org/ns/audiocommons#
+  '@base': http://audiocommons.org/ns/audiocommons
   ac: http://audiocommons.org/ns/audiocommons#
 
   rdfs: http://www.w3.org/2000/01/rdf-schema#
@@ -14,17 +14,18 @@
   id: '@id'
   type: '@type'
   subClassOf: {'@id': owl:subClassOf, '@type': '@id'}
-  superClassOf: {'@reverse': owl:subClassOf }
+  superClassOf: {'@reverse': owl:subClassOf, '@type': '@id' }
   subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
-  superPropertyOf: {'@reverse': owl:subPropertyOf}
+  superPropertyOf: {'@reverse': owl:subPropertyOf, '@type': '@id'}
   domain: {'@id': rdfs:domain, '@type': '@id'}
-  domainOf: {'@reverse': rdfs:domain}
+  domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
   range: {'@id': rdfs:range, '@type': '@id'}
-  rangeOf: {'@reverse': rdfs:range}
+  rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
 
   versionInfo: owl:versionInfo
   maker: foaf:maker
   name: foaf:name
+  defines: {'@reverse': rdfs:isDefinedBy, '@type': '@id'}
 
   label: rdfs:label
   comment: rdfs:comment
@@ -62,7 +63,7 @@ defines:
 
   - id: ac:AudioManifestation
     label: Audio manifestation
-    subClassOf: frbr:Manifestation
+    subClassOf: [frbr:Manifestation, cc:Work]
     superClassOf: [mo:MusicalManifestation, ac:AudioClip, ac:AudioCollection]
 
   - id: ac:AudioClip
@@ -74,11 +75,16 @@ defines:
     superClassOf: [mo:Record, ac:Release]
 
   - id: ac:AudioCollectionNode
-    label: Audio collection
+    label: Audio collection node
     superClassOf: [mo:Record, ac:Release]
-    domainOf:
-      - {id: ac:nodeContent, range: ac:AudioManifestation}
-      - {id: ac:nodeIndex, range: ac:AudioCollectionNode}
+
+  - id: ac:nodeContent
+    domain: ac:AudioCollectionNode
+    range: ac:AudioManifestation
+
+  - id: ac:nodeIndex
+    domain: ac:AudioCollectionNode
+    range: ac:AudioManifestation
 
   - id: ac:AudioItem
     label: Audio item
@@ -87,7 +93,7 @@ defines:
 
   - id: ac:AudioFile
     label: Audio file
-    subClassOf: ebu:
+    subClassOf: ebu:MediaResource
     superClassOf: mo:AudioFile
 
   - id: ac:AudioCategory

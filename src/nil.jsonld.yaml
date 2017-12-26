@@ -1,0 +1,29 @@
+'@context':
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  owl: http://www.w3.org/2002/07/owl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+  id: '@id'
+  type: '@type'
+  subClassOf: {'@id': owl:subClassOf, '@type': '@id'}
+  superClassOf: {'@reverse': owl:subClassOf, '@type': '@id' }
+  subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
+  superPropertyOf: {'@reverse': owl:subPropertyOf, '@type': '@id'}
+  domain: {'@id': rdfs:domain, '@type': '@id'}
+  domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
+  range: {'@id': rdfs:range, '@type': '@id'}
+  rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
+
+  onProperty: {'@id': owl:onProperty, '@type': '@id'}
+  onClass: {'@id': owl:onClass, '@type': '@id'}
+  qualifiedCardinality: {'@id': owl:qualifiedCardinality, '@type': 'xsd:nonNegativeInteger'}
+  hasValue: {'@id': owl:hasValue}
+  disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
+  intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
+
+id: rdf:nil
+type:
+  type: owl:Restriction
+  onProperty: rdf:rest
+  onClass: rdf:List
+  qualifiedCardinality: 0
