@@ -5,7 +5,7 @@ const rdflib = require('rdflib'),
       path = require('path'),
       async = require('async'),
       _ = require('lodash'),
-      pug = require('pug'),
+      Handlebars = require('handlebars'),
       jsld = require('jsld'),
       eye = require('./eye.js');
 
@@ -30,7 +30,6 @@ const quadsToTriples = quads => {
 };
 
 const conflateStore = store => {
-  console.log(store.statements);
   _.each(store.statements, (stat) => {stat.why = {termType: 'DefaultGraph'}});
   // console.log(store.statements);
   return store;
@@ -47,13 +46,13 @@ const fromJsonLdToTurtle = (input, ctxt, callback) => {
 
 const onlyGraph = (inputJsonld) => inputJsonld[0];
 
-const ontologyToHtml = pug.compileFile(path.join(srcDir, 'ontology.pug'));
-
 async.autoInject({
   ontologyYaml: [_.partial(fs.readFile, path.join(srcDir, 'ac-ontology.jsonld.yaml'), 'utf8')],
   ontologyJsonLd: ['ontologyYaml', async.asyncify(yaml.safeLoad)],
   ontologyCtxtYaml: [_.partial(fs.readFile, path.join(srcDir, 'ac-ontology-context.jsonld.yaml'), 'utf8')],
   ontologyCtxt: ['ontologyCtxtYaml', async.asyncify(yaml.safeLoad)],
+  htmlTemplateSrc: [_.partial(fs.readFile, path.join(srcDir, 'ontology.hbs'), 'utf8')],
+  htmlTemplate: ['htmlTemplateSrc', async.asyncify(Handlebars.compile)],
   base: ['ontologyCtxt', async.asyncify((jsonldCtxt) => (jsonldCtxt['@base']))],
   baseAsNode: ['base', async.asyncify((iri) => (rdflib.sym(iri)))],
   // identityQueryN3: [_.partial(fs.readFile, path.join(srcDir, 'identity.n3'), 'utf8')],
@@ -85,7 +84,7 @@ async.autoInject({
   writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
   writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
   outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
-  outputAsHtml: ['outputAsJsLd', async.asyncify(ontologyToHtml)],
+  outputAsHtml: ['outputAsJsLd', 'htmlTemplate', async.asyncify((input, template) => template(input))],
   writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
   result: ['outputAsJsLd', async.asyncify(_.identity)]
 }, function(err, results) {
@@ -94,7 +93,7 @@ async.autoInject({
   }
   // console.log(results);
   // console.log(results.result);
-  console.log(JSON.stringify(results.result));
+  //console.log(JSON.stringify(results.result));
 });
 
 // // serialize the ontoly to RDF/XML

@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "jsld": "^1.0.2",
-    "pug": "^2.0.0-rc.4"
+    "handlebars": "^4.0.11",
+    "jsld": "^1.0.2"
   }
 }
