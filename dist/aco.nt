@@ -13,7 +13,7 @@
 <http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection" .
+<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection node" .
 <http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
 <http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#label> "Audio expression" .
@@ -31,6 +31,7 @@
 <http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
 <http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "Audio manifestation" .
+<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <cc:Work> .
 <http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Manifestation> .
 <http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .

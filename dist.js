@@ -1,11 +1,13 @@
-var rdflib = require('rdflib'),
-    jsonld = require('jsonld'),
-    yaml = require('js-yaml'),
-    fs = require('fs'),
-    path = require('path'),
-    async = require('async'),
-    _ = require('lodash'),
-    eye = require('./eye.js');
+const rdflib = require('rdflib'),
+      jsonld = require('jsonld'),
+      yaml = require('js-yaml'),
+      fs = require('fs'),
+      path = require('path'),
+      async = require('async'),
+      _ = require('lodash'),
+      pug = require('pug'),
+      jsld = require('jsld'),
+      eye = require('./eye.js');
 
 var srcDir = path.join(__dirname, 'src');
 var ontologiesDir = path.join(__dirname, 'dist');
@@ -22,8 +24,6 @@ const simpleBnodes = quads => {
   return quads.replace(/_:bn_([0-9]*)/mg,'_:bn$1');
 };
 
-
-
 const quadsToTriples = quads => {
   // return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*|\"\"\"([^"]|\"[^"]|\"\"[^"])*\"\"\"[^"\s]*) (\S+) .$/mg, '$1 $2 $3 .')
   return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*) (\S+) .$/mg, '$1 $2 $3 .')
@@ -36,24 +36,30 @@ const conflateStore = store => {
   return store;
 };
 
-const fromJsonLdToTurtle = (input, callback) => {
+const fromJsonLdToTurtle = (input, ctxt, callback) => {
   async.autoInject({
     newStore: [async.asyncify(rdflib.graph)],
-    quads: [_.partial(jsonld.toRDF, input, {format: 'application/nquads'})],
+    quads: [_.partial(jsonld.toRDF, input, {expandContext: ctxt, format: 'application/nquads'})],
     rdfInStore: ['quads', 'newStore', _.partial(rdflib.parse, _, _, null, 'application/n-quads')],
     n3: ['rdfInStore', _.partial(rdflib.serialize, null, _, 'http://shouldbethebase.org/', 'text/n3')],
   }, (err, result) => err ? callback(err) : callback(null, result.n3));
 };
 
+const onlyGraph = (inputJsonld) => inputJsonld[0];
+
+const ontologyToHtml = pug.compileFile(path.join(srcDir, 'ontology.pug'));
+
 async.autoInject({
   ontologyYaml: [_.partial(fs.readFile, path.join(srcDir, 'ac-ontology.jsonld.yaml'), 'utf8')],
   ontologyJsonLd: ['ontologyYaml', async.asyncify(yaml.safeLoad)],
-  base: ['ontologyJsonLd', async.asyncify((jsonLd) => (jsonLd['@context']['@base']))],
+  ontologyCtxtYaml: [_.partial(fs.readFile, path.join(srcDir, 'ac-ontology-context.jsonld.yaml'), 'utf8')],
+  ontologyCtxt: ['ontologyCtxtYaml', async.asyncify(yaml.safeLoad)],
+  base: ['ontologyCtxt', async.asyncify((jsonldCtxt) => (jsonldCtxt['@base']))],
   baseAsNode: ['base', async.asyncify((iri) => (rdflib.sym(iri)))],
   // identityQueryN3: [_.partial(fs.readFile, path.join(srcDir, 'identity.n3'), 'utf8')],
   ontologyTermsQueryN3: [_.partial(fs.readFile, path.join(srcDir, 'definedByOntology.n3'), 'utf8')],
   rdfsAxiomsTtl: [_.partial(fs.readFile, path.join(srcDir, 'rdfs-axioms.ttl'), 'utf8')],
-  ontologyTtl: ['ontologyJsonLd', fromJsonLdToTurtle],
+  ontologyTtl: ['ontologyJsonLd', 'ontologyCtxt', fromJsonLdToTurtle],
   eyeDataArray: [
     'ontologyTtl', 'rdfsAxiomsTtl',
     _.partial(
@@ -70,13 +76,18 @@ async.autoInject({
   outputAsQuads: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/n-quads')],
   outputAsTriples: ['outputAsQuads', async.asyncify(_.flow(fixLiterals, simpleBnodes, quadsToTriples))],
   writeTriples: ['outputAsTriples', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.nt'))],
-  outputAsJsonLd: ['outputAsTriples', _.partial(jsonld.fromRDF, _, {format: 'application/nquads'})],
+  outputAsJsonLdRaw: ['outputAsTriples', _.partial(jsonld.fromRDF, _, {format: 'application/nquads'})],
+  outputAsJsonLdCompacted: ['outputAsJsonLdRaw', 'ontologyCtxt', _.partial(jsonld.compact, _, _, {graph: true})],
+  outputAsJsonLd: ['outputAsJsonLdCompacted', async.asyncify(onlyGraph)],
   outputAsJsonLdTxt: ['outputAsJsonLd', async.asyncify(_.partialRight(JSON.stringify, null, 3))],
   writeJsonLd: ['outputAsJsonLdTxt', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.jsonld'))],
   outputAsRdfXml: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/rdf+xml')],
   writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
   writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
-  result: ['writeJsonLd', async.asyncify(_.identity)]
+  outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
+  outputAsHtml: ['outputAsJsLd', async.asyncify(ontologyToHtml)],
+  writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
+  result: ['outputAsJsLd', async.asyncify(_.identity)]
 }, function(err, results) {
   if (err) {
     console.error(err);

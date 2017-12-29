@@ -1,0 +1,34 @@
+'@base': http://audiocommons.org/ns/audiocommons
+ac: http://audiocommons.org/ns/audiocommons#
+
+rdfs: http://www.w3.org/2000/01/rdf-schema#
+owl: http://www.w3.org/2002/07/owl#
+xsd: http://www.w3.org/2001/XMLSchema#
+
+foaf: http://xmlns.com/foaf/0.1/
+dc: http://purl.org/dc/elements/1.1/
+dcterms: http://purl.org/dc/terms/
+skos: http://www.w3.org/2004/02/skos/core#
+
+id: '@id'
+type: '@type'
+subClassOf: {'@id': owl:subClassOf, '@type': '@id'}
+superClassOf: {'@reverse': owl:subClassOf, '@type': '@id' }
+subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
+superPropertyOf: {'@reverse': owl:subPropertyOf, '@type': '@id'}
+domain: {'@id': rdfs:domain, '@type': '@id'}
+domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
+range: {'@id': rdfs:range, '@type': '@id'}
+rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
+
+versionInfo: owl:versionInfo
+maker: foaf:maker
+name: foaf:name
+defines: {'@reverse': rdfs:isDefinedBy, '@type': '@id'}
+
+label: rdfs:label
+comment: rdfs:comment
+descr: dcterms:description
+title: dcterms:title
+created: dcterms:created
+date: dcterms:date

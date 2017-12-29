@@ -44,7 +44,7 @@ n1:Sound rdfs:isDefinedBy n:audiocommons.
 n1:AudioCategory rdfs:label "Audio category".
 n1:AudioClip rdfs:label "Audio clip".
 n1:AudioCollection rdfs:label "Audio collection".
-n1:AudioCollectionNode rdfs:label "Audio collection".
+n1:AudioCollectionNode rdfs:label "Audio collection node".
 n1:AudioExpression rdfs:label "Audio expression".
 n1:AudioFile rdfs:label "Audio file".
 n1:AudioItem rdfs:label "Audio item".
@@ -58,6 +58,7 @@ n1:AudioExpression owl:subClassOf <frbr:Expression>.
 n1:AudioFile owl:subClassOf <ebu:MediaResource>.
 n1:AudioFile owl:subClassOf n1:AudioItem.
 n1:AudioItem owl:subClassOf <frbr:Item>.
+n1:AudioManifestation owl:subClassOf <cc:Work>.
 n1:AudioManifestation owl:subClassOf <frbr:Manifestation>.
 n1:DigitalSignal owl:subClassOf n1:AudioExpression.
 n1:Sound owl:subClassOf n1:AudioExpression.

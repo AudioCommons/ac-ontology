@@ -25,6 +25,8 @@
     "rdflib": "^0.16.5"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jsld": "^1.0.1",
+    "pug": "^2.0.0-rc.4"
   }
 }

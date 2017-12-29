@@ -1,326 +1,229 @@
-[
-   {
-      "@id": "_:bn1",
-      "http://xmlns.com/foaf/0.1/name": [
-         {
-            "@value": "George Fazekas"
-         }
-      ]
+{
+   "@context": {
+      "@base": "http://audiocommons.org/ns/audiocommons",
+      "ac": "http://audiocommons.org/ns/audiocommons#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "dcterms": "http://purl.org/dc/terms/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "id": "@id",
+      "type": "@type",
+      "subClassOf": {
+         "@id": "owl:subClassOf",
+         "@type": "@id"
+      },
+      "superClassOf": {
+         "@reverse": "owl:subClassOf",
+         "@type": "@id"
+      },
+      "subPropertyOf": {
+         "@id": "owl:subPropertyOf",
+         "@type": "@id"
+      },
+      "superPropertyOf": {
+         "@reverse": "owl:subPropertyOf",
+         "@type": "@id"
+      },
+      "domain": {
+         "@id": "rdfs:domain",
+         "@type": "@id"
+      },
+      "domainOf": {
+         "@reverse": "rdfs:domain",
+         "@type": "@id"
+      },
+      "range": {
+         "@id": "rdfs:range",
+         "@type": "@id"
+      },
+      "rangeOf": {
+         "@reverse": "rdfs:range",
+         "@type": "@id"
+      },
+      "versionInfo": "owl:versionInfo",
+      "maker": "foaf:maker",
+      "name": "foaf:name",
+      "defines": {
+         "@reverse": "rdfs:isDefinedBy",
+         "@type": "@id"
+      },
+      "label": "rdfs:label",
+      "comment": "rdfs:comment",
+      "descr": "dcterms:description",
+      "title": "dcterms:title",
+      "created": "dcterms:created",
+      "date": "dcterms:date"
    },
-   {
-      "@id": "_:bn2",
-      "http://xmlns.com/foaf/0.1/name": [
-         {
-            "@value": "Miguel Ceriani"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons",
-      "http://purl.org/dc/terms/created": [
-         {
-            "@value": "2017/07/27 11:09:00"
-         }
-      ],
-      "http://purl.org/dc/terms/date": [
-         {
-            "@value": "2017/07/27 11:09:00"
-         }
-      ],
-      "http://purl.org/dc/terms/description": [
-         {
-            "@value": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n"
-         }
-      ],
-      "http://purl.org/dc/terms/title": [
-         {
-            "@value": "The Audio Commons Ontology"
-         }
-      ],
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource",
-         "http://www.w3.org/2002/07/owl#Ontology"
-      ],
-      "http://www.w3.org/2002/07/owl#versionInfo": [
-         {
-            "@value": "Revision: 0.0.0"
-         }
-      ],
-      "http://xmlns.com/foaf/0.1/maker": [
-         {
-            "@id": "_:bn1"
+   "@graph": [
+      {
+         "id": "_:bn1",
+         "name": "George Fazekas"
+      },
+      {
+         "id": "_:bn2",
+         "name": "Miguel Ceriani"
+      },
+      {
+         "id": "audiocommons",
+         "type": [
+            "rdfs:Resource",
+            "owl:Ontology"
+         ],
+         "created": "2017/07/27 11:09:00",
+         "date": "2017/07/27 11:09:00",
+         "descr": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n",
+         "title": "The Audio Commons Ontology",
+         "versionInfo": "Revision: 0.0.0",
+         "maker": [
+            {
+               "id": "_:bn1"
+            },
+            {
+               "id": "_:bn2"
+            }
+         ]
+      },
+      {
+         "id": "ac:AudioCategory",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
          },
-         {
-            "@id": "_:bn2"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioCategory",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio category"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "frbr:Concept"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioClip",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio clip"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioManifestation"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioCollection",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio collection"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioManifestation"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioCollectionNode",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Class",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio collection"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioExpression",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio expression"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "frbr:Expression"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioFile",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio file"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "ebu:MediaResource"
+         "label": "Audio category",
+         "subClassOf": "frbr:Concept"
+      },
+      {
+         "id": "ac:AudioClip",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
          },
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioItem"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioItem",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio item"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "frbr:Item"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#AudioManifestation",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Class",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Audio manifestation"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "frbr:Manifestation"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#DigitalSignal",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Digital signal"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioExpression"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#Sound",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#label": [
-         {
-            "@value": "Physical sound"
-         }
-      ],
-      "http://www.w3.org/2002/07/owl#subClassOf": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioExpression"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#nodeContent",
-      "@type": [
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#domain": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioCollectionNode"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#range": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioManifestation"
-         }
-      ]
-   },
-   {
-      "@id": "http://audiocommons.org/ns/audiocommons#nodeIndex",
-      "@type": [
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#domain": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioCollectionNode"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons"
-         }
-      ],
-      "http://www.w3.org/2000/01/rdf-schema#range": [
-         {
-            "@id": "http://audiocommons.org/ns/audiocommons#AudioManifestation"
-         }
-      ]
-   },
-   {
-      "@id": "http://www.w3.org/2000/01/rdf-schema#Resource",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Class",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ]
-   },
-   {
-      "@id": "http://www.w3.org/2002/07/owl#Ontology",
-      "@type": [
-         "http://www.w3.org/2000/01/rdf-schema#Class",
-         "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ]
-   }
-]
+         "label": "Audio clip",
+         "subClassOf": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:AudioCollection",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio collection",
+         "subClassOf": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:AudioCollectionNode",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio collection node"
+      },
+      {
+         "id": "ac:AudioExpression",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio expression",
+         "subClassOf": "frbr:Expression"
+      },
+      {
+         "id": "ac:AudioFile",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio file",
+         "subClassOf": [
+            "ebu:MediaResource",
+            "ac:AudioItem"
+         ]
+      },
+      {
+         "id": "ac:AudioItem",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio item",
+         "subClassOf": "frbr:Item"
+      },
+      {
+         "id": "ac:AudioManifestation",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Audio manifestation",
+         "subClassOf": [
+            "cc:Work",
+            "frbr:Manifestation"
+         ]
+      },
+      {
+         "id": "ac:DigitalSignal",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Digital signal",
+         "subClassOf": "ac:AudioExpression"
+      },
+      {
+         "id": "ac:Sound",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "label": "Physical sound",
+         "subClassOf": "ac:AudioExpression"
+      },
+      {
+         "id": "ac:nodeContent",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource"
+         ],
+         "domain": "ac:AudioCollectionNode",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "range": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:nodeIndex",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource"
+         ],
+         "domain": "ac:AudioCollectionNode",
+         "rdfs:isDefinedBy": {
+            "id": "audiocommons"
+         },
+         "range": "ac:AudioManifestation"
+      },
+      {
+         "id": "rdfs:Resource",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ]
+      },
+      {
+         "id": "owl:Ontology",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ]
+      }
+   ]
+}

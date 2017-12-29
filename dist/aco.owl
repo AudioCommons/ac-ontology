@@ -26,7 +26,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
         <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio collection</rdfs:label>
+        <rdfs:label>Audio collection node</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="#AudioExpression">
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
@@ -52,6 +52,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
         <rdfs:isDefinedBy rdf:resource=""/>
         <rdfs:label>Audio manifestation</rdfs:label>
+        <owl:subClassOf rdf:resource="cc:Work"/>
         <owl:subClassOf rdf:resource="frbr:Manifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="#DigitalSignal">
