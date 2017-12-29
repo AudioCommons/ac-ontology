@@ -1,8 +1,14 @@
-@base            <http://audiocommons.org/ns/audiocommons> .
-@prefix ac:      <http://audiocommons.org/ns/audiocommons#> .
+@base            <http://ns.audiocommons.org/aco> .
+@prefix ac:      <http://ns.audiocommons.org/aco#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-{?ontologyTerm rdfs:isDefinedBy <> . ?ontologyTerm ?p ?o. } => {?ontologyTerm ?p ?o}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?o. } => {?ontologyTerm ?p ?o}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?s1. ?s1 ?p1 ?o1} => {?s1 ?p1 ?o1}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?o1. ?s1 ?p1 ?o1} => {?s1 ?p1 ?o1}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?s1. ?s1 ?p1 ?s2. ?s2 ?p2 ?o2} => {?s2 ?p2 ?o2}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?o1. ?s2 ?p1 ?o1. ?s2 ?p2 ?o2} => {?s2 ?p2 ?o2}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?s1. ?s1 ?p1 ?o2. ?s2 ?p2 ?o2} => {?s2 ?p2 ?o2}.
+{?ontologyTerm rdfs:isDefinedBy <>. ?ontologyTerm ?p ?o1. ?o2 ?p1 ?o1. ?s2 ?p2 ?o2} => {?s2 ?p2 ?o2}.
 
 {<> ?p1 ?o1} => {<> ?p1 ?o1}.
 

@@ -1,5 +1,5 @@
-'@base': http://audiocommons.org/ns/audiocommons
-ac: http://audiocommons.org/ns/audiocommons#
+'@base': http://ns.audiocommons.org/aco
+ac: http://ns.audiocommons.org/aco#
 
 rdfs: http://www.w3.org/2000/01/rdf-schema#
 owl: http://www.w3.org/2002/07/owl#
@@ -9,6 +9,8 @@ foaf: http://xmlns.com/foaf/0.1/
 dc: http://purl.org/dc/elements/1.1/
 dcterms: http://purl.org/dc/terms/
 skos: http://www.w3.org/2004/02/skos/core#
+mo: http://purl.org/ontology/mo/
+event: http://purl.org/NET/c4dm/event.owl#
 
 id: '@id'
 type: '@type'
@@ -20,6 +22,18 @@ domain: {'@id': rdfs:domain, '@type': '@id'}
 domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
 range: {'@id': rdfs:range, '@type': '@id'}
 rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
+
+onProperty: {'@id': owl:onProperty, '@type': '@id'}
+onClass: {'@id': owl:onClass, '@type': '@id'}
+qualifiedCardinality: {'@id': owl:qualifiedCardinality, '@type': 'xsd:nonNegativeInteger'}
+hasValue: {'@id': owl:hasValue}
+someValuesFromValue: {'@id': owl:someValuesFromValue, '@type': '@id'}
+
+unionOf: {'@id': owl:unionOf, '@type': '@id'}
+disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
+intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
+equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}
+disjointWith: {'@id': owl:disjointWith, '@type': '@id'}
 
 versionInfo: owl:versionInfo
 maker: foaf:maker

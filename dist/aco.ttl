@@ -1,56 +1,425 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix : <#>.
-@prefix n: <http://audiocommons.org/ns/>.
+@prefix n: <http://ns.audiocommons.org/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix terms: <http://purl.org/dc/terms/>.
 @prefix n0: <http://xmlns.com/foaf/0.1/>.
-@prefix n1: <http://audiocommons.org/ns/audiocommons#>.
+@prefix n1: <http://ns.audiocommons.org/aco#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix mo: <http://purl.org/ontology/mo/>.
+@prefix eve: <http://purl.org/NET/c4dm/event.owl#>.
 
+n:aco a owl:Ontology.
+n1:audioCategory a owl:ObjectProperty.
+n1:availableAs a owl:ObjectProperty.
+n1:bitsPerSample a owl:DatatypeProperty.
+n1:bitsPerSample a owl:FunctionalProperty.
+n1:channels a owl:DatatypeProperty.
+n1:channels a owl:FunctionalProperty.
+n1:compiled a owl:ObjectProperty.
+n1:duration a owl:DatatypeProperty.
+n1:duration a owl:FunctionalProperty.
+_:bn_3 a owl:Class.
+n1:encodes a owl:ObjectProperty.
+n1:homepage a owl:ObjectProperty.
+n1:image a owl:ObjectProperty.
+n1:publicationOf a owl:ObjectProperty.
+n1:published a owl:ObjectProperty.
+n1:sampleRate a owl:DatatypeProperty.
+n1:sampleRate a owl:FunctionalProperty.
+n1:producedSignal a owl:ObjectProperty.
+n1:productionFrom a owl:ObjectProperty.
+n1:publishedAudioManifestation a owl:ObjectProperty.
+n1:recordingOf a owl:ObjectProperty.
+_:bn_9 a owl:Restriction.
+_:bn_10 a owl:Restriction.
+_:bn_11 a owl:Restriction.
+n1:firstNode a owl:FunctionalProperty.
+n1:firstNode a owl:ObjectProperty.
+n1:lastNode a owl:FunctionalProperty.
+n1:lastNode a owl:ObjectProperty.
+n1:memberNode a owl:ObjectProperty.
+n1:nextNode a owl:FunctionalProperty.
+n1:nextNode a owl:ObjectProperty.
+n1:nodeContent a owl:FunctionalProperty.
+n1:nodeContent a owl:ObjectProperty.
+n1:nodeIndex a owl:DatatypeProperty.
+n1:nodeIndex a owl:FunctionalProperty.
+n1:previousNode a owl:FunctionalProperty.
+n1:previousNode a owl:ObjectProperty.
+n:aco a rdfs:Resource.
+n1:audioCategory a rdfs:Resource.
+n1:availableAs a rdfs:Resource.
+n1:bitsPerSample a rdfs:Resource.
+n1:channels a rdfs:Resource.
+n1:compiled a rdfs:Resource.
+n1:duration a rdfs:Resource.
+_:bn_3 a rdfs:Resource.
+n1:encodes a rdfs:Resource.
+n1:homepage a rdfs:Resource.
+n1:image a rdfs:Resource.
+n1:publicationOf a rdfs:Resource.
+n1:published a rdfs:Resource.
+n1:sampleRate a rdfs:Resource.
+n1:producedSignal a rdfs:Resource.
+n1:productionFrom a rdfs:Resource.
+n1:publishedAudioManifestation a rdfs:Resource.
+n1:recordingOf a rdfs:Resource.
+_:bn_9 a rdfs:Resource.
+_:bn_10 a rdfs:Resource.
+_:bn_11 a rdfs:Resource.
+n1:firstNode a rdfs:Resource.
+n1:lastNode a rdfs:Resource.
+n1:memberNode a rdfs:Resource.
+n1:nextNode a rdfs:Resource.
+n1:nodeContent a rdfs:Resource.
+n1:nodeIndex a rdfs:Resource.
+n1:previousNode a rdfs:Resource.
+n1:availableAs a rdf:Property.
+n1:bitsPerSample a rdf:Property.
+n1:channels a rdf:Property.
+n1:compiled a rdf:Property.
+n1:duration a rdf:Property.
+n1:encodes a rdf:Property.
+n1:publicationOf a rdf:Property.
+n1:published a rdf:Property.
+n1:sampleRate a rdf:Property.
+n1:producedSignal a rdf:Property.
+n1:productionFrom a rdf:Property.
+n1:publishedAudioManifestation a rdf:Property.
+n1:recordingOf a rdf:Property.
+n1:firstNode a rdf:Property.
+n1:lastNode a rdf:Property.
+n1:memberNode a rdf:Property.
+n1:nextNode a rdf:Property.
+n1:nodeContent a rdf:Property.
+n1:nodeIndex a rdf:Property.
+n1:previousNode a rdf:Property.
+rdf:type a rdf:Property.
+rdfs:domain a rdf:Property.
+rdfs:range a rdf:Property.
+rdfs:subPropertyOf a rdf:Property.
+rdfs:subClassOf a rdf:Property.
+rdf:subject a rdf:Property.
+rdf:predicate a rdf:Property.
+rdf:object a rdf:Property.
+rdfs:member a rdf:Property.
+rdf:first a rdf:Property.
+rdf:rest a rdf:Property.
+rdfs:seeAlso a rdf:Property.
+rdfs:isDefinedBy a rdf:Property.
+rdfs:comment a rdf:Property.
+rdfs:label a rdf:Property.
+rdf:value a rdf:Property.
+n1:audioCategory a rdf:Property.
+n1:homepage a rdf:Property.
+n1:image a rdf:Property.
+rdf:Alt a rdfs:Class.
+rdf:Bag a rdfs:Class.
+rdf:Seq a rdfs:Class.
+rdfs:ContainerMembershipProperty a rdfs:Class.
+rdfs:Datatype a rdfs:Class.
+n1:AnalogSignal a rdfs:Resource.
 n1:AudioCategory a rdfs:Resource.
 n1:AudioClip a rdfs:Resource.
-n1:AudioCollection a rdfs:Resource.
-n1:AudioCollectionNode a rdfs:Resource.
-n1:AudioCollectionNode a rdfs:Class.
 n1:AudioExpression a rdfs:Resource.
 n1:AudioFile a rdfs:Resource.
 n1:AudioItem a rdfs:Resource.
 n1:AudioManifestation a rdfs:Resource.
-n1:AudioManifestation a rdfs:Class.
 n1:DigitalSignal a rdfs:Resource.
-n1:nodeContent a rdf:Property.
-n1:nodeContent a rdfs:Resource.
-n1:nodeIndex a rdf:Property.
-n1:nodeIndex a rdfs:Resource.
+n1:Signal a rdfs:Resource.
 n1:Sound a rdfs:Resource.
-n:audiocommons a owl:Ontology.
-n:audiocommons a rdfs:Resource.
+n1:AudioPublication a rdfs:Resource.
+n1:Recording a rdfs:Resource.
+n1:SignalProduction a rdfs:Resource.
+n1:Syntesis a rdfs:Resource.
+n1:AudioCollection a rdfs:Resource.
+n1:AudioCollectionNode a rdfs:Resource.
 owl:Ontology a rdfs:Class.
+owl:ObjectProperty a rdfs:Class.
+owl:DatatypeProperty a rdfs:Class.
+owl:FunctionalProperty a rdfs:Class.
+owl:Class a rdfs:Class.
+owl:Restriction a rdfs:Class.
 rdfs:Resource a rdfs:Class.
+rdf:Property a rdfs:Class.
+rdfs:Class a rdfs:Class.
+n1:AudioManifestation a rdfs:Class.
+n1:DigitalSignal a rdfs:Class.
+n0:Agent a rdfs:Class.
+_:bn_3 a rdfs:Class.
+n1:AudioItem a rdfs:Class.
+n1:SignalProduction a rdfs:Class.
+n1:AudioPublication a rdfs:Class.
+n1:Recording a rdfs:Class.
+n1:AudioCollection a rdfs:Class.
+n1:AudioCollectionNonLastNode a rdfs:Class.
+n1:AudioCollectionNode a rdfs:Class.
+n1:AudioCollectionNonFirstNode a rdfs:Class.
+rdf:Statement a rdfs:Class.
+rdf:List a rdfs:Class.
+n1:AudioCategory a rdfs:Class.
+xsd:int a rdfs:Class.
+n0:Document a rdfs:Class.
+n0:Image a rdfs:Class.
+n1:AudioExpression a rdfs:Class.
+xsd:float a rdfs:Class.
+n1:Signal a rdfs:Class.
+n1:Sound a rdfs:Class.
+n1:AudioCollectionFirstNode a rdfs:Class.
+n1:AudioCollectionLastNode a rdfs:Class.
+rdfs:Literal a rdfs:Class.
+rdfs:Container a rdfs:Class.
+"Analog signal" a rdfs:Literal.
+"is in audio category" a rdfs:Literal.
+"Audio category" a rdfs:Literal.
+"Audio clip" a rdfs:Literal.
+"Audio expression" a rdfs:Literal.
+"Audio file" a rdfs:Literal.
+"Audio item" a rdfs:Literal.
+"Audio manifestation" a rdfs:Literal.
+"available as" a rdfs:Literal.
+"bits per sample" a rdfs:Literal.
+"channels" a rdfs:Literal.
+"compiled" a rdfs:Literal.
+"Digital signal" a rdfs:Literal.
+"duration" a rdfs:Literal.
+"encodes" a rdfs:Literal.
+"homepage" a rdfs:Literal.
+"image" a rdfs:Literal.
+"publication of" a rdfs:Literal.
+"published" a rdfs:Literal.
+"sample rate" a rdfs:Literal.
+"Signal" a rdfs:Literal.
+"Physical sound" a rdfs:Literal.
+"Audio publication" a rdfs:Literal.
+"produced signal" a rdfs:Literal.
+"production from" a rdfs:Literal.
+"published audio manifestation" a rdfs:Literal.
+"Recording" a rdfs:Literal.
+"recording of" a rdfs:Literal.
+"Signal production" a rdfs:Literal.
+"Syntesis" a rdfs:Literal.
+"Audio collection" a rdfs:Literal.
+"Audio collection node" a rdfs:Literal.
+"first node" a rdfs:Literal.
+"last node" a rdfs:Literal.
+"member node" a rdfs:Literal.
+"next node" a rdfs:Literal.
+"node content" a rdfs:Literal.
+"node index" a rdfs:Literal.
+"previous node" a rdfs:Literal.
+rdf:type a rdfs:Resource.
+rdfs:domain a rdfs:Resource.
+rdfs:range a rdfs:Resource.
+rdfs:subPropertyOf a rdfs:Resource.
+rdfs:subClassOf a rdfs:Resource.
+rdf:subject a rdfs:Resource.
+rdf:predicate a rdfs:Resource.
+rdf:object a rdfs:Resource.
+rdfs:member a rdfs:Resource.
+rdf:first a rdfs:Resource.
+rdf:rest a rdfs:Resource.
+rdfs:seeAlso a rdfs:Resource.
+rdfs:isDefinedBy a rdfs:Resource.
+rdfs:comment a rdfs:Resource.
+rdfs:label a rdfs:Resource.
+rdf:value a rdfs:Resource.
+rdf:Alt a rdfs:Resource.
+rdf:Bag a rdfs:Resource.
+rdf:Seq a rdfs:Resource.
+rdfs:ContainerMembershipProperty a rdfs:Resource.
+rdfs:Datatype a rdfs:Resource.
 owl:Ontology a rdfs:Resource.
+owl:ObjectProperty a rdfs:Resource.
+owl:DatatypeProperty a rdfs:Resource.
+owl:FunctionalProperty a rdfs:Resource.
+owl:Class a rdfs:Resource.
+owl:Restriction a rdfs:Resource.
 rdfs:Resource a rdfs:Resource.
-n1:AudioCategory rdfs:isDefinedBy n:audiocommons.
-n1:AudioClip rdfs:isDefinedBy n:audiocommons.
-n1:AudioCollection rdfs:isDefinedBy n:audiocommons.
-n1:AudioCollectionNode rdfs:isDefinedBy n:audiocommons.
-n1:AudioExpression rdfs:isDefinedBy n:audiocommons.
-n1:AudioFile rdfs:isDefinedBy n:audiocommons.
-n1:AudioItem rdfs:isDefinedBy n:audiocommons.
-n1:AudioManifestation rdfs:isDefinedBy n:audiocommons.
-n1:DigitalSignal rdfs:isDefinedBy n:audiocommons.
-n1:nodeContent rdfs:isDefinedBy n:audiocommons.
-n1:nodeIndex rdfs:isDefinedBy n:audiocommons.
-n1:Sound rdfs:isDefinedBy n:audiocommons.
+rdf:Property a rdfs:Resource.
+rdfs:Class a rdfs:Resource.
+n0:Agent a rdfs:Resource.
+n1:AudioCollectionNonLastNode a rdfs:Resource.
+n1:AudioCollectionNonFirstNode a rdfs:Resource.
+rdf:Statement a rdfs:Resource.
+rdf:List a rdfs:Resource.
+xsd:int a rdfs:Resource.
+n0:Document a rdfs:Resource.
+n0:Image a rdfs:Resource.
+xsd:float a rdfs:Resource.
+n1:AudioCollectionFirstNode a rdfs:Resource.
+n1:AudioCollectionLastNode a rdfs:Resource.
+rdfs:Literal a rdfs:Resource.
+rdfs:Container a rdfs:Resource.
+"Analog signal" a rdfs:Resource.
+"is in audio category" a rdfs:Resource.
+"Audio category" a rdfs:Resource.
+"Audio clip" a rdfs:Resource.
+"Audio expression" a rdfs:Resource.
+"Audio file" a rdfs:Resource.
+"Audio item" a rdfs:Resource.
+"Audio manifestation" a rdfs:Resource.
+"available as" a rdfs:Resource.
+"bits per sample" a rdfs:Resource.
+"channels" a rdfs:Resource.
+"compiled" a rdfs:Resource.
+"Digital signal" a rdfs:Resource.
+"duration" a rdfs:Resource.
+"encodes" a rdfs:Resource.
+"homepage" a rdfs:Resource.
+"image" a rdfs:Resource.
+"publication of" a rdfs:Resource.
+"published" a rdfs:Resource.
+"sample rate" a rdfs:Resource.
+"Signal" a rdfs:Resource.
+"Physical sound" a rdfs:Resource.
+"Audio publication" a rdfs:Resource.
+"produced signal" a rdfs:Resource.
+"production from" a rdfs:Resource.
+"published audio manifestation" a rdfs:Resource.
+"Recording" a rdfs:Resource.
+"recording of" a rdfs:Resource.
+"Signal production" a rdfs:Resource.
+"Syntesis" a rdfs:Resource.
+"Audio collection" a rdfs:Resource.
+"Audio collection node" a rdfs:Resource.
+"first node" a rdfs:Resource.
+"last node" a rdfs:Resource.
+"member node" a rdfs:Resource.
+"next node" a rdfs:Resource.
+"node content" a rdfs:Resource.
+"node index" a rdfs:Resource.
+"previous node" a rdfs:Resource.
+n:aco terms:created "2017/07/27 11:09:00".
+n:aco terms:date "2017/07/27 11:09:00".
+n:aco terms:description "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n".
+n:aco terms:title "The Audio Commons Ontology".
+n:aco owl:versionInfo "Revision: 0.0.0".
+n:aco n0:maker _:bn_1.
+n:aco n0:maker _:bn_2.
+_:bn_1 n0:name "George Fazekas".
+_:bn_2 n0:name "Miguel Ceriani".
+n1:AnalogSignal rdfs:isDefinedBy n:aco.
+n1:audioCategory rdfs:isDefinedBy n:aco.
+n1:AudioCategory rdfs:isDefinedBy n:aco.
+n1:AudioClip rdfs:isDefinedBy n:aco.
+n1:AudioExpression rdfs:isDefinedBy n:aco.
+n1:AudioFile rdfs:isDefinedBy n:aco.
+n1:AudioItem rdfs:isDefinedBy n:aco.
+n1:AudioManifestation rdfs:isDefinedBy n:aco.
+n1:availableAs rdfs:isDefinedBy n:aco.
+n1:bitsPerSample rdfs:isDefinedBy n:aco.
+n1:channels rdfs:isDefinedBy n:aco.
+n1:compiled rdfs:isDefinedBy n:aco.
+n1:DigitalSignal rdfs:isDefinedBy n:aco.
+n1:duration rdfs:isDefinedBy n:aco.
+n1:encodes rdfs:isDefinedBy n:aco.
+n1:homepage rdfs:isDefinedBy n:aco.
+n1:image rdfs:isDefinedBy n:aco.
+n1:publicationOf rdfs:isDefinedBy n:aco.
+n1:published rdfs:isDefinedBy n:aco.
+n1:sampleRate rdfs:isDefinedBy n:aco.
+n1:Signal rdfs:isDefinedBy n:aco.
+n1:Sound rdfs:isDefinedBy n:aco.
+n1:AudioPublication rdfs:isDefinedBy n:aco.
+n1:producedSignal rdfs:isDefinedBy n:aco.
+n1:productionFrom rdfs:isDefinedBy n:aco.
+n1:publishedAudioManifestation rdfs:isDefinedBy n:aco.
+n1:Recording rdfs:isDefinedBy n:aco.
+n1:recordingOf rdfs:isDefinedBy n:aco.
+n1:SignalProduction rdfs:isDefinedBy n:aco.
+n1:Syntesis rdfs:isDefinedBy n:aco.
+n1:AudioCollection rdfs:isDefinedBy n:aco.
+n1:AudioCollectionNode rdfs:isDefinedBy n:aco.
+n1:firstNode rdfs:isDefinedBy n:aco.
+n1:lastNode rdfs:isDefinedBy n:aco.
+n1:memberNode rdfs:isDefinedBy n:aco.
+n1:nextNode rdfs:isDefinedBy n:aco.
+n1:nodeContent rdfs:isDefinedBy n:aco.
+n1:nodeIndex rdfs:isDefinedBy n:aco.
+n1:previousNode rdfs:isDefinedBy n:aco.
+n1:AnalogSignal rdfs:label "Analog signal".
+n1:audioCategory rdfs:label "is in audio category".
 n1:AudioCategory rdfs:label "Audio category".
 n1:AudioClip rdfs:label "Audio clip".
-n1:AudioCollection rdfs:label "Audio collection".
-n1:AudioCollectionNode rdfs:label "Audio collection node".
 n1:AudioExpression rdfs:label "Audio expression".
 n1:AudioFile rdfs:label "Audio file".
 n1:AudioItem rdfs:label "Audio item".
 n1:AudioManifestation rdfs:label "Audio manifestation".
+n1:availableAs rdfs:label "available as".
+n1:bitsPerSample rdfs:label "bits per sample".
+n1:channels rdfs:label "channels".
+n1:compiled rdfs:label "compiled".
 n1:DigitalSignal rdfs:label "Digital signal".
+n1:duration rdfs:label "duration".
+n1:encodes rdfs:label "encodes".
+n1:homepage rdfs:label "homepage".
+n1:image rdfs:label "image".
+n1:publicationOf rdfs:label "publication of".
+n1:published rdfs:label "published".
+n1:sampleRate rdfs:label "sample rate".
+n1:Signal rdfs:label "Signal".
 n1:Sound rdfs:label "Physical sound".
+n1:AudioPublication rdfs:label "Audio publication".
+n1:producedSignal rdfs:label "produced signal".
+n1:productionFrom rdfs:label "production from".
+n1:publishedAudioManifestation rdfs:label "published audio manifestation".
+n1:Recording rdfs:label "Recording".
+n1:recordingOf rdfs:label "recording of".
+n1:SignalProduction rdfs:label "Signal production".
+n1:Syntesis rdfs:label "Syntesis".
+n1:AudioCollection rdfs:label "Audio collection".
+n1:AudioCollectionNode rdfs:label "Audio collection node".
+n1:firstNode rdfs:label "first node".
+n1:lastNode rdfs:label "last node".
+n1:memberNode rdfs:label "member node".
+n1:nextNode rdfs:label "next node".
+n1:nodeContent rdfs:label "node content".
+n1:nodeIndex rdfs:label "node index".
+n1:previousNode rdfs:label "previous node".
+n1:AnalogSignal owl:disjointWith n1:DigitalSignal.
+n1:DigitalSignal owl:disjointWith n1:AnalogSignal.
+n1:audioCategory rdfs:range n1:AudioCategory.
+n1:availableAs rdfs:range n1:AudioItem.
+n1:bitsPerSample rdfs:range xsd:int.
+n1:channels rdfs:range xsd:int.
+n1:compiled rdfs:range n1:AudioManifestation.
+n1:duration rdfs:range xsd:int.
+n1:encodes rdfs:range n1:DigitalSignal.
+n1:homepage rdfs:range n0:Document.
+n1:image rdfs:range n0:Image.
+n1:publicationOf rdfs:range n1:AudioExpression.
+n1:published rdfs:range n1:AudioManifestation.
+n1:sampleRate rdfs:range xsd:float.
+n1:producedSignal rdfs:range n1:Signal.
+n1:productionFrom rdfs:range n1:Sound.
+n1:publishedAudioManifestation rdfs:range n1:AudioManifestation.
+n1:recordingOf rdfs:range n1:Sound.
+n1:firstNode rdfs:range n1:AudioCollectionFirstNode.
+n1:lastNode rdfs:range n1:AudioCollectionLastNode.
+n1:memberNode rdfs:range n1:AudioCollectionNode.
+n1:nextNode rdfs:range n1:AudioCollectionNonFirstNode.
+n1:nodeContent rdfs:range n1:AudioManifestation.
+n1:nodeIndex rdfs:range xsd:int.
+n1:previousNode rdfs:range n1:AudioCollectionNonLastNode.
+rdf:type rdfs:range rdfs:Class.
+rdfs:domain rdfs:range rdfs:Class.
+rdfs:range rdfs:range rdfs:Class.
+rdfs:subPropertyOf rdfs:range rdf:Property.
+rdfs:subClassOf rdfs:range rdfs:Class.
+rdf:subject rdfs:range rdfs:Resource.
+rdf:predicate rdfs:range rdfs:Resource.
+rdf:object rdfs:range rdfs:Resource.
+rdfs:member rdfs:range rdfs:Resource.
+rdf:first rdfs:range rdfs:Resource.
+rdf:rest rdfs:range rdf:List.
+rdfs:seeAlso rdfs:range rdfs:Resource.
+rdfs:isDefinedBy rdfs:range rdfs:Resource.
+rdfs:comment rdfs:range rdfs:Literal.
+rdfs:label rdfs:range rdfs:Literal.
+rdf:value rdfs:range rdfs:Resource.
 n1:AudioCategory owl:subClassOf <frbr:Concept>.
 n1:AudioClip owl:subClassOf n1:AudioManifestation.
 n1:AudioCollection owl:subClassOf n1:AudioManifestation.
@@ -60,18 +429,104 @@ n1:AudioFile owl:subClassOf n1:AudioItem.
 n1:AudioItem owl:subClassOf <frbr:Item>.
 n1:AudioManifestation owl:subClassOf <cc:Work>.
 n1:AudioManifestation owl:subClassOf <frbr:Manifestation>.
-n1:DigitalSignal owl:subClassOf n1:AudioExpression.
+n1:DigitalSignal owl:subClassOf n1:Signal.
+n1:Instrument owl:subClassOf n1:AudioCategory.
+n1:Signal owl:subClassOf n1:AudioExpression.
 n1:Sound owl:subClassOf n1:AudioExpression.
+mo:AnalogSignal owl:subClassOf n1:AnalogSignal.
+mo:AudioFile owl:subClassOf n1:AudioFile.
+mo:DigitalSignal owl:subClassOf n1:DigitalSignal.
+mo:Genre owl:subClassOf n1:AudioCategory.
+mo:MusicalExpression owl:subClassOf n1:AudioExpression.
+mo:MusicalItem owl:subClassOf n1:AudioItem.
+mo:MusicalManifestation owl:subClassOf n1:AudioManifestation.
+mo:Signal owl:subClassOf n1:Signal.
+mo:Sound owl:subClassOf n1:Sound.
+mo:Track owl:subClassOf n1:AudioClip.
+n1:AudioPublication owl:subClassOf eve:Event.
+n1:Recording owl:subClassOf n1:SignalProduction.
+n1:SignalProduction owl:subClassOf eve:Event.
+n1:Syntesis owl:subClassOf n1:SignalProduction.
+mo:Recording owl:subClassOf n1:Recording.
+mo:ReleaseEvent owl:subClassOf n1:AudioPublication.
+n1:AudioCollectionNode owl:subClassOf <rdf:List>.
+n1:AudioCollectionNode owl:subClassOf _:bn_9.
+n1:AudioCollectionNode owl:subClassOf _:bn_10.
+n1:AudioCollectionNode owl:subClassOf _:bn_11.
+mo:Record owl:subClassOf n1:AudioCollection.
+mo:Release owl:subClassOf n1:AudioCollection.
+n1:availableAs rdfs:domain n1:AudioManifestation.
+n1:bitsPerSample rdfs:domain n1:DigitalSignal.
+n1:channels rdfs:domain n1:DigitalSignal.
+n1:compiled rdfs:domain n0:Agent.
+n1:duration rdfs:domain _:bn_3.
+n1:encodes rdfs:domain n1:AudioItem.
+n1:publicationOf rdfs:domain n1:AudioManifestation.
+n1:published rdfs:domain n0:Agent.
+n1:sampleRate rdfs:domain n1:DigitalSignal.
+n1:producedSignal rdfs:domain n1:SignalProduction.
+n1:productionFrom rdfs:domain n1:SignalProduction.
+n1:publishedAudioManifestation rdfs:domain n1:AudioPublication.
+n1:recordingOf rdfs:domain n1:Recording.
+n1:firstNode rdfs:domain n1:AudioCollection.
+n1:lastNode rdfs:domain n1:AudioCollection.
+n1:memberNode rdfs:domain n1:AudioCollection.
+n1:nextNode rdfs:domain n1:AudioCollectionNonLastNode.
 n1:nodeContent rdfs:domain n1:AudioCollectionNode.
 n1:nodeIndex rdfs:domain n1:AudioCollectionNode.
-n1:nodeContent rdfs:range n1:AudioManifestation.
-n1:nodeIndex rdfs:range n1:AudioManifestation.
-n:audiocommons terms:created "2017/07/27 11:09:00".
-n:audiocommons terms:date "2017/07/27 11:09:00".
-n:audiocommons terms:description "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n".
-n:audiocommons terms:title "The Audio Commons Ontology".
-n:audiocommons owl:versionInfo "Revision: 0.0.0".
-n:audiocommons n0:maker _:bn_1.
-n:audiocommons n0:maker _:bn_2.
-_:bn_1 n0:name "George Fazekas".
-_:bn_2 n0:name "Miguel Ceriani".
+n1:previousNode rdfs:domain n1:AudioCollectionNonFirstNode.
+rdf:type rdfs:domain rdfs:Resource.
+rdfs:domain rdfs:domain rdf:Property.
+rdfs:range rdfs:domain rdf:Property.
+rdfs:subPropertyOf rdfs:domain rdf:Property.
+rdfs:subClassOf rdfs:domain rdfs:Class.
+rdf:subject rdfs:domain rdf:Statement.
+rdf:predicate rdfs:domain rdf:Statement.
+rdf:object rdfs:domain rdf:Statement.
+rdfs:member rdfs:domain rdfs:Resource.
+rdf:first rdfs:domain rdf:List.
+rdf:rest rdfs:domain rdf:List.
+rdfs:seeAlso rdfs:domain rdfs:Resource.
+rdfs:isDefinedBy rdfs:domain rdfs:Resource.
+rdfs:comment rdfs:domain rdfs:Resource.
+rdfs:label rdfs:domain rdfs:Resource.
+rdf:value rdfs:domain rdfs:Resource.
+_:bn_3 owl:unionOf _:bn_4.
+n1:homepage owl:subPropertyOf n0:isPrimaryTopicOf.
+n1:image owl:subPropertyOf n0:depiction.
+mo:available_as owl:subPropertyOf n1:availableAs.
+mo:bitsPerSample owl:subPropertyOf n1:bitsPerSample.
+mo:channels owl:subPropertyOf n1:channels.
+mo:compiled owl:subPropertyOf n1:compiled.
+mo:duration owl:subPropertyOf n1:duration.
+mo:encodes owl:subPropertyOf n1:encodes.
+mo:genre owl:subPropertyOf n1:audioCategory.
+mo:homepage owl:subPropertyOf n1:homepage.
+mo:image owl:subPropertyOf n1:image.
+mo:instrument owl:subPropertyOf n1:audioCategory.
+mo:publication_of owl:subPropertyOf n1:publicationOf.
+mo:published owl:subPropertyOf n1:published.
+mo:sample_rate owl:subPropertyOf n1:sampleRate.
+n1:recordingOf owl:subPropertyOf n1:productionFrom.
+mo:produced_signal owl:subPropertyOf n1:producedSignal.
+mo:recording_of owl:subPropertyOf n1:recordingOf.
+mo:release owl:subPropertyOf n1:publishedAudioManifestation.
+n1:firstNode owl:subPropertyOf n1:memberNode.
+n1:lastNode owl:subPropertyOf n1:memberNode.
+n1:nextNode owl:subPropertyOf <rdf:rest>.
+n1:nodeContent owl:subPropertyOf <rdf:first>.
+n1:AudioCollectionNode owl:disjointUnionOf (n1:AudioCollectionFirstNode n1:AudioCollectionNonFirstNode).
+n1:AudioCollectionNode owl:disjointUnionOf (n1:AudioCollectionLastNode n1:AudioCollectionNonLastNode).
+_:bn_9 owl:onClass <rdf:List>.
+_:bn_9 owl:onProperty <rdf:rest>.
+_:bn_10 owl:onProperty n1:nodeContent.
+_:bn_11 owl:onProperty <rdf:first>.
+_:bn_9 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger.
+_:bn_10 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger.
+_:bn_11 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger.
+rdf:Alt rdfs:subClassOf rdfs:Container.
+rdf:Bag rdfs:subClassOf rdfs:Container.
+rdf:Seq rdfs:subClassOf rdfs:Container.
+rdfs:ContainerMembershipProperty rdfs:subClassOf rdf:Property.
+rdfs:Datatype rdfs:subClassOf rdfs:Class.
+rdfs:isDefinedBy rdfs:subPropertyOf rdfs:seeAlso.

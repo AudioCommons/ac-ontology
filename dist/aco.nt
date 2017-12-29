@@ -1,65 +1,271 @@
-<http://audiocommons.org/ns/audiocommons#AudioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Audio category" .
-<http://audiocommons.org/ns/audiocommons#AudioCategory> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Concept> .
-<http://audiocommons.org/ns/audiocommons#AudioClip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioClip> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioClip> <http://www.w3.org/2000/01/rdf-schema#label> "Audio clip" .
-<http://audiocommons.org/ns/audiocommons#AudioClip> <http://www.w3.org/2002/07/owl#subClassOf> <http://audiocommons.org/ns/audiocommons#AudioManifestation> .
-<http://audiocommons.org/ns/audiocommons#AudioCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection" .
-<http://audiocommons.org/ns/audiocommons#AudioCollection> <http://www.w3.org/2002/07/owl#subClassOf> <http://audiocommons.org/ns/audiocommons#AudioManifestation> .
-<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection node" .
-<http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#label> "Audio expression" .
-<http://audiocommons.org/ns/audiocommons#AudioExpression> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Expression> .
-<http://audiocommons.org/ns/audiocommons#AudioFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioFile> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioFile> <http://www.w3.org/2000/01/rdf-schema#label> "Audio file" .
-<http://audiocommons.org/ns/audiocommons#AudioFile> <http://www.w3.org/2002/07/owl#subClassOf> <ebu:MediaResource> .
-<http://audiocommons.org/ns/audiocommons#AudioFile> <http://www.w3.org/2002/07/owl#subClassOf> <http://audiocommons.org/ns/audiocommons#AudioItem> .
-<http://audiocommons.org/ns/audiocommons#AudioItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioItem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioItem> <http://www.w3.org/2000/01/rdf-schema#label> "Audio item" .
-<http://audiocommons.org/ns/audiocommons#AudioItem> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Item> .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "Audio manifestation" .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <cc:Work> .
-<http://audiocommons.org/ns/audiocommons#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Manifestation> .
-<http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#label> "Digital signal" .
-<http://audiocommons.org/ns/audiocommons#DigitalSignal> <http://www.w3.org/2002/07/owl#subClassOf> <http://audiocommons.org/ns/audiocommons#AudioExpression> .
-<http://audiocommons.org/ns/audiocommons#Sound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#Sound> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#Sound> <http://www.w3.org/2000/01/rdf-schema#label> "Physical sound" .
-<http://audiocommons.org/ns/audiocommons#Sound> <http://www.w3.org/2002/07/owl#subClassOf> <http://audiocommons.org/ns/audiocommons#AudioExpression> .
-<http://audiocommons.org/ns/audiocommons#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://audiocommons.org/ns/audiocommons#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#nodeContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://audiocommons.org/ns/audiocommons#AudioCollectionNode> .
-<http://audiocommons.org/ns/audiocommons#nodeContent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#nodeContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://audiocommons.org/ns/audiocommons#AudioManifestation> .
-<http://audiocommons.org/ns/audiocommons#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://audiocommons.org/ns/audiocommons#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <http://audiocommons.org/ns/audiocommons#AudioCollectionNode> .
-<http://audiocommons.org/ns/audiocommons#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://audiocommons.org/ns/audiocommons> .
-<http://audiocommons.org/ns/audiocommons#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://audiocommons.org/ns/audiocommons#AudioManifestation> .
-<http://audiocommons.org/ns/audiocommons> <http://purl.org/dc/terms/created> "2017/07/27 11:09:00" .
-<http://audiocommons.org/ns/audiocommons> <http://purl.org/dc/terms/date> "2017/07/27 11:09:00" .
-<http://audiocommons.org/ns/audiocommons> <http://purl.org/dc/terms/description> "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n" .
-<http://audiocommons.org/ns/audiocommons> <http://purl.org/dc/terms/title> "The Audio Commons Ontology" .
-<http://audiocommons.org/ns/audiocommons> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<http://audiocommons.org/ns/audiocommons> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://audiocommons.org/ns/audiocommons> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 0.0.0" .
-<http://audiocommons.org/ns/audiocommons> <http://xmlns.com/foaf/0.1/maker> _:bn1 .
-<http://audiocommons.org/ns/audiocommons> <http://xmlns.com/foaf/0.1/maker> _:bn2 .
+<http://ns.audiocommons.org/aco#AnalogSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#label> "Analog signal" .
+<http://ns.audiocommons.org/aco#AnalogSignal> <http://www.w3.org/2002/07/owl#disjointWith> <http://ns.audiocommons.org/aco#DigitalSignal> .
+<http://ns.audiocommons.org/aco#AudioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Audio category" .
+<http://ns.audiocommons.org/aco#AudioCategory> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Concept> .
+<http://ns.audiocommons.org/aco#AudioClip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#label> "Audio clip" .
+<http://ns.audiocommons.org/aco#AudioClip> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#AudioCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection" .
+<http://ns.audiocommons.org/aco#AudioCollection> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection node" .
+_:n2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ns.audiocommons.org/aco#AudioCollectionNonFirstNode>.\n_:n2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nill>.\n_:n3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ns.audiocommons.org/aco#AudioCollectionFirstNode>.\n_:n3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2.\n<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:n3 <http://ns.audiocommons.org/aco> .
+_:n4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ns.audiocommons.org/aco#AudioCollectionNonLastNode>.\n_:n4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nill>.\n_:n5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ns.audiocommons.org/aco#AudioCollectionLastNode>.\n_:n5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n4.\n<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:n5 <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#subClassOf> <rdf:List> .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#subClassOf> _:bn10 .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#subClassOf> _:bn11 .
+<http://ns.audiocommons.org/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#subClassOf> _:bn9 .
+<http://ns.audiocommons.org/aco#AudioExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#label> "Audio expression" .
+<http://ns.audiocommons.org/aco#AudioExpression> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Expression> .
+<http://ns.audiocommons.org/aco#AudioFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#label> "Audio file" .
+<http://ns.audiocommons.org/aco#AudioFile> <http://www.w3.org/2002/07/owl#subClassOf> <ebu:MediaResource> .
+<http://ns.audiocommons.org/aco#AudioFile> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#AudioItem> .
+<http://ns.audiocommons.org/aco#AudioItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#label> "Audio item" .
+<http://ns.audiocommons.org/aco#AudioItem> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Item> .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "Audio manifestation" .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <cc:Work> .
+<http://ns.audiocommons.org/aco#AudioManifestation> <http://www.w3.org/2002/07/owl#subClassOf> <frbr:Manifestation> .
+<http://ns.audiocommons.org/aco#AudioPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#AudioPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#label> "Audio publication" .
+<http://ns.audiocommons.org/aco#AudioPublication> <http://www.w3.org/2002/07/owl#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#label> "Digital signal" .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/2002/07/owl#disjointWith> <http://ns.audiocommons.org/aco#AnalogSignal> .
+<http://ns.audiocommons.org/aco#DigitalSignal> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#Signal> .
+<http://ns.audiocommons.org/aco#Recording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#Recording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#label> "Recording" .
+<http://ns.audiocommons.org/aco#Recording> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#SignalProduction> .
+<http://ns.audiocommons.org/aco#Signal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#Signal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#label> "Signal" .
+<http://ns.audiocommons.org/aco#Signal> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#AudioExpression> .
+<http://ns.audiocommons.org/aco#SignalProduction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#SignalProduction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#label> "Signal production" .
+<http://ns.audiocommons.org/aco#SignalProduction> <http://www.w3.org/2002/07/owl#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
+<http://ns.audiocommons.org/aco#Sound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://ns.audiocommons.org/aco#Sound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#label> "Physical sound" .
+<http://ns.audiocommons.org/aco#Sound> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#AudioExpression> .
+<http://ns.audiocommons.org/aco#Syntesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#label> "Syntesis" .
+<http://ns.audiocommons.org/aco#Syntesis> <http://www.w3.org/2002/07/owl#subClassOf> <http://ns.audiocommons.org/aco#SignalProduction> .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "is in audio category" .
+<http://ns.audiocommons.org/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCategory> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#label> "available as" .
+<http://ns.audiocommons.org/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioItem> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#DigitalSignal> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#label> "bits per sample" .
+<http://ns.audiocommons.org/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#DigitalSignal> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/2000/01/rdf-schema#label> "channels" .
+<http://ns.audiocommons.org/aco#channels> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#label> "compiled" .
+<http://ns.audiocommons.org/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/2000/01/rdf-schema#domain> _:bn3 .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/2000/01/rdf-schema#label> "duration" .
+<http://ns.audiocommons.org/aco#duration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioItem> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#label> "encodes" .
+<http://ns.audiocommons.org/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#DigitalSignal> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollection> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#label> "first node" .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCollectionFirstNode> .
+<http://ns.audiocommons.org/aco#firstNode> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://ns.audiocommons.org/aco#memberNode> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#label> "homepage" .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
+<http://ns.audiocommons.org/aco#homepage> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Image> .
+<http://ns.audiocommons.org/aco#image> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://xmlns.com/foaf/0.1/depiction> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollection> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#label> "last node" .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCollectionLastNode> .
+<http://ns.audiocommons.org/aco#lastNode> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://ns.audiocommons.org/aco#memberNode> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollection> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#label> "member node" .
+<http://ns.audiocommons.org/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCollectionNode> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollectionNonLastNode> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#label> "next node" .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCollectionNonFirstNode> .
+<http://ns.audiocommons.org/aco#nextNode> <http://www.w3.org/2002/07/owl#subPropertyOf> <rdf:rest> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollectionNode> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#label> "node content" .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#nodeContent> <http://www.w3.org/2002/07/owl#subPropertyOf> <rdf:first> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollectionNode> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#label> "node index" .
+<http://ns.audiocommons.org/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioCollectionNonFirstNode> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#label> "previous node" .
+<http://ns.audiocommons.org/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioCollectionNonLastNode> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#SignalProduction> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#label> "produced signal" .
+<http://ns.audiocommons.org/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#Signal> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#SignalProduction> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#label> "production from" .
+<http://ns.audiocommons.org/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#Sound> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#label> "publication of" .
+<http://ns.audiocommons.org/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioExpression> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/2000/01/rdf-schema#label> "published" .
+<http://ns.audiocommons.org/aco#published> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#AudioPublication> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "published audio manifestation" .
+<http://ns.audiocommons.org/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#AudioManifestation> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#Recording> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#label> "recording of" .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ns.audiocommons.org/aco#Sound> .
+<http://ns.audiocommons.org/aco#recordingOf> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://ns.audiocommons.org/aco#productionFrom> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ns.audiocommons.org/aco#DigitalSignal> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://ns.audiocommons.org/aco> .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#label> "sample rate" .
+<http://ns.audiocommons.org/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://ns.audiocommons.org/aco> <http://purl.org/dc/terms/created> "2017/07/27 11:09:00" .
+<http://ns.audiocommons.org/aco> <http://purl.org/dc/terms/date> "2017/07/27 11:09:00" .
+<http://ns.audiocommons.org/aco> <http://purl.org/dc/terms/description> "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n" .
+<http://ns.audiocommons.org/aco> <http://purl.org/dc/terms/title> "The Audio Commons Ontology" .
+<http://ns.audiocommons.org/aco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://ns.audiocommons.org/aco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://ns.audiocommons.org/aco> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 0.0.0" .
+<http://ns.audiocommons.org/aco> <http://xmlns.com/foaf/0.1/maker> _:bn1 .
+<http://ns.audiocommons.org/aco> <http://xmlns.com/foaf/0.1/maker> _:bn2 .
 <http://www.w3.org/2000/01/rdf-schema#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://www.w3.org/2000/01/rdf-schema#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://www.w3.org/2002/07/owl#Ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .

@@ -1,0 +1,47 @@
+id: ''
+defines:
+
+  - id: ac:SignalProduction
+    label: Signal production
+    subClassOf: event:Event
+    superClassOf: [ac:Recording, ac:Syntesis]
+
+  - id: ac:productionFrom
+    label: production from
+    type: owl:ObjectProperty
+    superPropertyOf: ac:recordingOf
+    domain: ac:SignalProduction
+    range: ac:Sound
+
+  - id: ac:producedSignal
+    label: produced signal
+    type: owl:ObjectProperty
+    superPropertyOf: mo:produced_signal
+    domain: ac:SignalProduction
+    range: ac:Signal
+
+  - id: ac:Recording
+    label: Recording
+    superClassOf: mo:Recording
+
+  - id: ac:recordingOf
+    label: recording of
+    type: owl:ObjectProperty
+    superPropertyOf: mo:recording_of
+    domain: ac:Recording
+    range: ac:Sound
+
+  - id: ac:Syntesis
+    label: Syntesis
+
+  - id: ac:AudioPublication
+    label: Audio publication
+    subClassOf: event:Event
+    superClassOf: mo:ReleaseEvent
+
+  - id: ac:publishedAudioManifestation
+    label: published audio manifestation
+    type: owl:ObjectProperty
+    superPropertyOf: mo:release
+    domain: ac:AudioPublication
+    range: ac:AudioManifestation

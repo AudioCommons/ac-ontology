@@ -1,7 +1,7 @@
 {
    "@context": {
-      "@base": "http://audiocommons.org/ns/audiocommons",
-      "ac": "http://audiocommons.org/ns/audiocommons#",
+      "@base": "http://ns.audiocommons.org/aco",
+      "ac": "http://ns.audiocommons.org/aco#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -9,6 +9,8 @@
       "dc": "http://purl.org/dc/elements/1.1/",
       "dcterms": "http://purl.org/dc/terms/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
+      "mo": "http://purl.org/ontology/mo/",
+      "event": "http://purl.org/NET/c4dm/event.owl#",
       "id": "@id",
       "type": "@type",
       "subClassOf": {
@@ -43,6 +45,45 @@
          "@reverse": "rdfs:range",
          "@type": "@id"
       },
+      "onProperty": {
+         "@id": "owl:onProperty",
+         "@type": "@id"
+      },
+      "onClass": {
+         "@id": "owl:onClass",
+         "@type": "@id"
+      },
+      "qualifiedCardinality": {
+         "@id": "owl:qualifiedCardinality",
+         "@type": "xsd:nonNegativeInteger"
+      },
+      "hasValue": {
+         "@id": "owl:hasValue"
+      },
+      "someValuesFromValue": {
+         "@id": "owl:someValuesFromValue",
+         "@type": "@id"
+      },
+      "unionOf": {
+         "@id": "owl:unionOf",
+         "@type": "@id"
+      },
+      "disjointUnionOf": {
+         "@id": "owl:disjointUnionOf",
+         "@type": "@id"
+      },
+      "intersectionOf": {
+         "@id": "owl:intersectionOf",
+         "@type": "@id"
+      },
+      "equivalentClass": {
+         "@id": "owl:equivalentClass",
+         "@type": "@id"
+      },
+      "disjointWith": {
+         "@id": "owl:disjointWith",
+         "@type": "@id"
+      },
       "versionInfo": "owl:versionInfo",
       "maker": "foaf:maker",
       "name": "foaf:name",
@@ -67,7 +108,7 @@
          "name": "Miguel Ceriani"
       },
       {
-         "id": "audiocommons",
+         "id": "aco",
          "type": [
             "rdfs:Resource",
             "owl:Ontology"
@@ -87,10 +128,22 @@
          ]
       },
       {
-         "id": "ac:AudioCategory",
+         "id": "ac:AnalogSignal",
          "type": "rdfs:Resource",
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
+         },
+         "label": "Analog signal",
+         "disjointWith": "ac:DigitalSignal"
+      },
+      {
+         "id": "ac:AudioCategory",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
          },
          "label": "Audio category",
          "subClassOf": "frbr:Concept"
@@ -99,36 +152,31 @@
          "id": "ac:AudioClip",
          "type": "rdfs:Resource",
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
          "label": "Audio clip",
          "subClassOf": "ac:AudioManifestation"
       },
       {
          "id": "ac:AudioCollection",
-         "type": "rdfs:Resource",
-         "rdfs:isDefinedBy": {
-            "id": "audiocommons"
-         },
-         "label": "Audio collection",
-         "subClassOf": "ac:AudioManifestation"
-      },
-      {
-         "id": "ac:AudioCollectionNode",
          "type": [
             "rdfs:Class",
             "rdfs:Resource"
          ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
-         "label": "Audio collection node"
+         "label": "Audio collection",
+         "subClassOf": "ac:AudioManifestation"
       },
       {
          "id": "ac:AudioExpression",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
          "label": "Audio expression",
          "subClassOf": "frbr:Expression"
@@ -137,7 +185,7 @@
          "id": "ac:AudioFile",
          "type": "rdfs:Resource",
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
          "label": "Audio file",
          "subClassOf": [
@@ -147,9 +195,12 @@
       },
       {
          "id": "ac:AudioItem",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
          "label": "Audio item",
          "subClassOf": "frbr:Item"
@@ -161,7 +212,7 @@
             "rdfs:Resource"
          ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
          "label": "Audio manifestation",
          "subClassOf": [
@@ -170,46 +221,422 @@
          ]
       },
       {
-         "id": "ac:DigitalSignal",
-         "type": "rdfs:Resource",
+         "id": "ac:AudioPublication",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
+         },
+         "label": "Audio publication",
+         "subClassOf": "event:Event"
+      },
+      {
+         "id": "ac:DigitalSignal",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
          },
          "label": "Digital signal",
+         "disjointWith": "ac:AnalogSignal",
+         "subClassOf": "ac:Signal"
+      },
+      {
+         "id": "ac:Recording",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Recording",
+         "subClassOf": "ac:SignalProduction"
+      },
+      {
+         "id": "ac:Signal",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Signal",
          "subClassOf": "ac:AudioExpression"
       },
       {
-         "id": "ac:Sound",
-         "type": "rdfs:Resource",
+         "id": "ac:SignalProduction",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
+         },
+         "label": "Signal production",
+         "subClassOf": "event:Event"
+      },
+      {
+         "id": "ac:Sound",
+         "type": [
+            "rdfs:Class",
+            "rdfs:Resource"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
          },
          "label": "Physical sound",
          "subClassOf": "ac:AudioExpression"
       },
       {
+         "id": "ac:Syntesis",
+         "type": "rdfs:Resource",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Syntesis",
+         "subClassOf": "ac:SignalProduction"
+      },
+      {
+         "id": "ac:audioCategory",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "is in audio category",
+         "range": "ac:AudioCategory"
+      },
+      {
+         "id": "ac:availableAs",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioManifestation",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "available as",
+         "range": "ac:AudioItem"
+      },
+      {
+         "id": "ac:bitsPerSample",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "domain": "ac:DigitalSignal",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "bits per sample",
+         "range": "xsd:int"
+      },
+      {
+         "id": "ac:channels",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "domain": "ac:DigitalSignal",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "channels",
+         "range": "xsd:int"
+      },
+      {
+         "id": "ac:compiled",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "foaf:Agent",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "compiled",
+         "range": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:duration",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "domain": "_:bn3",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "duration",
+         "range": "xsd:int"
+      },
+      {
+         "id": "ac:encodes",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioItem",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "encodes",
+         "range": "ac:DigitalSignal"
+      },
+      {
+         "id": "ac:firstNode",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioCollection",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "first node",
+         "range": "ac:AudioCollectionFirstNode",
+         "subPropertyOf": "ac:memberNode"
+      },
+      {
+         "id": "ac:homepage",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "homepage",
+         "range": "foaf:Document",
+         "subPropertyOf": "foaf:isPrimaryTopicOf"
+      },
+      {
+         "id": "ac:image",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "image",
+         "range": "foaf:Image",
+         "subPropertyOf": "foaf:depiction"
+      },
+      {
+         "id": "ac:lastNode",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioCollection",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "last node",
+         "range": "ac:AudioCollectionLastNode",
+         "subPropertyOf": "ac:memberNode"
+      },
+      {
+         "id": "ac:memberNode",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioCollection",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "member node",
+         "range": "ac:AudioCollectionNode"
+      },
+      {
+         "id": "ac:nextNode",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioCollectionNonLastNode",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "next node",
+         "range": "ac:AudioCollectionNonFirstNode",
+         "subPropertyOf": "rdf:rest"
+      },
+      {
          "id": "ac:nodeContent",
          "type": [
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
          ],
          "domain": "ac:AudioCollectionNode",
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
-         "range": "ac:AudioManifestation"
+         "label": "node content",
+         "range": "ac:AudioManifestation",
+         "subPropertyOf": "rdf:first"
       },
       {
          "id": "ac:nodeIndex",
          "type": [
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
          ],
          "domain": "ac:AudioCollectionNode",
          "rdfs:isDefinedBy": {
-            "id": "audiocommons"
+            "id": "aco"
          },
+         "label": "node index",
+         "range": "xsd:int"
+      },
+      {
+         "id": "ac:previousNode",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioCollectionNonFirstNode",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "previous node",
+         "range": "ac:AudioCollectionNonLastNode"
+      },
+      {
+         "id": "ac:producedSignal",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:SignalProduction",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "produced signal",
+         "range": "ac:Signal"
+      },
+      {
+         "id": "ac:productionFrom",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:SignalProduction",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "production from",
+         "range": "ac:Sound"
+      },
+      {
+         "id": "ac:publicationOf",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioManifestation",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "publication of",
+         "range": "ac:AudioExpression"
+      },
+      {
+         "id": "ac:published",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "foaf:Agent",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "published",
          "range": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:publishedAudioManifestation",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:AudioPublication",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "published audio manifestation",
+         "range": "ac:AudioManifestation"
+      },
+      {
+         "id": "ac:recordingOf",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:ObjectProperty"
+         ],
+         "domain": "ac:Recording",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "recording of",
+         "range": "ac:Sound",
+         "subPropertyOf": "ac:productionFrom"
+      },
+      {
+         "id": "ac:sampleRate",
+         "type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "rdfs:Resource",
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "domain": "ac:DigitalSignal",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "sample rate",
+         "range": "xsd:float"
       },
       {
          "id": "rdfs:Resource",
