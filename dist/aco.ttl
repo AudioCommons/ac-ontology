@@ -171,45 +171,6 @@ n1:AudioCollectionFirstNode a rdfs:Class.
 n1:AudioCollectionLastNode a rdfs:Class.
 rdfs:Literal a rdfs:Class.
 rdfs:Container a rdfs:Class.
-"Analog signal" a rdfs:Literal.
-"is in audio category" a rdfs:Literal.
-"Audio category" a rdfs:Literal.
-"Audio clip" a rdfs:Literal.
-"Audio expression" a rdfs:Literal.
-"Audio file" a rdfs:Literal.
-"Audio item" a rdfs:Literal.
-"Audio manifestation" a rdfs:Literal.
-"available as" a rdfs:Literal.
-"bits per sample" a rdfs:Literal.
-"channels" a rdfs:Literal.
-"compiled" a rdfs:Literal.
-"Digital signal" a rdfs:Literal.
-"duration" a rdfs:Literal.
-"encodes" a rdfs:Literal.
-"homepage" a rdfs:Literal.
-"image" a rdfs:Literal.
-"publication of" a rdfs:Literal.
-"published" a rdfs:Literal.
-"sample rate" a rdfs:Literal.
-"Signal" a rdfs:Literal.
-"Physical sound" a rdfs:Literal.
-"Audio publication" a rdfs:Literal.
-"produced signal" a rdfs:Literal.
-"production from" a rdfs:Literal.
-"published audio manifestation" a rdfs:Literal.
-"Recording" a rdfs:Literal.
-"recording of" a rdfs:Literal.
-"Signal production" a rdfs:Literal.
-"Syntesis" a rdfs:Literal.
-"Audio collection" a rdfs:Literal.
-"Audio collection node" a rdfs:Literal.
-"first node" a rdfs:Literal.
-"last node" a rdfs:Literal.
-"member node" a rdfs:Literal.
-"next node" a rdfs:Literal.
-"node content" a rdfs:Literal.
-"node index" a rdfs:Literal.
-"previous node" a rdfs:Literal.
 rdf:type a rdfs:Resource.
 rdfs:domain a rdfs:Resource.
 rdfs:range a rdfs:Resource.
@@ -253,45 +214,6 @@ n1:AudioCollectionFirstNode a rdfs:Resource.
 n1:AudioCollectionLastNode a rdfs:Resource.
 rdfs:Literal a rdfs:Resource.
 rdfs:Container a rdfs:Resource.
-"Analog signal" a rdfs:Resource.
-"is in audio category" a rdfs:Resource.
-"Audio category" a rdfs:Resource.
-"Audio clip" a rdfs:Resource.
-"Audio expression" a rdfs:Resource.
-"Audio file" a rdfs:Resource.
-"Audio item" a rdfs:Resource.
-"Audio manifestation" a rdfs:Resource.
-"available as" a rdfs:Resource.
-"bits per sample" a rdfs:Resource.
-"channels" a rdfs:Resource.
-"compiled" a rdfs:Resource.
-"Digital signal" a rdfs:Resource.
-"duration" a rdfs:Resource.
-"encodes" a rdfs:Resource.
-"homepage" a rdfs:Resource.
-"image" a rdfs:Resource.
-"publication of" a rdfs:Resource.
-"published" a rdfs:Resource.
-"sample rate" a rdfs:Resource.
-"Signal" a rdfs:Resource.
-"Physical sound" a rdfs:Resource.
-"Audio publication" a rdfs:Resource.
-"produced signal" a rdfs:Resource.
-"production from" a rdfs:Resource.
-"published audio manifestation" a rdfs:Resource.
-"Recording" a rdfs:Resource.
-"recording of" a rdfs:Resource.
-"Signal production" a rdfs:Resource.
-"Syntesis" a rdfs:Resource.
-"Audio collection" a rdfs:Resource.
-"Audio collection node" a rdfs:Resource.
-"first node" a rdfs:Resource.
-"last node" a rdfs:Resource.
-"member node" a rdfs:Resource.
-"next node" a rdfs:Resource.
-"node content" a rdfs:Resource.
-"node index" a rdfs:Resource.
-"previous node" a rdfs:Resource.
 n:aco terms:created "2017/07/27 11:09:00".
 n:aco terms:date "2017/07/27 11:09:00".
 n:aco terms:description "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n".

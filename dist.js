@@ -31,6 +31,10 @@ const quadsToTriples = quads => {
   return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*) (\S+) \.$/mg, '$1 $2 $3 .')
 };
 
+const removeInvalidTriples = quads => {
+  return quads.replace(/^\".*\.\n/mg, '')
+};
+
 const removeInvalidQuads = quads => {
   return quads.replace(/^\".*\n/mg, '')
 };
@@ -90,32 +94,32 @@ async.autoInject({
       [ 'http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain.n3',
         'http://eulersharp.sourceforge.net/2003/03swap/rdfs-range.n3'])],
   ontologyAfterInference: ['eyeDataArray', 'identityQueryN3', eye],
-  ontologyAfterInferenceForStore: ['ontologyAfterInference', async.asyncify(classicTurtle)],
+  ontologyAfterInferenceForStore: ['ontologyAfterInference', async.asyncify(_.flow(classicTurtle, removeInvalidTriples))],
   writeTurtle: ['ontologyAfterInferenceForStore', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.ttl'))],
   newOutputStore: [async.asyncify(rdflib.graph)],
   // fullOutputStore: ['ontologyAfterInferenceForStore', 'newOutputStore', _.partial(rdflib.parse, _, _, 'http://shouldbethebase.org/', 'text/n3')],
   fullOutputStore: ['ontologyAfterInferenceForStore', 'newOutputStore', 'base', _.partial(rdflib.parse, _, _, _, 'text/n3')],
   outputAsQuads: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/n-quads')],
-  outputAsTriples: ['outputAsQuads', async.asyncify(_.flow(fixLiterals, simpleBnodes, removeInvalidQuads, quadsToTriples))],
+  outputAsTriples: ['outputAsQuads', async.asyncify(_.flow(fixLiterals, simpleBnodes, quadsToTriples))],
   writeTriples: ['outputAsTriples', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.nt'))],
   outputAsJsonLdRaw: ['outputAsTriples', _.partial(jsonld.fromRDF, _, {format: 'application/nquads'})],
   outputAsJsonLdCompacted: ['outputAsJsonLdRaw', 'ontologyCtxt', _.partial(jsonld.compact, _, _, {graph: true})],
   outputAsJsonLd: ['outputAsJsonLdCompacted', async.asyncify(onlyGraph)],
   outputAsJsonLdTxt: ['outputAsJsonLd', async.asyncify(_.partialRight(JSON.stringify, null, 3))],
   writeJsonLd: ['outputAsJsonLdTxt', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.jsonld'))],
-  // outputAsRdfXml: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/rdf+xml')],
-  // writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
-  // writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
+  outputAsRdfXml: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/rdf+xml')],
+  writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
+  writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
   outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
   outputAsHtml: ['outputAsJsLd', 'htmlTemplate', async.asyncify((input, template) => template(input))],
   writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
-  result: ['outputAsQuads', async.asyncify(_.identity)]
+  result: ['writeHtml', async.asyncify(_.identity)]
 }, function(err, results) {
   if (err) {
     console.error(err);
   }
   // console.log(results);
-  console.log(results.result);
+  // console.log(results.result.statements);
   //console.log(JSON.stringify(results.result));
 });
 

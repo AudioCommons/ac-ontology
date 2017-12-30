@@ -1,14 +1,24 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
- xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
- xmlns:owl="http://www.w3.org/2002/07/owl#"
  xmlns:terms="http://purl.org/dc/terms/"
- xmlns:n0="http://xmlns.com/foaf/0.1/">
-    <rdf:Description rdf:about="/aco#AnalogSignal">
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:n0="http://xmlns.com/foaf/0.1/"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <rdf:Description rdf:about="">
+        <terms:created>2017/07/27 11:09:00</terms:created>
+        <terms:date>2017/07/27 11:09:00</terms:date>
+        <terms:description>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
+</terms:description>
+        <terms:title>The Audio Commons Ontology</terms:title>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Analog signal</rdfs:label>
-        <owl:disjointWith rdf:resource="/aco#DigitalSignal"/>
+        <owl:versionInfo>Revision: 0.0.0</owl:versionInfo>
+        <n0:maker rdf:parseType="Resource">
+           <rdf:Description><n0:name>George Fazekas</n0:name></rdf:Description>
+        </n0:maker>
+        <n0:maker rdf:parseType="Resource">
+           <rdf:Description><n0:name>Miguel Ceriani</n0:name></rdf:Description>
+        </n0:maker>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#audioCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -17,48 +27,6 @@
         <rdfs:isDefinedBy rdf:resource=""/>
         <rdfs:label>is in audio category</rdfs:label>
         <rdfs:range rdf:resource="/aco#AudioCategory"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioCategory">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio category</rdfs:label>
-        <owl:subClassOf rdf:resource="frbr:Concept"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioClip">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio clip</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioExpression">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio expression</rdfs:label>
-        <owl:subClassOf rdf:resource="frbr:Expression"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioFile">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio file</rdfs:label>
-        <owl:subClassOf rdf:resource="ebu:MediaResource"/>
-        <owl:subClassOf rdf:resource="/aco#AudioItem"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioItem">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio item</rdfs:label>
-        <owl:subClassOf rdf:resource="frbr:Item"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioManifestation">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio manifestation</rdfs:label>
-        <owl:subClassOf rdf:resource="cc:Work"/>
-        <owl:subClassOf rdf:resource="frbr:Manifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -98,21 +66,20 @@
         <rdfs:label>compiled</rdfs:label>
         <rdfs:range rdf:resource="/aco#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="/aco#DigitalSignal">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Digital signal</rdfs:label>
-        <owl:disjointWith rdf:resource="/aco#AnalogSignal"/>
-        <owl:subClassOf rdf:resource="/aco#Signal"/>
-    </rdf:Description>
     <rdf:Description rdf:about="/aco#duration">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
         <rdfs:domain rdf:parseType="Resource">
-            </rdfs:domain>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+                <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+                <owl:unionOf rdf:parseType="Resource">
+                    </owl:unionOf>
+            </rdf:Description>
+        </rdfs:domain>
         <rdfs:isDefinedBy rdf:resource=""/>
         <rdfs:label>duration</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
@@ -172,27 +139,6 @@
         <rdfs:label>sample rate</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </rdf:Description>
-    <rdf:Description rdf:about="/aco#Signal">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Signal</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#Sound">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Physical sound</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioPublication">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio publication</rdfs:label>
-        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
-    </rdf:Description>
     <rdf:Description rdf:about="/aco#producedSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
@@ -220,13 +166,6 @@
         <rdfs:label>published audio manifestation</rdfs:label>
         <rdfs:range rdf:resource="/aco#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="/aco#Recording">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Recording</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
-    </rdf:Description>
     <rdf:Description rdf:about="/aco#recordingOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
@@ -236,43 +175,6 @@
         <rdfs:label>recording of</rdfs:label>
         <rdfs:range rdf:resource="/aco#Sound"/>
         <owl:subPropertyOf rdf:resource="/aco#productionFrom"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#SignalProduction">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Signal production</rdfs:label>
-        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#Syntesis">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Syntesis</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioCollection">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio collection</rdfs:label>
-        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="/aco#AudioCollectionNode">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:isDefinedBy rdf:resource=""/>
-        <rdfs:label>Audio collection node</rdfs:label>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            </owl:disjointUnionOf>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            </owl:disjointUnionOf>
-        <owl:subClassOf rdf:resource="rdf:List"/>
-        <owl:subClassOf rdf:parseType="Resource">
-            </owl:subClassOf>
-        <owl:subClassOf rdf:parseType="Resource">
-            </owl:subClassOf>
-        <owl:subClassOf rdf:parseType="Resource">
-            </owl:subClassOf>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#firstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -347,28 +249,463 @@
         <rdfs:label>previous node</rdfs:label>
         <rdfs:range rdf:resource="/aco#AudioCollectionNonLastNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="">
-        <terms:created>2017/07/27 11:09:00</terms:created>
-        <terms:date>2017/07/27 11:09:00</terms:date>
-        <terms:description>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
-</terms:description>
-        <terms:title>The Audio Commons Ontology</terms:title>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <owl:versionInfo>Revision: 0.0.0</owl:versionInfo>
-        <n0:maker rdf:parseType="Resource">
-           <rdf:Description><n0:name>George Fazekas</n0:name></rdf:Description>
-        </n0:maker>
-        <n0:maker rdf:parseType="Resource">
-           <rdf:Description><n0:name>Miguel Ceriani</n0:name></rdf:Description>
-        </n0:maker>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#domain">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#range">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#member">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AnalogSignal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Analog signal</rdfs:label>
+        <owl:disjointWith rdf:resource="/aco#DigitalSignal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCategory">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio category</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioClip">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio clip</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio expression</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Expression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioFile">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio file</rdfs:label>
+        <owl:subClassOf rdf:resource="ebu:MediaResource"/>
+        <owl:subClassOf rdf:resource="/aco#AudioItem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioItem">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio item</rdfs:label>
+        <owl:subClassOf rdf:resource="frbr:Item"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioManifestation">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio manifestation</rdfs:label>
+        <owl:subClassOf rdf:resource="cc:Work"/>
+        <owl:subClassOf rdf:resource="frbr:Manifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#DigitalSignal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Digital signal</rdfs:label>
+        <owl:disjointWith rdf:resource="/aco#AnalogSignal"/>
+        <owl:subClassOf rdf:resource="/aco#Signal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#Signal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Signal</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#Sound">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Physical sound</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioPublication">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio publication</rdfs:label>
+        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#Recording">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Recording</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#SignalProduction">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Signal production</rdfs:label>
+        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#Syntesis">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Syntesis</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio collection</rdfs:label>
+        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollectionNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:label>Audio collection node</rdfs:label>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="/aco#AudioCollectionFirstNode">
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                </rdf:Description>
+                <rdf:Description rdf:about="/aco#AudioCollectionNonFirstNode">
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                </rdf:Description>
+        </owl:disjointUnionOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="/aco#AudioCollectionLastNode">
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                </rdf:Description>
+                <rdf:Description rdf:about="/aco#AudioCollectionNonLastNode">
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+                    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                </rdf:Description>
+        </owl:disjointUnionOf>
+        <owl:subClassOf rdf:resource="rdf:List"/>
+        <owl:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                <owl:onClass rdf:resource="rdf:List"/>
+                <owl:onProperty rdf:resource="rdf:rest"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </owl:subClassOf>
+        <owl:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                <owl:onProperty rdf:resource="/aco#nodeContent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </owl:subClassOf>
+        <owl:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+                <owl:onProperty rdf:resource="rdf:first"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </owl:subClassOf>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Ontology">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#ObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#DatatypeProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#FunctionalProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Class">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Restriction">
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
         <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Class">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollectionNonLastNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollectionNonFirstNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Image">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollectionFirstNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#AudioCollectionLastNode">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Container">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="/aco#Instrument">
+       <owl:subClassOf rdf:resource="/aco#AudioCategory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/AnalogSignal">
+       <owl:subClassOf rdf:resource="/aco#AnalogSignal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/AudioFile">
+       <owl:subClassOf rdf:resource="/aco#AudioFile"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/DigitalSignal">
+       <owl:subClassOf rdf:resource="/aco#DigitalSignal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Genre">
+       <owl:subClassOf rdf:resource="/aco#AudioCategory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalExpression">
+       <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalItem">
+       <owl:subClassOf rdf:resource="/aco#AudioItem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalManifestation">
+       <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Signal">
+       <owl:subClassOf rdf:resource="/aco#Signal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Sound">
+       <owl:subClassOf rdf:resource="/aco#Sound"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Track">
+       <owl:subClassOf rdf:resource="/aco#AudioClip"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Recording">
+       <owl:subClassOf rdf:resource="/aco#Recording"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/ReleaseEvent">
+       <owl:subClassOf rdf:resource="/aco#AudioPublication"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Record">
+       <owl:subClassOf rdf:resource="/aco#AudioCollection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/Release">
+       <owl:subClassOf rdf:resource="/aco#AudioCollection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/available_as">
+       <owl:subPropertyOf rdf:resource="/aco#availableAs"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/bitsPerSample">
+       <owl:subPropertyOf rdf:resource="/aco#bitsPerSample"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/channels">
+       <owl:subPropertyOf rdf:resource="/aco#channels"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/compiled">
+       <owl:subPropertyOf rdf:resource="/aco#compiled"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/duration">
+       <owl:subPropertyOf rdf:resource="/aco#duration"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/encodes">
+       <owl:subPropertyOf rdf:resource="/aco#encodes"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/genre">
+       <owl:subPropertyOf rdf:resource="/aco#audioCategory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/homepage">
+       <owl:subPropertyOf rdf:resource="/aco#homepage"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/image">
+       <owl:subPropertyOf rdf:resource="/aco#image"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/instrument">
+       <owl:subPropertyOf rdf:resource="/aco#audioCategory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/publication_of">
+       <owl:subPropertyOf rdf:resource="/aco#publicationOf"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/published">
+       <owl:subPropertyOf rdf:resource="/aco#published"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/sample_rate">
+       <owl:subPropertyOf rdf:resource="/aco#sampleRate"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/produced_signal">
+       <owl:subPropertyOf rdf:resource="/aco#producedSignal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/recording_of">
+       <owl:subPropertyOf rdf:resource="/aco#recordingOf"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/release">
+       <owl:subPropertyOf rdf:resource="/aco#publishedAudioManifestation"/>
     </rdf:Description>
 </rdf:RDF>
