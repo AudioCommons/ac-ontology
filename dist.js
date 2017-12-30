@@ -17,7 +17,9 @@ const classicTurtle = turtleString => {
 };
 
 const fixLiterals = quads => {
-  return quads.replace(/([^.]|[^ ]\.)\n/mg,'$1\\n').replace(/\"\"\"(([^"]|\"[^"]|\"\"[^"])*)\"\"\"/mg, '\"$1\"');
+  return _.join(_.map(quads.split('"""'),
+      (str, index) => index % 2 === 0 ? str : str.replace(/\n/mg,'\\n')
+  ), '"');
 };
 
 const simpleBnodes = quads => {
@@ -26,7 +28,11 @@ const simpleBnodes = quads => {
 
 const quadsToTriples = quads => {
   // return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*|\"\"\"([^"]|\"[^"]|\"\"[^"])*\"\"\"[^"\s]*) (\S+) .$/mg, '$1 $2 $3 .')
-  return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*) (\S+) .$/mg, '$1 $2 $3 .')
+  return quads.replace(/^(\S+) (\S+) ((\S+)|\"[^"]*\"[^"\s]*) (\S+) \.$/mg, '$1 $2 $3 .')
+};
+
+const removeInvalidQuads = quads => {
+  return quads.replace(/^\".*\n/mg, '')
 };
 
 const conflateStore = store => {
@@ -90,19 +96,19 @@ async.autoInject({
   // fullOutputStore: ['ontologyAfterInferenceForStore', 'newOutputStore', _.partial(rdflib.parse, _, _, 'http://shouldbethebase.org/', 'text/n3')],
   fullOutputStore: ['ontologyAfterInferenceForStore', 'newOutputStore', 'base', _.partial(rdflib.parse, _, _, _, 'text/n3')],
   outputAsQuads: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/n-quads')],
-  outputAsTriples: ['outputAsQuads', async.asyncify(_.flow(fixLiterals, simpleBnodes, quadsToTriples))],
-  // writeTriples: ['outputAsTriples', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.nt'))],
-  // outputAsJsonLdRaw: ['outputAsTriples', _.partial(jsonld.fromRDF, _, {format: 'application/nquads'})],
-  // outputAsJsonLdCompacted: ['outputAsJsonLdRaw', 'ontologyCtxt', _.partial(jsonld.compact, _, _, {graph: true})],
-  // outputAsJsonLd: ['outputAsJsonLdCompacted', async.asyncify(onlyGraph)],
-  // outputAsJsonLdTxt: ['outputAsJsonLd', async.asyncify(_.partialRight(JSON.stringify, null, 3))],
-  // writeJsonLd: ['outputAsJsonLdTxt', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.jsonld'))],
+  outputAsTriples: ['outputAsQuads', async.asyncify(_.flow(fixLiterals, simpleBnodes, removeInvalidQuads, quadsToTriples))],
+  writeTriples: ['outputAsTriples', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.nt'))],
+  outputAsJsonLdRaw: ['outputAsTriples', _.partial(jsonld.fromRDF, _, {format: 'application/nquads'})],
+  outputAsJsonLdCompacted: ['outputAsJsonLdRaw', 'ontologyCtxt', _.partial(jsonld.compact, _, _, {graph: true})],
+  outputAsJsonLd: ['outputAsJsonLdCompacted', async.asyncify(onlyGraph)],
+  outputAsJsonLdTxt: ['outputAsJsonLd', async.asyncify(_.partialRight(JSON.stringify, null, 3))],
+  writeJsonLd: ['outputAsJsonLdTxt', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.jsonld'))],
   // outputAsRdfXml: ['baseAsNode', 'fullOutputStore', 'base', _.partial(rdflib.serialize, _, _, _, 'application/rdf+xml')],
   // writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
   // writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
-  // outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
-  // outputAsHtml: ['outputAsJsLd', 'htmlTemplate', async.asyncify((input, template) => template(input))],
-  // writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
+  outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
+  outputAsHtml: ['outputAsJsLd', 'htmlTemplate', async.asyncify((input, template) => template(input))],
+  writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
   result: ['outputAsQuads', async.asyncify(_.identity)]
 }, function(err, results) {
   if (err) {
