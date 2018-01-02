@@ -63,7 +63,15 @@
                 
                   <li class="nav-item"><a class="nav-link" href="#ac:AudioCollection">Audio collection</a></li>
                 
-                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionNode">Audio collection node</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionFirstNode">First node</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionNode">Node</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionLastNode">Last node</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionNonLastNode">Any node but the last</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionNonFirstNode">Any node but the first</a></li>
                 
                   <li class="nav-item"><a class="nav-link" href="#ac:AudioExpression">Audio expression</a></li>
                 
@@ -102,7 +110,7 @@
             
     <!-- <p class="card-text"> -->
       <strong>Classes</strong>:
-      <a href="#ac:AnalogSignal">Analog signal</a>, <a href="#ac:DigitalSignal">Digital signal</a>, <a href="#ac:AudioCategory">Audio category</a>, <a href="#ac:AudioClip">Audio clip</a>, <a href="#ac:AudioManifestation">Audio manifestation</a>, <a href="#ac:AudioCollection">Audio collection</a>, <a href="#ac:AudioCollectionNode">Audio collection node</a>, <a href="#ac:AudioExpression">Audio expression</a>, <a href="#ac:AudioFile">Audio file</a>, <a href="#ac:AudioItem">Audio item</a>, <a href="#ac:AudioPublication">Audio publication</a>, <a href="#ac:Signal">Signal</a>, <a href="#ac:Recording">Recording</a>, <a href="#ac:SignalProduction">Signal production</a>, <a href="#ac:Sound">Physical sound</a>, <a href="#ac:Syntesis">Syntesis</a>.
+      <a href="#ac:AnalogSignal">Analog signal</a>, <a href="#ac:DigitalSignal">Digital signal</a>, <a href="#ac:AudioCategory">Audio category</a>, <a href="#ac:AudioClip">Audio clip</a>, <a href="#ac:AudioManifestation">Audio manifestation</a>, <a href="#ac:AudioCollection">Audio collection</a>, <a href="#ac:AudioCollectionFirstNode">First node</a>, <a href="#ac:AudioCollectionNode">Node</a>, <a href="#ac:AudioCollectionLastNode">Last node</a>, <a href="#ac:AudioCollectionNonLastNode">Any node but the last</a>, <a href="#ac:AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#ac:AudioExpression">Audio expression</a>, <a href="#ac:AudioFile">Audio file</a>, <a href="#ac:AudioItem">Audio item</a>, <a href="#ac:AudioPublication">Audio publication</a>, <a href="#ac:Signal">Signal</a>, <a href="#ac:Recording">Recording</a>, <a href="#ac:SignalProduction">Signal production</a>, <a href="#ac:Sound">Physical sound</a>, <a href="#ac:Syntesis">Syntesis</a>.
     <!-- </p> -->
   
           </p>
@@ -110,7 +118,7 @@
             
     <!-- <p class="card-text"> -->
       <strong>Object Properties</strong>:
-      <a href="#ac:nodeContent">node content</a>, <a href="#ac:audioCategory">is in audio category</a>, <a href="#ac:availableAs">available as</a>, <a href="#ac:compiled">compiled</a>, <a href="#ac:encodes">encodes</a>, <a href="#ac:firstNode">first node</a>, <a href="#ac:memberNode">member node</a>, <a href="#ac:homepage">homepage</a>, <a href="#ac:image">image</a>, <a href="#ac:lastNode">last node</a>, <a href="#ac:nextNode">next node</a>, <a href="#ac:previousNode">previous node</a>, <a href="#ac:producedSignal">produced signal</a>, <a href="#ac:productionFrom">production from</a>, <a href="#ac:publicationOf">publication of</a>, <a href="#ac:published">published</a>, <a href="#ac:publishedAudioManifestation">published audio manifestation</a>, <a href="#ac:recordingOf">recording of</a>.
+      <a href="#ac:nodeContent">node content</a>, <a href="#ac:previousNode">previous node</a>, <a href="#ac:nextNode">next node</a>, <a href="#ac:audioCategory">is in audio category</a>, <a href="#ac:availableAs">available as</a>, <a href="#ac:compiled">compiled</a>, <a href="#ac:encodes">encodes</a>, <a href="#ac:firstNode">first node</a>, <a href="#ac:memberNode">member node</a>, <a href="#ac:homepage">homepage</a>, <a href="#ac:image">image</a>, <a href="#ac:lastNode">last node</a>, <a href="#ac:producedSignal">produced signal</a>, <a href="#ac:productionFrom">production from</a>, <a href="#ac:publicationOf">publication of</a>, <a href="#ac:published">published</a>, <a href="#ac:publishedAudioManifestation">published audio manifestation</a>, <a href="#ac:recordingOf">recording of</a>.
     <!-- </p> -->
   
           </p>
@@ -288,9 +296,32 @@
               </div>
             </div>
           
+            <div id="ac:AudioCollectionFirstNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">First node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionFirstNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioCollectionNode">Node</a>.
+    <!-- </p> -->
+  
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:firstNode">first node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
             <div id="ac:AudioCollectionNode" class="card">
               <div class="card-body">
-                <h5 class="card-title">Audio collection node</h5>
+                <h5 class="card-title">Node</h5>
                 <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNode</code></h6>
                 <p class="card-text">
                 
@@ -301,6 +332,11 @@
     <!-- </p> -->
   
                 
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:AudioCollectionFirstNode">First node</a>, <a href="#ac:AudioCollectionLastNode">Last node</a>, <a href="#ac:AudioCollectionNonLastNode">Any node but the last</a>, <a href="#ac:AudioCollectionNonFirstNode">Any node but the first</a>.
+    <!-- </p> -->
+  
                 
     <!-- <p class="card-text"> -->
       <strong>Domain of</strong>:
@@ -311,6 +347,85 @@
     <!-- <p class="card-text"> -->
       <strong>Range of</strong>:
       <a href="#ac:memberNode">member node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioCollectionLastNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Last node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionLastNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioCollectionNode">Node</a>.
+    <!-- </p> -->
+  
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:lastNode">last node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioCollectionNonLastNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Any node but the last</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNonLastNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioCollectionNode">Node</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:nextNode">next node</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:previousNode">previous node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioCollectionNonFirstNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Any node but the first</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNonFirstNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioCollectionNode">Node</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:previousNode">previous node</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:nextNode">next node</a>.
     <!-- </p> -->
   
               </div>
@@ -578,13 +693,64 @@
                 
     <!-- <p class="card-text"> -->
       <strong>Domain</strong>:
-      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+      <a href="#ac:AudioCollectionNode">Node</a>.
     <!-- </p> -->
   
                 
     <!-- <p class="card-text"> -->
       <strong>Range</strong>:
       <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:previousNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">previous node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:previousNode</code></h6>
+                <p class="card-text">
+                
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNonFirstNode">Any node but the first</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionNonLastNode">Any node but the last</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:nextNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">next node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:nextNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#rdf:rest">rdf:rest</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNonLastNode">Any node but the last</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionNonFirstNode">Any node but the first</a>.
     <!-- </p> -->
   
               </div>
@@ -719,7 +885,7 @@
                 
     <!-- <p class="card-text"> -->
       <strong>Range</strong>:
-      <a href="#ac:AudioCollectionFirstNode">ac:AudioCollectionFirstNode</a>.
+      <a href="#ac:AudioCollectionFirstNode">First node</a>.
     <!-- </p> -->
   
               </div>
@@ -747,7 +913,7 @@
                 
     <!-- <p class="card-text"> -->
       <strong>Range</strong>:
-      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+      <a href="#ac:AudioCollectionNode">Node</a>.
     <!-- </p> -->
   
               </div>
@@ -831,58 +997,7 @@
                 
     <!-- <p class="card-text"> -->
       <strong>Range</strong>:
-      <a href="#ac:AudioCollectionLastNode">ac:AudioCollectionLastNode</a>.
-    <!-- </p> -->
-  
-              </div>
-            </div>
-          
-            <div id="ac:nextNode" class="card">
-              <div class="card-body">
-                <h5 class="card-title">next node</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code>ac:nextNode</code></h6>
-                <p class="card-text">
-                
-                
-    <!-- <p class="card-text"> -->
-      <strong>Super-Properties</strong>:
-      <a href="#rdf:rest">rdf:rest</a>.
-    <!-- </p> -->
-  
-                
-                
-    <!-- <p class="card-text"> -->
-      <strong>Domain</strong>:
-      <a href="#ac:AudioCollectionNonLastNode">ac:AudioCollectionNonLastNode</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Range</strong>:
-      <a href="#ac:AudioCollectionNonFirstNode">ac:AudioCollectionNonFirstNode</a>.
-    <!-- </p> -->
-  
-              </div>
-            </div>
-          
-            <div id="ac:previousNode" class="card">
-              <div class="card-body">
-                <h5 class="card-title">previous node</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code>ac:previousNode</code></h6>
-                <p class="card-text">
-                
-                
-                
-                
-    <!-- <p class="card-text"> -->
-      <strong>Domain</strong>:
-      <a href="#ac:AudioCollectionNonFirstNode">ac:AudioCollectionNonFirstNode</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Range</strong>:
-      <a href="#ac:AudioCollectionNonLastNode">ac:AudioCollectionNonLastNode</a>.
+      <a href="#ac:AudioCollectionLastNode">Last node</a>.
     <!-- </p> -->
   
               </div>
@@ -1159,7 +1274,7 @@
                 
     <!-- <p class="card-text"> -->
       <strong>Domain</strong>:
-      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+      <a href="#ac:AudioCollectionNode">Node</a>.
     <!-- </p> -->
   
                 

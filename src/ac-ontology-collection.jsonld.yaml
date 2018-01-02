@@ -28,7 +28,7 @@ defines:
     range: ac:AudioCollectionLastNode
 
   - id: ac:AudioCollectionNode
-    label: Audio collection node
+    label: Node
     type: owl:Class
     subClassOf:
       - id: rdf:List
@@ -50,35 +50,39 @@ defines:
         - id: ac:AudioCollectionLastNode
         - id: ac:AudioCollectionNonLastNode
 
-  # - id: ac:AudioCollectionFirstNode
-  #   label: First node of an audio collection
-  #   subClassOf: ac:AudioCollectionNode
-  #
-  # - id: ac:AudioCollectionLastNode
-  #   label: Last node of an audio collection
-  #   subClassOf: ac:AudioCollectionNode
-  #   intersectionOf:
-  #     - '@list':
-  #       - id: ac:AudioCollectionNode
-  #       - type: owl:Restriction
-  #         onProperty: rdf:rest
-  #         hasValue: rdf:nil
-  #
-  # - id: ac:AudioCollectionNonFirstNode
-  #   label: Any node of an audio collection but the first
-  #   subClassOf: ac:AudioCollectionNode
-  #   equivalentClass:
-  #     type: owl:Restriction
-  #     onProperty: ac:previousNode
-  #     someValuesFrom: ac:AudioCollectionNode
-  #
-  # - id: ac:AudioCollectionNonLastNode
-  #   label: Any node of an audio collection but the last
-  #   subClassOf: ac:AudioCollectionNode
-  #   equivalentClass:
-  #     type: owl:Restriction
-  #     onProperty: ac:nextNode
-  #     someValuesFrom: ac:AudioCollectionNode
+  - id: ac:AudioCollectionFirstNode
+    label: First node
+    type: owl:Class
+    subClassOf: ac:AudioCollectionNode
+
+  - id: ac:AudioCollectionLastNode
+    label: Last node
+    type: owl:Class
+    subClassOf: ac:AudioCollectionNode
+    intersectionOf:
+      - '@list':
+        - id: ac:AudioCollectionNode
+        - type: owl:Restriction
+          onProperty: rdf:rest
+          hasValue: rdf:nil
+
+  - id: ac:AudioCollectionNonFirstNode
+    label: Any node but the first
+    type: owl:Class
+    subClassOf: ac:AudioCollectionNode
+    equivalentClass:
+      type: owl:Restriction
+      onProperty: ac:previousNode
+      someValuesFrom: ac:AudioCollectionNode
+
+  - id: ac:AudioCollectionNonLastNode
+    label: Any node but the last
+    type: owl:Class
+    subClassOf: ac:AudioCollectionNode
+    equivalentClass:
+      type: owl:Restriction
+      onProperty: ac:nextNode
+      someValuesFrom: ac:AudioCollectionNode
 
   - id: ac:nodeContent
     label: node content

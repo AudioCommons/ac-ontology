@@ -132,6 +132,22 @@
          "qualifiedCardinality": "1"
       },
       {
+         "id": "_:b1xb3",
+         "type": "owl:Restriction",
+         "hasValue": "rdf:nil",
+         "onProperty": "rdf:rest"
+      },
+      {
+         "id": "_:b1xb4",
+         "type": "owl:Restriction",
+         "onProperty": "ac:previousNode"
+      },
+      {
+         "id": "_:b1xb5",
+         "type": "owl:Restriction",
+         "onProperty": "ac:nextNode"
+      },
+      {
          "id": "aco",
          "type": "owl:Ontology",
          "created": "2017/07/27 11:09:00",
@@ -185,12 +201,36 @@
          "subClassOf": "ac:AudioManifestation"
       },
       {
+         "id": "ac:AudioCollectionFirstNode",
+         "type": "owl:Class",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "First node",
+         "subClassOf": "ac:AudioCollectionNode"
+      },
+      {
+         "id": "ac:AudioCollectionLastNode",
+         "type": "owl:Class",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Last node",
+         "subClassOf": "ac:AudioCollectionNode",
+         "intersectionOf": {
+            "@list": [
+               "ac:AudioCollectionNode",
+               "_:b1xb3"
+            ]
+         }
+      },
+      {
          "id": "ac:AudioCollectionNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
-         "label": "Audio collection node",
+         "label": "Node",
          "subClassOf": [
             "rdf:List",
             "_:b1xb0",
@@ -200,17 +240,37 @@
          "disjointUnionOf": [
             {
                "@list": [
-                  "ac:AudioCollectionFirstNode",
-                  "ac:AudioCollectionNonFirstNode"
+                  "ac:AudioCollectionLastNode",
+                  "ac:AudioCollectionNonLastNode"
                ]
             },
             {
                "@list": [
-                  "ac:AudioCollectionLastNode",
-                  "ac:AudioCollectionNonLastNode"
+                  "ac:AudioCollectionFirstNode",
+                  "ac:AudioCollectionNonFirstNode"
                ]
             }
          ]
+      },
+      {
+         "id": "ac:AudioCollectionNonFirstNode",
+         "type": "owl:Class",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Any node but the first",
+         "subClassOf": "ac:AudioCollectionNode",
+         "equivalentClass": "_:b1xb4"
+      },
+      {
+         "id": "ac:AudioCollectionNonLastNode",
+         "type": "owl:Class",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "Any node but the last",
+         "subClassOf": "ac:AudioCollectionNode",
+         "equivalentClass": "_:b1xb5"
       },
       {
          "id": "ac:AudioExpression",
