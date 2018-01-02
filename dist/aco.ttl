@@ -53,21 +53,7 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Last node";
-    rd:subClassOf :AudioCollectionNode;
-    owl:intersectionOf
-            [
-                rdf:first :AudioCollectionNode;
-                rdf:rest
-                        [
-                            rdf:first
-                                    [
-                                        a owl:Restriction;
-                                        owl:hasValue "rdf:nil";
-                                        owl:onProperty <rdf:rest>
-                                    ];
-                            rdf:rest rdf:nil
-                        ]
-            ].
+    rd:subClassOf :AudioCollectionNode.
 :AudioCollectionNode
     a owl:Class;
     rd:isDefinedBy n:aco;
@@ -105,14 +91,12 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Any node but the first";
-    rd:subClassOf :AudioCollectionNode;
-    owl:equivalentClass [ a owl:Restriction; owl:onProperty :previousNode ].
+    rd:subClassOf :AudioCollectionNode.
 :AudioCollectionNonLastNode
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Any node but the last";
-    rd:subClassOf :AudioCollectionNode;
-    owl:equivalentClass [ a owl:Restriction; owl:onProperty :nextNode ].
+    rd:subClassOf :AudioCollectionNode.
 :AudioExpression
     a owl:Class;
     rd:isDefinedBy n:aco;

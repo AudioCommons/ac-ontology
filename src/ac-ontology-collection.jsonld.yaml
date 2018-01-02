@@ -59,30 +59,30 @@ defines:
     label: Last node
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
-    intersectionOf:
-      - '@list':
-        - id: ac:AudioCollectionNode
-        - type: owl:Restriction
-          onProperty: rdf:rest
-          hasValue: rdf:nil
+  #   intersectionOf:
+  #     - '@list':
+  #       - id: ac:AudioCollectionNode
+  #       - type: owl:Restriction
+  #         onProperty: rdf:rest
+  #         hasValue: rdf:nil
 
   - id: ac:AudioCollectionNonFirstNode
     label: Any node but the first
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
-    equivalentClass:
-      type: owl:Restriction
-      onProperty: ac:previousNode
-      someValuesFrom: ac:AudioCollectionNode
+  #   equivalentClass:
+  #     type: owl:Restriction
+  #     onProperty: ac:previousNode
+  #     someValuesFrom: ac:AudioCollectionNode
 
   - id: ac:AudioCollectionNonLastNode
     label: Any node but the last
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
-    equivalentClass:
-      type: owl:Restriction
-      onProperty: ac:nextNode
-      someValuesFrom: ac:AudioCollectionNode
+  #   equivalentClass:
+  #     type: owl:Restriction
+  #     onProperty: ac:nextNode
+  #     someValuesFrom: ac:AudioCollectionNode
 
   - id: ac:nodeContent
     label: node content

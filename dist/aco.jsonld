@@ -132,22 +132,6 @@
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb3",
-         "type": "owl:Restriction",
-         "hasValue": "rdf:nil",
-         "onProperty": "rdf:rest"
-      },
-      {
-         "id": "_:b1xb4",
-         "type": "owl:Restriction",
-         "onProperty": "ac:previousNode"
-      },
-      {
-         "id": "_:b1xb5",
-         "type": "owl:Restriction",
-         "onProperty": "ac:nextNode"
-      },
-      {
          "id": "aco",
          "type": "owl:Ontology",
          "created": "2017/07/27 11:09:00",
@@ -216,13 +200,7 @@
             "id": "aco"
          },
          "label": "Last node",
-         "subClassOf": "ac:AudioCollectionNode",
-         "intersectionOf": {
-            "@list": [
-               "ac:AudioCollectionNode",
-               "_:b1xb3"
-            ]
-         }
+         "subClassOf": "ac:AudioCollectionNode"
       },
       {
          "id": "ac:AudioCollectionNode",
@@ -240,14 +218,14 @@
          "disjointUnionOf": [
             {
                "@list": [
-                  "ac:AudioCollectionLastNode",
-                  "ac:AudioCollectionNonLastNode"
+                  "ac:AudioCollectionFirstNode",
+                  "ac:AudioCollectionNonFirstNode"
                ]
             },
             {
                "@list": [
-                  "ac:AudioCollectionFirstNode",
-                  "ac:AudioCollectionNonFirstNode"
+                  "ac:AudioCollectionLastNode",
+                  "ac:AudioCollectionNonLastNode"
                ]
             }
          ]
@@ -259,8 +237,7 @@
             "id": "aco"
          },
          "label": "Any node but the first",
-         "subClassOf": "ac:AudioCollectionNode",
-         "equivalentClass": "_:b1xb4"
+         "subClassOf": "ac:AudioCollectionNode"
       },
       {
          "id": "ac:AudioCollectionNonLastNode",
@@ -269,8 +246,7 @@
             "id": "aco"
          },
          "label": "Any node but the last",
-         "subClassOf": "ac:AudioCollectionNode",
-         "equivalentClass": "_:b1xb5"
+         "subClassOf": "ac:AudioCollectionNode"
       },
       {
          "id": "ac:AudioExpression",

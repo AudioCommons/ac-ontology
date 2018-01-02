@@ -60,23 +60,6 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Last node</rd:label>
         <rd:subClassOf rdf:resource="/aco#AudioCollectionNode"/>
-        <owl:intersectionOf rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:first rdf:resource="/aco#AudioCollectionNode"/>
-                <rdf:rest rdf:parseType="Resource">
-                    <rdf:Description>
-                        <rdf:first rdf:parseType="Resource">
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                                <owl:hasValue>rdf:nil</owl:hasValue>
-                                <owl:onProperty rdf:resource="rdf:rest"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </owl:intersectionOf>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioCollectionNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -133,24 +116,12 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Any node but the first</rd:label>
         <rd:subClassOf rdf:resource="/aco#AudioCollectionNode"/>
-        <owl:equivalentClass rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onProperty rdf:resource="/aco#previousNode"/>
-            </rdf:Description>
-        </owl:equivalentClass>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioCollectionNonLastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Any node but the last</rd:label>
         <rd:subClassOf rdf:resource="/aco#AudioCollectionNode"/>
-        <owl:equivalentClass rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onProperty rdf:resource="/aco#nextNode"/>
-            </rdf:Description>
-        </owl:equivalentClass>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioExpression">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
