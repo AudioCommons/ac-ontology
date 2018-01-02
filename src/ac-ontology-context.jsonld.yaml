@@ -14,8 +14,8 @@ event: http://purl.org/NET/c4dm/event.owl#
 
 id: '@id'
 type: '@type'
-subClassOf: {'@id': owl:subClassOf, '@type': '@id'}
-superClassOf: {'@reverse': owl:subClassOf, '@type': '@id' }
+subClassOf: {'@id': rdfs:subClassOf, '@type': '@id'}
+superClassOf: {'@reverse': rdfs:subClassOf, '@type': '@id' }
 subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
 superPropertyOf: {'@reverse': owl:subPropertyOf, '@type': '@id'}
 domain: {'@id': rdfs:domain, '@type': '@id'}

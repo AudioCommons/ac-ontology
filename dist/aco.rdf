@@ -35,24 +35,47 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio category</rd:label>
-        <owl:subClassOf rdf:resource="frbr:Concept"/>
+        <rd:subClassOf rdf:resource="frbr:Concept"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioClip">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio clip</rd:label>
-        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+        <rd:subClassOf rdf:resource="/aco#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioCollection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio collection</rd:label>
-        <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+        <rd:subClassOf rdf:resource="/aco#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioCollectionNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio collection node</rd:label>
+        <rd:subClassOf rdf:resource="rdf:List"/>
+        <rd:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onClass rdf:resource="rdf:List"/>
+                <owl:onProperty rdf:resource="rdf:rest"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </rd:subClassOf>
+        <rd:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="/aco#nodeContent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </rd:subClassOf>
+        <rd:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="rdf:first"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </rdf:Description>
+        </rd:subClassOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:first rdf:resource="/aco#AudioCollectionFirstNode"/>
@@ -75,61 +98,38 @@
                 </rdf:rest>
             </rdf:Description>
         </owl:disjointUnionOf>
-        <owl:subClassOf rdf:resource="rdf:List"/>
-        <owl:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onClass rdf:resource="rdf:List"/>
-                <owl:onProperty rdf:resource="rdf:rest"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </owl:subClassOf>
-        <owl:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onProperty rdf:resource="/aco#nodeContent"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </owl:subClassOf>
-        <owl:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onProperty rdf:resource="rdf:first"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </owl:subClassOf>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioExpression">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio expression</rd:label>
-        <owl:subClassOf rdf:resource="frbr:Expression"/>
+        <rd:subClassOf rdf:resource="frbr:Expression"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioFile">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio file</rd:label>
-        <owl:subClassOf rdf:resource="ebu:MediaResource"/>
-        <owl:subClassOf rdf:resource="/aco#AudioItem"/>
+        <rd:subClassOf rdf:resource="ebu:MediaResource"/>
+        <rd:subClassOf rdf:resource="/aco#AudioItem"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioItem">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio item</rd:label>
-        <owl:subClassOf rdf:resource="frbr:Item"/>
+        <rd:subClassOf rdf:resource="frbr:Item"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio manifestation</rd:label>
-        <owl:subClassOf rdf:resource="cc:Work"/>
-        <owl:subClassOf rdf:resource="frbr:Manifestation"/>
+        <rd:subClassOf rdf:resource="cc:Work"/>
+        <rd:subClassOf rdf:resource="frbr:Manifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#AudioPublication">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Audio publication</rd:label>
-        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -165,8 +165,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Digital signal</rd:label>
+        <rd:subClassOf rdf:resource="/aco#Signal"/>
         <owl:disjointWith rdf:resource="/aco#AnalogSignal"/>
-        <owl:subClassOf rdf:resource="/aco#Signal"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#duration">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -213,7 +213,7 @@
         <owl:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#Instrument">
-       <owl:subClassOf rdf:resource="/aco#AudioCategory"/>
+       <rd:subClassOf rdf:resource="/aco#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#lastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -304,7 +304,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Recording</rd:label>
-        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
+        <rd:subClassOf rdf:resource="/aco#SignalProduction"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#recordingOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -326,31 +326,31 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Signal</rd:label>
-        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+        <rd:subClassOf rdf:resource="/aco#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#SignalProduction">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Signal production</rd:label>
-        <owl:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#Sound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Physical sound</rd:label>
-        <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+        <rd:subClassOf rdf:resource="/aco#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="/aco#Syntesis">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Syntesis</rd:label>
-        <owl:subClassOf rdf:resource="/aco#SignalProduction"/>
+        <rd:subClassOf rdf:resource="/aco#SignalProduction"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/AnalogSignal">
-       <owl:subClassOf rdf:resource="/aco#AnalogSignal"/>
+       <rd:subClassOf rdf:resource="/aco#AnalogSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/AudioFile">
-       <owl:subClassOf rdf:resource="/aco#AudioFile"/>
+       <rd:subClassOf rdf:resource="/aco#AudioFile"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/available_as">
        <owl:subPropertyOf rdf:resource="/aco#availableAs"/>
@@ -365,7 +365,7 @@
        <owl:subPropertyOf rdf:resource="/aco#compiled"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/DigitalSignal">
-       <owl:subClassOf rdf:resource="/aco#DigitalSignal"/>
+       <rd:subClassOf rdf:resource="/aco#DigitalSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/duration">
        <owl:subPropertyOf rdf:resource="/aco#duration"/>
@@ -377,7 +377,7 @@
        <owl:subPropertyOf rdf:resource="/aco#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Genre">
-       <owl:subClassOf rdf:resource="/aco#AudioCategory"/>
+       <rd:subClassOf rdf:resource="/aco#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/homepage">
        <owl:subPropertyOf rdf:resource="/aco#homepage"/>
@@ -389,13 +389,13 @@
        <owl:subPropertyOf rdf:resource="/aco#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalExpression">
-       <owl:subClassOf rdf:resource="/aco#AudioExpression"/>
+       <rd:subClassOf rdf:resource="/aco#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalItem">
-       <owl:subClassOf rdf:resource="/aco#AudioItem"/>
+       <rd:subClassOf rdf:resource="/aco#AudioItem"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalManifestation">
-       <owl:subClassOf rdf:resource="/aco#AudioManifestation"/>
+       <rd:subClassOf rdf:resource="/aco#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/produced_signal">
        <owl:subPropertyOf rdf:resource="/aco#producedSignal"/>
@@ -407,10 +407,10 @@
        <owl:subPropertyOf rdf:resource="/aco#published"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Record">
-       <owl:subClassOf rdf:resource="/aco#AudioCollection"/>
+       <rd:subClassOf rdf:resource="/aco#AudioCollection"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Recording">
-       <owl:subClassOf rdf:resource="/aco#Recording"/>
+       <rd:subClassOf rdf:resource="/aco#Recording"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/recording_of">
        <owl:subPropertyOf rdf:resource="/aco#recordingOf"/>
@@ -419,21 +419,21 @@
        <owl:subPropertyOf rdf:resource="/aco#publishedAudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Release">
-       <owl:subClassOf rdf:resource="/aco#AudioCollection"/>
+       <rd:subClassOf rdf:resource="/aco#AudioCollection"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/ReleaseEvent">
-       <owl:subClassOf rdf:resource="/aco#AudioPublication"/>
+       <rd:subClassOf rdf:resource="/aco#AudioPublication"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/sample_rate">
        <owl:subPropertyOf rdf:resource="/aco#sampleRate"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Signal">
-       <owl:subClassOf rdf:resource="/aco#Signal"/>
+       <rd:subClassOf rdf:resource="/aco#Signal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Sound">
-       <owl:subClassOf rdf:resource="/aco#Sound"/>
+       <rd:subClassOf rdf:resource="/aco#Sound"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Track">
-       <owl:subClassOf rdf:resource="/aco#AudioClip"/>
+       <rd:subClassOf rdf:resource="/aco#AudioClip"/>
     </rdf:Description>
 </rdf:RDF>

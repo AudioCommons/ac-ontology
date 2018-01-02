@@ -14,11 +14,11 @@
       "id": "@id",
       "type": "@type",
       "subClassOf": {
-         "@id": "owl:subClassOf",
+         "@id": "rdfs:subClassOf",
          "@type": "@id"
       },
       "superClassOf": {
-         "@reverse": "owl:subClassOf",
+         "@reverse": "rdfs:subClassOf",
          "@type": "@id"
       },
       "subPropertyOf": {
@@ -191,6 +191,12 @@
             "id": "aco"
          },
          "label": "Audio collection node",
+         "subClassOf": [
+            "rdf:List",
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2"
+         ],
          "disjointUnionOf": [
             {
                "@list": [
@@ -204,12 +210,6 @@
                   "ac:AudioCollectionNonLastNode"
                ]
             }
-         ],
-         "subClassOf": [
-            "rdf:List",
-            "_:b1xb0",
-            "_:b1xb1",
-            "_:b1xb2"
          ]
       },
       {
@@ -270,8 +270,8 @@
             "id": "aco"
          },
          "label": "Digital signal",
-         "disjointWith": "ac:AnalogSignal",
-         "subClassOf": "ac:Signal"
+         "subClassOf": "ac:Signal",
+         "disjointWith": "ac:AnalogSignal"
       },
       {
          "id": "ac:Instrument",

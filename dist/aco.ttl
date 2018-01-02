@@ -33,33 +33,22 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio category";
-    owl:subClassOf <frbr:Concept>.
+    rd:subClassOf <frbr:Concept>.
 :AudioClip
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio clip";
-    owl:subClassOf :AudioManifestation.
+    rd:subClassOf :AudioManifestation.
 :AudioCollection
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio collection";
-    owl:subClassOf :AudioManifestation.
+    rd:subClassOf :AudioManifestation.
 :AudioCollectionNode
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio collection node";
-    owl:disjointUnionOf
-            [
-                rdf:first :AudioCollectionFirstNode;
-                rdf:rest
-                [ rdf:first :AudioCollectionNonFirstNode; rdf:rest rdf:nil ]
-            ],
-            [
-                rdf:first :AudioCollectionLastNode;
-                rdf:rest
-                [ rdf:first :AudioCollectionNonLastNode; rdf:rest rdf:nil ]
-            ];
-    owl:subClassOf
+    rd:subClassOf
         <rdf:List>,
             [
                 a owl:Restriction;
@@ -76,32 +65,43 @@ n:aco
                 a owl:Restriction;
                 owl:onProperty <rdf:first>;
                 owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
+            ];
+    owl:disjointUnionOf
+            [
+                rdf:first :AudioCollectionFirstNode;
+                rdf:rest
+                [ rdf:first :AudioCollectionNonFirstNode; rdf:rest rdf:nil ]
+            ],
+            [
+                rdf:first :AudioCollectionLastNode;
+                rdf:rest
+                [ rdf:first :AudioCollectionNonLastNode; rdf:rest rdf:nil ]
             ].
 :AudioExpression
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio expression";
-    owl:subClassOf <frbr:Expression>.
+    rd:subClassOf <frbr:Expression>.
 :AudioFile
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio file";
-    owl:subClassOf <ebu:MediaResource>, :AudioItem.
+    rd:subClassOf <ebu:MediaResource>, :AudioItem.
 :AudioItem
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio item";
-    owl:subClassOf <frbr:Item>.
+    rd:subClassOf <frbr:Item>.
 :AudioManifestation
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio manifestation";
-    owl:subClassOf <cc:Work>, <frbr:Manifestation>.
+    rd:subClassOf <cc:Work>, <frbr:Manifestation>.
 :AudioPublication
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Audio publication";
-    owl:subClassOf eve:Event.
+    rd:subClassOf eve:Event.
 :availableAs
     a owl:ObjectProperty;
     rd:domain :AudioManifestation;
@@ -130,8 +130,8 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Digital signal";
-    owl:disjointWith :AnalogSignal;
-    owl:subClassOf :Signal.
+    rd:subClassOf :Signal;
+    owl:disjointWith :AnalogSignal.
 :duration
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:domain [ a owl:Class; owl:unionOf [] ];
@@ -163,7 +163,7 @@ n:aco
     rd:label "image";
     rd:range n0:Image;
     owl:subPropertyOf n0:depiction.
-:Instrument owl:subClassOf :AudioCategory.
+:Instrument rd:subClassOf :AudioCategory.
 
 :lastNode
     a owl:FunctionalProperty, owl:ObjectProperty;
@@ -238,7 +238,7 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Recording";
-    owl:subClassOf :SignalProduction.
+    rd:subClassOf :SignalProduction.
 :recordingOf
     a owl:ObjectProperty;
     rd:domain :Recording;
@@ -256,25 +256,25 @@ n:aco
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Signal";
-    owl:subClassOf :AudioExpression.
+    rd:subClassOf :AudioExpression.
 :SignalProduction
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Signal production";
-    owl:subClassOf eve:Event.
+    rd:subClassOf eve:Event.
 :Sound
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Physical sound";
-    owl:subClassOf :AudioExpression.
+    rd:subClassOf :AudioExpression.
 :Syntesis
     a owl:Class;
     rd:isDefinedBy n:aco;
     rd:label "Syntesis";
-    owl:subClassOf :SignalProduction.
-mo:AnalogSignal owl:subClassOf :AnalogSignal.
+    rd:subClassOf :SignalProduction.
+mo:AnalogSignal rd:subClassOf :AnalogSignal.
 
-mo:AudioFile owl:subClassOf :AudioFile.
+mo:AudioFile rd:subClassOf :AudioFile.
 
 mo:available_as owl:subPropertyOf :availableAs.
 
@@ -284,7 +284,7 @@ mo:channels owl:subPropertyOf :channels.
 
 mo:compiled owl:subPropertyOf :compiled.
 
-mo:DigitalSignal owl:subClassOf :DigitalSignal.
+mo:DigitalSignal rd:subClassOf :DigitalSignal.
 
 mo:duration owl:subPropertyOf :duration.
 
@@ -292,7 +292,7 @@ mo:encodes owl:subPropertyOf :encodes.
 
 mo:genre owl:subPropertyOf :audioCategory.
 
-mo:Genre owl:subClassOf :AudioCategory.
+mo:Genre rd:subClassOf :AudioCategory.
 
 mo:homepage owl:subPropertyOf :homepage.
 
@@ -300,11 +300,11 @@ mo:image owl:subPropertyOf :image.
 
 mo:instrument owl:subPropertyOf :audioCategory.
 
-mo:MusicalExpression owl:subClassOf :AudioExpression.
+mo:MusicalExpression rd:subClassOf :AudioExpression.
 
-mo:MusicalItem owl:subClassOf :AudioItem.
+mo:MusicalItem rd:subClassOf :AudioItem.
 
-mo:MusicalManifestation owl:subClassOf :AudioManifestation.
+mo:MusicalManifestation rd:subClassOf :AudioManifestation.
 
 mo:produced_signal owl:subPropertyOf :producedSignal.
 
@@ -312,23 +312,23 @@ mo:publication_of owl:subPropertyOf :publicationOf.
 
 mo:published owl:subPropertyOf :published.
 
-mo:Record owl:subClassOf :AudioCollection.
+mo:Record rd:subClassOf :AudioCollection.
 
-mo:Recording owl:subClassOf :Recording.
+mo:Recording rd:subClassOf :Recording.
 
 mo:recording_of owl:subPropertyOf :recordingOf.
 
 mo:release owl:subPropertyOf :publishedAudioManifestation.
 
-mo:Release owl:subClassOf :AudioCollection.
+mo:Release rd:subClassOf :AudioCollection.
 
-mo:ReleaseEvent owl:subClassOf :AudioPublication.
+mo:ReleaseEvent rd:subClassOf :AudioPublication.
 
 mo:sample_rate owl:subPropertyOf :sampleRate.
 
-mo:Signal owl:subClassOf :Signal.
+mo:Signal rd:subClassOf :Signal.
 
-mo:Sound owl:subClassOf :Sound.
+mo:Sound rd:subClassOf :Sound.
 
-mo:Track owl:subClassOf :AudioClip.
+mo:Track rd:subClassOf :AudioClip.
 
