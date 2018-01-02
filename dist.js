@@ -5,12 +5,12 @@ const rdflib = require('rdflib'),
       path = require('path'),
       async = require('async'),
       _ = require('lodash'),
-      Handlebars = require('handlebars'),
+      ejs = require('ejs'),
       jsld = require('jsld'),
       eye = require('./eye.js');
 
-var srcDir = path.join(__dirname, 'src');
-var ontologiesDir = path.join(__dirname, 'dist');
+const srcDir = path.join(__dirname, 'src');
+const ontologiesDir = path.join(__dirname, 'dist');
 
 const classicTurtle = turtleString => {
   return turtleString.replace(/^PREFIX ([^:]*): (<[^>]*>)$/mg, '@prefix $1: $2.')
@@ -41,7 +41,6 @@ const removeInvalidQuads = quads => {
 
 const conflateStore = store => {
   _.each(store.statements, (stat) => {stat.why = {termType: 'DefaultGraph'}});
-  // console.log(store.statements);
   return store;
 };
 
@@ -79,8 +78,11 @@ async.autoInject({
   ontologyEventsJsonLd: ['ontologyEventsYaml', async.asyncify(yaml.safeLoad)],
   ontologyEventsTtl: ['ontologyEventsJsonLd', 'ontologyCtxt', fromJsonLdToTurtle],
 
-  htmlTemplateSrc: [_.partial(fs.readFile, path.join(srcDir, 'ontology.hbs'), 'utf8')],
-  htmlTemplate: ['htmlTemplateSrc', async.asyncify(Handlebars.compile)],
+  htmlTemplateSrc: [_.partial(fs.readFile, path.join(srcDir, 'ontology.ejs'), 'utf8')],
+  htmlTemplate: [
+    'htmlTemplateSrc',
+    async.asyncify(_.partialRight(ejs.compile, {}))],
+
   base: ['ontologyCtxt', async.asyncify((jsonldCtxt) => (jsonldCtxt['@base']))],
   baseAsNode: ['base', async.asyncify((iri) => (rdflib.sym(iri)))],
   identityQueryN3: [_.partial(fs.readFile, path.join(srcDir, 'identity.n3'), 'utf8')],
@@ -111,7 +113,9 @@ async.autoInject({
   writeRdf: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.rdf'))],
   writeOwl: ['outputAsRdfXml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.owl'))],
   outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
-  outputAsHtml: ['outputAsJsLd', 'htmlTemplate', async.asyncify((input, template) => template(input))],
+  outputAsHtml: [
+    'htmlTemplate', 'outputAsJsLd',
+    async.asyncify((template, data) => template(_.assign(data, {_: _})))],
   writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
   result: ['writeHtml', async.asyncify(_.identity)]
 }, function(err, results) {
@@ -122,34 +126,3 @@ async.autoInject({
   // console.log(results.result.statements);
   //console.log(JSON.stringify(results.result));
 });
-
-// // serialize the ontoly to RDF/XML
-// jsonld.toRDF(jsonldObj, {format: 'application/nquads'}, function(err, nquads) {
-//   var store = rdflib.graph();
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     try {
-//       rdflib.parse(nquads, store, null, 'application/n-quads', function(err) {
-//         if (err) {
-//           console.log(err);
-//         } else {
-//           // var base = jsonldObj["@context"] && jsonldObj["@context"]["@base"];
-//           // not using base because is not explicitly set in rdf/xml
-//           rdflib.serialize(
-//             null, store, null, 'application/rdf+xml',
-//             function(err, rdfXml) {
-//               if (err) {
-//                 console.log(err);
-//               } else {
-//                 fs.writeFileSync(path.join(ontologiesDir, 'aco.owl'), rdfXml);
-//                 console.log('Ontology in RDF/XML regenerated successfully.');
-//               }
-//             });
-//         }
-//       });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
-// });

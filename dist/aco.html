@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <title>The Audio Commons Ontology</title>
@@ -7,12 +8,1198 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   </head>
   <body>
-    <h1>The Audio Commons Ontology</h1>
-    <p>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">The Audio Commons Ontology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#http://visualdataweb.de/webvowl/#iri=http://purl.org/ontology/mo/">View in WebVOWL</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Download...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="aco.owl">...as XML/RDF</a>
+                <a class="dropdown-item" href="aco.ttl">...as Turtle</a>
+                <a class="dropdown-item" href="aco.jsonld">...as JSON-LD</a>
+                <a class="dropdown-item" href="aco.nt">...as N-Triples</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <!-- <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <nav class="nav flex-column">
+            <div class="nav-item">
+              <a class="nav-link active" href="#top">Intro</a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#classList">Classes</a>
+              <ul class="nav">
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AnalogSignal">Analog signal</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:DigitalSignal">Digital signal</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCategory">Audio category</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioClip">Audio clip</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioManifestation">Audio manifestation</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollection">Audio collection</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioCollectionNode">Audio collection node</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioExpression">Audio expression</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioFile">Audio file</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioItem">Audio item</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:AudioPublication">Audio publication</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:Signal">Signal</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:Recording">Recording</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:SignalProduction">Signal production</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:Sound">Physical sound</a></li>
+                
+                  <li class="nav-item"><a class="nav-link" href="#ac:Syntesis">Syntesis</a></li>
+                
+              </ul>
+            </div>
+            <a class="nav-link" href="#objPropList">Object Properties</a>
+            <a class="nav-link" href="#dtPropList">Datatype Properties</a>
+          </nav>
+        </div> -->
+        <div class="col">
+
+          <h1 id="top">The Audio Commons Ontology</h1>
+          <!-- <p class="lead">The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
+</p> -->
+          <h2>Description</h2>
+          <p>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
 </p>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+          <p>
+            
+    <!-- <p class="card-text"> -->
+      <strong>Classes</strong>:
+      <a href="#ac:AnalogSignal">Analog signal</a>, <a href="#ac:DigitalSignal">Digital signal</a>, <a href="#ac:AudioCategory">Audio category</a>, <a href="#ac:AudioClip">Audio clip</a>, <a href="#ac:AudioManifestation">Audio manifestation</a>, <a href="#ac:AudioCollection">Audio collection</a>, <a href="#ac:AudioCollectionNode">Audio collection node</a>, <a href="#ac:AudioExpression">Audio expression</a>, <a href="#ac:AudioFile">Audio file</a>, <a href="#ac:AudioItem">Audio item</a>, <a href="#ac:AudioPublication">Audio publication</a>, <a href="#ac:Signal">Signal</a>, <a href="#ac:Recording">Recording</a>, <a href="#ac:SignalProduction">Signal production</a>, <a href="#ac:Sound">Physical sound</a>, <a href="#ac:Syntesis">Syntesis</a>.
+    <!-- </p> -->
+  
+          </p>
+          <p>
+            
+    <!-- <p class="card-text"> -->
+      <strong>Object Properties</strong>:
+      <a href="#ac:nodeContent">node content</a>, <a href="#ac:audioCategory">is in audio category</a>, <a href="#ac:availableAs">available as</a>, <a href="#ac:compiled">compiled</a>, <a href="#ac:encodes">encodes</a>, <a href="#ac:firstNode">first node</a>, <a href="#ac:memberNode">member node</a>, <a href="#ac:homepage">homepage</a>, <a href="#ac:image">image</a>, <a href="#ac:lastNode">last node</a>, <a href="#ac:nextNode">next node</a>, <a href="#ac:previousNode">previous node</a>, <a href="#ac:producedSignal">produced signal</a>, <a href="#ac:productionFrom">production from</a>, <a href="#ac:publicationOf">publication of</a>, <a href="#ac:published">published</a>, <a href="#ac:publishedAudioManifestation">published audio manifestation</a>, <a href="#ac:recordingOf">recording of</a>.
+    <!-- </p> -->
+  
+          </p>
+          <p>
+            
+    <!-- <p class="card-text"> -->
+      <strong>Datatype Properties</strong>:
+      <a href="#ac:bitsPerSample">bits per sample</a>, <a href="#ac:channels">channels</a>, <a href="#ac:duration">duration</a>, <a href="#ac:nodeIndex">node index</a>, <a href="#ac:sampleRate">sample rate</a>.
+    <!-- </p> -->
+  
+          </p>
+
+          <h2 id="classList">Classes</h2>
+          
+            <div id="ac:AnalogSignal" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Analog signal</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AnalogSignal</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:AnalogSignal">mo:AnalogSignal</a>.
+    <!-- </p> -->
+  
+                
+                
+              </div>
+            </div>
+          
+            <div id="ac:DigitalSignal" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Digital signal</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:DigitalSignal</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:Signal">Signal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:DigitalSignal">mo:DigitalSignal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:bitsPerSample">bits per sample</a>, <a href="#ac:channels">channels</a>, <a href="#ac:sampleRate">sample rate</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:encodes">encodes</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioCategory" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio category</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCategory</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#frbr:Concept">frbr:Concept</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:Instrument">ac:Instrument</a>, <a href="#mo:Genre">mo:Genre</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:audioCategory">is in audio category</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioClip" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio clip</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioClip</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:Track">mo:Track</a>.
+    <!-- </p> -->
+  
+                
+                
+              </div>
+            </div>
+          
+            <div id="ac:AudioManifestation" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio manifestation</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioManifestation</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#cc:Work">cc:Work</a>, <a href="#frbr:Manifestation">frbr:Manifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:AudioClip">Audio clip</a>, <a href="#ac:AudioCollection">Audio collection</a>, <a href="#mo:MusicalManifestation">mo:MusicalManifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:availableAs">available as</a>, <a href="#ac:publicationOf">publication of</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:nodeContent">node content</a>, <a href="#ac:compiled">compiled</a>, <a href="#ac:published">published</a>, <a href="#ac:publishedAudioManifestation">published audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioCollection" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio collection</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollection</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:Record">mo:Record</a>, <a href="#mo:Release">mo:Release</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:firstNode">first node</a>, <a href="#ac:memberNode">member node</a>, <a href="#ac:lastNode">last node</a>.
+    <!-- </p> -->
+  
+                
+              </div>
+            </div>
+          
+            <div id="ac:AudioCollectionNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio collection node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#rdf:List">rdf:List</a>, <a href="#_:b1">_:b1</a>, <a href="#_:b2">_:b2</a>, <a href="#_:b6">_:b6</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:nodeContent">node content</a>, <a href="#ac:nodeIndex">node index</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:memberNode">member node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioExpression" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio expression</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioExpression</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#frbr:Expression">frbr:Expression</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:Signal">Signal</a>, <a href="#ac:Sound">Physical sound</a>, <a href="#mo:MusicalExpression">mo:MusicalExpression</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:publicationOf">publication of</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioFile" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio file</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioFile</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ebu:MediaResource">ebu:MediaResource</a>, <a href="#ac:AudioItem">Audio item</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:AudioFile">mo:AudioFile</a>.
+    <!-- </p> -->
+  
+                
+                
+              </div>
+            </div>
+          
+            <div id="ac:AudioItem" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio item</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioItem</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#frbr:Item">frbr:Item</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:AudioFile">Audio file</a>, <a href="#mo:MusicalItem">mo:MusicalItem</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:encodes">encodes</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:availableAs">available as</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:AudioPublication" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio publication</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioPublication</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#event:Event">event:Event</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:ReleaseEvent">mo:ReleaseEvent</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:publishedAudioManifestation">published audio manifestation</a>.
+    <!-- </p> -->
+  
+                
+              </div>
+            </div>
+          
+            <div id="ac:Signal" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Signal</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:Signal</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioExpression">Audio expression</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:DigitalSignal">Digital signal</a>, <a href="#mo:Signal">mo:Signal</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:producedSignal">produced signal</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:Recording" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Recording</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:Recording</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:SignalProduction">Signal production</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:Recording">mo:Recording</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:recordingOf">recording of</a>.
+    <!-- </p> -->
+  
+                
+              </div>
+            </div>
+          
+            <div id="ac:SignalProduction" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Signal production</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:SignalProduction</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#event:Event">event:Event</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#ac:Recording">Recording</a>, <a href="#ac:Syntesis">Syntesis</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#ac:producedSignal">produced signal</a>, <a href="#ac:productionFrom">production from</a>.
+    <!-- </p> -->
+  
+                
+              </div>
+            </div>
+          
+            <div id="ac:Sound" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Physical sound</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:Sound</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:AudioExpression">Audio expression</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#mo:Sound">mo:Sound</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#ac:productionFrom">production from</a>, <a href="#ac:recordingOf">recording of</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:Syntesis" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Syntesis</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:Syntesis</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="#ac:SignalProduction">Signal production</a>.
+    <!-- </p> -->
+  
+                
+                
+                
+              </div>
+            </div>
+          
+
+
+          <h2 id="objPropList">Object properties</h2>
+          
+            <div id="ac:nodeContent" class="card">
+              <div class="card-body">
+                <h5 class="card-title">node content</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:nodeContent</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#rdf:first">rdf:first</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:audioCategory" class="card">
+              <div class="card-body">
+                <h5 class="card-title">is in audio category</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:audioCategory</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:genre">mo:genre</a>, <a href="#mo:instrument">mo:instrument</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCategory">Audio category</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:availableAs" class="card">
+              <div class="card-body">
+                <h5 class="card-title">available as</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:availableAs</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:available_as">mo:available_as</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioItem">Audio item</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:compiled" class="card">
+              <div class="card-body">
+                <h5 class="card-title">compiled</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:compiled</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:compiled">mo:compiled</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#foaf:Agent">foaf:Agent</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:encodes" class="card">
+              <div class="card-body">
+                <h5 class="card-title">encodes</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:encodes</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:encodes">mo:encodes</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioItem">Audio item</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:DigitalSignal">Digital signal</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:firstNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">first node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:firstNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#ac:memberNode">member node</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollection">Audio collection</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionFirstNode">ac:AudioCollectionFirstNode</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:memberNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">member node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:memberNode</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#ac:firstNode">first node</a>, <a href="#ac:lastNode">last node</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollection">Audio collection</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:homepage" class="card">
+              <div class="card-body">
+                <h5 class="card-title">homepage</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:homepage</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#foaf:isPrimaryTopicOf">foaf:isPrimaryTopicOf</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:homepage">mo:homepage</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#foaf:Document">foaf:Document</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:image" class="card">
+              <div class="card-body">
+                <h5 class="card-title">image</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:image</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#foaf:depiction">foaf:depiction</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:image">mo:image</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#foaf:Image">foaf:Image</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:lastNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">last node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:lastNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#ac:memberNode">member node</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollection">Audio collection</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionLastNode">ac:AudioCollectionLastNode</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:nextNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">next node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:nextNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#rdf:rest">rdf:rest</a>.
+    <!-- </p> -->
+  
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNonLastNode">ac:AudioCollectionNonLastNode</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionNonFirstNode">ac:AudioCollectionNonFirstNode</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:previousNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">previous node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:previousNode</code></h6>
+                <p class="card-text">
+                
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNonFirstNode">ac:AudioCollectionNonFirstNode</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioCollectionNonLastNode">ac:AudioCollectionNonLastNode</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:producedSignal" class="card">
+              <div class="card-body">
+                <h5 class="card-title">produced signal</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:producedSignal</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:produced_signal">mo:produced_signal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:SignalProduction">Signal production</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:Signal">Signal</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:productionFrom" class="card">
+              <div class="card-body">
+                <h5 class="card-title">production from</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:productionFrom</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#ac:recordingOf">recording of</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:SignalProduction">Signal production</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:Sound">Physical sound</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:publicationOf" class="card">
+              <div class="card-body">
+                <h5 class="card-title">publication of</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:publicationOf</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:publication_of">mo:publication_of</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioExpression">Audio expression</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:published" class="card">
+              <div class="card-body">
+                <h5 class="card-title">published</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:published</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:published">mo:published</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#foaf:Agent">foaf:Agent</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:publishedAudioManifestation" class="card">
+              <div class="card-body">
+                <h5 class="card-title">published audio manifestation</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:publishedAudioManifestation</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:release">mo:release</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioPublication">Audio publication</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:AudioManifestation">Audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:recordingOf" class="card">
+              <div class="card-body">
+                <h5 class="card-title">recording of</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:recordingOf</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Properties</strong>:
+      <a href="#ac:productionFrom">production from</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:recording_of">mo:recording_of</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:Recording">Recording</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#ac:Sound">Physical sound</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+
+          <h2 id="dtPropList">Datatype properties</h2>
+          
+            <div id="ac:bitsPerSample" class="card">
+              <div class="card-body">
+                <h5 class="card-title">bits per sample</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:bitsPerSample</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:bitsPerSample">mo:bitsPerSample</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:DigitalSignal">Digital signal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#xsd:int">xsd:int</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:channels" class="card">
+              <div class="card-body">
+                <h5 class="card-title">channels</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:channels</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:channels">mo:channels</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:DigitalSignal">Digital signal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#xsd:int">xsd:int</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:duration" class="card">
+              <div class="card-body">
+                <h5 class="card-title">duration</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:duration</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:duration">mo:duration</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#_:b4">_:b4</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#xsd:int">xsd:int</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:nodeIndex" class="card">
+              <div class="card-body">
+                <h5 class="card-title">node index</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:nodeIndex</code></h6>
+                <p class="card-text">
+                
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:AudioCollectionNode">Audio collection node</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#xsd:int">xsd:int</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="ac:sampleRate" class="card">
+              <div class="card-body">
+                <h5 class="card-title">sample rate</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:sampleRate</code></h6>
+                <p class="card-text">
+                
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Properties</strong>:
+      <a href="#mo:sample_rate">mo:sample_rate</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain</strong>:
+      <a href="#ac:DigitalSignal">Digital signal</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range</strong>:
+      <a href="#xsd:float">xsd:float</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>

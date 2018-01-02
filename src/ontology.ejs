@@ -1,0 +1,157 @@
+<!doctype html>
+<%
+const asArray = (value) => _.isArray(value) ? value : [value];
+const label = (resource) => resource.label ? resource.label : resource.id;
+const filterByType = (resources, typeId) =>
+    _.filter( resources,
+              res => _.some(asArray(res.type),
+                            type => type.id === typeId));
+const localList = (listLabel, resources) => {
+  if (resources) { %>
+    <!-- <p class="card-text"> -->
+      <strong><%= listLabel %></strong>:
+      <% _.forIn(asArray(resources), (res, index) => {
+        %><%= index > 0 ? ", " : "" %><a href="#<%= res.id %>"><%= label(res) %></a><%
+      }); %>.
+    <!-- </p> -->
+  <% }
+};
+%>
+<html lang="en">
+  <head>
+    <title><%= aco.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><%= aco.title %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#http://visualdataweb.de/webvowl/#iri=http://purl.org/ontology/mo/">View in WebVOWL</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Download...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="aco.owl">...as XML/RDF</a>
+                <a class="dropdown-item" href="aco.ttl">...as Turtle</a>
+                <a class="dropdown-item" href="aco.jsonld">...as JSON-LD</a>
+                <a class="dropdown-item" href="aco.nt">...as N-Triples</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <!-- <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <nav class="nav flex-column">
+            <div class="nav-item">
+              <a class="nav-link active" href="#top">Intro</a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#classList">Classes</a>
+              <ul class="nav">
+                <% _.forIn(
+                      _.filter(
+                          aco.defines,
+                          (c) => _.some(asArray(c.type), (type) => type.id === 'owl:Class')
+                      ), (clazz) => { %>
+                  <li class="nav-item"><a class="nav-link" href="#<%= clazz.id %>"><%= label(clazz) %></a></li>
+                <% }); %>
+              </ul>
+            </div>
+            <a class="nav-link" href="#objPropList">Object Properties</a>
+            <a class="nav-link" href="#dtPropList">Datatype Properties</a>
+          </nav>
+        </div> -->
+        <div class="col">
+
+          <h1 id="top"><%= aco.title %></h1>
+          <!-- <p class="lead"><%= aco.descr %></p> -->
+          <h2>Description</h2>
+          <p><%= aco.descr %></p>
+
+          <p>
+            <% localList('Classes', filterByType(aco.defines, 'owl:Class')); %>
+          </p>
+          <p>
+            <% localList('Object Properties', filterByType(aco.defines, 'owl:ObjectProperty')); %>
+          </p>
+          <p>
+            <% localList('Datatype Properties', filterByType(aco.defines, 'owl:DatatypeProperty')); %>
+          </p>
+
+          <h2 id="classList">Classes</h2>
+          <% _.forIn(filterByType(aco.defines, 'owl:Class'), (clazz) => { %>
+            <div id="<%= clazz.id %>" class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= label(clazz) %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code><%= clazz.id %></code></h6>
+                <p class="card-text">
+                <% if (clazz.comment) { %>
+                  <%= clazz.comment %>
+                <% } %>
+                <% localList("Super-Classes", clazz.subClassOf); %>
+                <% localList("Sub-Classes", clazz.superClassOf); %>
+                <% localList("Domain of", clazz.domainOf); %>
+                <% localList("Range of", clazz.rangeOf); %>
+              </div>
+            </div>
+          <% }); %>
+
+
+          <h2 id="objPropList">Object properties</h2>
+          <% _.forIn(filterByType(aco.defines, 'owl:ObjectProperty'), (prop) => { %>
+            <div id="<%= prop.id %>" class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= label(prop) %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code><%= prop.id %></code></h6>
+                <p class="card-text">
+                <% if (prop.comment) { %>
+                  <%= prop.comment %>
+                <% } %>
+                <% localList("Super-Properties", prop.subPropertyOf); %>
+                <% localList("Sub-Properties", prop.superPropertyOf); %>
+                <% localList("Domain", prop.domain); %>
+                <% localList("Range", prop.range); %>
+              </div>
+            </div>
+          <% }); %>
+
+          <h2 id="dtPropList">Datatype properties</h2>
+          <% _.forIn(filterByType(aco.defines, 'owl:DatatypeProperty'), (prop) => { %>
+            <div id="<%= prop.id %>" class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= label(prop) %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code><%= prop.id %></code></h6>
+                <p class="card-text">
+                <% if (prop.comment) { %>
+                  <%= prop.comment %>
+                <% } %>
+                <% localList("Super-Properties", prop.subPropertyOf); %>
+                <% localList("Sub-Properties", prop.superPropertyOf); %>
+                <% localList("Domain", prop.domain); %>
+                <% localList("Range", prop.range); %>
+              </div>
+            </div>
+          <% }); %>
+
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    </div>
+  </body>
+</html>

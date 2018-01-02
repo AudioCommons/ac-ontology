@@ -3,6 +3,7 @@ defines:
 
   - id: ac:SignalProduction
     label: Signal production
+    type: owl:Class
     subClassOf: event:Event
     superClassOf: [ac:Recording, ac:Syntesis]
 
@@ -22,6 +23,7 @@ defines:
 
   - id: ac:Recording
     label: Recording
+    type: owl:Class
     superClassOf: mo:Recording
 
   - id: ac:recordingOf
@@ -33,9 +35,11 @@ defines:
 
   - id: ac:Syntesis
     label: Syntesis
+    type: owl:Class
 
   - id: ac:AudioPublication
     label: Audio publication
+    type: owl:Class
     subClassOf: event:Event
     superClassOf: mo:ReleaseEvent
 

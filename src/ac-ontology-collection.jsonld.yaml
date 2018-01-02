@@ -3,6 +3,7 @@ defines:
 
   - id: ac:AudioCollection
     label: Audio collection
+    type: owl:Class
     subClassOf: ac:AudioManifestation
     superClassOf: [mo:Record, mo:Release]
 
@@ -28,6 +29,7 @@ defines:
 
   - id: ac:AudioCollectionNode
     label: Audio collection node
+    type: owl:Class
     subClassOf:
       - id: rdf:List
       - type: owl:Restriction

@@ -202,7 +202,10 @@
       },
       {
          "id": "ac:AnalogSignal",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Resource",
+            "owl:Class"
+         ],
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -213,7 +216,8 @@
          "id": "ac:AudioCategory",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -223,7 +227,10 @@
       },
       {
          "id": "ac:AudioClip",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Resource",
+            "owl:Class"
+         ],
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -234,7 +241,8 @@
          "id": "ac:AudioCollection",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -260,7 +268,8 @@
          "id": "ac:AudioCollectionNode",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -295,7 +304,8 @@
          "id": "ac:AudioExpression",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -305,7 +315,10 @@
       },
       {
          "id": "ac:AudioFile",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Resource",
+            "owl:Class"
+         ],
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -319,7 +332,8 @@
          "id": "ac:AudioItem",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -331,7 +345,8 @@
          "id": "ac:AudioManifestation",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -346,7 +361,8 @@
          "id": "ac:AudioPublication",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -358,7 +374,8 @@
          "id": "ac:DigitalSignal",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -375,7 +392,8 @@
          "id": "ac:Recording",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -387,7 +405,8 @@
          "id": "ac:Signal",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -399,7 +418,8 @@
          "id": "ac:SignalProduction",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -411,7 +431,8 @@
          "id": "ac:Sound",
          "type": [
             "rdfs:Class",
-            "rdfs:Resource"
+            "rdfs:Resource",
+            "owl:Class"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -421,7 +442,10 @@
       },
       {
          "id": "ac:Syntesis",
-         "type": "rdfs:Resource",
+         "type": [
+            "rdfs:Resource",
+            "owl:Class"
+         ],
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
