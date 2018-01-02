@@ -100,92 +100,40 @@
    },
    "@graph": [
       {
-         "id": "_:bn1",
+         "id": "_:b0xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b0xb1"
+      },
+      {
+         "id": "_:b0xb2",
+         "name": "Miguel Ceriani"
+      },
+      {
+         "id": "_:b0xb3",
          "name": "George Fazekas"
       },
       {
-         "id": "_:bn10",
-         "type": [
-            "rdfs:Resource",
-            "owl:Restriction"
-         ],
-         "onProperty": "ac:nodeContent",
-         "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:bn11",
-         "type": [
-            "rdfs:Resource",
-            "owl:Restriction"
-         ],
+         "id": "_:b1xb0",
+         "type": "owl:Restriction",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:bn2",
-         "name": "Miguel Ceriani"
+         "id": "_:b1xb1",
+         "type": "owl:Restriction",
+         "onProperty": "ac:nodeContent",
+         "qualifiedCardinality": "1"
       },
       {
-         "id": "_:bn3",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
-         "unionOf": "_:bn4"
-      },
-      {
-         "id": "_:bn9",
-         "type": [
-            "rdfs:Resource",
-            "owl:Restriction"
-         ],
+         "id": "_:b1xb2",
+         "type": "owl:Restriction",
          "onClass": "rdf:List",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:n2",
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": {
-            "id": "ac:AudioCollectionNonFirstNode"
-         },
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nill"
-         }
-      },
-      {
-         "id": "_:n3",
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": {
-            "id": "ac:AudioCollectionFirstNode"
-         },
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": {
-            "id": "_:n2"
-         }
-      },
-      {
-         "id": "_:n4",
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": {
-            "id": "ac:AudioCollectionNonLastNode"
-         },
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nill"
-         }
-      },
-      {
-         "id": "_:n5",
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": {
-            "id": "ac:AudioCollectionLastNode"
-         },
-         "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": {
-            "id": "_:n4"
-         }
-      },
-      {
          "id": "aco",
-         "type": [
-            "rdfs:Resource",
-            "owl:Ontology"
-         ],
+         "type": "owl:Ontology",
          "created": "2017/07/27 11:09:00",
          "date": "2017/07/27 11:09:00",
          "descr": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n",
@@ -193,19 +141,16 @@
          "versionInfo": "Revision: 0.0.0",
          "maker": [
             {
-               "id": "_:bn1"
+               "id": "_:b0xb2"
             },
             {
-               "id": "_:bn2"
+               "id": "_:b0xb3"
             }
          ]
       },
       {
          "id": "ac:AnalogSignal",
-         "type": [
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -214,11 +159,7 @@
       },
       {
          "id": "ac:AudioCategory",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -227,10 +168,7 @@
       },
       {
          "id": "ac:AudioClip",
-         "type": [
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -239,11 +177,7 @@
       },
       {
          "id": "ac:AudioCollection",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -251,62 +185,36 @@
          "subClassOf": "ac:AudioManifestation"
       },
       {
-         "id": "ac:AudioCollectionFirstNode",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "ac:AudioCollectionLastNode",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
          "id": "ac:AudioCollectionNode",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
          "label": "Audio collection node",
          "disjointUnionOf": [
-            "_:n3",
-            "_:n5"
+            {
+               "@list": [
+                  "ac:AudioCollectionFirstNode",
+                  "ac:AudioCollectionNonFirstNode"
+               ]
+            },
+            {
+               "@list": [
+                  "ac:AudioCollectionLastNode",
+                  "ac:AudioCollectionNonLastNode"
+               ]
+            }
          ],
          "subClassOf": [
             "rdf:List",
-            "_:bn10",
-            "_:bn11",
-            "_:bn9"
-         ]
-      },
-      {
-         "id": "ac:AudioCollectionNonFirstNode",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "ac:AudioCollectionNonLastNode",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2"
          ]
       },
       {
          "id": "ac:AudioExpression",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -315,10 +223,7 @@
       },
       {
          "id": "ac:AudioFile",
-         "type": [
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -330,11 +235,7 @@
       },
       {
          "id": "ac:AudioItem",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -343,11 +244,7 @@
       },
       {
          "id": "ac:AudioManifestation",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -359,11 +256,7 @@
       },
       {
          "id": "ac:AudioPublication",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -372,11 +265,7 @@
       },
       {
          "id": "ac:DigitalSignal",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -390,11 +279,7 @@
       },
       {
          "id": "ac:Recording",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -403,11 +288,7 @@
       },
       {
          "id": "ac:Signal",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -416,11 +297,7 @@
       },
       {
          "id": "ac:SignalProduction",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -429,11 +306,7 @@
       },
       {
          "id": "ac:Sound",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -442,10 +315,7 @@
       },
       {
          "id": "ac:Syntesis",
-         "type": [
-            "rdfs:Resource",
-            "owl:Class"
-         ],
+         "type": "owl:Class",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -454,11 +324,7 @@
       },
       {
          "id": "ac:audioCategory",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -467,11 +333,7 @@
       },
       {
          "id": "ac:availableAs",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:AudioManifestation",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -482,8 +344,6 @@
       {
          "id": "ac:bitsPerSample",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
@@ -497,8 +357,6 @@
       {
          "id": "ac:channels",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
@@ -511,11 +369,7 @@
       },
       {
          "id": "ac:compiled",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -526,12 +380,10 @@
       {
          "id": "ac:duration",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "domain": "_:bn3",
+         "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -540,11 +392,7 @@
       },
       {
          "id": "ac:encodes",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:AudioItem",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -555,8 +403,6 @@
       {
          "id": "ac:firstNode",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
@@ -570,11 +416,7 @@
       },
       {
          "id": "ac:homepage",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -584,11 +426,7 @@
       },
       {
          "id": "ac:image",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -599,8 +437,6 @@
       {
          "id": "ac:lastNode",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
@@ -614,11 +450,7 @@
       },
       {
          "id": "ac:memberNode",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -629,8 +461,6 @@
       {
          "id": "ac:nextNode",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
@@ -645,8 +475,6 @@
       {
          "id": "ac:nodeContent",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
@@ -661,8 +489,6 @@
       {
          "id": "ac:nodeIndex",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
@@ -676,8 +502,6 @@
       {
          "id": "ac:previousNode",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
@@ -690,11 +514,7 @@
       },
       {
          "id": "ac:producedSignal",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:SignalProduction",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -704,11 +524,7 @@
       },
       {
          "id": "ac:productionFrom",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:SignalProduction",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -718,11 +534,7 @@
       },
       {
          "id": "ac:publicationOf",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:AudioManifestation",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -732,11 +544,7 @@
       },
       {
          "id": "ac:published",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -746,11 +554,7 @@
       },
       {
          "id": "ac:publishedAudioManifestation",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:AudioPublication",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -760,11 +564,7 @@
       },
       {
          "id": "ac:recordingOf",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
-            "owl:ObjectProperty"
-         ],
+         "type": "owl:ObjectProperty",
          "domain": "ac:Recording",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -776,8 +576,6 @@
       {
          "id": "ac:sampleRate",
          "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource",
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
@@ -907,329 +705,6 @@
       {
          "id": "mo:sample_rate",
          "subPropertyOf": "ac:sampleRate"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ],
-         "rdfs:subClassOf": {
-            "id": "rdfs:Container"
-         }
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ],
-         "rdfs:subClassOf": {
-            "id": "rdfs:Container"
-         }
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ],
-         "rdfs:subClassOf": {
-            "id": "rdfs:Container"
-         }
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
-         "range": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Class"
-      },
-      {
-         "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "rdfs:Class",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "rdfs:Container",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "rdfs:ContainerMembershipProperty",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ],
-         "rdfs:subClassOf": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-         }
-      },
-      {
-         "id": "rdfs:Datatype",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ],
-         "rdfs:subClassOf": {
-            "id": "rdfs:Class"
-         }
-      },
-      {
-         "id": "rdfs:Literal",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "rdfs:Resource",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "rdfs:comment",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Literal"
-      },
-      {
-         "id": "rdfs:domain",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "range": "rdfs:Class"
-      },
-      {
-         "id": "rdfs:isDefinedBy",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Resource",
-         "rdfs:subPropertyOf": {
-            "id": "rdfs:seeAlso"
-         }
-      },
-      {
-         "id": "rdfs:label",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Literal"
-      },
-      {
-         "id": "rdfs:member",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "rdfs:range",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "range": "rdfs:Class"
-      },
-      {
-         "id": "rdfs:seeAlso",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Resource",
-         "range": "rdfs:Resource"
-      },
-      {
-         "id": "rdfs:subClassOf",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "rdfs:Class",
-         "range": "rdfs:Class"
-      },
-      {
-         "id": "rdfs:subPropertyOf",
-         "type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-            "rdfs:Resource"
-         ],
-         "domain": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-         "range": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-      },
-      {
-         "id": "xsd:float",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "xsd:int",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:Class",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:DatatypeProperty",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:FunctionalProperty",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:ObjectProperty",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:Ontology",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "owl:Restriction",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "foaf:Agent",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "foaf:Document",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
-      },
-      {
-         "id": "foaf:Image",
-         "type": [
-            "rdfs:Class",
-            "rdfs:Resource"
-         ]
       }
    ]
 }
