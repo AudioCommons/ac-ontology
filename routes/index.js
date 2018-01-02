@@ -8,13 +8,13 @@ var ontologiesDir = path.join(__dirname, '..', 'dist');
 var dataDir = path.join(__dirname, '..', 'data');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render(
-    'index',
-    JSON.parse(fs.readFileSync(
-       path.join(dataDir, 'home.json'),
-       { encoding: 'UTF-8' })));
-});
+// router.get('/', function(req, res, next) {
+//   res.render(
+//     'index',
+//     JSON.parse(fs.readFileSync(
+//        path.join(dataDir, 'home.json'),
+//        { encoding: 'UTF-8' })));
+// });
 
 var mapExtension = function(format) {
   switch (format) {
@@ -30,6 +30,10 @@ var mapExtension = function(format) {
     return { extension: format };
   }
 };
+
+router.get('/', (req, res, next) => {
+  res.sendFile(path.join(ontologiesDir, 'aco.html'));
+});
 
 router.get('/aco.:format?', function(req, res, next) {
   console.log(req.params.format);
@@ -51,15 +55,22 @@ router.get('/aco.:format?', function(req, res, next) {
       'application/ld+json': function() {
         res.sendFile(path.join(ontologiesDir, 'aco.jsonld'));
       },
+      'text/turtle, application/x-turtle': function() {
+        res.sendFile(path.join(ontologiesDir, 'aco.ttl'));
+      },
+      'application/n-triples': function() {
+        res.sendFile(path.join(ontologiesDir, 'aco.nt'));
+      },
       'text/html': function() {
-        res.render(
-          'ontology',
-          { tree:
-              JSON.parse(fs.readFileSync(
-                path.join(ontologiesDir, 'aco.jsonld'),
-                { encoding: 'UTF-8' })),
-            path: '/vocab/spa'
-          });
+        res.sendFile(path.join(ontologiesDir, 'aco.html'));
+        // res.render(
+        //   'ontology',
+        //   { tree:
+        //       JSON.parse(fs.readFileSync(
+        //         path.join(ontologiesDir, 'aco.jsonld'),
+        //         { encoding: 'UTF-8' })),
+        //     path: '/vocab/spa'
+        //   });
       }
       // 'application/owl+xml': function() {
       //   res.sendFile(ontologiesDir + '/spa.owx');
