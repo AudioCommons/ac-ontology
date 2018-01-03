@@ -146,8 +146,8 @@ async.autoInject({
 
   outputAsJsLd: ['outputAsJsonLdRaw', 'ontologyCtxt', jsld.convert],
   outputAsHtml: [
-    'htmlTemplate', 'outputAsJsLd',
-    async.asyncify((template, data) => template(_.assign(data, {_: _})))],
+    'htmlTemplate', 'outputAsJsLd', 'ontologyCtxt',
+    async.asyncify((template, data, context) => template(_.assign(data, {_: _, context: context})))],
   writeHtml: ['outputAsHtml', _.partial(fs.writeFile, path.join(ontologiesDir, 'aco.html'))],
 
   result: ['writeHtml', async.asyncify(_.identity)]

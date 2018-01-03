@@ -1,6 +1,7 @@
-'@base': http://ns.audiocommons.org/aco
-ac: http://ns.audiocommons.org/aco#
+'@base': https://w3id.org/audiocommons/ontology
+#ac: https://w3id.org/audiocommons/ontology#
 
+rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdfs: http://www.w3.org/2000/01/rdf-schema#
 owl: http://www.w3.org/2002/07/owl#
 xsd: http://www.w3.org/2001/XMLSchema#
@@ -11,6 +12,10 @@ dcterms: http://purl.org/dc/terms/
 skos: http://www.w3.org/2004/02/skos/core#
 mo: http://purl.org/ontology/mo/
 event: http://purl.org/NET/c4dm/event.owl#
+vann: http://purl.org/vocab/vann/
+cc: http://web.resource.org/cc/
+frbr: http://purl.org/vocab/frbr/core#
+ebu: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
 
 id: '@id'
 type: '@type'
@@ -39,6 +44,8 @@ versionInfo: owl:versionInfo
 maker: foaf:maker
 name: foaf:name
 defines: {'@reverse': rdfs:isDefinedBy, '@type': '@id'}
+preferredNamespaceUri: vann:preferredNamespaceUri
+preferredNamespacePrefix: vann:preferredNamespacePrefix
 
 label: rdfs:label
 comment: rdfs:comment

@@ -1,3 +1,5 @@
+'@context':
+  - ac: https://w3id.org/audiocommons/ontology#
 id: ''
 defines:
 

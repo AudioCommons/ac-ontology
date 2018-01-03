@@ -1,5 +1,9 @@
+'@context':
+  - ac: https://w3id.org/audiocommons/ontology#
 id: ''
 type: owl:Ontology
+preferredNamespaceUri: https://w3id.org/audiocommons/ontology#
+preferredNamespacePrefix: ac
 created: 2017/07/27 11:09:00
 date: 2017/07/27 11:09:00
 descr: >
@@ -147,7 +151,7 @@ defines:
     label: Audio category
     type: owl:Class
     subClassOf: frbr:Concept
-    superClassOf: [mo:Genre, ac:Instrument]
+    superClassOf: [mo:Genre, mo:Instrument]
 
   - id: ac:audioCategory
     label: is in audio category
