@@ -111,49 +111,49 @@
    "@graph": [
       {
          "id": "_:b0xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b0xb1"
+      },
+      {
+         "id": "_:b0xb2",
+         "name": "Miguel Ceriani"
+      },
+      {
+         "id": "_:b0xb3",
+         "name": "George Fazekas"
+      },
+      {
+         "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b0xb1",
+         "id": "_:b1xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb2",
+         "id": "_:b1xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb3",
+         "id": "_:b1xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b0xb4",
+         "id": "_:b1xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:b1xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b1xb1"
-      },
-      {
-         "id": "_:b1xb2",
-         "name": "Miguel Ceriani"
-      },
-      {
-         "id": "_:b1xb3",
-         "name": "George Fazekas"
       },
       {
          "id": "mo:AnalogSignal",
@@ -291,10 +291,10 @@
          "versionInfo": "Revision: 0.0.0",
          "maker": [
             {
-               "id": "_:b1xb2"
+               "id": "_:b0xb2"
             },
             {
-               "id": "_:b1xb3"
+               "id": "_:b0xb3"
             }
          ]
       },
@@ -362,11 +362,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b0xb0",
-            "_:b0xb1",
-            "_:b0xb2",
-            "_:b0xb3",
-            "_:b0xb4"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2",
+            "_:b1xb3",
+            "_:b1xb4"
          ],
          "disjointUnionOf": [
             {
@@ -568,7 +568,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "domain": "_:b1xb0",
+         "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "ontology"
          },

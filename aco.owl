@@ -190,21 +190,17 @@
         <owl:disjointUnionOf rdf:parseType="Resource">
                 <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionFirstNode"/>
                 <rdf:rest rdf:parseType="Resource">
-                    <rdf:Description>
                         <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     </rdf:rest>
-            </rdf:Description>
-        </owl:disjointUnionOf>
+            </owl:disjointUnionOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
                 <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionLastNode"/>
                 <rdf:rest rdf:parseType="Resource">
-                    <rdf:Description>
                         <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     </rdf:rest>
-            </rdf:Description>
-        </owl:disjointUnionOf>
+            </owl:disjointUnionOf>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
