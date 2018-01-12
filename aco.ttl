@@ -1,0 +1,360 @@
+@prefix : <#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix mo: <http://purl.org/ontology/mo/>.
+@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix n0: <./>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix v: <http://purl.org/vocab/vann/>.
+@prefix n1: <http://xmlns.com/foaf/0.1/>.
+@prefix core: <http://purl.org/vocab/frbr/core#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>.
+@prefix cc: <http://web.resource.org/cc/>.
+@prefix eve: <http://purl.org/NET/c4dm/event.owl#>.
+
+mo:AnalogSignal rd:subClassOf :AnalogSignal.
+
+mo:AudioFile rd:subClassOf :AudioFile.
+
+mo:available_as owl:subPropertyOf :availableAs.
+
+mo:bitsPerSample owl:subPropertyOf :bitsPerSample.
+
+mo:channels owl:subPropertyOf :channels.
+
+mo:compiled owl:subPropertyOf :compiled.
+
+mo:DigitalSignal rd:subClassOf :DigitalSignal.
+
+mo:duration owl:subPropertyOf :duration.
+
+mo:encodes owl:subPropertyOf :encodes.
+
+mo:genre owl:subPropertyOf :audioCategory.
+
+mo:Genre rd:subClassOf :AudioCategory.
+
+mo:homepage owl:subPropertyOf :homepage.
+
+mo:image owl:subPropertyOf :image.
+
+mo:instrument owl:subPropertyOf :audioCategory.
+
+mo:Instrument rd:subClassOf :AudioCategory.
+
+mo:MusicalExpression rd:subClassOf :AudioExpression.
+
+mo:MusicalItem rd:subClassOf :AudioItem.
+
+mo:MusicalManifestation rd:subClassOf :AudioManifestation.
+
+mo:produced_signal owl:subPropertyOf :producedSignal.
+
+mo:publication_of owl:subPropertyOf :publicationOf.
+
+mo:published owl:subPropertyOf :published.
+
+mo:Record rd:subClassOf :AudioCollection.
+
+mo:Recording rd:subClassOf :Recording.
+
+mo:recording_of owl:subPropertyOf :recordingOf.
+
+mo:release owl:subPropertyOf :publishedAudioManifestation.
+
+mo:Release rd:subClassOf :AudioCollection.
+
+mo:ReleaseEvent rd:subClassOf :AudioPublication.
+
+mo:sample_rate owl:subPropertyOf :sampleRate.
+
+mo:Signal rd:subClassOf :Signal.
+
+mo:Sound rd:subClassOf :Sound.
+
+mo:Track rd:subClassOf :AudioClip.
+
+n0:ontology
+    a owl:Ontology;
+    terms:created "2017/07/27 11:09:00";
+    terms:date "2017/07/27 11:09:00";
+    terms:description
+        """The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
+""";
+    terms:title "The Audio Commons Ontology";
+    v:preferredNamespacePrefix "ac";
+    v:preferredNamespaceUri "https://w3id.org/audiocommons/ontology#";
+    owl:versionInfo "Revision: 0.0.0";
+    n1:maker [ n1:name "George Fazekas" ], [ n1:name "Miguel Ceriani" ].
+:AnalogSignal
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Analog signal";
+    owl:disjointWith :DigitalSignal.
+:audioCategory
+    a owl:ObjectProperty;
+    rd:isDefinedBy n0:ontology;
+    rd:label "is in audio category";
+    rd:range :AudioCategory.
+:AudioCategory
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio category";
+    rd:subClassOf core:Concept.
+:AudioClip
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio clip";
+    rd:subClassOf :AudioManifestation.
+:AudioCollection
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio collection";
+    rd:subClassOf :AudioManifestation.
+:AudioCollectionFirstNode
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "First node";
+    rd:subClassOf :AudioCollectionNode.
+:AudioCollectionLastNode
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Last node";
+    rd:subClassOf :AudioCollectionNode.
+:AudioCollectionNode
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Node";
+    rd:subClassOf
+        rdf:List,
+            [
+                a owl:Restriction;
+                owl:onClass rdf:List;
+                owl:onProperty rdf:rest;
+                owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
+            ],
+            [
+                a owl:Restriction;
+                owl:onProperty rdf:first;
+                owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
+            ],
+            [
+                a owl:Restriction;
+                owl:onProperty :nodeContent;
+                owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
+            ];
+    owl:disjointUnionOf
+            [
+                rdf:first :AudioCollectionFirstNode;
+                rdf:rest
+                [ rdf:first :AudioCollectionNonFirstNode; rdf:rest rdf:nil ]
+            ],
+            [
+                rdf:first :AudioCollectionLastNode;
+                rdf:rest
+                [ rdf:first :AudioCollectionNonLastNode; rdf:rest rdf:nil ]
+            ].
+:AudioCollectionNonFirstNode
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Any node but the first";
+    rd:subClassOf :AudioCollectionNode.
+:AudioCollectionNonLastNode
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Any node but the last";
+    rd:subClassOf :AudioCollectionNode.
+:AudioExpression
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio expression";
+    rd:subClassOf core:Expression.
+:AudioFile
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio file";
+    rd:subClassOf ebu:MediaResource, :AudioItem.
+:AudioItem
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio item";
+    rd:subClassOf core:Item.
+:AudioManifestation
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio manifestation";
+    rd:subClassOf core:Manifestation, cc:Work.
+:AudioPublication
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Audio publication";
+    rd:subClassOf eve:Event.
+:availableAs
+    a owl:ObjectProperty;
+    rd:domain :AudioManifestation;
+    rd:isDefinedBy n0:ontology;
+    rd:label "available as";
+    rd:range :AudioItem.
+:bitsPerSample
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:domain :DigitalSignal;
+    rd:isDefinedBy n0:ontology;
+    rd:label "bits per sample";
+    rd:range XML:int.
+:channels
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:domain :DigitalSignal;
+    rd:isDefinedBy n0:ontology;
+    rd:label "channels";
+    rd:range XML:int.
+:compiled
+    a owl:ObjectProperty;
+    rd:domain n1:Agent;
+    rd:isDefinedBy n0:ontology;
+    rd:label "compiled";
+    rd:range :AudioManifestation.
+:DigitalSignal
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Digital signal";
+    rd:subClassOf :Signal;
+    owl:disjointWith :AnalogSignal.
+:duration
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:domain [ a owl:Class; owl:unionOf [] ];
+    rd:isDefinedBy n0:ontology;
+    rd:label "duration";
+    rd:range XML:int.
+:encodes
+    a owl:ObjectProperty;
+    rd:domain :AudioItem;
+    rd:isDefinedBy n0:ontology;
+    rd:label "encodes";
+    rd:range :DigitalSignal.
+:firstNode
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:domain :AudioCollection;
+    rd:isDefinedBy n0:ontology;
+    rd:label "first node";
+    rd:range :AudioCollectionFirstNode;
+    owl:subPropertyOf :memberNode.
+:homepage
+    a owl:ObjectProperty;
+    rd:isDefinedBy n0:ontology;
+    rd:label "homepage";
+    rd:range n1:Document;
+    owl:subPropertyOf n1:isPrimaryTopicOf.
+:image
+    a owl:ObjectProperty;
+    rd:isDefinedBy n0:ontology;
+    rd:label "image";
+    rd:range n1:Image;
+    owl:subPropertyOf n1:depiction.
+:lastNode
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:domain :AudioCollection;
+    rd:isDefinedBy n0:ontology;
+    rd:label "last node";
+    rd:range :AudioCollectionLastNode;
+    owl:subPropertyOf :memberNode.
+:memberNode
+    a owl:ObjectProperty;
+    rd:domain :AudioCollection;
+    rd:isDefinedBy n0:ontology;
+    rd:label "member node";
+    rd:range :AudioCollectionNode.
+:nextNode
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:domain :AudioCollectionNonLastNode;
+    rd:isDefinedBy n0:ontology;
+    rd:label "next node";
+    rd:range :AudioCollectionNonFirstNode;
+    owl:subPropertyOf rdf:rest.
+:nodeContent
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:domain :AudioCollectionNode;
+    rd:isDefinedBy n0:ontology;
+    rd:label "node content";
+    rd:range :AudioManifestation;
+    owl:subPropertyOf rdf:first.
+:nodeIndex
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:domain :AudioCollectionNode;
+    rd:isDefinedBy n0:ontology;
+    rd:label "node index";
+    rd:range XML:int.
+:previousNode
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:domain :AudioCollectionNonFirstNode;
+    rd:isDefinedBy n0:ontology;
+    rd:label "previous node";
+    rd:range :AudioCollectionNonLastNode.
+:producedSignal
+    a owl:ObjectProperty;
+    rd:domain :SignalProduction;
+    rd:isDefinedBy n0:ontology;
+    rd:label "produced signal";
+    rd:range :Signal.
+:productionFrom
+    a owl:ObjectProperty;
+    rd:domain :SignalProduction;
+    rd:isDefinedBy n0:ontology;
+    rd:label "production from";
+    rd:range :Sound.
+:publicationOf
+    a owl:ObjectProperty;
+    rd:domain :AudioManifestation;
+    rd:isDefinedBy n0:ontology;
+    rd:label "publication of";
+    rd:range :AudioExpression.
+:published
+    a owl:ObjectProperty;
+    rd:domain n1:Agent;
+    rd:isDefinedBy n0:ontology;
+    rd:label "published";
+    rd:range :AudioManifestation.
+:publishedAudioManifestation
+    a owl:ObjectProperty;
+    rd:domain :AudioPublication;
+    rd:isDefinedBy n0:ontology;
+    rd:label "published audio manifestation";
+    rd:range :AudioManifestation.
+:Recording
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Recording";
+    rd:subClassOf :SignalProduction.
+:recordingOf
+    a owl:ObjectProperty;
+    rd:domain :Recording;
+    rd:isDefinedBy n0:ontology;
+    rd:label "recording of";
+    rd:range :Sound;
+    owl:subPropertyOf :productionFrom.
+:sampleRate
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:domain :DigitalSignal;
+    rd:isDefinedBy n0:ontology;
+    rd:label "sample rate";
+    rd:range XML:float.
+:Signal
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Signal";
+    rd:subClassOf :AudioExpression.
+:SignalProduction
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Signal production";
+    rd:subClassOf eve:Event.
+:Sound
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Physical sound";
+    rd:subClassOf :AudioExpression.
+:Syntesis
+    a owl:Class;
+    rd:isDefinedBy n0:ontology;
+    rd:label "Syntesis";
+    rd:subClassOf :SignalProduction.
