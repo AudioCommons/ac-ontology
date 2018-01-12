@@ -68,6 +68,10 @@
          "@id": "owl:someValuesFromValue",
          "@type": "@id"
       },
+      "allValuesFrom": {
+         "@id": "owl:allValuesFrom",
+         "@type": "@id"
+      },
       "unionOf": {
          "@id": "owl:unionOf",
          "@type": "@id"
@@ -121,19 +125,33 @@
       {
          "id": "_:b1xb0",
          "type": "owl:Restriction",
-         "onProperty": "rdf:first",
-         "qualifiedCardinality": "1"
+         "allValuesFrom": "#AudioManifestation",
+         "onProperty": "rdf:first"
       },
       {
          "id": "_:b1xb1",
          "type": "owl:Restriction",
-         "onProperty": "#nodeContent",
+         "onClass": "#AudioManifestation",
+         "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
          "id": "_:b1xb2",
          "type": "owl:Restriction",
-         "onClass": "rdf:List",
+         "onClass": "#AudioManifestation",
+         "onProperty": "#nodeContent",
+         "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b1xb3",
+         "type": "owl:Restriction",
+         "allValuesFrom": "#AudioCollectionNode",
+         "onProperty": "rdf:rest"
+      },
+      {
+         "id": "_:b1xb4",
+         "type": "owl:Restriction",
+         "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
       },
@@ -346,7 +364,9 @@
             "rdf:List",
             "_:b1xb0",
             "_:b1xb1",
-            "_:b1xb2"
+            "_:b1xb2",
+            "_:b1xb3",
+            "_:b1xb4"
          ],
          "disjointUnionOf": [
             {

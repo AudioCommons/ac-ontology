@@ -131,17 +131,29 @@ n0:ontology
         rdf:List,
             [
                 a owl:Restriction;
-                owl:onClass rdf:List;
+                owl:allValuesFrom :AudioCollectionNode;
+                owl:onProperty rdf:rest
+            ],
+            [
+                a owl:Restriction;
+                owl:allValuesFrom :AudioManifestation;
+                owl:onProperty rdf:first
+            ],
+            [
+                a owl:Restriction;
+                owl:onClass :AudioCollectionNode;
                 owl:onProperty rdf:rest;
                 owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
             ],
             [
                 a owl:Restriction;
+                owl:onClass :AudioManifestation;
                 owl:onProperty rdf:first;
                 owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
             ],
             [
                 a owl:Restriction;
+                owl:onClass :AudioManifestation;
                 owl:onProperty :nodeContent;
                 owl:qualifiedCardinality "1"^^XML:nonNegativeInteger
             ];

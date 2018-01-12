@@ -55,7 +55,7 @@
             
     <!-- <p class="card-text"> -->
       <strong>Classes</strong>:
-      <a href="#AnalogSignal">Analog signal</a>, <a href="#AudioFile">Audio file</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="#AudioCategory">Audio category</a>, <a href="#AudioExpression">Audio expression</a>, <a href="#AudioItem">Audio item</a>, <a href="#AudioManifestation">Audio manifestation</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#Recording">Recording</a>, <a href="#AudioPublication">Audio publication</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>, <a href="#AudioClip">Audio clip</a>, <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionNode">Node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>, <a href="#SignalProduction">Signal production</a>, <a href="#Syntesis">Syntesis</a>.
+      <a href="#AudioManifestation">Audio manifestation</a>, <a href="#AudioCollectionNode">Node</a>, <a href="#AnalogSignal">Analog signal</a>, <a href="#AudioFile">Audio file</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="#AudioCategory">Audio category</a>, <a href="#AudioExpression">Audio expression</a>, <a href="#AudioItem">Audio item</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#Recording">Recording</a>, <a href="#AudioPublication">Audio publication</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>, <a href="#AudioClip">Audio clip</a>, <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>, <a href="#SignalProduction">Signal production</a>, <a href="#Syntesis">Syntesis</a>.
     <!-- </p> -->
   
           </p>
@@ -77,6 +77,72 @@
           </p>
 
           <h2 id="classList">Classes</h2>
+          
+            <div id="AudioManifestation" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Audio manifestation</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioManifestation</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="http://purl.org/vocab/frbr/core#Manifestation">frbr:Manifestation</a>, <a href="http://web.resource.org/cc/Work">cc:Work</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#AudioClip">Audio clip</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#availableAs">available as</a>, <a href="#publicationOf">publication of</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
+          
+            <div id="AudioCollectionNode" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Node</h5>
+                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNode</code></h6>
+                <p class="card-text">
+                
+                
+    <!-- <p class="card-text"> -->
+      <strong>Super-Classes</strong>:
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="#">_:b4</a>, <a href="#">_:b5</a>, <a href="#">_:b6</a>, <a href="#">_:b7</a>, <a href="#">_:b8</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Sub-Classes</strong>:
+      <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Domain of</strong>:
+      <a href="#nodeContent">node content</a>, <a href="#nodeIndex">node index</a>.
+    <!-- </p> -->
+  
+                
+    <!-- <p class="card-text"> -->
+      <strong>Range of</strong>:
+      <a href="#memberNode">member node</a>.
+    <!-- </p> -->
+  
+              </div>
+            </div>
           
             <div id="AnalogSignal" class="card">
               <div class="card-body">
@@ -241,39 +307,6 @@
     <!-- <p class="card-text"> -->
       <strong>Range of</strong>:
       <a href="#availableAs">available as</a>.
-    <!-- </p> -->
-  
-              </div>
-            </div>
-          
-            <div id="AudioManifestation" class="card">
-              <div class="card-body">
-                <h5 class="card-title">Audio manifestation</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioManifestation</code></h6>
-                <p class="card-text">
-                
-                
-    <!-- <p class="card-text"> -->
-      <strong>Super-Classes</strong>:
-      <a href="http://purl.org/vocab/frbr/core#Manifestation">frbr:Manifestation</a>, <a href="http://web.resource.org/cc/Work">cc:Work</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#AudioClip">Audio clip</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Domain of</strong>:
-      <a href="#availableAs">available as</a>, <a href="#publicationOf">publication of</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Range of</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>.
     <!-- </p> -->
   
               </div>
@@ -460,39 +493,6 @@
     <!-- <p class="card-text"> -->
       <strong>Range of</strong>:
       <a href="#firstNode">first node</a>.
-    <!-- </p> -->
-  
-              </div>
-            </div>
-          
-            <div id="AudioCollectionNode" class="card">
-              <div class="card-body">
-                <h5 class="card-title">Node</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code>ac:AudioCollectionNode</code></h6>
-                <p class="card-text">
-                
-                
-    <!-- <p class="card-text"> -->
-      <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="#">_:b4</a>, <a href="#">_:b5</a>, <a href="#">_:b6</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Sub-Classes</strong>:
-      <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Domain of</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#nodeIndex">node index</a>.
-    <!-- </p> -->
-  
-                
-    <!-- <p class="card-text"> -->
-      <strong>Range of</strong>:
-      <a href="#memberNode">member node</a>.
     <!-- </p> -->
   
               </div>

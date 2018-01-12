@@ -166,7 +166,21 @@
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onClass rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                <owl:allValuesFrom rdf:resource="#AudioCollectionNode"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+            </rdf:Description>
+        </rd:subClassOf>
+        <rd:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:allValuesFrom rdf:resource="#AudioManifestation"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+            </rdf:Description>
+        </rd:subClassOf>
+        <rd:subClassOf rdf:parseType="Resource">
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onClass rdf:resource="#AudioCollectionNode"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>
@@ -174,6 +188,7 @@
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onClass rdf:resource="#AudioManifestation"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>
@@ -181,6 +196,7 @@
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onClass rdf:resource="#AudioManifestation"/>
                 <owl:onProperty rdf:resource="#nodeContent"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>

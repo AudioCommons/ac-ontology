@@ -36,13 +36,21 @@ defines:
       - id: rdf:List
       - type: owl:Restriction
         onProperty: rdf:first
+        allValuesFrom: ac:AudioManifestation
+      - type: owl:Restriction
+        onProperty: rdf:first
+        onClass: ac:AudioManifestation
         qualifiedCardinality: 1
       - type: owl:Restriction
         onProperty: ac:nodeContent
+        onClass: ac:AudioManifestation
         qualifiedCardinality: 1
       - type: owl:Restriction
         onProperty: rdf:rest
-        onClass: rdf:List
+        allValuesFrom: ac:AudioCollectionNode
+      - type: owl:Restriction
+        onProperty: rdf:rest
+        onClass: ac:AudioCollectionNode
         qualifiedCardinality: 1
     disjointUnionOf:
       - '@list':

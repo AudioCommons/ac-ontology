@@ -33,6 +33,7 @@ onClass: {'@id': owl:onClass, '@type': '@id'}
 qualifiedCardinality: {'@id': owl:qualifiedCardinality, '@type': 'xsd:nonNegativeInteger'}
 hasValue: {'@id': owl:hasValue}
 someValuesFromValue: {'@id': owl:someValuesFromValue, '@type': '@id'}
+allValuesFrom: {'@id': owl:allValuesFrom, '@type': '@id'}
 
 unionOf: {'@id': owl:unionOf, '@type': '@id'}
 disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
