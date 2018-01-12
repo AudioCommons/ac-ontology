@@ -6,99 +6,99 @@
  xmlns:owl="http://www.w3.org/2002/07/owl#"
  xmlns:n0="http://xmlns.com/foaf/0.1/">
     <rdf:Description rdf:about="http://purl.org/ontology/mo/AnalogSignal">
-       <rd:subClassOf rdf:resource="#AnalogSignal"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AnalogSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/AudioFile">
-       <rd:subClassOf rdf:resource="#AudioFile"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioFile"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/available_as">
-       <rd:subPropertyOf rdf:resource="#availableAs"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#availableAs"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/bitsPerSample">
-       <rd:subPropertyOf rdf:resource="#bitsPerSample"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#bitsPerSample"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/channels">
-       <rd:subPropertyOf rdf:resource="#channels"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#channels"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/compiled">
-       <rd:subPropertyOf rdf:resource="#compiled"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#compiled"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/DigitalSignal">
-       <rd:subClassOf rdf:resource="#DigitalSignal"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/duration">
-       <rd:subPropertyOf rdf:resource="#duration"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#duration"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/encodes">
-       <rd:subPropertyOf rdf:resource="#encodes"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#encodes"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/genre">
-       <rd:subPropertyOf rdf:resource="#audioCategory"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Genre">
-       <rd:subClassOf rdf:resource="#AudioCategory"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/homepage">
-       <rd:subPropertyOf rdf:resource="#homepage"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#homepage"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/image">
-       <rd:subPropertyOf rdf:resource="#image"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#image"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/instrument">
-       <rd:subPropertyOf rdf:resource="#audioCategory"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Instrument">
-       <rd:subClassOf rdf:resource="#AudioCategory"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalExpression">
-       <rd:subClassOf rdf:resource="#AudioExpression"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalItem">
-       <rd:subClassOf rdf:resource="#AudioItem"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioItem"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/MusicalManifestation">
-       <rd:subClassOf rdf:resource="#AudioManifestation"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/produced_signal">
-       <rd:subPropertyOf rdf:resource="#producedSignal"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#producedSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/publication_of">
-       <rd:subPropertyOf rdf:resource="#publicationOf"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#publicationOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/published">
-       <rd:subPropertyOf rdf:resource="#published"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#published"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Record">
-       <rd:subClassOf rdf:resource="#AudioCollection"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollection"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Recording">
-       <rd:subClassOf rdf:resource="#Recording"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#Recording"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/recording_of">
-       <rd:subPropertyOf rdf:resource="#recordingOf"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#recordingOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/release">
-       <rd:subPropertyOf rdf:resource="#publishedAudioManifestation"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#publishedAudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Release">
-       <rd:subClassOf rdf:resource="#AudioCollection"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollection"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/ReleaseEvent">
-       <rd:subClassOf rdf:resource="#AudioPublication"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioPublication"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/sample_rate">
-       <rd:subPropertyOf rdf:resource="#sampleRate"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#sampleRate"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Signal">
-       <rd:subClassOf rdf:resource="#Signal"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#Signal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Sound">
-       <rd:subClassOf rdf:resource="#Sound"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#Sound"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Track">
-       <rd:subClassOf rdf:resource="#AudioClip"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioClip"/>
     </rdf:Description>
-    <rdf:Description rdf:about="">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology">
         <terms:created>2017/07/27 11:09:00</terms:created>
         <terms:date>2017/07/27 11:09:00</terms:date>
         <terms:description>The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.
@@ -115,72 +115,72 @@
            <rdf:Description><n0:name>Miguel Ceriani</n0:name></rdf:Description>
         </n0:maker>
     </rdf:Description>
-    <rdf:Description rdf:about="#AnalogSignal">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AnalogSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Analog signal</rd:label>
-        <rd:subClassOf rdf:resource="#Signal"/>
-        <owl:disjointWith rdf:resource="#DigitalSignal"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#Signal"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#audioCategory">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#audioCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>is in audio category</rd:label>
-        <rd:range rdf:resource="#AudioCategory"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCategory"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCategory">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio category</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Concept"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioClip">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioClip">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio clip</rd:label>
-        <rd:subClassOf rdf:resource="#AudioManifestation"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollection">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio collection</rd:label>
-        <rd:subClassOf rdf:resource="#AudioManifestation"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollectionFirstNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionFirstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>First node</rd:label>
-        <rd:subClassOf rdf:resource="#AudioCollectionNode"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollectionLastNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionLastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Last node</rd:label>
-        <rd:subClassOf rdf:resource="#AudioCollectionNode"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollectionNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Node</rd:label>
         <rd:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:allValuesFrom rdf:resource="#AudioCollectionNode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
             </rdf:Description>
         </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:allValuesFrom rdf:resource="#AudioManifestation"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
             </rdf:Description>
         </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onClass rdf:resource="#AudioCollectionNode"/>
+                <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>
@@ -188,7 +188,7 @@
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onClass rdf:resource="#AudioManifestation"/>
+                <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>
@@ -196,17 +196,17 @@
         <rd:subClassOf rdf:parseType="Resource">
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-                <owl:onClass rdf:resource="#AudioManifestation"/>
-                <owl:onProperty rdf:resource="#nodeContent"/>
+                <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
+                <owl:onProperty rdf:resource="https://w3id.org/audiocommons/ontology#nodeContent"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </rdf:Description>
         </rd:subClassOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
             <rdf:Description>
-                <rdf:first rdf:resource="#AudioCollectionFirstNode"/>
+                <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionFirstNode"/>
                 <rdf:rest rdf:parseType="Resource">
                     <rdf:Description>
-                        <rdf:first rdf:resource="#AudioCollectionNonFirstNode"/>
+                        <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     </rdf:Description>
                 </rdf:rest>
@@ -214,98 +214,98 @@
         </owl:disjointUnionOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
             <rdf:Description>
-                <rdf:first rdf:resource="#AudioCollectionLastNode"/>
+                <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionLastNode"/>
                 <rdf:rest rdf:parseType="Resource">
                     <rdf:Description>
-                        <rdf:first rdf:resource="#AudioCollectionNonLastNode"/>
+                        <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     </rdf:Description>
                 </rdf:rest>
             </rdf:Description>
         </owl:disjointUnionOf>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollectionNonFirstNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Any node but the first</rd:label>
-        <rd:subClassOf rdf:resource="#AudioCollectionNode"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioCollectionNonLastNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Any node but the last</rd:label>
-        <rd:subClassOf rdf:resource="#AudioCollectionNode"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioExpression">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioExpression">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio expression</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioFile">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioFile">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio file</rd:label>
         <rd:subClassOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource"/>
-        <rd:subClassOf rdf:resource="#AudioItem"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioItem"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioItem">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioItem">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio item</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioManifestation">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio manifestation</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
         <rd:subClassOf rdf:resource="http://web.resource.org/cc/Work"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#AudioPublication">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AudioPublication">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Audio publication</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#availableAs">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioManifestation"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>available as</rd:label>
-        <rd:range rdf:resource="#AudioItem"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioItem"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#bitsPerSample">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#bitsPerSample">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:domain rdf:resource="#DigitalSignal"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>bits per sample</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#channels">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#channels">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:domain rdf:resource="#DigitalSignal"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>channels</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#compiled">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#compiled">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>compiled</rd:label>
-        <rd:range rdf:resource="#AudioManifestation"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#DigitalSignal">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#DigitalSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Digital signal</rd:label>
-        <rd:subClassOf rdf:resource="#Signal"/>
-        <owl:disjointWith rdf:resource="#AnalogSignal"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#Signal"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/audiocommons/ontology#AnalogSignal"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#duration">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#duration">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rd:domain rdf:parseType="Resource">
@@ -315,169 +315,169 @@
                     </owl:unionOf>
             </rdf:Description>
         </rd:domain>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>duration</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#encodes">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#encodes">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioItem"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>encodes</rd:label>
-        <rd:range rdf:resource="#DigitalSignal"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#firstNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#firstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollection"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollection"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>first node</rd:label>
-        <rd:range rdf:resource="#AudioCollectionFirstNode"/>
-        <rd:subPropertyOf rdf:resource="#memberNode"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionFirstNode"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#memberNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#homepage">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#homepage">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>homepage</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
         <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#image">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#image">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>image</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
         <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#lastNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#lastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollection"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollection"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>last node</rd:label>
-        <rd:range rdf:resource="#AudioCollectionLastNode"/>
-        <rd:subPropertyOf rdf:resource="#memberNode"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionLastNode"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#memberNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#memberNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#memberNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollection"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollection"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>member node</rd:label>
-        <rd:range rdf:resource="#AudioCollectionNode"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#nextNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#nextNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollectionNonLastNode"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>next node</rd:label>
-        <rd:range rdf:resource="#AudioCollectionNonFirstNode"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode"/>
         <rd:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#nodeContent">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#nodeContent">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollectionNode"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>node content</rd:label>
-        <rd:range rdf:resource="#AudioManifestation"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
         <rd:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#nodeIndex">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#nodeIndex">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:domain rdf:resource="#AudioCollectionNode"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>node index</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#previousNode">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#previousNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioCollectionNonFirstNode"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>previous node</rd:label>
-        <rd:range rdf:resource="#AudioCollectionNonLastNode"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#producedSignal">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#producedSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#SignalProduction"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#SignalProduction"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>produced signal</rd:label>
-        <rd:range rdf:resource="#Signal"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#Signal"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#productionFrom">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#productionFrom">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#SignalProduction"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#SignalProduction"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>production from</rd:label>
-        <rd:range rdf:resource="#Sound"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#Sound"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#publicationOf">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#publicationOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioManifestation"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>publication of</rd:label>
-        <rd:range rdf:resource="#AudioExpression"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioExpression"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#published">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#published">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>published</rd:label>
-        <rd:range rdf:resource="#AudioManifestation"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#publishedAudioManifestation">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#publishedAudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#AudioPublication"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#AudioPublication"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>published audio manifestation</rd:label>
-        <rd:range rdf:resource="#AudioManifestation"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#Recording">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#Recording">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Recording</rd:label>
-        <rd:subClassOf rdf:resource="#SignalProduction"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#SignalProduction"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#recordingOf">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#recordingOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:domain rdf:resource="#Recording"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#Recording"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>recording of</rd:label>
-        <rd:range rdf:resource="#Sound"/>
-        <rd:subPropertyOf rdf:resource="#productionFrom"/>
+        <rd:range rdf:resource="https://w3id.org/audiocommons/ontology#Sound"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/audiocommons/ontology#productionFrom"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#sampleRate">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#sampleRate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:domain rdf:resource="#DigitalSignal"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:domain rdf:resource="https://w3id.org/audiocommons/ontology#DigitalSignal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>sample rate</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#Signal">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#Signal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Signal</rd:label>
-        <rd:subClassOf rdf:resource="#AudioExpression"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioExpression"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#SignalProduction">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#SignalProduction">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Signal production</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#Sound">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#Sound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Physical sound</rd:label>
-        <rd:subClassOf rdf:resource="#AudioExpression"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#AudioExpression"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#Syntesis">
+    <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#Syntesis">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rd:isDefinedBy rdf:resource=""/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>Syntesis</rd:label>
-        <rd:subClassOf rdf:resource="#SignalProduction"/>
+        <rd:subClassOf rdf:resource="https://w3id.org/audiocommons/ontology#SignalProduction"/>
     </rdf:Description>
 </rdf:RDF>
