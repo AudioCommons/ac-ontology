@@ -26,11 +26,11 @@
          "@type": "@id"
       },
       "subPropertyOf": {
-         "@id": "owl:subPropertyOf",
+         "@id": "rdfs:subPropertyOf",
          "@type": "@id"
       },
       "superPropertyOf": {
-         "@reverse": "owl:subPropertyOf",
+         "@reverse": "rdfs:subPropertyOf",
          "@type": "@id"
       },
       "domain": {
@@ -107,35 +107,35 @@
    "@graph": [
       {
          "id": "_:b0xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b0xb1"
+      },
+      {
+         "id": "_:b0xb2",
+         "name": "Miguel Ceriani"
+      },
+      {
+         "id": "_:b0xb3",
+         "name": "George Fazekas"
+      },
+      {
+         "id": "_:b1xb0",
          "type": "owl:Restriction",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb1",
+         "id": "_:b1xb1",
          "type": "owl:Restriction",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb2",
+         "id": "_:b1xb2",
          "type": "owl:Restriction",
          "onClass": "rdf:List",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:b1xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b1xb1"
-      },
-      {
-         "id": "_:b1xb2",
-         "name": "Miguel Ceriani"
-      },
-      {
-         "id": "_:b1xb3",
-         "name": "George Fazekas"
       },
       {
          "id": "mo:AnalogSignal",
@@ -273,10 +273,10 @@
          "versionInfo": "Revision: 0.0.0",
          "maker": [
             {
-               "id": "_:b1xb2"
+               "id": "_:b0xb2"
             },
             {
-               "id": "_:b1xb3"
+               "id": "_:b0xb3"
             }
          ]
       },
@@ -287,6 +287,7 @@
             "id": "ontology"
          },
          "label": "Analog signal",
+         "subClassOf": "#Signal",
          "disjointWith": "#DigitalSignal"
       },
       {
@@ -343,9 +344,9 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b0xb0",
-            "_:b0xb1",
-            "_:b0xb2"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2"
          ],
          "disjointUnionOf": [
             {
@@ -547,7 +548,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "domain": "_:b1xb0",
+         "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "ontology"
          },

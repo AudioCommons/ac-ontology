@@ -2,8 +2,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix mo: <http://purl.org/ontology/mo/>.
 @prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix n0: <./>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix terms: <http://purl.org/dc/terms/>.
 @prefix v: <http://purl.org/vocab/vann/>.
 @prefix n1: <http://xmlns.com/foaf/0.1/>.
@@ -17,29 +17,29 @@ mo:AnalogSignal rd:subClassOf :AnalogSignal.
 
 mo:AudioFile rd:subClassOf :AudioFile.
 
-mo:available_as owl:subPropertyOf :availableAs.
+mo:available_as rd:subPropertyOf :availableAs.
 
-mo:bitsPerSample owl:subPropertyOf :bitsPerSample.
+mo:bitsPerSample rd:subPropertyOf :bitsPerSample.
 
-mo:channels owl:subPropertyOf :channels.
+mo:channels rd:subPropertyOf :channels.
 
-mo:compiled owl:subPropertyOf :compiled.
+mo:compiled rd:subPropertyOf :compiled.
 
 mo:DigitalSignal rd:subClassOf :DigitalSignal.
 
-mo:duration owl:subPropertyOf :duration.
+mo:duration rd:subPropertyOf :duration.
 
-mo:encodes owl:subPropertyOf :encodes.
+mo:encodes rd:subPropertyOf :encodes.
 
-mo:genre owl:subPropertyOf :audioCategory.
+mo:genre rd:subPropertyOf :audioCategory.
 
 mo:Genre rd:subClassOf :AudioCategory.
 
-mo:homepage owl:subPropertyOf :homepage.
+mo:homepage rd:subPropertyOf :homepage.
 
-mo:image owl:subPropertyOf :image.
+mo:image rd:subPropertyOf :image.
 
-mo:instrument owl:subPropertyOf :audioCategory.
+mo:instrument rd:subPropertyOf :audioCategory.
 
 mo:Instrument rd:subClassOf :AudioCategory.
 
@@ -49,25 +49,25 @@ mo:MusicalItem rd:subClassOf :AudioItem.
 
 mo:MusicalManifestation rd:subClassOf :AudioManifestation.
 
-mo:produced_signal owl:subPropertyOf :producedSignal.
+mo:produced_signal rd:subPropertyOf :producedSignal.
 
-mo:publication_of owl:subPropertyOf :publicationOf.
+mo:publication_of rd:subPropertyOf :publicationOf.
 
-mo:published owl:subPropertyOf :published.
+mo:published rd:subPropertyOf :published.
 
 mo:Record rd:subClassOf :AudioCollection.
 
 mo:Recording rd:subClassOf :Recording.
 
-mo:recording_of owl:subPropertyOf :recordingOf.
+mo:recording_of rd:subPropertyOf :recordingOf.
 
-mo:release owl:subPropertyOf :publishedAudioManifestation.
+mo:release rd:subPropertyOf :publishedAudioManifestation.
 
 mo:Release rd:subClassOf :AudioCollection.
 
 mo:ReleaseEvent rd:subClassOf :AudioPublication.
 
-mo:sample_rate owl:subPropertyOf :sampleRate.
+mo:sample_rate rd:subPropertyOf :sampleRate.
 
 mo:Signal rd:subClassOf :Signal.
 
@@ -91,6 +91,7 @@ n0:ontology
     a owl:Class;
     rd:isDefinedBy n0:ontology;
     rd:label "Analog signal";
+    rd:subClassOf :Signal;
     owl:disjointWith :DigitalSignal.
 :audioCategory
     a owl:ObjectProperty;
@@ -238,26 +239,26 @@ n0:ontology
     rd:isDefinedBy n0:ontology;
     rd:label "first node";
     rd:range :AudioCollectionFirstNode;
-    owl:subPropertyOf :memberNode.
+    rd:subPropertyOf :memberNode.
 :homepage
     a owl:ObjectProperty;
     rd:isDefinedBy n0:ontology;
     rd:label "homepage";
     rd:range n1:Document;
-    owl:subPropertyOf n1:isPrimaryTopicOf.
+    rd:subPropertyOf n1:isPrimaryTopicOf.
 :image
     a owl:ObjectProperty;
     rd:isDefinedBy n0:ontology;
     rd:label "image";
     rd:range n1:Image;
-    owl:subPropertyOf n1:depiction.
+    rd:subPropertyOf n1:depiction.
 :lastNode
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:domain :AudioCollection;
     rd:isDefinedBy n0:ontology;
     rd:label "last node";
     rd:range :AudioCollectionLastNode;
-    owl:subPropertyOf :memberNode.
+    rd:subPropertyOf :memberNode.
 :memberNode
     a owl:ObjectProperty;
     rd:domain :AudioCollection;
@@ -270,14 +271,14 @@ n0:ontology
     rd:isDefinedBy n0:ontology;
     rd:label "next node";
     rd:range :AudioCollectionNonFirstNode;
-    owl:subPropertyOf rdf:rest.
+    rd:subPropertyOf rdf:rest.
 :nodeContent
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:domain :AudioCollectionNode;
     rd:isDefinedBy n0:ontology;
     rd:label "node content";
     rd:range :AudioManifestation;
-    owl:subPropertyOf rdf:first.
+    rd:subPropertyOf rdf:first.
 :nodeIndex
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:domain :AudioCollectionNode;
@@ -331,7 +332,7 @@ n0:ontology
     rd:isDefinedBy n0:ontology;
     rd:label "recording of";
     rd:range :Sound;
-    owl:subPropertyOf :productionFrom.
+    rd:subPropertyOf :productionFrom.
 :sampleRate
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:domain :DigitalSignal;

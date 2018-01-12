@@ -25,7 +25,7 @@ defines:
   - id: ac:Signal
     label: Signal
     type: owl:Class
-    superClassOf: [ac:DigitalSignal, mo:Signal]
+    superClassOf: [ac:DigitalSignal, ac:AnalogSignal, mo:Signal]
 
   - id: ac:DigitalSignal
     label: Digital signal

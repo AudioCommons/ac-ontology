@@ -1,9 +1,9 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  xmlns:rd="http://www.w3.org/2000/01/rdf-schema#"
- xmlns:owl="http://www.w3.org/2002/07/owl#"
  xmlns:terms="http://purl.org/dc/terms/"
  xmlns:v="http://purl.org/vocab/vann/"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
  xmlns:n0="http://xmlns.com/foaf/0.1/">
     <rdf:Description rdf:about="http://purl.org/ontology/mo/AnalogSignal">
        <rd:subClassOf rdf:resource="#AnalogSignal"/>
@@ -12,40 +12,40 @@
        <rd:subClassOf rdf:resource="#AudioFile"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/available_as">
-       <owl:subPropertyOf rdf:resource="#availableAs"/>
+       <rd:subPropertyOf rdf:resource="#availableAs"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/bitsPerSample">
-       <owl:subPropertyOf rdf:resource="#bitsPerSample"/>
+       <rd:subPropertyOf rdf:resource="#bitsPerSample"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/channels">
-       <owl:subPropertyOf rdf:resource="#channels"/>
+       <rd:subPropertyOf rdf:resource="#channels"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/compiled">
-       <owl:subPropertyOf rdf:resource="#compiled"/>
+       <rd:subPropertyOf rdf:resource="#compiled"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/DigitalSignal">
        <rd:subClassOf rdf:resource="#DigitalSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/duration">
-       <owl:subPropertyOf rdf:resource="#duration"/>
+       <rd:subPropertyOf rdf:resource="#duration"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/encodes">
-       <owl:subPropertyOf rdf:resource="#encodes"/>
+       <rd:subPropertyOf rdf:resource="#encodes"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/genre">
-       <owl:subPropertyOf rdf:resource="#audioCategory"/>
+       <rd:subPropertyOf rdf:resource="#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Genre">
        <rd:subClassOf rdf:resource="#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/homepage">
-       <owl:subPropertyOf rdf:resource="#homepage"/>
+       <rd:subPropertyOf rdf:resource="#homepage"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/image">
-       <owl:subPropertyOf rdf:resource="#image"/>
+       <rd:subPropertyOf rdf:resource="#image"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/instrument">
-       <owl:subPropertyOf rdf:resource="#audioCategory"/>
+       <rd:subPropertyOf rdf:resource="#audioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Instrument">
        <rd:subClassOf rdf:resource="#AudioCategory"/>
@@ -60,13 +60,13 @@
        <rd:subClassOf rdf:resource="#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/produced_signal">
-       <owl:subPropertyOf rdf:resource="#producedSignal"/>
+       <rd:subPropertyOf rdf:resource="#producedSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/publication_of">
-       <owl:subPropertyOf rdf:resource="#publicationOf"/>
+       <rd:subPropertyOf rdf:resource="#publicationOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/published">
-       <owl:subPropertyOf rdf:resource="#published"/>
+       <rd:subPropertyOf rdf:resource="#published"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Record">
        <rd:subClassOf rdf:resource="#AudioCollection"/>
@@ -75,10 +75,10 @@
        <rd:subClassOf rdf:resource="#Recording"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/recording_of">
-       <owl:subPropertyOf rdf:resource="#recordingOf"/>
+       <rd:subPropertyOf rdf:resource="#recordingOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/release">
-       <owl:subPropertyOf rdf:resource="#publishedAudioManifestation"/>
+       <rd:subPropertyOf rdf:resource="#publishedAudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Release">
        <rd:subClassOf rdf:resource="#AudioCollection"/>
@@ -87,7 +87,7 @@
        <rd:subClassOf rdf:resource="#AudioPublication"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/sample_rate">
-       <owl:subPropertyOf rdf:resource="#sampleRate"/>
+       <rd:subPropertyOf rdf:resource="#sampleRate"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Signal">
        <rd:subClassOf rdf:resource="#Signal"/>
@@ -119,6 +119,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>Analog signal</rd:label>
+        <rd:subClassOf rdf:resource="#Signal"/>
         <owl:disjointWith rdf:resource="#DigitalSignal"/>
     </rdf:Description>
     <rdf:Description rdf:about="#audioCategory">
@@ -316,21 +317,21 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>first node</rd:label>
         <rd:range rdf:resource="#AudioCollectionFirstNode"/>
-        <owl:subPropertyOf rdf:resource="#memberNode"/>
+        <rd:subPropertyOf rdf:resource="#memberNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="#homepage">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>homepage</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-        <owl:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+        <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="#image">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>image</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
-        <owl:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
+        <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
     </rdf:Description>
     <rdf:Description rdf:about="#lastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -339,7 +340,7 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>last node</rd:label>
         <rd:range rdf:resource="#AudioCollectionLastNode"/>
-        <owl:subPropertyOf rdf:resource="#memberNode"/>
+        <rd:subPropertyOf rdf:resource="#memberNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="#memberNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -355,7 +356,7 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>next node</rd:label>
         <rd:range rdf:resource="#AudioCollectionNonFirstNode"/>
-        <owl:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <rd:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
     </rdf:Description>
     <rdf:Description rdf:about="#nodeContent">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -364,7 +365,7 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>node content</rd:label>
         <rd:range rdf:resource="#AudioManifestation"/>
-        <owl:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <rd:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
     </rdf:Description>
     <rdf:Description rdf:about="#nodeIndex">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -429,7 +430,7 @@
         <rd:isDefinedBy rdf:resource=""/>
         <rd:label>recording of</rd:label>
         <rd:range rdf:resource="#Sound"/>
-        <owl:subPropertyOf rdf:resource="#productionFrom"/>
+        <rd:subPropertyOf rdf:resource="#productionFrom"/>
     </rdf:Description>
     <rdf:Description rdf:about="#sampleRate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>

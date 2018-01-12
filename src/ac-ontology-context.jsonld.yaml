@@ -21,8 +21,8 @@ id: '@id'
 type: '@type'
 subClassOf: {'@id': rdfs:subClassOf, '@type': '@id'}
 superClassOf: {'@reverse': rdfs:subClassOf, '@type': '@id' }
-subPropertyOf: {'@id': owl:subPropertyOf, '@type': '@id'}
-superPropertyOf: {'@reverse': owl:subPropertyOf, '@type': '@id'}
+subPropertyOf: {'@id': rdfs:subPropertyOf, '@type': '@id'}
+superPropertyOf: {'@reverse': rdfs:subPropertyOf, '@type': '@id'}
 domain: {'@id': rdfs:domain, '@type': '@id'}
 domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
 range: {'@id': rdfs:range, '@type': '@id'}
