@@ -108,12 +108,8 @@
         <v:preferredNamespaceUri>https://w3id.org/audiocommons/ontology#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
         <owl:versionInfo>Revision: 0.0.0</owl:versionInfo>
-        <n0:maker rdf:parseType="Resource">
-           <rdf:Description><n0:name>George Fazekas</n0:name></rdf:Description>
-        </n0:maker>
-        <n0:maker rdf:parseType="Resource">
-           <rdf:Description><n0:name>Miguel Ceriani</n0:name></rdf:Description>
-        </n0:maker>
+        <n0:maker rdf:parseType="Resource"><n0:name>George Fazekas</n0:name></n0:maker>
+        <n0:maker rdf:parseType="Resource"><n0:name>Miguel Ceriani</n0:name></n0:maker>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/audiocommons/ontology#AnalogSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -164,63 +160,49 @@
         <rd:label>Node</rd:label>
         <rd:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
         <rd:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-            </rdf:Description>
-        </rd:subClassOf>
+            </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-            </rdf:Description>
-        </rd:subClassOf>
+            </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
                 <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNode"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </rd:subClassOf>
+            </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
                 <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
                 <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </rd:subClassOf>
+            </rd:subClassOf>
         <rd:subClassOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
                 <owl:onClass rdf:resource="https://w3id.org/audiocommons/ontology#AudioManifestation"/>
                 <owl:onProperty rdf:resource="https://w3id.org/audiocommons/ontology#nodeContent"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </rdf:Description>
-        </rd:subClassOf>
+            </rd:subClassOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionFirstNode"/>
                 <rdf:rest rdf:parseType="Resource">
                     <rdf:Description>
                         <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonFirstNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
+                    </rdf:rest>
             </rdf:Description>
         </owl:disjointUnionOf>
         <owl:disjointUnionOf rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionLastNode"/>
                 <rdf:rest rdf:parseType="Resource">
                     <rdf:Description>
                         <rdf:first rdf:resource="https://w3id.org/audiocommons/ontology#AudioCollectionNonLastNode"/>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
+                    </rdf:rest>
             </rdf:Description>
         </owl:disjointUnionOf>
     </rdf:Description>
@@ -309,12 +291,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rd:domain rdf:parseType="Resource">
-            <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
                 <owl:unionOf rdf:parseType="Resource">
                     </owl:unionOf>
-            </rdf:Description>
-        </rd:domain>
+            </rd:domain>
         <rd:isDefinedBy rdf:resource="https://w3id.org/audiocommons/ontology"/>
         <rd:label>duration</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
