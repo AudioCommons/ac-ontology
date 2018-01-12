@@ -1,1 +1,1 @@
-exclude: package.json, package-lock.json, lib, README.md
+exclude: package.json, package-lock.json, README.md, bin, lib, routes, src, static
