@@ -26,9 +26,9 @@ const prefixedFromId = (resourceId) => {
     return resourceId;
   } else {
     const fullIri = context['@base'] + resourceId; // very simplistic resolution
-    if (fullIri.startsWith(ontology.preferredNamespaceUri)) {
-      const localPart = fullIri.substr(ontology.preferredNamespaceUri.length);
-      return ontology.preferredNamespacePrefix + ':' + localPart;
+    if (fullIri.startsWith(aco.preferredNamespaceUri)) {
+      const localPart = fullIri.substr(aco.preferredNamespaceUri.length);
+      return aco.preferredNamespacePrefix + ':' + localPart;
     } else {
       return fullIri;
     }
@@ -47,7 +47,7 @@ const localList = (listLabel, resources) => {
 %>
 <html lang="en">
   <head>
-    <title><%= ontology.title %></title>
+    <title><%= aco.title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -62,7 +62,7 @@ const localList = (listLabel, resources) => {
     <div class="container">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><%= ontology.title %></a>
+        <a class="navbar-brand" href="#"><%= aco.title %></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -89,23 +89,23 @@ const localList = (listLabel, resources) => {
       <div class="row">
         <div class="col">
 
-          <h1 id="top"><%= ontology.title %></h1>
-          <!-- <p class="lead"><%= ontology.descr %></p> -->
+          <h1 id="top"><%= aco.title %></h1>
+          <!-- <p class="lead"><%= aco.descr %></p> -->
           <h2>Description</h2>
-          <p><%= ontology.descr %></p>
+          <p><%= aco.descr %></p>
 
           <p>
-            <% localList('Classes', filterByType(ontology.defines, 'owl:Class')); %>
+            <% localList('Classes', filterByType(aco.defines, 'owl:Class')); %>
           </p>
           <p>
-            <% localList('Object Properties', filterByType(ontology.defines, 'owl:ObjectProperty')); %>
+            <% localList('Object Properties', filterByType(aco.defines, 'owl:ObjectProperty')); %>
           </p>
           <p>
-            <% localList('Datatype Properties', filterByType(ontology.defines, 'owl:DatatypeProperty')); %>
+            <% localList('Datatype Properties', filterByType(aco.defines, 'owl:DatatypeProperty')); %>
           </p>
 
           <h2 id="classList">Classes</h2>
-          <% _.forIn(filterByType(ontology.defines, 'owl:Class'), (clazz) => { %>
+          <% _.forIn(filterByType(aco.defines, 'owl:Class'), (clazz) => { %>
             <div id="<%= htmlId(clazz.id) %>" class="card">
               <div class="card-body">
                 <h5 class="card-title"><%= label(clazz) %></h5>
@@ -124,7 +124,7 @@ const localList = (listLabel, resources) => {
 
 
           <h2 id="objPropList">Object properties</h2>
-          <% _.forIn(filterByType(ontology.defines, 'owl:ObjectProperty'), (prop) => { %>
+          <% _.forIn(filterByType(aco.defines, 'owl:ObjectProperty'), (prop) => { %>
             <div id="<%= htmlId(prop.id) %>" class="card">
               <div class="card-body">
                 <h5 class="card-title"><%= label(prop) %></h5>
@@ -142,7 +142,7 @@ const localList = (listLabel, resources) => {
           <% }); %>
 
           <h2 id="dtPropList">Datatype properties</h2>
-          <% _.forIn(filterByType(ontology.defines, 'owl:DatatypeProperty'), (prop) => { %>
+          <% _.forIn(filterByType(aco.defines, 'owl:DatatypeProperty'), (prop) => { %>
             <div id="<%= htmlId(prop.id) %>" class="card">
               <div class="card-body">
                 <h5 class="card-title"><%= label(prop) %></h5>

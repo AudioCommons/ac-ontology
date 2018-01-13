@@ -1,6 +1,6 @@
 {
    "@context": {
-      "@base": "https://w3id.org/audiocommons/ontology",
+      "@base": "https://w3id.org/ac-ontology/aco",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "owl": "http://www.w3.org/2002/07/owl#",
@@ -123,33 +123,33 @@
          "name": "George Fazekas"
       },
       {
-         "id": "_:b1xb0",
+         "id": "_:b2xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b1xb1",
+         "id": "_:b2xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb2",
+         "id": "_:b2xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb3",
+         "id": "_:b2xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b1xb4",
+         "id": "_:b2xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
@@ -280,14 +280,14 @@
          "subPropertyOf": "#sampleRate"
       },
       {
-         "id": "ontology",
+         "id": "aco",
          "type": "owl:Ontology",
          "created": "2017/07/27 11:09:00",
          "date": "2017/07/27 11:09:00",
          "descr": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n",
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
-         "preferredNamespaceUri": "https://w3id.org/audiocommons/ontology#",
+         "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
          "versionInfo": "Revision: 0.0.0",
          "maker": [
             {
@@ -302,7 +302,7 @@
          "id": "#AnalogSignal",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Analog signal",
          "subClassOf": "#Signal",
@@ -312,7 +312,7 @@
          "id": "#AudioCategory",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio category",
          "subClassOf": "frbr:Concept"
@@ -321,7 +321,7 @@
          "id": "#AudioClip",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio clip",
          "subClassOf": "#AudioManifestation"
@@ -330,7 +330,7 @@
          "id": "#AudioCollection",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio collection",
          "subClassOf": "#AudioManifestation"
@@ -339,7 +339,7 @@
          "id": "#AudioCollectionFirstNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "First node",
          "subClassOf": "#AudioCollectionNode"
@@ -348,7 +348,7 @@
          "id": "#AudioCollectionLastNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Last node",
          "subClassOf": "#AudioCollectionNode"
@@ -357,16 +357,16 @@
          "id": "#AudioCollectionNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b1xb0",
-            "_:b1xb1",
-            "_:b1xb2",
-            "_:b1xb3",
-            "_:b1xb4"
+            "_:b2xb0",
+            "_:b2xb1",
+            "_:b2xb2",
+            "_:b2xb3",
+            "_:b2xb4"
          ],
          "disjointUnionOf": [
             {
@@ -387,7 +387,7 @@
          "id": "#AudioCollectionNonFirstNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Any node but the first",
          "subClassOf": "#AudioCollectionNode"
@@ -396,7 +396,7 @@
          "id": "#AudioCollectionNonLastNode",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Any node but the last",
          "subClassOf": "#AudioCollectionNode"
@@ -405,7 +405,7 @@
          "id": "#AudioExpression",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio expression",
          "subClassOf": "frbr:Expression"
@@ -414,7 +414,7 @@
          "id": "#AudioFile",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio file",
          "subClassOf": [
@@ -426,7 +426,7 @@
          "id": "#AudioItem",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio item",
          "subClassOf": "frbr:Item"
@@ -435,7 +435,7 @@
          "id": "#AudioManifestation",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio manifestation",
          "subClassOf": [
@@ -447,7 +447,7 @@
          "id": "#AudioPublication",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Audio publication",
          "subClassOf": "event:Event"
@@ -456,7 +456,7 @@
          "id": "#DigitalSignal",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Digital signal",
          "subClassOf": "#Signal",
@@ -466,7 +466,7 @@
          "id": "#Recording",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Recording",
          "subClassOf": "#SignalProduction"
@@ -475,7 +475,7 @@
          "id": "#Signal",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Signal",
          "subClassOf": "#AudioExpression"
@@ -484,7 +484,7 @@
          "id": "#SignalProduction",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Signal production",
          "subClassOf": "event:Event"
@@ -493,7 +493,7 @@
          "id": "#Sound",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Physical sound",
          "subClassOf": "#AudioExpression"
@@ -502,7 +502,7 @@
          "id": "#Syntesis",
          "type": "owl:Class",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "Syntesis",
          "subClassOf": "#SignalProduction"
@@ -511,7 +511,7 @@
          "id": "#audioCategory",
          "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "is in audio category",
          "range": "#AudioCategory"
@@ -521,7 +521,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#AudioManifestation",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "available as",
          "range": "#AudioItem"
@@ -534,7 +534,7 @@
          ],
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "bits per sample",
          "range": "xsd:int"
@@ -547,7 +547,7 @@
          ],
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "channels",
          "range": "xsd:int"
@@ -557,7 +557,7 @@
          "type": "owl:ObjectProperty",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "compiled",
          "range": "#AudioManifestation"
@@ -570,7 +570,7 @@
          ],
          "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "duration",
          "range": "xsd:int"
@@ -580,7 +580,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#AudioItem",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "encodes",
          "range": "#DigitalSignal"
@@ -593,7 +593,7 @@
          ],
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "first node",
          "range": "#AudioCollectionFirstNode",
@@ -603,7 +603,7 @@
          "id": "#homepage",
          "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "homepage",
          "range": "foaf:Document",
@@ -613,7 +613,7 @@
          "id": "#image",
          "type": "owl:ObjectProperty",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "image",
          "range": "foaf:Image",
@@ -627,7 +627,7 @@
          ],
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "last node",
          "range": "#AudioCollectionLastNode",
@@ -638,7 +638,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "member node",
          "range": "#AudioCollectionNode"
@@ -651,7 +651,7 @@
          ],
          "domain": "#AudioCollectionNonLastNode",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "next node",
          "range": "#AudioCollectionNonFirstNode",
@@ -665,7 +665,7 @@
          ],
          "domain": "#AudioCollectionNode",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "node content",
          "range": "#AudioManifestation",
@@ -679,7 +679,7 @@
          ],
          "domain": "#AudioCollectionNode",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "node index",
          "range": "xsd:int"
@@ -692,7 +692,7 @@
          ],
          "domain": "#AudioCollectionNonFirstNode",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "previous node",
          "range": "#AudioCollectionNonLastNode"
@@ -702,7 +702,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#SignalProduction",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "produced signal",
          "range": "#Signal"
@@ -712,7 +712,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#SignalProduction",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "production from",
          "range": "#Sound"
@@ -722,7 +722,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#AudioManifestation",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "publication of",
          "range": "#AudioExpression"
@@ -732,7 +732,7 @@
          "type": "owl:ObjectProperty",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "published",
          "range": "#AudioManifestation"
@@ -742,7 +742,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#AudioPublication",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "published audio manifestation",
          "range": "#AudioManifestation"
@@ -752,7 +752,7 @@
          "type": "owl:ObjectProperty",
          "domain": "#Recording",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "recording of",
          "range": "#Sound",
@@ -766,7 +766,7 @@
          ],
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
-            "id": "ontology"
+            "id": "aco"
          },
          "label": "sample rate",
          "range": "xsd:float"

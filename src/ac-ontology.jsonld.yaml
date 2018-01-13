@@ -1,8 +1,8 @@
 '@context':
-  - ac: https://w3id.org/audiocommons/ontology#
+  - ac: https://w3id.org/ac-ontology/aco#
 id: ''
 type: owl:Ontology
-preferredNamespaceUri: https://w3id.org/audiocommons/ontology#
+preferredNamespaceUri: https://w3id.org/ac-ontology/aco#
 preferredNamespacePrefix: ac
 created: 2017/07/27 11:09:00
 date: 2017/07/27 11:09:00
