@@ -7,6 +7,7 @@ const filterByType = (resources, typeId) =>
               res => _.some(asArray(res.type),
                             type => type.id === typeId));
 const htmlId = (resourceId) => resourceId.startsWith('#') ? resourceId.substr(1) : resourceId;
+
 const urlFromId = (resourceId) => {
   const colonIndex = resourceId.indexOf(':');
   if (colonIndex === -1) {
@@ -20,6 +21,7 @@ const urlFromId = (resourceId) => {
     }
   }
 };
+
 const prefixedFromId = (resourceId) => {
   const colonIndex = resourceId.indexOf(':');
   if (colonIndex !== -1) {
@@ -34,23 +36,35 @@ const prefixedFromId = (resourceId) => {
     }
   }
 };
+
 const localList = (listLabel, resources) => {
   if (resources) { %>
-    <!-- <p class="card-text"> -->
       <strong><%= listLabel %></strong>:
       <% _.forIn(asArray(resources), (res, index) => {
         %><%= index > 0 ? ", " : "" %><a href="<%= urlFromId(res.id) %>"><%= label(res) %></a><%
       }); %>.
-    <!-- </p> -->
   <% }
 };
+
+const showProperty = (propertyLabel, propertyValue) => {
+  if (propertyValue) { %>
+      <strong><%= propertyLabel %></strong>: <%= propertyValue %>
+  <% }
+};
+
+const showCodeProperty = (propertyLabel, propertyValue) => {
+  if (propertyValue) { %>
+      <strong><%= propertyLabel %></strong>: <code><%= propertyValue %></code>
+  <% }
+};
+
 %>
 <html lang="en">
   <head>
     <title><%= aco.title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script>
       var baseWebVOWL = 'http://visualdataweb.de/webvowl/#iri=';
       function openInWebVOWL() {
@@ -91,8 +105,11 @@ const localList = (listLabel, resources) => {
 
           <h1 id="top"><%= aco.title %></h1>
           <!-- <p class="lead"><%= aco.descr %></p> -->
-          <h2>Description</h2>
+          <!-- <h2>Description</h2> -->
           <p><%= aco.descr %></p>
+
+          <p><% showCodeProperty('Namespace URI', aco.preferredNamespaceUri); %></p>
+          <p><% showCodeProperty('Preferred Prefix', aco.preferredNamespacePrefix); %></p>
 
           <p>
             <% localList('Classes', filterByType(aco.defines, 'owl:Class')); %>
@@ -106,55 +123,88 @@ const localList = (listLabel, resources) => {
 
           <h2 id="classList">Classes</h2>
           <% _.forIn(filterByType(aco.defines, 'owl:Class'), (clazz) => { %>
-            <div id="<%= htmlId(clazz.id) %>" class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%= label(clazz) %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code><%= prefixedFromId(clazz.id) %></code></h6>
-                <p class="card-text">
-                <% if (clazz.comment) { %>
-                  <%= clazz.comment %>
-                <% } %>
-                <% localList("Super-Classes", clazz.subClassOf); %>
-                <% localList("Sub-Classes", clazz.superClassOf); %>
-                <% localList("Domain of", clazz.domainOf); %>
-                <% localList("Range of", clazz.rangeOf); %>
-              </div>
-            </div>
-          <% }); %>
+            <div class="row"><div class="col-12">
+              <!-- <div id="<%= htmlId(clazz.id) %>" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= label(clazz) %></h3>
+                  <code><%= prefixedFromId(clazz.id) %></code>
+                </div>
+                <div class="panel-body">
+                  <% if (clazz.comment) { %>
+                    <%= clazz.comment %>
+                  <% } %>
+                  <% localList("Super-Classes", clazz.subClassOf); %>
+                  <% localList("Sub-Classes", clazz.superClassOf); %>
+                  <% localList("Domain of", clazz.domainOf); %>
+                  <% localList("Range of", clazz.rangeOf); %>
+                </div>
+              </div> -->
 
+                <div id="<%= htmlId(clazz.id) %>" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2"><%= label(clazz) %></span>
+                      <small class="text-muted"><code><%= prefixedFromId(clazz.id) %></code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">
+                      <% if (clazz.comment) { %>
+                        <%= clazz.comment %>
+                      <% } %>
+                      <% localList("Super-Classes", clazz.subClassOf); %>
+                      <% localList("Sub-Classes", clazz.superClassOf); %>
+                      <% localList("Domain of", clazz.domainOf); %>
+                      <% localList("Range of", clazz.rangeOf); %>
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          <% }); %>
 
           <h2 id="objPropList">Object properties</h2>
           <% _.forIn(filterByType(aco.defines, 'owl:ObjectProperty'), (prop) => { %>
-            <div id="<%= htmlId(prop.id) %>" class="card">
+            <div id="<%= htmlId(prop.id) %>" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2"><%= label(prop) %></span>
+                  <small class="text-muted"><code><%= prefixedFromId(prop.id) %></code></small>
+                </h5>
+              </div>
               <div class="card-body">
-                <h5 class="card-title"><%= label(prop) %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code><%= prefixedFromId(prop.id) %></code></h6>
                 <p class="card-text">
-                <% if (prop.comment) { %>
-                  <%= prop.comment %>
-                <% } %>
-                <% localList("Super-Properties", prop.subPropertyOf); %>
-                <% localList("Sub-Properties", prop.superPropertyOf); %>
-                <% localList("Domain", prop.domain); %>
-                <% localList("Range", prop.range); %>
+                  <% if (prop.comment) { %>
+                    <%= prop.comment %>
+                  <% } %>
+                  <% localList("Super-Properties", prop.subPropertyOf); %>
+                  <% localList("Sub-Properties", prop.superPropertyOf); %>
+                  <% localList("Domain", prop.domain); %>
+                  <% localList("Range", prop.range); %>
+                </p>
               </div>
             </div>
           <% }); %>
 
           <h2 id="dtPropList">Datatype properties</h2>
           <% _.forIn(filterByType(aco.defines, 'owl:DatatypeProperty'), (prop) => { %>
-            <div id="<%= htmlId(prop.id) %>" class="card">
+            <div id="<%= htmlId(prop.id) %>" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2"><%= label(prop) %></span>
+                  <small class="text-muted"><code><%= prefixedFromId(prop.id) %></code></small>
+                </h5>
+              </div>
               <div class="card-body">
-                <h5 class="card-title"><%= label(prop) %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><code><%= prefixedFromId(prop.id) %></code></h6>
                 <p class="card-text">
-                <% if (prop.comment) { %>
-                  <%= prop.comment %>
-                <% } %>
-                <% localList("Super-Properties", prop.subPropertyOf); %>
-                <% localList("Sub-Properties", prop.superPropertyOf); %>
-                <% localList("Domain", prop.domain); %>
-                <% localList("Range", prop.range); %>
+                  <% if (prop.comment) { %>
+                    <%= prop.comment %>
+                  <% } %>
+                  <% localList("Super-Properties", prop.subPropertyOf); %>
+                  <% localList("Sub-Properties", prop.superPropertyOf); %>
+                  <% localList("Domain", prop.domain); %>
+                  <% localList("Range", prop.range); %>
+                </p>
               </div>
             </div>
           <% }); %>
@@ -162,9 +212,9 @@ const localList = (listLabel, resources) => {
         </div>
       </div>
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </div>
   </body>
 </html>
