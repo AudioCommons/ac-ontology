@@ -17,7 +17,7 @@ const urlFromId = (resourceId) => {
     if (expandedPrefix) {
       return expandedPrefix + resourceId.substr(colonIndex + 1);
     } else {
-      return '#';
+      return resourceId;
     }
   }
 };
@@ -106,10 +106,15 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
           <h1 id="top"><%= aco.title %></h1>
           <!-- <p class="lead"><%= aco.descr %></p> -->
           <!-- <h2>Description</h2> -->
-          <p><%= aco.descr %></p>
 
-          <p><% showCodeProperty('Namespace URI', aco.preferredNamespaceUri); %></p>
-          <p><% showCodeProperty('Preferred Prefix', aco.preferredNamespacePrefix); %></p>
+          <p>
+            <% showCodeProperty('Namespace URI', aco.preferredNamespaceUri); %><br/>
+            <% showCodeProperty('Preferred Prefix', aco.preferredNamespacePrefix + ':'); %><br/>
+            <% showProperty('Version Info', aco.versionInfo); %><br/>
+            <% localList('Authors', aco.maker); %>
+          </p>
+
+          <p><%= aco.descr %></p>
 
           <p>
             <% localList('Classes', filterByType(aco.defines, 'owl:Class')); %>

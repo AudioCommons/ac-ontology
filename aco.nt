@@ -299,13 +299,15 @@
 <https://w3id.org/ac-ontology/aco> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ac" .
 <https://w3id.org/ac-ontology/aco> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/ac-ontology/aco#" .
 <https://w3id.org/ac-ontology/aco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/ac-ontology/aco> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 0.0.0" .
-<https://w3id.org/ac-ontology/aco> <http://xmlns.com/foaf/0.1/maker> _:b0xb2 .
-<https://w3id.org/ac-ontology/aco> <http://xmlns.com/foaf/0.1/maker> _:b0xb3 .
+<https://w3id.org/ac-ontology/aco> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 1.0.0" .
+<https://w3id.org/ac-ontology/aco> <http://xmlns.com/foaf/0.1/maker> <mailto:g.fazekas@qmul.ac.uk> .
+<https://w3id.org/ac-ontology/aco> <http://xmlns.com/foaf/0.1/maker> <mailto:miguel.ceriani@gmail.com> .
+<mailto:g.fazekas@qmul.ac.uk> <http://www.w3.org/2000/01/rdf-schema#label> "George Fazekas" .
+<mailto:g.fazekas@qmul.ac.uk> <http://xmlns.com/foaf/0.1/name> "George Fazekas" .
+<mailto:miguel.ceriani@gmail.com> <http://www.w3.org/2000/01/rdf-schema#label> "Miguel Ceriani" .
+<mailto:miguel.ceriani@gmail.com> <http://xmlns.com/foaf/0.1/name> "Miguel Ceriani" .
 _:b0xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:b0xb0 <http://www.w3.org/2002/07/owl#unionOf> _:b0xb1 .
-_:b0xb2 <http://xmlns.com/foaf/0.1/name> "Miguel Ceriani" .
-_:b0xb3 <http://xmlns.com/foaf/0.1/name> "George Fazekas" .
 _:b1xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:b1xb0 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 _:b1xb0 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .

@@ -85,8 +85,8 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 0.0.0";
-    n2:maker [ n2:name "George Fazekas" ], [ n2:name "Miguel Ceriani" ].
+    owl:versionInfo "Revision: 1.0.0";
+    n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
     rd:comment "An analog signal.";
@@ -454,3 +454,7 @@ n0:Syntesis
     rd:isDefinedBy n1:aco;
     rd:label "Syntesis";
     rd:subClassOf n0:SignalProduction.
+<mailto:g.fazekas@qmul.ac.uk> rd:label "George Fazekas"; n2:name "George Fazekas".
+
+<mailto:miguel.ceriani@gmail.com>
+rd:label "Miguel Ceriani"; n2:name "Miguel Ceriani".

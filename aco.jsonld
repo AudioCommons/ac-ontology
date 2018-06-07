@@ -115,14 +115,6 @@
          "unionOf": "_:b0xb1"
       },
       {
-         "id": "_:b0xb2",
-         "name": "Miguel Ceriani"
-      },
-      {
-         "id": "_:b0xb3",
-         "name": "George Fazekas"
-      },
-      {
          "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
@@ -288,13 +280,13 @@
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
          "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
-         "versionInfo": "Revision: 0.0.0",
+         "versionInfo": "Revision: 1.0.0",
          "maker": [
             {
-               "id": "_:b0xb2"
+               "id": "mailto:g.fazekas@qmul.ac.uk"
             },
             {
-               "id": "_:b0xb3"
+               "id": "mailto:miguel.ceriani@gmail.com"
             }
          ]
       },
@@ -813,6 +805,16 @@
          },
          "label": "sample rate",
          "range": "xsd:float"
+      },
+      {
+         "id": "mailto:g.fazekas@qmul.ac.uk",
+         "label": "George Fazekas",
+         "name": "George Fazekas"
+      },
+      {
+         "id": "mailto:miguel.ceriani@gmail.com",
+         "label": "Miguel Ceriani",
+         "name": "Miguel Ceriani"
       }
    ]
 }

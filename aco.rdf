@@ -107,9 +107,9 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 0.0.0</owl:versionInfo>
-        <n0:maker rdf:parseType="Resource"><n0:name>George Fazekas</n0:name></n0:maker>
-        <n0:maker rdf:parseType="Resource"><n0:name>Miguel Ceriani</n0:name></n0:maker>
+        <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+        <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
+        <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AnalogSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -516,5 +516,11 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Syntesis</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#SignalProduction"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="mailto:g.fazekas@qmul.ac.uk">
+       <rd:label>George Fazekas</rd:label><n0:name>George Fazekas</n0:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="mailto:miguel.ceriani@gmail.com">
+       <rd:label>Miguel Ceriani</rd:label><n0:name>Miguel Ceriani</n0:name>
     </rdf:Description>
 </rdf:RDF>
