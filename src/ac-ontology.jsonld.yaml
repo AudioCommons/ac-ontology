@@ -18,29 +18,39 @@ defines:
 
   - id: ac:AudioExpression
     label: Audio expression
+    comment: >
+      The specific intellectual or artistic form that a work takes each time it
+      is 	“realized”, in the audio domain (e.g., the recording or synthesis of
+      music or sounds).
     type: owl:Class
     subClassOf: frbr:Expression
     superClassOf: [mo:MusicalExpression, ac:Signal, ac:Sound]
 
   - id: ac:Signal
     label: Signal
+    comment: >
+      A subclass of AudioExpression, representing a signal, for example a master
+      signal produced by a performance and a recording.
     type: owl:Class
     superClassOf: [ac:DigitalSignal, ac:AnalogSignal, mo:Signal]
 
   - id: ac:DigitalSignal
     label: Digital signal
+    comment: A digital signal.
     type: owl:Class
     disjointWith: ac:AnalogSignal
     superClassOf: mo:DigitalSignal
 
   - id: ac:AnalogSignal
     label: Analog signal
+    comment: An analog signal.
     type: owl:Class
     disjointWith: ac:DigitalSignal
     superClassOf: mo:AnalogSignal
 
   - id: ac:sampleRate
     label: sample rate
+    comment: Associates a digital signal to its sample rate.
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     superPropertyOf: mo:sample_rate
     domain: ac:DigitalSignal
@@ -48,6 +58,9 @@ defines:
 
   - id: ac:bitsPerSample
     label: bits per sample
+    comment: >
+      Associates a digital signal to the number of bits used to encode one
+      sample.
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     superPropertyOf: mo:bitsPerSample
     domain: ac:DigitalSignal
@@ -55,6 +68,9 @@ defines:
 
   - id: ac:channels
     label: channels
+    comment: >
+      Associates a signal to the number of channels it holds (mono → 1,
+      stereo → 2).
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     superPropertyOf: mo:channels
     domain: ac:DigitalSignal
@@ -62,17 +78,23 @@ defines:
 
   - id: ac:Sound
     label: Physical sound
+    comment: A subclass of AudioExpression, representing a (physical) sound.
     type: owl:Class
     superClassOf: mo:Sound
 
   - id: ac:AudioManifestation
     label: Audio manifestation
+    comment: >
+      The physical embodiment of an audio expression (e.g., a musical track, a
+      sound, an album).
     type: owl:Class
     subClassOf: [frbr:Manifestation, cc:Work]
     superClassOf: [mo:MusicalManifestation, ac:AudioClip, ac:AudioCollection]
 
   - id: ac:homepage
     label: homepage
+    comment: >
+      Links a sound, an artist, a record, etc. to a corresponding webpage.
     type: owl:ObjectProperty
     subPropertyOf: foaf:isPrimaryTopicOf
     superPropertyOf: mo:homepage
@@ -80,6 +102,9 @@ defines:
 
   - id: ac:image
     label: image
+    comment: >
+      Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound,
+      an artist, a record, etc.
     type: owl:ObjectProperty
     subPropertyOf: foaf:depiction
     superPropertyOf: mo:image
@@ -87,6 +112,9 @@ defines:
 
   - id: ac:compiled
     label: compiled
+    comment: >
+      Used to relate a person or a group of people who compiled an audio
+      manifestation.
     type: owl:ObjectProperty
     superPropertyOf: mo:compiled
     domain: foaf:Agent
@@ -94,6 +122,9 @@ defines:
 
   - id: ac:published
     label: published
+    comment: >
+      Used to relate a person or a group of people who published an audio
+      manifestation.
     type: owl:ObjectProperty
     superPropertyOf: mo:published
     domain: foaf:Agent
@@ -101,6 +132,9 @@ defines:
 
   - id: ac:publicationOf
     label: publication of
+    comment: >
+      Link a particular manifestation to the related expression (e.g., a signal
+      or a sound).
     type: owl:ObjectProperty
     superPropertyOf: mo:publication_of
     domain: ac:AudioManifestation
@@ -108,6 +142,8 @@ defines:
 
   - id: ac:availableAs
     label: available as
+    comment: >
+      Relates a musical manifestation to a musical item (e.g., a media file).
     type: owl:ObjectProperty
     superPropertyOf: mo:available_as
     domain: ac:AudioManifestation
@@ -115,11 +151,16 @@ defines:
 
   - id: ac:AudioClip
     label: Audio clip
+    comment: >
+      An audio segment that has been somehow published or uploaded for
+      consumption (e.g., a track in a music label's repository or a sound in an
+      audio repository, library or archive).
     type: owl:Class
     superClassOf: mo:Track
 
   - id: ac:duration
     label: duration
+    comment: Associates an audio clip or signal with its duration.
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     superPropertyOf: mo:duration
     domain:
@@ -130,18 +171,25 @@ defines:
 
   - id: ac:AudioItem
     label: Audio item
+    comment: >
+      A concrete exemplar of an audio manifestation (e.g., a copy of a CD or a
+      specific media file).
     type: owl:Class
     subClassOf: frbr:Item
     superClassOf: [mo:MusicalItem, ac:AudioFile]
 
   - id: ac:AudioFile
     label: Audio file
+    comment: A concrete audio file (encoded in some format)
     type: owl:Class
     subClassOf: ebu:MediaResource
     superClassOf: mo:AudioFile
 
   - id: ac:encodes
     label: encodes
+    comment: >
+      Relates a MusicalItem (a track on a particular CD, an audio file, a stream
+      somewhere) to the signal it encodes.
     type: owl:ObjectProperty
     superPropertyOf: mo:encodes
     domain: ac:AudioItem
@@ -149,12 +197,14 @@ defines:
 
   - id: ac:AudioCategory
     label: Audio category
+    comment: Any category that is used to classify audio content.
     type: owl:Class
     subClassOf: frbr:Concept
     superClassOf: [mo:Genre, mo:Instrument]
 
   - id: ac:audioCategory
     label: is in audio category
+    comment: Classify a piece of audio content in a category.
     type: owl:ObjectProperty
     superPropertyOf: [mo:instrument, mo:genre]
     range: ac:AudioCategory

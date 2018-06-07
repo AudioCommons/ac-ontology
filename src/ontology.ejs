@@ -148,10 +148,12 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
                     </h5>
                   </div>
                   <div class="card-body">
-                    <p class="card-text">
-                      <% if (clazz.comment) { %>
+                    <% if (clazz.comment) { %>
+                      <p class="card-text">
                         <%= clazz.comment %>
-                      <% } %>
+                      </p>
+                    <% } %>
+                    <p class="card-text">
                       <% localList("Super-Classes", clazz.subClassOf); %>
                       <% localList("Sub-Classes", clazz.superClassOf); %>
                       <% localList("Domain of", clazz.domainOf); %>
@@ -173,10 +175,12 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
                 </h5>
               </div>
               <div class="card-body">
-                <p class="card-text">
-                  <% if (prop.comment) { %>
+                <% if (prop.comment) { %>
+                  <p class="card-text">
                     <%= prop.comment %>
-                  <% } %>
+                  </p>
+                <% } %>
+                <p class="card-text">
                   <% localList("Super-Properties", prop.subPropertyOf); %>
                   <% localList("Sub-Properties", prop.superPropertyOf); %>
                   <% localList("Domain", prop.domain); %>
@@ -196,10 +200,12 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
                 </h5>
               </div>
               <div class="card-body">
-                <p class="card-text">
-                  <% if (prop.comment) { %>
+                <% if (prop.comment) { %>
+                  <p class="card-text">
                     <%= prop.comment %>
-                  <% } %>
+                  </p>
+                <% } %>
+                <p class="card-text">
                   <% localList("Super-Properties", prop.subPropertyOf); %>
                   <% localList("Sub-Properties", prop.superPropertyOf); %>
                   <% localList("Domain", prop.domain); %>

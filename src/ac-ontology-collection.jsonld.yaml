@@ -5,18 +5,27 @@ defines:
 
   - id: ac:AudioCollection
     label: Audio collection
+    comment: >
+      A collection of audio manifestations (e.g., a sound pack, an album, a
+      result set of a search over a repository of audio content).
+      As an audio collection is an audio manifestation too, collections may be
+      nested.
+      An audio collection is composed of nodes.
     type: owl:Class
     subClassOf: ac:AudioManifestation
     superClassOf: [mo:Record, mo:Release]
+    seeAlso: ac:AudioCollectionNode
 
   - id: ac:memberNode
     label: member node
+    comment: Associates an audio collection to its nodes.
     type: owl:ObjectProperty
     domain: ac:AudioCollection
     range: ac:AudioCollectionNode
 
   - id: ac:firstNode
     label: first node
+    comment: Associates an audio collection to its first node.
     type: [owl:ObjectProperty, owl:FunctionalProperty]
     subPropertyOf: ac:memberNode
     domain: ac:AudioCollection
@@ -24,6 +33,7 @@ defines:
 
   - id: ac:lastNode
     label: last node
+    comment: Associates an audio collection to its last node.
     type: [owl:ObjectProperty, owl:FunctionalProperty]
     subPropertyOf: ac:memberNode
     domain: ac:AudioCollection
@@ -31,6 +41,11 @@ defines:
 
   - id: ac:AudioCollectionNode
     label: Node
+    comment: >
+      A node of an audio collection. It encapsulates the actual content
+      (ac:nodeContent), the position in the collection (ac:nodeIndex), and
+      links to the previous and following node in the collection
+      (ac:previousNode and ac:nextNode).
     type: owl:Class
     subClassOf:
       - id: rdf:List
@@ -62,11 +77,13 @@ defines:
 
   - id: ac:AudioCollectionFirstNode
     label: First node
+    comment: A node that is the first in the containing audio collection
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
 
   - id: ac:AudioCollectionLastNode
     label: Last node
+    comment: A node that is the last in the containing audio collection
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
   #   intersectionOf:
@@ -78,6 +95,7 @@ defines:
 
   - id: ac:AudioCollectionNonFirstNode
     label: Any node but the first
+    comment: A node that is not the first in the containing audio collection
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
   #   equivalentClass:
@@ -87,6 +105,7 @@ defines:
 
   - id: ac:AudioCollectionNonLastNode
     label: Any node but the last
+    comment: A node that is not the last in the containing audio collection
     type: owl:Class
     subClassOf: ac:AudioCollectionNode
   #   equivalentClass:
@@ -96,6 +115,7 @@ defines:
 
   - id: ac:nodeContent
     label: node content
+    comment: Associates a node with the actual content (an audio manifestation).
     type: [owl:ObjectProperty, owl:FunctionalProperty]
     subPropertyOf: rdf:first
     domain: ac:AudioCollectionNode
@@ -103,12 +123,14 @@ defines:
 
   - id: ac:nodeIndex
     label: node index
+    comment: Associates a node with its position in the collection.
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     domain: ac:AudioCollectionNode
     range: xsd:int
 
   - id: ac:nextNode
     label: next node
+    comment: Associates a node with the next node in the collection.
     type: [owl:ObjectProperty, owl:FunctionalProperty]
     subPropertyOf: rdf:rest
     inverseOf: ac:previousNode
@@ -117,6 +139,7 @@ defines:
 
   - id: ac:previousNode
     label: previous node
+    comment: Associates a node with the previous node in the collection.
     type: [owl:ObjectProperty, owl:FunctionalProperty]
     inverseOf: ac:nextNode
     domain: ac:AudioCollectionNonFirstNode

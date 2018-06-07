@@ -123,33 +123,33 @@
          "name": "George Fazekas"
       },
       {
-         "id": "_:b2xb0",
+         "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b2xb1",
+         "id": "_:b1xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b2xb2",
+         "id": "_:b1xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b2xb3",
+         "id": "_:b1xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b2xb4",
+         "id": "_:b1xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
@@ -301,6 +301,7 @@
       {
          "id": "#AnalogSignal",
          "type": "owl:Class",
+         "comment": "An analog signal.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -311,6 +312,7 @@
       {
          "id": "#AudioCategory",
          "type": "owl:Class",
+         "comment": "Any category that is used to classify audio content.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -320,6 +322,7 @@
       {
          "id": "#AudioClip",
          "type": "owl:Class",
+         "comment": "An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label's repository or a sound in an audio repository, library or archive).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -329,6 +332,7 @@
       {
          "id": "#AudioCollection",
          "type": "owl:Class",
+         "comment": "A collection of audio manifestations (e.g., a sound pack, an album, a result set of a search over a repository of audio content). As an audio collection is an audio manifestation too, collections may be nested. An audio collection is composed of nodes.\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -338,6 +342,7 @@
       {
          "id": "#AudioCollectionFirstNode",
          "type": "owl:Class",
+         "comment": "A node that is the first in the containing audio collection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -347,6 +352,7 @@
       {
          "id": "#AudioCollectionLastNode",
          "type": "owl:Class",
+         "comment": "A node that is the last in the containing audio collection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -356,17 +362,18 @@
       {
          "id": "#AudioCollectionNode",
          "type": "owl:Class",
+         "comment": "A node of an audio collection. It encapsulates the actual content (ac:nodeContent), the position in the collection (ac:nodeIndex), and links to the previous and following node in the collection (ac:previousNode and ac:nextNode).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b2xb0",
-            "_:b2xb1",
-            "_:b2xb2",
-            "_:b2xb3",
-            "_:b2xb4"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2",
+            "_:b1xb3",
+            "_:b1xb4"
          ],
          "disjointUnionOf": [
             {
@@ -386,6 +393,7 @@
       {
          "id": "#AudioCollectionNonFirstNode",
          "type": "owl:Class",
+         "comment": "A node that is not the first in the containing audio collection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -395,6 +403,7 @@
       {
          "id": "#AudioCollectionNonLastNode",
          "type": "owl:Class",
+         "comment": "A node that is not the last in the containing audio collection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -404,6 +413,7 @@
       {
          "id": "#AudioExpression",
          "type": "owl:Class",
+         "comment": "The specific intellectual or artistic form that a work takes each time it is \t\\u201crealized\\u201d, in the audio domain (e.g., the recording or synthesis of music or sounds).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -413,6 +423,7 @@
       {
          "id": "#AudioFile",
          "type": "owl:Class",
+         "comment": "A concrete audio file (encoded in some format)",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -425,6 +436,7 @@
       {
          "id": "#AudioItem",
          "type": "owl:Class",
+         "comment": "A concrete exemplar of an audio manifestation (e.g., a copy of a CD or a specific media file).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -434,6 +446,7 @@
       {
          "id": "#AudioManifestation",
          "type": "owl:Class",
+         "comment": "The physical embodiment of an audio expression (e.g., a musical track, a sound, an album).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -446,6 +459,7 @@
       {
          "id": "#AudioPublication",
          "type": "owl:Class",
+         "comment": "The act of publishing some audio content as an audio manifestation.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -455,6 +469,7 @@
       {
          "id": "#DigitalSignal",
          "type": "owl:Class",
+         "comment": "A digital signal.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -465,6 +480,7 @@
       {
          "id": "#Recording",
          "type": "owl:Class",
+         "comment": "The act of recording some sound to produce a signal.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -474,6 +490,7 @@
       {
          "id": "#Signal",
          "type": "owl:Class",
+         "comment": "A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -483,6 +500,7 @@
       {
          "id": "#SignalProduction",
          "type": "owl:Class",
+         "comment": "The act of producing a signal (e.g., through a recording or a synthesis).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -492,6 +510,7 @@
       {
          "id": "#Sound",
          "type": "owl:Class",
+         "comment": "A subclass of AudioExpression, representing a (physical) sound.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -501,6 +520,7 @@
       {
          "id": "#Syntesis",
          "type": "owl:Class",
+         "comment": "The act of synthesizing a signal.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -510,6 +530,7 @@
       {
          "id": "#audioCategory",
          "type": "owl:ObjectProperty",
+         "comment": "Classify a piece of audio content in a category.",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -519,6 +540,7 @@
       {
          "id": "#availableAs",
          "type": "owl:ObjectProperty",
+         "comment": "Relates a musical manifestation to a musical item (e.g., a media file).\n",
          "domain": "#AudioManifestation",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -532,6 +554,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
+         "comment": "Associates a digital signal to the number of bits used to encode one sample.\n",
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -545,6 +568,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
+         "comment": "Associates a signal to the number of channels it holds (mono \\u2192 1, stereo \\u2192 2).\n",
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -555,6 +579,7 @@
       {
          "id": "#compiled",
          "type": "owl:ObjectProperty",
+         "comment": "Used to relate a person or a group of people who compiled an audio manifestation.\n",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -568,6 +593,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
+         "comment": "Associates an audio clip or signal with its duration.",
          "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -578,6 +604,7 @@
       {
          "id": "#encodes",
          "type": "owl:ObjectProperty",
+         "comment": "Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.\n",
          "domain": "#AudioItem",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -591,6 +618,7 @@
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
+         "comment": "Associates an audio collection to its first node.",
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -602,6 +630,7 @@
       {
          "id": "#homepage",
          "type": "owl:ObjectProperty",
+         "comment": "Links a sound, an artist, a record, etc. to a corresponding webpage.\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -612,6 +641,7 @@
       {
          "id": "#image",
          "type": "owl:ObjectProperty",
+         "comment": "Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -625,6 +655,7 @@
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
+         "comment": "Associates an audio collection to its last node.",
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -636,6 +667,7 @@
       {
          "id": "#memberNode",
          "type": "owl:ObjectProperty",
+         "comment": "Associates an audio collection to its nodes.",
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -649,6 +681,7 @@
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
+         "comment": "Associates a node with the next node in the collection.",
          "domain": "#AudioCollectionNonLastNode",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -663,6 +696,7 @@
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
+         "comment": "Associates a node with the actual content (an audio manifestation).",
          "domain": "#AudioCollectionNode",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -677,6 +711,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
+         "comment": "Associates a node with its position in the collection.",
          "domain": "#AudioCollectionNode",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -690,6 +725,7 @@
             "owl:FunctionalProperty",
             "owl:ObjectProperty"
          ],
+         "comment": "Associates a node with the previous node in the collection.",
          "domain": "#AudioCollectionNonFirstNode",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -700,6 +736,7 @@
       {
          "id": "#producedSignal",
          "type": "owl:ObjectProperty",
+         "comment": "Associates a signal production event to the produced signal.",
          "domain": "#SignalProduction",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -710,6 +747,7 @@
       {
          "id": "#productionFrom",
          "type": "owl:ObjectProperty",
+         "comment": "Associates a signal production act to a sound from which the signal was produced (e.g., if recording, the recorded sound).\n",
          "domain": "#SignalProduction",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -720,6 +758,7 @@
       {
          "id": "#publicationOf",
          "type": "owl:ObjectProperty",
+         "comment": "Link a particular manifestation to the related expression (e.g., a signal or a sound).\n",
          "domain": "#AudioManifestation",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -730,6 +769,7 @@
       {
          "id": "#published",
          "type": "owl:ObjectProperty",
+         "comment": "Used to relate a person or a group of people who published an audio manifestation.\n",
          "domain": "foaf:Agent",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -740,6 +780,7 @@
       {
          "id": "#publishedAudioManifestation",
          "type": "owl:ObjectProperty",
+         "comment": "Associates a publishing act to the audio manifestation.",
          "domain": "#AudioPublication",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -750,6 +791,7 @@
       {
          "id": "#recordingOf",
          "type": "owl:ObjectProperty",
+         "comment": "Associates a recording act to the recorded (physical) sound.",
          "domain": "#Recording",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -764,6 +806,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
+         "comment": "Associates a digital signal to its sample rate.",
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
             "id": "aco"

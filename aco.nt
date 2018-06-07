@@ -30,164 +30,197 @@
 <http://purl.org/ontology/mo/release> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> .
 <http://purl.org/ontology/mo/sample_rate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#sampleRate> .
 <https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "An analog signal." .
 <https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#label> "Analog signal" .
 <https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#Signal> .
 <https://w3id.org/ac-ontology/aco#AnalogSignal> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/ac-ontology/aco#DigitalSignal> .
 <https://w3id.org/ac-ontology/aco#AudioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Any category that is used to classify audio content." .
 <https://w3id.org/ac-ontology/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Audio category" .
 <https://w3id.org/ac-ontology/aco#AudioCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Concept> .
 <https://w3id.org/ac-ontology/aco#AudioClip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#comment> "An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label's repository or a sound in an audio repository, library or archive).\n" .
 <https://w3id.org/ac-ontology/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#label> "Audio clip" .
 <https://w3id.org/ac-ontology/aco#AudioClip> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#AudioCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of audio manifestations (e.g., a sound pack, an album, a result set of a search over a repository of audio content). As an audio collection is an audio manifestation too, collections may be nested. An audio collection is composed of nodes.\n" .
 <https://w3id.org/ac-ontology/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Audio collection" .
 <https://w3id.org/ac-ontology/aco#AudioCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A node that is the first in the containing audio collection" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> <http://www.w3.org/2000/01/rdf-schema#label> "First node" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A node that is the last in the containing audio collection" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> <http://www.w3.org/2000/01/rdf-schema#label> "Last node" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A node of an audio collection. It encapsulates the actual content (ac:nodeContent), the position in the collection (ac:nodeIndex), and links to the previous and following node in the collection (ac:previousNode and ac:nextNode).\n" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#label> "Node" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b2xb0 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b2xb1 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b2xb2 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b2xb3 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b2xb4 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:b2xb5 .
-<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:b2xb7 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b1xb0 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b1xb1 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b1xb2 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b1xb3 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:b1xb4 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:b1xb5 .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNode> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:b1xb7 .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A node that is not the first in the containing audio collection" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> <http://www.w3.org/2000/01/rdf-schema#label> "Any node but the first" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A node that is not the last in the containing audio collection" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> <http://www.w3.org/2000/01/rdf-schema#label> "Any node but the last" .
 <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#AudioExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific intellectual or artistic form that a work takes each time it is 	\u201crealized\u201d, in the audio domain (e.g., the recording or synthesis of music or sounds).\n" .
 <https://w3id.org/ac-ontology/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#label> "Audio expression" .
 <https://w3id.org/ac-ontology/aco#AudioExpression> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Expression> .
 <https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#comment> "A concrete audio file (encoded in some format)" .
 <https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#label> "Audio file" .
 <https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> .
 <https://w3id.org/ac-ontology/aco#AudioFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioItem> .
 <https://w3id.org/ac-ontology/aco#AudioItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#comment> "A concrete exemplar of an audio manifestation (e.g., a copy of a CD or a specific media file).\n" .
 <https://w3id.org/ac-ontology/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#label> "Audio item" .
 <https://w3id.org/ac-ontology/aco#AudioItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Item> .
 <https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#comment> "The physical embodiment of an audio expression (e.g., a musical track, a sound, an album).\n" .
 <https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "Audio manifestation" .
 <https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Manifestation> .
 <https://w3id.org/ac-ontology/aco#AudioManifestation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://web.resource.org/cc/Work> .
 <https://w3id.org/ac-ontology/aco#AudioPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of publishing some audio content as an audio manifestation." .
 <https://w3id.org/ac-ontology/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#label> "Audio publication" .
 <https://w3id.org/ac-ontology/aco#AudioPublication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
 <https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "A digital signal." .
 <https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#label> "Digital signal" .
 <https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#Signal> .
 <https://w3id.org/ac-ontology/aco#DigitalSignal> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/ac-ontology/aco#AnalogSignal> .
 <https://w3id.org/ac-ontology/aco#Recording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of recording some sound to produce a signal." .
 <https://w3id.org/ac-ontology/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#label> "Recording" .
 <https://w3id.org/ac-ontology/aco#Recording> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#SignalProduction> .
 <https://w3id.org/ac-ontology/aco#Signal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.\n" .
 <https://w3id.org/ac-ontology/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#label> "Signal" .
 <https://w3id.org/ac-ontology/aco#Signal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioExpression> .
 <https://w3id.org/ac-ontology/aco#SignalProduction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of producing a signal (e.g., through a recording or a synthesis).\n" .
 <https://w3id.org/ac-ontology/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#label> "Signal production" .
 <https://w3id.org/ac-ontology/aco#SignalProduction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
 <https://w3id.org/ac-ontology/aco#Sound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of AudioExpression, representing a (physical) sound." .
 <https://w3id.org/ac-ontology/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#label> "Physical sound" .
 <https://w3id.org/ac-ontology/aco#Sound> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#AudioExpression> .
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of synthesizing a signal." .
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#label> "Syntesis" .
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#SignalProduction> .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Classify a piece of audio content in a category." .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "is in audio category" .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCategory> .
 <https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a musical manifestation to a musical item (e.g., a media file).\n" .
 <https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#label> "available as" .
 <https://w3id.org/ac-ontology/aco#availableAs> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioItem> .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a digital signal to the number of bits used to encode one sample.\n" .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#DigitalSignal> .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#label> "bits per sample" .
 <https://w3id.org/ac-ontology/aco#bitsPerSample> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a signal to the number of channels it holds (mono \u2192 1, stereo \u2192 2).\n" .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#DigitalSignal> .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#label> "channels" .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to relate a person or a group of people who compiled an audio manifestation.\n" .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#label> "compiled" .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an audio clip or signal with its duration." .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/2000/01/rdf-schema#domain> _:b0xb0 .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/2000/01/rdf-schema#label> "duration" .
 <https://w3id.org/ac-ontology/aco#duration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.\n" .
 <https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioItem> .
 <https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#label> "encodes" .
 <https://w3id.org/ac-ontology/aco#encodes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#DigitalSignal> .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an audio collection to its first node." .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollection> .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#label> "first node" .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> .
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#memberNode> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a sound, an artist, a record, etc. to a corresponding webpage.\n" .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#label> "homepage" .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.\n" .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Image> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/depiction> .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an audio collection to its last node." .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollection> .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#label> "last node" .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> .
 <https://w3id.org/ac-ontology/aco#lastNode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#memberNode> .
 <https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an audio collection to its nodes." .
 <https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollection> .
 <https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#label> "member node" .
 <https://w3id.org/ac-ontology/aco#memberNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a node with the next node in the collection." .
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> .
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#label> "next node" .
@@ -195,6 +228,7 @@
 <https://w3id.org/ac-ontology/aco#nextNode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a node with the actual content (an audio manifestation)." .
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#label> "node content" .
@@ -202,42 +236,50 @@
 <https://w3id.org/ac-ontology/aco#nodeContent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a node with its position in the collection." .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#label> "node index" .
 <https://w3id.org/ac-ontology/aco#nodeIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a node with the previous node in the collection." .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#label> "previous node" .
 <https://w3id.org/ac-ontology/aco#previousNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> .
 <https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a signal production event to the produced signal." .
 <https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#SignalProduction> .
 <https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#label> "produced signal" .
 <https://w3id.org/ac-ontology/aco#producedSignal> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#Signal> .
 <https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a signal production act to a sound from which the signal was produced (e.g., if recording, the recorded sound).\n" .
 <https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#SignalProduction> .
 <https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#label> "production from" .
 <https://w3id.org/ac-ontology/aco#productionFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#Sound> .
 <https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Link a particular manifestation to the related expression (e.g., a signal or a sound).\n" .
 <https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#label> "publication of" .
 <https://w3id.org/ac-ontology/aco#publicationOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioExpression> .
 <https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to relate a person or a group of people who published an audio manifestation.\n" .
 <https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
 <https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/2000/01/rdf-schema#label> "published" .
 <https://w3id.org/ac-ontology/aco#published> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a publishing act to the audio manifestation." .
 <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioPublication> .
 <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "published audio manifestation" .
 <https://w3id.org/ac-ontology/aco#publishedAudioManifestation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
 <https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a recording act to the recorded (physical) sound." .
 <https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#Recording> .
 <https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#label> "recording of" .
@@ -245,6 +287,7 @@
 <https://w3id.org/ac-ontology/aco#recordingOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#productionFrom> .
 <https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a digital signal to its sample rate." .
 <https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#DigitalSignal> .
 <https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#sampleRate> <http://www.w3.org/2000/01/rdf-schema#label> "sample rate" .
@@ -263,29 +306,29 @@ _:b0xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/200
 _:b0xb0 <http://www.w3.org/2002/07/owl#unionOf> _:b0xb1 .
 _:b0xb2 <http://xmlns.com/foaf/0.1/name> "Miguel Ceriani" .
 _:b0xb3 <http://xmlns.com/foaf/0.1/name> "George Fazekas" .
-_:b2xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:b2xb0 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
-_:b2xb0 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
-_:b2xb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:b2xb1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
-_:b2xb1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
-_:b2xb1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:b2xb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:b2xb2 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
-_:b2xb2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ac-ontology/aco#nodeContent> .
-_:b2xb2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:b2xb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:b2xb3 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
-_:b2xb3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
-_:b2xb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:b2xb4 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
-_:b2xb4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
-_:b2xb4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:b2xb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> .
-_:b2xb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b2xb6 .
-_:b2xb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> .
-_:b2xb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:b2xb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> .
-_:b2xb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b2xb8 .
-_:b2xb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> .
-_:b2xb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:b1xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:b1xb0 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
+_:b1xb0 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
+_:b1xb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:b1xb1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
+_:b1xb1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
+_:b1xb1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:b1xb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:b1xb2 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioManifestation> .
+_:b1xb2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ac-ontology/aco#nodeContent> .
+_:b1xb2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:b1xb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:b1xb3 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
+_:b1xb3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
+_:b1xb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:b1xb4 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ac-ontology/aco#AudioCollectionNode> .
+_:b1xb4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
+_:b1xb4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:b1xb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode> .
+_:b1xb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b1xb6 .
+_:b1xb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode> .
+_:b1xb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:b1xb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionLastNode> .
+_:b1xb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b1xb8 .
+_:b1xb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode> .
+_:b1xb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .

@@ -113,6 +113,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AnalogSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>An analog signal.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Analog signal</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#Signal"/>
@@ -120,42 +121,52 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#audioCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Classify a piece of audio content in a category.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>is in audio category</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCategory"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Any category that is used to classify audio content.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio category</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Concept"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioClip">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label's repository or a sound in an audio repository, library or archive).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio clip</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A collection of audio manifestations (e.g., a sound pack, an album, a result set of a search over a repository of audio content). As an audio collection is an audio manifestation too, collections may be nested. An audio collection is composed of nodes.
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio collection</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A node that is the first in the containing audio collection</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>First node</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollectionLastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A node that is the last in the containing audio collection</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Last node</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollectionNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A node of an audio collection. It encapsulates the actual content (ac:nodeContent), the position in the collection (ac:nodeIndex), and links to the previous and following node in the collection (ac:previousNode and ac:nextNode).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Node</rd:label>
         <rd:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -204,24 +215,29 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A node that is not the first in the containing audio collection</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Any node but the first</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A node that is not the last in the containing audio collection</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Any node but the last</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioExpression">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The specific intellectual or artistic form that a work takes each time it is 	“realized”, in the audio domain (e.g., the recording or synthesis of music or sounds).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio expression</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioFile">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A concrete audio file (encoded in some format)</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio file</rd:label>
         <rd:subClassOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource"/>
@@ -229,12 +245,16 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioItem">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A concrete exemplar of an audio manifestation (e.g., a copy of a CD or a specific media file).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio item</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The physical embodiment of an audio expression (e.g., a musical track, a sound, an album).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio manifestation</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
@@ -242,12 +262,15 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioPublication">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The act of publishing some audio content as an audio manifestation.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Audio publication</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Relates a musical manifestation to a musical item (e.g., a media file).
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>available as</rd:label>
@@ -256,6 +279,8 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#bitsPerSample">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates a digital signal to the number of bits used to encode one sample.
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>bits per sample</rd:label>
@@ -264,6 +289,8 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#channels">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates a signal to the number of channels it holds (mono → 1, stereo → 2).
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>channels</rd:label>
@@ -271,6 +298,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#compiled">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Used to relate a person or a group of people who compiled an audio manifestation.
+</rd:comment>
         <rd:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>compiled</rd:label>
@@ -278,6 +307,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#DigitalSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A digital signal.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Digital signal</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#Signal"/>
@@ -286,6 +316,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#duration">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates an audio clip or signal with its duration.</rd:comment>
         <rd:domain rdf:parseType="Resource">
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
                 <owl:unionOf rdf:parseType="Resource">
@@ -297,6 +328,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#encodes">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>encodes</rd:label>
@@ -305,6 +338,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#firstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio collection to its first node.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollection"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>first node</rd:label>
@@ -313,6 +347,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#homepage">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Links a sound, an artist, a record, etc. to a corresponding webpage.
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>homepage</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
@@ -320,6 +356,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#image">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>image</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
@@ -328,6 +366,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#lastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio collection to its last node.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollection"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>last node</rd:label>
@@ -336,6 +375,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#memberNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio collection to its nodes.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollection"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>member node</rd:label>
@@ -344,6 +384,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#nextNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a node with the next node in the collection.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>next node</rd:label>
@@ -353,6 +394,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#nodeContent">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a node with the actual content (an audio manifestation).</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>node content</rd:label>
@@ -362,6 +404,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#nodeIndex">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates a node with its position in the collection.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>node index</rd:label>
@@ -370,6 +413,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#previousNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a node with the previous node in the collection.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>previous node</rd:label>
@@ -377,6 +421,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#producedSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a signal production event to the produced signal.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#SignalProduction"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>produced signal</rd:label>
@@ -384,6 +429,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#productionFrom">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a signal production act to a sound from which the signal was produced (e.g., if recording, the recorded sound).
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#SignalProduction"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>production from</rd:label>
@@ -391,6 +438,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#publicationOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Link a particular manifestation to the related expression (e.g., a signal or a sound).
+</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>publication of</rd:label>
@@ -398,6 +447,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#published">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Used to relate a person or a group of people who published an audio manifestation.
+</rd:comment>
         <rd:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>published</rd:label>
@@ -405,6 +456,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#publishedAudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a publishing act to the audio manifestation.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioPublication"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>published audio manifestation</rd:label>
@@ -412,12 +464,14 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Recording">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The act of recording some sound to produce a signal.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Recording</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#SignalProduction"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#recordingOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a recording act to the recorded (physical) sound.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#Recording"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>recording of</rd:label>
@@ -427,6 +481,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#sampleRate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates a digital signal to its sample rate.</rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>sample rate</rd:label>
@@ -434,24 +489,30 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Signal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Signal</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#SignalProduction">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The act of producing a signal (e.g., through a recording or a synthesis).
+</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Signal production</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Sound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A subclass of AudioExpression, representing a (physical) sound.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Physical sound</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioExpression"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Syntesis">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>The act of synthesizing a signal.</rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Syntesis</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#SignalProduction"/>

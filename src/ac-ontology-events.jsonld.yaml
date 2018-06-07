@@ -5,12 +5,17 @@ defines:
 
   - id: ac:SignalProduction
     label: Signal production
+    comment: >
+      The act of producing a signal (e.g., through a recording or a synthesis).
     type: owl:Class
     subClassOf: event:Event
     superClassOf: [ac:Recording, ac:Syntesis]
 
   - id: ac:productionFrom
     label: production from
+    comment: >
+      Associates a signal production act to a sound from which the signal
+      was produced (e.g., if recording, the recorded sound).
     type: owl:ObjectProperty
     superPropertyOf: ac:recordingOf
     domain: ac:SignalProduction
@@ -18,6 +23,7 @@ defines:
 
   - id: ac:producedSignal
     label: produced signal
+    comment: Associates a signal production event to the produced signal.
     type: owl:ObjectProperty
     superPropertyOf: mo:produced_signal
     domain: ac:SignalProduction
@@ -25,11 +31,13 @@ defines:
 
   - id: ac:Recording
     label: Recording
+    comment: The act of recording some sound to produce a signal.
     type: owl:Class
     superClassOf: mo:Recording
 
   - id: ac:recordingOf
     label: recording of
+    comment: Associates a recording act to the recorded (physical) sound.
     type: owl:ObjectProperty
     superPropertyOf: mo:recording_of
     domain: ac:Recording
@@ -37,16 +45,19 @@ defines:
 
   - id: ac:Syntesis
     label: Syntesis
+    comment: The act of synthesizing a signal.
     type: owl:Class
 
   - id: ac:AudioPublication
     label: Audio publication
+    comment: The act of publishing some audio content as an audio manifestation.
     type: owl:Class
     subClassOf: event:Event
     superClassOf: mo:ReleaseEvent
 
   - id: ac:publishedAudioManifestation
     label: published audio manifestation
+    comment: Associates a publishing act to the audio manifestation.
     type: owl:ObjectProperty
     superPropertyOf: mo:release
     domain: ac:AudioPublication
