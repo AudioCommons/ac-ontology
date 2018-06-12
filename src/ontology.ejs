@@ -82,8 +82,14 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:openInWebVOWL()">View in WebVOWL</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                View...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="javascript:openInWebVOWL()">...in WebVOWL</a>
+                <a class="dropdown-item" href="http://www.essepuntato.it/lode/owlapi/https://w3id.org/ac-ontology/aco">...in LODE</a>
+              </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
