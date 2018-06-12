@@ -277,7 +277,7 @@ n0:DigitalSignal
     owl:disjointWith n0:AnalogSignal.
 n0:duration
     a owl:DatatypeProperty, owl:FunctionalProperty;
-    rd:comment "Associates an audio clip or signal with its duration.";
+    rd:comment "The duration of an audio clip or a signal in ms.";
     rd:domain [ a owl:Class; owl:unionOf [] ];
     rd:isDefinedBy n1:aco;
     rd:label "duration";

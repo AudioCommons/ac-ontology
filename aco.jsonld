@@ -585,7 +585,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "comment": "Associates an audio clip or signal with its duration.",
+         "comment": "The duration of an audio clip or a signal in ms.",
          "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"

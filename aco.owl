@@ -316,7 +316,7 @@
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#duration">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:comment>Associates an audio clip or signal with its duration.</rd:comment>
+        <rd:comment>The duration of an audio clip or a signal in ms.</rd:comment>
         <rd:domain rdf:parseType="Resource">
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
                 <owl:unionOf rdf:parseType="Resource">

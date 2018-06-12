@@ -160,7 +160,7 @@ defines:
 
   - id: ac:duration
     label: duration
-    comment: Associates an audio clip or signal with its duration.
+    comment: The duration of an audio clip or a signal in ms.
     type: [owl:DatatypeProperty, owl:FunctionalProperty]
     superPropertyOf: mo:duration
     domain:
