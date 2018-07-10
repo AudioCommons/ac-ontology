@@ -41,6 +41,8 @@ intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
 equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}
 disjointWith: {'@id': owl:disjointWith, '@type': '@id'}
 
+inverseOf: {'@id': owl:inverseOf, '@type': '@id'}
+
 versionInfo: owl:versionInfo
 maker: foaf:maker
 name: foaf:name

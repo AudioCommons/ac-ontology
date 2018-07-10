@@ -1,0 +1,35 @@
+'@context':
+  - ac: https://w3id.org/ac-ontology/aco#
+id: ''
+defines:
+
+  - id: ac:bitRate
+    label: bit rate
+    comment: >
+      Associates an audio file to the bit rate used for the audio encoding.
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    domain: ac:AudioItem
+    range: xsd:float
+
+  - id: ac:fileSize
+    label: file size
+    comment: Associates an audio file to its size.
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    domain: ac:AudioItem
+    range: xsd:int
+
+  - id: ac:hasCodec
+    label: has codec
+    comment: Associates an audio file to the codec used for the audio encoding.
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    domain: ac:AudioItem
+    range: ebu:AudioCodec
+
+  - id: ac:compressionType
+    label: compression type
+    comment: >
+      Associates an audio file to the kind of compression type used for the
+      audio encoding (either lossless or lossy).
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    domain: ac:AudioItem
+    range: nfo:CompressionType

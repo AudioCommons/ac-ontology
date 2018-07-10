@@ -55,6 +55,8 @@ mo:publication_of rd:subPropertyOf n0:publicationOf.
 
 mo:published rd:subPropertyOf n0:published.
 
+mo:published_as rd:subPropertyOf n0:publishedAs.
+
 mo:Record rd:subClassOf n0:AudioCollection.
 
 mo:Recording rd:subClassOf n0:Recording.
@@ -85,7 +87,7 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 1.0.0";
+    owl:versionInfo "Revision: 1.1.0";
     n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
@@ -235,12 +237,33 @@ n0:AudioPublication
 n0:availableAs
     a owl:ObjectProperty;
     rd:comment
-        """Relates a musical manifestation to a musical item (e.g., a media file).
+        """Relates an audio manifestation to an audio item (e.g., a media file).
 """;
     rd:domain n0:AudioManifestation;
     rd:isDefinedBy n1:aco;
     rd:label "available as";
-    rd:range n0:AudioItem.
+    rd:range n0:AudioItem;
+    rd:subPropertyOf core:exemplar.
+n0:availableItemOf
+    a owl:ObjectProperty;
+    rd:comment
+        """Relates an audio item (e.g., a media file) to the corresponding audio manifestation.
+""";
+    rd:domain n0:AudioItem;
+    rd:isDefinedBy n1:aco;
+    rd:label "available item of";
+    rd:range n0:AudioManifestation;
+    rd:subPropertyOf core:exemplarOf;
+    owl:inverseOf n0:availableAs.
+n0:bitRate
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment
+        """Associates an audio file to the bit rate used for the audio encoding.
+""";
+    rd:domain n0:AudioItem;
+    rd:isDefinedBy n1:aco;
+    rd:label "bit rate";
+    rd:range XML:float.
 n0:bitsPerSample
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:comment
@@ -268,6 +291,15 @@ n0:compiled
     rd:isDefinedBy n1:aco;
     rd:label "compiled";
     rd:range n0:AudioManifestation.
+n0:compressionType
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:comment
+        """Associates an audio file to the kind of compression type used for the audio encoding (either lossless or lossy).
+""";
+    rd:domain n0:AudioItem;
+    rd:isDefinedBy n1:aco;
+    rd:label "compression type";
+    rd:range <nfo:CompressionType>.
 n0:DigitalSignal
     a owl:Class;
     rd:comment "A digital signal.";
@@ -291,6 +323,13 @@ n0:encodes
     rd:isDefinedBy n1:aco;
     rd:label "encodes";
     rd:range n0:DigitalSignal.
+n0:fileSize
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment "Associates an audio file to its size.";
+    rd:domain n0:AudioItem;
+    rd:isDefinedBy n1:aco;
+    rd:label "file size";
+    rd:range XML:int.
 n0:firstNode
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment "Associates an audio collection to its first node.";
@@ -299,6 +338,14 @@ n0:firstNode
     rd:label "first node";
     rd:range n0:AudioCollectionFirstNode;
     rd:subPropertyOf n0:memberNode.
+n0:hasCodec
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:comment
+    "Associates an audio file to the codec used for the audio encoding.";
+    rd:domain n0:AudioItem;
+    rd:isDefinedBy n1:aco;
+    rd:label "has codec";
+    rd:range ebu:AudioCodec.
 n0:homepage
     a owl:ObjectProperty;
     rd:comment
@@ -317,6 +364,16 @@ n0:image
     rd:label "image";
     rd:range n2:Image;
     rd:subPropertyOf n2:depiction.
+n0:isEncodedBy
+    a owl:ObjectProperty;
+    rd:comment
+        """Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+""";
+    rd:domain n0:DigitalSignal;
+    rd:isDefinedBy n1:aco;
+    rd:label "is encoded by";
+    rd:range n0:AudioItem;
+    owl:inverseOf n0:encodes.
 n0:lastNode
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment "Associates an audio collection to its last node.";
@@ -339,7 +396,8 @@ n0:nextNode
     rd:isDefinedBy n1:aco;
     rd:label "next node";
     rd:range n0:AudioCollectionNonFirstNode;
-    rd:subPropertyOf rdf:rest.
+    rd:subPropertyOf rdf:rest;
+    owl:inverseOf n0:previousNode.
 n0:nodeContent
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment
@@ -356,13 +414,24 @@ n0:nodeIndex
     rd:isDefinedBy n1:aco;
     rd:label "node index";
     rd:range XML:int.
+n0:originalFile
+    a owl:ObjectProperty;
+    rd:comment
+        """Relates an audio clip to the original published audio file (if there is such thing).
+""";
+    rd:domain n0:AudioClip;
+    rd:isDefinedBy n1:aco;
+    rd:label "original file";
+    rd:range n0:AudioFile;
+    rd:subPropertyOf n0:availableAs.
 n0:previousNode
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment "Associates a node with the previous node in the collection.";
     rd:domain n0:AudioCollectionNonFirstNode;
     rd:isDefinedBy n1:aco;
     rd:label "previous node";
-    rd:range n0:AudioCollectionNonLastNode.
+    rd:range n0:AudioCollectionNonLastNode;
+    owl:inverseOf n0:nextNode.
 n0:producedSignal
     a owl:ObjectProperty;
     rd:comment "Associates a signal production event to the produced signal.";
@@ -387,7 +456,8 @@ n0:publicationOf
     rd:domain n0:AudioManifestation;
     rd:isDefinedBy n1:aco;
     rd:label "publication of";
-    rd:range n0:AudioExpression.
+    rd:range n0:AudioExpression;
+    rd:subPropertyOf core:embodimentOf.
 n0:published
     a owl:ObjectProperty;
     rd:comment
@@ -397,6 +467,17 @@ n0:published
     rd:isDefinedBy n1:aco;
     rd:label "published";
     rd:range n0:AudioManifestation.
+n0:publishedAs
+    a owl:ObjectProperty;
+    rd:comment
+        """Link an expression to its publication as manifestation.
+""";
+    rd:domain n0:AudioExpression;
+    rd:isDefinedBy n1:aco;
+    rd:label "published as";
+    rd:range n0:AudioManifestation;
+    rd:subPropertyOf core:embodiment;
+    owl:inverseOf n0:publicationOf.
 n0:publishedAudioManifestation
     a owl:ObjectProperty;
     rd:comment "Associates a publishing act to the audio manifestation.";

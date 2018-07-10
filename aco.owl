@@ -68,6 +68,9 @@
     <rdf:Description rdf:about="http://purl.org/ontology/mo/published">
         <rd:subPropertyOf rdf:resource="https://w3id.org/ac-ontology/aco#published"/>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/mo/published_as">
+        <rd:subPropertyOf rdf:resource="https://w3id.org/ac-ontology/aco#publishedAs"/>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/ontology/mo/Record">
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollection"/>
     </rdf:Description>
@@ -107,7 +110,7 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.1.0</owl:versionInfo>
         <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
@@ -269,12 +272,34 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:comment>Relates a musical manifestation to a musical item (e.g., a media file).
+        <rd:comment>Relates an audio manifestation to an audio item (e.g., a media file).
 </rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>available as</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#availableItemOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Relates an audio item (e.g., a media file) to the corresponding audio manifestation.
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>available item of</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+        <rd:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplarOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#availableAs"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#bitRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates an audio file to the bit rate used for the audio encoding.
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>bit rate</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#bitsPerSample">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -304,6 +329,16 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>compiled</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#compressionType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio file to the kind of compression type used for the audio encoding (either lossless or lossy).
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>compression type</rd:label>
+        <rd:range rdf:resource="nfo:CompressionType"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#DigitalSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -335,6 +370,15 @@
         <rd:label>encodes</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#fileSize">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates an audio file to its size.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>file size</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#firstNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -344,6 +388,15 @@
         <rd:label>first node</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionFirstNode"/>
         <rd:subPropertyOf rdf:resource="https://w3id.org/ac-ontology/aco#memberNode"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#hasCodec">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio file to the codec used for the audio encoding.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>has codec</rd:label>
+        <rd:range rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioCodec"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#homepage">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -362,6 +415,16 @@
         <rd:label>image</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
         <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#isEncodedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>is encoded by</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#lastNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -390,6 +453,7 @@
         <rd:label>next node</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNonFirstNode"/>
         <rd:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#previousNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#nodeContent">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -410,6 +474,16 @@
         <rd:label>node index</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#originalFile">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Relates an audio clip to the original published audio file (if there is such thing).
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioClip"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>original file</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioFile"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/ac-ontology/aco#availableAs"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#previousNode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -418,6 +492,7 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>previous node</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNonLastNode"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#nextNode"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#producedSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -444,6 +519,7 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>publication of</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioExpression"/>
+        <rd:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodimentOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#published">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -453,6 +529,17 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>published</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#publishedAs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Link an expression to its publication as manifestation.
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioExpression"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>published as</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+        <rd:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#publicationOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#publishedAudioManifestation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

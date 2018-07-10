@@ -63,7 +63,7 @@
       <strong>Preferred Prefix</strong>: <code>ac:</code>
   <br/>
             
-      <strong>Version Info</strong>: Revision: 1.0.0
+      <strong>Version Info</strong>: Revision: 1.1.0
   <br/>
             
       <strong>Authors</strong>:
@@ -83,13 +83,13 @@
           <p>
             
       <strong>Object Properties</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#encodes">encodes</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#productionFrom">production from</a>.
+      <a href="#nodeContent">node content</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#encodes">encodes</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#availableItemOf">available item of</a>, <a href="#compressionType">compression type</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#hasCodec">has codec</a>, <a href="#isEncodedBy">is encoded by</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#originalFile">original file</a>, <a href="#productionFrom">production from</a>.
   
           </p>
           <p>
             
       <strong>Datatype Properties</strong>:
-      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#nodeIndex">node index</a>.
+      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#bitRate">bit rate</a>, <a href="#fileSize">file size</a>, <a href="#nodeIndex">node index</a>.
   
           </p>
 
@@ -120,7 +120,7 @@
   
                   
       <strong>Range of</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>.
+      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#availableItemOf">available item of</a>.
   
                 </div>
               </div> -->
@@ -154,7 +154,7 @@
   
                       
       <strong>Range of</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>.
+      <a href="#nodeContent">node content</a>, <a href="#compiled">compiled</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#availableItemOf">available item of</a>.
   
                     </p>
                   </div>
@@ -302,6 +302,9 @@
   
                   
                   
+      <strong>Range of</strong>:
+      <a href="#originalFile">original file</a>.
+  
                 </div>
               </div> -->
 
@@ -329,6 +332,9 @@
   
                       
                       
+      <strong>Range of</strong>:
+      <a href="#originalFile">original file</a>.
+  
                     </p>
                   </div>
                 </div>
@@ -355,7 +361,7 @@
   
                   
       <strong>Domain of</strong>:
-      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#sampleRate">sample rate</a>.
+      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#sampleRate">sample rate</a>, <a href="#isEncodedBy">is encoded by</a>.
   
                   
       <strong>Range of</strong>:
@@ -388,7 +394,7 @@
   
                       
       <strong>Domain of</strong>:
-      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#sampleRate">sample rate</a>.
+      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#sampleRate">sample rate</a>, <a href="#isEncodedBy">is encoded by</a>.
   
                       
       <strong>Range of</strong>:
@@ -479,6 +485,9 @@
       <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>.
   
                   
+      <strong>Domain of</strong>:
+      <a href="#publishedAs">published as</a>.
+  
                   
       <strong>Range of</strong>:
       <a href="#publicationOf">publication of</a>.
@@ -510,6 +519,9 @@
       <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>.
   
                       
+      <strong>Domain of</strong>:
+      <a href="#publishedAs">published as</a>.
+  
                       
       <strong>Range of</strong>:
       <a href="#publicationOf">publication of</a>.
@@ -541,11 +553,11 @@
   
                   
       <strong>Domain of</strong>:
-      <a href="#encodes">encodes</a>.
+      <a href="#encodes">encodes</a>, <a href="#availableItemOf">available item of</a>, <a href="#bitRate">bit rate</a>, <a href="#compressionType">compression type</a>, <a href="#fileSize">file size</a>, <a href="#hasCodec">has codec</a>.
   
                   
       <strong>Range of</strong>:
-      <a href="#availableAs">available as</a>.
+      <a href="#availableAs">available as</a>, <a href="#isEncodedBy">is encoded by</a>.
   
                 </div>
               </div> -->
@@ -575,11 +587,11 @@
   
                       
       <strong>Domain of</strong>:
-      <a href="#encodes">encodes</a>.
+      <a href="#encodes">encodes</a>, <a href="#availableItemOf">available item of</a>, <a href="#bitRate">bit rate</a>, <a href="#compressionType">compression type</a>, <a href="#fileSize">file size</a>, <a href="#hasCodec">has codec</a>.
   
                       
       <strong>Range of</strong>:
-      <a href="#availableAs">available as</a>.
+      <a href="#availableAs">available as</a>, <a href="#isEncodedBy">is encoded by</a>.
   
                     </p>
                   </div>
@@ -906,6 +918,9 @@
       <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
   
                   
+      <strong>Domain of</strong>:
+      <a href="#originalFile">original file</a>.
+  
                   
                 </div>
               </div> -->
@@ -934,6 +949,9 @@
       <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
   
                       
+      <strong>Domain of</strong>:
+      <a href="#originalFile">original file</a>.
+  
                       
                     </p>
                   </div>
@@ -1317,15 +1335,18 @@
               <div class="card-body">
                 
                   <p class="card-text">
-                    Relates a musical manifestation to a musical item (e.g., a media file).
+                    Relates an audio manifestation to an audio item (e.g., a media file).
 
                   </p>
                 
                 <p class="card-text">
                   
+      <strong>Super-Properties</strong>:
+      <a href="http://purl.org/vocab/frbr/core#exemplar">frbr:exemplar</a>.
+  
                   
       <strong>Sub-Properties</strong>:
-      <a href="http://purl.org/ontology/mo/available_as">mo:available_as</a>.
+      <a href="http://purl.org/ontology/mo/available_as">mo:available_as</a>, <a href="#originalFile">original file</a>.
   
                   
       <strong>Domain</strong>:
@@ -1542,6 +1563,9 @@
                 
                 <p class="card-text">
                   
+      <strong>Super-Properties</strong>:
+      <a href="http://purl.org/vocab/frbr/core#embodimentOf">frbr:embodimentOf</a>.
+  
                   
       <strong>Sub-Properties</strong>:
       <a href="http://purl.org/ontology/mo/publication_of">mo:publication_of</a>.
@@ -1581,6 +1605,41 @@
                   
       <strong>Domain</strong>:
       <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioManifestation">Audio manifestation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="publishedAs" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">published as</span>
+                  <small class="text-muted"><code>ac:publishedAs</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Link an expression to its publication as manifestation.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="http://purl.org/vocab/frbr/core#embodiment">frbr:embodiment</a>.
+  
+                  
+      <strong>Sub-Properties</strong>:
+      <a href="http://purl.org/ontology/mo/published_as">mo:published_as</a>.
+  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioExpression">Audio expression</a>.
   
                   
       <strong>Range</strong>:
@@ -1655,6 +1714,67 @@
               </div>
             </div>
           
+            <div id="availableItemOf" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">available item of</span>
+                  <small class="text-muted"><code>ac:availableItemOf</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Relates an audio item (e.g., a media file) to the corresponding audio manifestation.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="http://purl.org/vocab/frbr/core#exemplarOf">frbr:exemplarOf</a>.
+  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioManifestation">Audio manifestation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="compressionType" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">compression type</span>
+                  <small class="text-muted"><code>ac:compressionType</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates an audio file to the kind of compression type used for the audio encoding (either lossless or lossy).
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="nfo:CompressionType">nfo:CompressionType</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="firstNode" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1712,6 +1832,63 @@
                   
       <strong>Range</strong>:
       <a href="#AudioCollectionNode">Node</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="hasCodec" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">has codec</span>
+                  <small class="text-muted"><code>ac:hasCodec</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates an audio file to the codec used for the audio encoding.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioCodec">ebu:AudioCodec</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="isEncodedBy" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">is encoded by</span>
+                  <small class="text-muted"><code>ac:isEncodedBy</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#DigitalSignal">Digital signal</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioItem">Audio item</a>.
   
                 </p>
               </div>
@@ -1802,6 +1979,38 @@
                   
       <strong>Range</strong>:
       <a href="#AudioCollectionNonLastNode">Any node but the last</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="originalFile" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">original file</span>
+                  <small class="text-muted"><code>ac:originalFile</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Relates an audio clip to the original published audio file (if there is such thing).
+
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="#availableAs">available as</a>.
+  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioClip">Audio clip</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioFile">Audio file</a>.
   
                 </p>
               </div>
@@ -1963,6 +2172,63 @@
                   
       <strong>Range</strong>:
       <a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="bitRate" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">bit rate</span>
+                  <small class="text-muted"><code>ac:bitRate</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates an audio file to the bit rate used for the audio encoding.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="fileSize" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">file size</span>
+                  <small class="text-muted"><code>ac:fileSize</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates an audio file to its size.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>.
   
                 </p>
               </div>

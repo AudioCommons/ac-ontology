@@ -10,7 +10,7 @@ descr: >
   The Audio Commons Ontology provides main concepts and properties for
   describing audio content, both musical and non-musical, on the Semantic Web.
 title: The Audio Commons Ontology
-versionInfo: 'Revision: 1.0.0'
+versionInfo: 'Revision: 1.1.0'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
   - {name: George Fazekas, label: George Fazekas, id: mailto:g.fazekas@qmul.ac.uk}
@@ -136,18 +136,42 @@ defines:
       Link a particular manifestation to the related expression (e.g., a signal
       or a sound).
     type: owl:ObjectProperty
+    subPropertyOf: frbr:embodimentOf
     superPropertyOf: mo:publication_of
     domain: ac:AudioManifestation
     range: ac:AudioExpression
 
+  - id: ac:publishedAs
+    label: published as
+    comment: >
+      Link an expression to its publication as manifestation.
+    type: owl:ObjectProperty
+    subPropertyOf: frbr:embodiment
+    inverseOf: ac:publicationOf
+    superPropertyOf: mo:published_as
+    domain: ac:AudioExpression
+    range: ac:AudioManifestation
+
   - id: ac:availableAs
     label: available as
     comment: >
-      Relates a musical manifestation to a musical item (e.g., a media file).
+      Relates an audio manifestation to an audio item (e.g., a media file).
     type: owl:ObjectProperty
+    subPropertyOf: frbr:exemplar
     superPropertyOf: mo:available_as
     domain: ac:AudioManifestation
     range: ac:AudioItem
+
+  - id: ac:availableItemOf
+    label: available item of
+    comment: >
+      Relates an audio item (e.g., a media file) to the corresponding audio
+      manifestation.
+    type: owl:ObjectProperty
+    subPropertyOf: frbr:exemplarOf
+    inverseOf: ac:availableAs
+    domain: ac:AudioItem
+    range: ac:AudioManifestation
 
   - id: ac:AudioClip
     label: Audio clip
@@ -157,6 +181,16 @@ defines:
       audio repository, library or archive).
     type: owl:Class
     superClassOf: mo:Track
+
+  - id: ac:originalFile
+    label: original file
+    comment: >
+      Relates an audio clip to the original published audio file (if there is
+      such thing).
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    subPropertyOf: ac:availableAs
+    domain: ac:AudioClip
+    range: ac:AudioFile
 
   - id: ac:duration
     label: duration
@@ -194,6 +228,16 @@ defines:
     superPropertyOf: mo:encodes
     domain: ac:AudioItem
     range: ac:DigitalSignal
+
+  - id: ac:isEncodedBy
+    label: is encoded by
+    comment: >
+      Relates a signal to a MusicalItem (a track on a particular CD, an audio
+      file, a stream somewhere) that encodes it.
+    type: owl:ObjectProperty
+    inverseOf: ac:encodes
+    domain: ac:DigitalSignal
+    range: ac:AudioItem
 
   - id: ac:AudioCategory
     label: Audio category
