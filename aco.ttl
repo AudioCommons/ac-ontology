@@ -263,15 +263,6 @@ n0:availableItemOf
     rd:range n0:AudioManifestation;
     rd:subPropertyOf core:exemplarOf;
     owl:inverseOf n0:availableAs.
-n0:bitRate
-    a owl:DatatypeProperty, owl:FunctionalProperty;
-    rd:comment
-        """Associates an audio file to the bit rate used for the audio encoding.
-""";
-    rd:domain n0:AudioItem;
-    rd:isDefinedBy n1:aco;
-    rd:label "bit rate";
-    rd:range XML:float.
 n0:bitsPerSample
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:comment
@@ -299,15 +290,6 @@ n0:compiled
     rd:isDefinedBy n1:aco;
     rd:label "compiled";
     rd:range n0:AudioManifestation.
-n0:compressionType
-    a owl:FunctionalProperty, owl:ObjectProperty;
-    rd:comment
-        """Associates an audio file to the kind of compression type used for the audio encoding (either lossless or lossy).
-""";
-    rd:domain n0:AudioItem;
-    rd:isDefinedBy n1:aco;
-    rd:label "compression type";
-    rd:range <nfo:CompressionType>.
 n0:DigitalSignal
     a owl:Class;
     rd:comment "A digital signal.";
@@ -331,13 +313,6 @@ n0:encodes
     rd:isDefinedBy n1:aco;
     rd:label "encodes";
     rd:range n0:DigitalSignal.
-n0:fileSize
-    a owl:DatatypeProperty, owl:FunctionalProperty;
-    rd:comment "Associates an audio file to its size.";
-    rd:domain n0:AudioItem;
-    rd:isDefinedBy n1:aco;
-    rd:label "file size";
-    rd:range XML:int.
 n0:firstNode
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment "Associates an audio collection to its first node.";
@@ -346,14 +321,6 @@ n0:firstNode
     rd:label "first node";
     rd:range n0:AudioCollectionFirstNode;
     rd:subPropertyOf n0:memberNode.
-n0:hasCodec
-    a owl:FunctionalProperty, owl:ObjectProperty;
-    rd:comment
-    "Associates an audio file to the codec used for the audio encoding.";
-    rd:domain n0:AudioItem;
-    rd:isDefinedBy n1:aco;
-    rd:label "has codec";
-    rd:range ebu:AudioCodec.
 n0:homepage
     a owl:ObjectProperty;
     rd:comment

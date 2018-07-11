@@ -117,41 +117,41 @@
    "@graph": [
       {
          "id": "_:b0xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b0xb1"
-      },
-      {
-         "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b1xb1",
+         "id": "_:b0xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb2",
+         "id": "_:b0xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb3",
+         "id": "_:b0xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b1xb4",
+         "id": "_:b0xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b1xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b1xb1"
       },
       {
          "id": "mo:AnalogSignal",
@@ -371,11 +371,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b1xb0",
-            "_:b1xb1",
-            "_:b1xb2",
-            "_:b1xb3",
-            "_:b1xb4"
+            "_:b0xb0",
+            "_:b0xb1",
+            "_:b0xb2",
+            "_:b0xb3",
+            "_:b0xb4"
          ],
          "disjointUnionOf": [
             {
@@ -576,20 +576,6 @@
          "inverseOf": "#availableAs"
       },
       {
-         "id": "#bitRate",
-         "type": [
-            "owl:DatatypeProperty",
-            "owl:FunctionalProperty"
-         ],
-         "comment": "Associates an audio file to the bit rate used for the audio encoding.\n",
-         "domain": "#AudioItem",
-         "rdfs:isDefinedBy": {
-            "id": "aco"
-         },
-         "label": "bit rate",
-         "range": "xsd:float"
-      },
-      {
          "id": "#bitsPerSample",
          "type": [
             "owl:DatatypeProperty",
@@ -629,27 +615,13 @@
          "range": "#AudioManifestation"
       },
       {
-         "id": "#compressionType",
-         "type": [
-            "owl:FunctionalProperty",
-            "owl:ObjectProperty"
-         ],
-         "comment": "Associates an audio file to the kind of compression type used for the audio encoding (either lossless or lossy).\n",
-         "domain": "#AudioItem",
-         "rdfs:isDefinedBy": {
-            "id": "aco"
-         },
-         "label": "compression type",
-         "range": "nfo:CompressionType"
-      },
-      {
          "id": "#duration",
          "type": [
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
          "comment": "The duration of an audio clip or a signal in ms.",
-         "domain": "_:b0xb0",
+         "domain": "_:b1xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -668,20 +640,6 @@
          "range": "#DigitalSignal"
       },
       {
-         "id": "#fileSize",
-         "type": [
-            "owl:DatatypeProperty",
-            "owl:FunctionalProperty"
-         ],
-         "comment": "Associates an audio file to its size.",
-         "domain": "#AudioItem",
-         "rdfs:isDefinedBy": {
-            "id": "aco"
-         },
-         "label": "file size",
-         "range": "xsd:int"
-      },
-      {
          "id": "#firstNode",
          "type": [
             "owl:FunctionalProperty",
@@ -695,20 +653,6 @@
          "label": "first node",
          "range": "#AudioCollectionFirstNode",
          "subPropertyOf": "#memberNode"
-      },
-      {
-         "id": "#hasCodec",
-         "type": [
-            "owl:FunctionalProperty",
-            "owl:ObjectProperty"
-         ],
-         "comment": "Associates an audio file to the codec used for the audio encoding.",
-         "domain": "#AudioItem",
-         "rdfs:isDefinedBy": {
-            "id": "aco"
-         },
-         "label": "has codec",
-         "range": "ebu:AudioCodec"
       },
       {
          "id": "#homepage",
