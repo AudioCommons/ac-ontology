@@ -238,6 +238,14 @@
         <rd:label>Audio expression</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#audioFeature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates a signal to an extracted audio feature.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#Signal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>audio feature</rd:label>
+        <rd:range rdf:resource="https://w3id.org/afo/onto/1.1#AudioFeature"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioFile">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>A concrete audio file (encoded in some format)</rd:comment>
@@ -475,6 +483,7 @@
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#originalFile">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:comment>Relates an audio clip to the original published audio file (if there is such thing).
 </rd:comment>

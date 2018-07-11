@@ -9,6 +9,7 @@
 @prefix n2: <http://xmlns.com/foaf/0.1/>.
 @prefix core: <http://purl.org/vocab/frbr/core#>.
 @prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix n3: <https://w3id.org/afo/onto/1.1#>.
 @prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>.
 @prefix cc: <http://web.resource.org/cc/>.
 @prefix eve: <http://purl.org/NET/c4dm/event.owl#>.
@@ -205,6 +206,13 @@ n0:AudioExpression
     rd:isDefinedBy n1:aco;
     rd:label "Audio expression";
     rd:subClassOf core:Expression.
+n0:audioFeature
+    a owl:ObjectProperty;
+    rd:comment "Associates a signal to an extracted audio feature.";
+    rd:domain n0:Signal;
+    rd:isDefinedBy n1:aco;
+    rd:label "audio feature";
+    rd:range n3:AudioFeature.
 n0:AudioFile
     a owl:Class;
     rd:comment "A concrete audio file (encoded in some format)";
@@ -415,7 +423,7 @@ n0:nodeIndex
     rd:label "node index";
     rd:range XML:int.
 n0:originalFile
-    a owl:ObjectProperty;
+    a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment
         """Relates an audio clip to the original published audio file (if there is such thing).
 """;

@@ -76,6 +76,13 @@ defines:
     domain: ac:DigitalSignal
     range: xsd:int
 
+  - id: ac:audioFeature
+    label: audio feature
+    comment: Associates a signal to an extracted audio feature.
+    type: owl:ObjectProperty
+    domain: ac:Signal
+    range: afo:AudioFeature
+
   - id: ac:Sound
     label: Physical sound
     comment: A subclass of AudioExpression, representing a (physical) sound.

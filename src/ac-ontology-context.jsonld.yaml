@@ -16,6 +16,8 @@ vann: http://purl.org/vocab/vann/
 cc: http://web.resource.org/cc/
 frbr: http://purl.org/vocab/frbr/core#
 ebu: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
+afo: https://w3id.org/afo/onto/1.1#
+afv: https://w3id.org/afo/vocab/1.1#
 
 id: '@id'
 type: '@type'
