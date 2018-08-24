@@ -44,6 +44,7 @@ equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}
 disjointWith: {'@id': owl:disjointWith, '@type': '@id'}
 
 inverseOf: {'@id': owl:inverseOf, '@type': '@id'}
+propertyChainAxiom: {'@id': owl:propertyChainAxiom, '@type': '@id'}
 
 versionInfo: owl:versionInfo
 maker: foaf:maker

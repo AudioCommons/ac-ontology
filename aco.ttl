@@ -88,7 +88,7 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 1.1.0";
+    owl:versionInfo "Revision: 1.2.0";
     n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
@@ -212,7 +212,12 @@ n0:audioFeature
     rd:domain n0:Signal;
     rd:isDefinedBy n1:aco;
     rd:label "audio feature";
-    rd:range n3:AudioFeature.
+    rd:range n3:AudioFeature;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:isEncodedBy;
+                rdf:rest [ rdf:first n0:signalAudioFeature; rdf:rest rdf:nil ]
+            ].
 n0:AudioFile
     a owl:Class;
     rd:comment "A concrete audio file (encoded in some format)";
@@ -280,7 +285,12 @@ n0:channels
     rd:domain n0:DigitalSignal;
     rd:isDefinedBy n1:aco;
     rd:label "channels";
-    rd:range XML:int.
+    rd:range XML:int;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:isEncodedBy;
+                rdf:rest [ rdf:first n0:signalChannels; rdf:rest rdf:nil ]
+            ].
 n0:compiled
     a owl:ObjectProperty;
     rd:comment
@@ -303,11 +313,16 @@ n0:duration
     rd:domain [ a owl:Class; owl:unionOf [] ];
     rd:isDefinedBy n1:aco;
     rd:label "duration";
-    rd:range XML:int.
+    rd:range XML:int;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:isEncodedBy;
+                rdf:rest [ rdf:first n0:signalDuration; rdf:rest rdf:nil ]
+            ].
 n0:encodes
-    a owl:ObjectProperty;
+    a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment
-        """Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+        """Associates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
 """;
     rd:domain n0:AudioItem;
     rd:isDefinedBy n1:aco;
@@ -342,7 +357,7 @@ n0:image
 n0:isEncodedBy
     a owl:ObjectProperty;
     rd:comment
-        """Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+        """Associates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
 """;
     rd:domain n0:DigitalSignal;
     rd:isDefinedBy n1:aco;
@@ -480,7 +495,12 @@ n0:sampleRate
     rd:domain n0:DigitalSignal;
     rd:isDefinedBy n1:aco;
     rd:label "sample rate";
-    rd:range XML:float.
+    rd:range XML:float;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:isEncodedBy;
+                rdf:rest [ rdf:first n0:signalSampleRate; rdf:rest rdf:nil ]
+            ].
 n0:Signal
     a owl:Class;
     rd:comment
@@ -489,6 +509,48 @@ n0:Signal
     rd:isDefinedBy n1:aco;
     rd:label "Signal";
     rd:subClassOf n0:AudioExpression.
+n0:signalAudioFeature
+    a owl:ObjectProperty;
+    rd:comment
+        """Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature
+""";
+    rd:domain n0:AudioItem, [ a owl:Restriction; owl:onProperty n0:encodes ];
+    rd:isDefinedBy n1:aco;
+    rd:label "signal audio feature";
+    rd:range n3:AudioFeature;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:encodes;
+                rdf:rest [ rdf:first n0:audioFeature; rdf:rest rdf:nil ]
+            ].
+n0:signalChannels
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment
+        """The number of channels the digital signal holds (mono \u2192 1, stereo \u2192 2). Shortcut for ac:encodes/ac:channels
+""";
+    rd:domain n0:AudioItem, [ a owl:Restriction; owl:onProperty n0:encodes ];
+    rd:isDefinedBy n1:aco;
+    rd:label "signal channels";
+    rd:range XML:int;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:encodes;
+                rdf:rest [ rdf:first n0:channels; rdf:rest rdf:nil ]
+            ].
+n0:signalDuration
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment
+        """The duration of the signal in ms. Shortcut for ac:encodes/ac:duration
+""";
+    rd:domain n0:AudioItem, [ a owl:Restriction; owl:onProperty n0:encodes ];
+    rd:isDefinedBy n1:aco;
+    rd:label "signal duration";
+    rd:range XML:int;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:encodes;
+                rdf:rest [ rdf:first n0:duration; rdf:rest rdf:nil ]
+            ].
 n0:SignalProduction
     a owl:Class;
     rd:comment
@@ -497,6 +559,20 @@ n0:SignalProduction
     rd:isDefinedBy n1:aco;
     rd:label "Signal production";
     rd:subClassOf eve:Event.
+n0:signalSampleRate
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment
+        """The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate
+""";
+    rd:domain n0:AudioItem, [ a owl:Restriction; owl:onProperty n0:encodes ];
+    rd:isDefinedBy n1:aco;
+    rd:label "signal sample rate";
+    rd:range XML:float;
+    owl:propertyChainAxiom
+            [
+                rdf:first n0:encodes;
+                rdf:rest [ rdf:first n0:sampleRate; rdf:rest rdf:nil ]
+            ].
 n0:Sound
     a owl:Class;
     rd:comment

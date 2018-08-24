@@ -1,0 +1,91 @@
+'@context':
+  - ac: https://w3id.org/ac-ontology/aco#
+id: ''
+defines:
+
+  - id: ac:signalSampleRate
+    label: signal sample rate
+    comment: >
+      The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:encodes
+        - id: ac:sampleRate
+    domain:
+      - ac:AudioItem
+      - type: owl:Restriction
+        onProperty: ac:encodes
+        cardinality: 1
+    range: xsd:float
+  - id: ac:sampleRate
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:isEncodedBy
+        - id: ac:signalSampleRate
+
+  - id: ac:signalChannels
+    label: signal channels
+    comment: >
+      The number of channels the digital signal holds (mono → 1, stereo → 2).
+      Shortcut for ac:encodes/ac:channels
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:encodes
+        - id: ac:channels
+    domain:
+      - ac:AudioItem
+      - type: owl:Restriction
+        onProperty: ac:encodes
+        cardinality: 1
+    range: xsd:int
+  - id: ac:channels
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:isEncodedBy
+        - id: ac:signalChannels
+
+  - id: ac:signalDuration
+    label: signal duration
+    comment: >
+      The duration of the signal in ms.
+      Shortcut for ac:encodes/ac:duration
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:encodes
+        - id: ac:duration
+    domain:
+      - ac:AudioItem
+      - type: owl:Restriction
+        onProperty: ac:encodes
+        cardinality: 1
+    range: xsd:int
+  - id: ac:duration
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:isEncodedBy
+        - id: ac:signalDuration
+
+  - id: ac:signalAudioFeature
+    label: signal audio feature
+    comment: >
+      Associates the signal encoded by an audio item to an extracted audio feature.
+      Shortcut for ac:encodes/ac:audioFeature
+    type: owl:ObjectProperty
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:encodes
+        - id: ac:audioFeature
+    domain:
+      - ac:AudioItem
+      - type: owl:Restriction
+        onProperty: ac:encodes
+        cardinality: 1
+    range: afo:AudioFeature
+  - id: ac:audioFeature
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:isEncodedBy
+        - id: ac:signalAudioFeature

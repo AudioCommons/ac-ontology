@@ -10,7 +10,7 @@ descr: >
   The Audio Commons Ontology provides main concepts and properties for
   describing audio content, both musical and non-musical, on the Semantic Web.
 title: The Audio Commons Ontology
-versionInfo: 'Revision: 1.1.0'
+versionInfo: 'Revision: 1.2.0'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
   - {name: George Fazekas, label: George Fazekas, id: mailto:g.fazekas@qmul.ac.uk}
@@ -229,9 +229,9 @@ defines:
   - id: ac:encodes
     label: encodes
     comment: >
-      Relates a MusicalItem (a track on a particular CD, an audio file, a stream
+      Associates a MusicalItem (a track on a particular CD, an audio file, a stream
       somewhere) to the signal it encodes.
-    type: owl:ObjectProperty
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
     superPropertyOf: mo:encodes
     domain: ac:AudioItem
     range: ac:DigitalSignal
@@ -239,7 +239,7 @@ defines:
   - id: ac:isEncodedBy
     label: is encoded by
     comment: >
-      Relates a signal to a MusicalItem (a track on a particular CD, an audio
+      Associates a signal to a MusicalItem (a track on a particular CD, an audio
       file, a stream somewhere) that encodes it.
     type: owl:ObjectProperty
     inverseOf: ac:encodes

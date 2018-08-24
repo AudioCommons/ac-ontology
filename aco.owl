@@ -110,7 +110,7 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.1.0</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.2.0</owl:versionInfo>
         <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
@@ -245,6 +245,13 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>audio feature</rd:label>
         <rd:range rdf:resource="https://w3id.org/afo/onto/1.1#AudioFeature"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#isEncodedBy"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#signalAudioFeature"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioFile">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -318,6 +325,13 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>channels</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#isEncodedBy"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#signalChannels"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#compiled">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -348,10 +362,18 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>duration</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#isEncodedBy"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#signalDuration"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#encodes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:comment>Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+        <rd:comment>Associates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
 </rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
@@ -388,7 +410,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#isEncodedBy">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:comment>Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+        <rd:comment>Associates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
 </rd:comment>
         <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
@@ -544,6 +566,13 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>sample rate</rd:label>
         <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#isEncodedBy"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#signalSampleRate"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Signal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -553,6 +582,68 @@
         <rd:label>Signal</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/ac-ontology/aco#AudioExpression"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#signalAudioFeature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:domain rdf:parseType="Resource">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+            </rd:domain>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>signal audio feature</rd:label>
+        <rd:range rdf:resource="https://w3id.org/afo/onto/1.1#AudioFeature"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#audioFeature"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#signalChannels">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>The number of channels the digital signal holds (mono → 1, stereo → 2). Shortcut for ac:encodes/ac:channels
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:domain rdf:parseType="Resource">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+            </rd:domain>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>signal channels</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#channels"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#signalDuration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>The duration of the signal in ms. Shortcut for ac:encodes/ac:duration
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:domain rdf:parseType="Resource">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+            </rd:domain>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>signal duration</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#duration"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#SignalProduction">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>The act of producing a signal (e.g., through a recording or a synthesis).
@@ -560,6 +651,27 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>Signal production</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#signalSampleRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioItem"/>
+        <rd:domain rdf:parseType="Resource">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+            </rd:domain>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>signal sample rate</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:propertyChainAxiom rdf:parseType="Resource">
+                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
+                <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#sampleRate"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+            </owl:propertyChainAxiom>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#Sound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>

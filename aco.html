@@ -63,7 +63,7 @@
       <strong>Preferred Prefix</strong>: <code>ac:</code>
   <br/>
             
-      <strong>Version Info</strong>: Revision: 1.1.0
+      <strong>Version Info</strong>: Revision: 1.2.0
   <br/>
             
       <strong>Authors</strong>:
@@ -83,13 +83,13 @@
           <p>
             
       <strong>Object Properties</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#encodes">encodes</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#audioFeature">audio feature</a>, <a href="#availableItemOf">available item of</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#isEncodedBy">is encoded by</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#originalFile">original file</a>, <a href="#productionFrom">production from</a>.
+      <a href="#encodes">encodes</a>, <a href="#nodeContent">node content</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#audioFeature">audio feature</a>, <a href="#isEncodedBy">is encoded by</a>, <a href="#signalAudioFeature">signal audio feature</a>, <a href="#availableItemOf">available item of</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#originalFile">original file</a>, <a href="#productionFrom">production from</a>.
   
           </p>
           <p>
             
       <strong>Datatype Properties</strong>:
-      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#nodeIndex">node index</a>.
+      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#signalChannels">signal channels</a>, <a href="#signalDuration">signal duration</a>, <a href="#nodeIndex">node index</a>, <a href="#signalSampleRate">signal sample rate</a>.
   
           </p>
 
@@ -175,7 +175,7 @@
                   
                   
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b0">_:b0</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b6">_:b6</a>, <a href="_:b7">_:b7</a>, <a href="_:b8">_:b8</a>, <a href="_:b9">_:b9</a>, <a href="_:b10">_:b10</a>.
   
                   
       <strong>Sub-Classes</strong>:
@@ -209,7 +209,7 @@
                     <p class="card-text">
                       
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b0">_:b0</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b6">_:b6</a>, <a href="_:b7">_:b7</a>, <a href="_:b8">_:b8</a>, <a href="_:b9">_:b9</a>, <a href="_:b10">_:b10</a>.
   
                       
       <strong>Sub-Classes</strong>:
@@ -553,7 +553,7 @@
   
                   
       <strong>Domain of</strong>:
-      <a href="#encodes">encodes</a>, <a href="#availableItemOf">available item of</a>.
+      <a href="#encodes">encodes</a>, <a href="#signalAudioFeature">signal audio feature</a>, <a href="#availableItemOf">available item of</a>, <a href="#signalChannels">signal channels</a>, <a href="#signalDuration">signal duration</a>, <a href="#signalSampleRate">signal sample rate</a>.
   
                   
       <strong>Range of</strong>:
@@ -587,7 +587,7 @@
   
                       
       <strong>Domain of</strong>:
-      <a href="#encodes">encodes</a>, <a href="#availableItemOf">available item of</a>.
+      <a href="#encodes">encodes</a>, <a href="#signalAudioFeature">signal audio feature</a>, <a href="#availableItemOf">available item of</a>, <a href="#signalChannels">signal channels</a>, <a href="#signalDuration">signal duration</a>, <a href="#signalSampleRate">signal sample rate</a>.
   
                       
       <strong>Range of</strong>:
@@ -1300,6 +1300,38 @@
 
           <h2 id="objPropList">Object properties</h2>
           
+            <div id="encodes" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">encodes</span>
+                  <small class="text-muted"><code>ac:encodes</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+      <strong>Sub-Properties</strong>:
+      <a href="http://purl.org/ontology/mo/encodes">mo:encodes</a>.
+  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#DigitalSignal">Digital signal</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="nodeContent" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1393,38 +1425,6 @@
                   
       <strong>Range</strong>:
       <a href="#AudioManifestation">Audio manifestation</a>.
-  
-                </p>
-              </div>
-            </div>
-          
-            <div id="encodes" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2">encodes</span>
-                  <small class="text-muted"><code>ac:encodes</code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                
-                  <p class="card-text">
-                    Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
-
-                  </p>
-                
-                <p class="card-text">
-                  
-                  
-      <strong>Sub-Properties</strong>:
-      <a href="http://purl.org/ontology/mo/encodes">mo:encodes</a>.
-  
-                  
-      <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>.
-  
-                  
-      <strong>Range</strong>:
-      <a href="#DigitalSignal">Digital signal</a>.
   
                 </p>
               </div>
@@ -1748,6 +1748,64 @@
               </div>
             </div>
           
+            <div id="isEncodedBy" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">is encoded by</span>
+                  <small class="text-muted"><code>ac:isEncodedBy</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#DigitalSignal">Digital signal</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioItem">Audio item</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="signalAudioFeature" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">signal audio feature</span>
+                  <small class="text-muted"><code>ac:signalAudioFeature</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>, <a href="_:b5">_:b5</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="https://w3id.org/afo/onto/1.1#AudioFeature">afo:AudioFeature</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="availableItemOf" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1837,35 +1895,6 @@
                   
       <strong>Range</strong>:
       <a href="#AudioCollectionNode">Node</a>.
-  
-                </p>
-              </div>
-            </div>
-          
-            <div id="isEncodedBy" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2">is encoded by</span>
-                  <small class="text-muted"><code>ac:isEncodedBy</code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                
-                  <p class="card-text">
-                    Relates a signal to a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) that encodes it.
-
-                  </p>
-                
-                <p class="card-text">
-                  
-                  
-                  
-      <strong>Domain</strong>:
-      <a href="#DigitalSignal">Digital signal</a>.
-  
-                  
-      <strong>Range</strong>:
-      <a href="#AudioItem">Audio item</a>.
   
                 </p>
               </div>
@@ -2113,7 +2142,7 @@
   
                   
       <strong>Domain</strong>:
-      <a href="_:b5">_:b5</a>.
+      <a href="_:b0">_:b0</a>.
   
                   
       <strong>Range</strong>:
@@ -2154,6 +2183,64 @@
               </div>
             </div>
           
+            <div id="signalChannels" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">signal channels</span>
+                  <small class="text-muted"><code>ac:signalChannels</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    The number of channels the digital signal holds (mono \u2192 1, stereo \u2192 2). Shortcut for ac:encodes/ac:channels
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>, <a href="_:b3">_:b3</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="signalDuration" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">signal duration</span>
+                  <small class="text-muted"><code>ac:signalDuration</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    The duration of the signal in ms. Shortcut for ac:encodes/ac:duration
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>, <a href="_:b4">_:b4</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="nodeIndex" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -2177,6 +2264,35 @@
                   
       <strong>Range</strong>:
       <a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="signalSampleRate" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">signal sample rate</span>
+                  <small class="text-muted"><code>ac:signalSampleRate</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioItem">Audio item</a>, <a href="_:b2">_:b2</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>.
   
                 </p>
               </div>
