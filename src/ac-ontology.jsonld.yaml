@@ -10,7 +10,7 @@ descr: >
   The Audio Commons Ontology provides main concepts and properties for
   describing audio content, both musical and non-musical, on the Semantic Web.
 title: The Audio Commons Ontology
-versionInfo: 'Revision: 1.2.0'
+versionInfo: 'Revision: 1.2.1'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
   - {name: George Fazekas, label: George Fazekas, id: mailto:g.fazekas@qmul.ac.uk}
