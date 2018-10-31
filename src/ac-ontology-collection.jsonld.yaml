@@ -144,3 +144,19 @@ defines:
     inverseOf: ac:nextNode
     domain: ac:AudioCollectionNonFirstNode
     range: ac:AudioCollectionNonLastNode
+
+  - id: ac:containerNode
+    label: container node
+    comment: Associates an audio manifestation with the collection nodes that contain it.
+    type: owl:ObjectProperty
+    inverseOf: ac:nodeContent
+    domain: ac:AudioManifestation
+    range: ac:AudioCollectionNode
+
+  - id: ac:defaultContainerNode
+    label: default container node
+    comment: Associates an audio manifestation with a node in the default parent collection (e.g., a musical track to the album it has been published it), if there is such a thing.
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    subPropertyOf: ac:containerNode
+    domain: ac:AudioManifestation
+    range: ac:AudioCollectionNode
