@@ -103,7 +103,7 @@ defines:
     comment: >
       Links a sound, an artist, a record, etc. to a corresponding webpage.
     type: owl:ObjectProperty
-    subPropertyOf: foaf:isPrimaryTopicOf
+    subPropertyOf: [foaf:isPrimaryTopicOf, schema:subjectOf]
     superPropertyOf: mo:homepage
     range: foaf:Document
 
@@ -113,9 +113,9 @@ defines:
       Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound,
       an artist, a record, etc.
     type: owl:ObjectProperty
-    subPropertyOf: foaf:depiction
+    subPropertyOf: [foaf:depiction, ebu:hasRelatedPicture]
     superPropertyOf: mo:image
-    range: foaf:Image
+    range: [foaf:Image, ebu:Picture]
 
   - id: ac:compiled
     label: compiled
