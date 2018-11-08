@@ -10,7 +10,7 @@ descr: >
   The Audio Commons Ontology provides main concepts and properties for
   describing audio content, both musical and non-musical, on the Semantic Web.
 title: The Audio Commons Ontology
-versionInfo: 'Revision: 1.2.1'
+versionInfo: 'Revision: 1.2.2'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
   - {name: George Fazekas, label: George Fazekas, id: mailto:g.fazekas@qmul.ac.uk}
@@ -117,6 +117,15 @@ defines:
     superPropertyOf: mo:image
     range: [foaf:Image, ebu:Picture]
 
+  - id: ac:author
+    label: author
+    comment: >
+      Used to relate a person or a group of people who authored an audio
+      manifestation.
+    type: owl:ObjectProperty
+    domain: foaf:Agent
+    range: ac:AudioManifestation
+
   - id: ac:compiled
     label: compiled
     comment: >
@@ -208,7 +217,7 @@ defines:
       - type: owl:Class
         unionOf:
           -'@list': [ac:AudioClip, ac:Signal]
-    range: xsd:int
+    range: xsd:float
 
   - id: ac:AudioItem
     label: Audio item

@@ -110,7 +110,7 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.2.0</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.2.2</owl:versionInfo>
         <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
@@ -285,6 +285,15 @@
         <rd:label>Audio publication</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#author">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Used to relate a person or a group of people who authored an audio manifestation.
+</rd:comment>
+        <rd:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>author</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#availableAs">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:comment>Relates an audio manifestation to an audio item (e.g., a media file).
@@ -342,6 +351,25 @@
         <rd:label>compiled</rd:label>
         <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#containerNode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio manifestation with the collection nodes that contain it.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>container node</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ac-ontology/aco#nodeContent"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#defaultContainerNode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Associates an audio manifestation with a node in the default parent collection (e.g., a musical track to the album it has been published it), if there is such a thing.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioManifestation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>default container node</rd:label>
+        <rd:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollectionNode"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/ac-ontology/aco#containerNode"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#DigitalSignal">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>A digital signal.</rd:comment>
@@ -361,7 +389,7 @@
             </rd:domain>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>duration</rd:label>
-        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <owl:propertyChainAxiom rdf:parseType="Resource">
                 <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#isEncodedBy"/>
                 <rdf:rest rdf:parseType="Resource">
@@ -398,6 +426,7 @@
         <rd:label>homepage</rd:label>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
         <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+        <rd:subPropertyOf rdf:resource="schema:subjectOf"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#image">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -405,7 +434,9 @@
 </rd:comment>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>image</rd:label>
+        <rd:range rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture"/>
         <rd:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
+        <rd:subPropertyOf rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPicture"/>
         <rd:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#isEncodedBy">
@@ -635,7 +666,7 @@
             </rd:domain>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rd:label>signal duration</rd:label>
-        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <owl:propertyChainAxiom rdf:parseType="Resource">
                 <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#encodes"/>
                 <rdf:rest rdf:parseType="Resource">

@@ -61,7 +61,7 @@ defines:
       - type: owl:Restriction
         onProperty: ac:encodes
         cardinality: 1
-    range: xsd:int
+    range: xsd:float
   - id: ac:duration
     propertyChainAxiom:
       - '@list':

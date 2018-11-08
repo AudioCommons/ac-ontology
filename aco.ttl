@@ -88,7 +88,7 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 1.2.0";
+    owl:versionInfo "Revision: 1.2.2";
     n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
@@ -247,6 +247,15 @@ n0:AudioPublication
     rd:isDefinedBy n1:aco;
     rd:label "Audio publication";
     rd:subClassOf eve:Event.
+n0:author
+    a owl:ObjectProperty;
+    rd:comment
+        """Used to relate a person or a group of people who authored an audio manifestation.
+""";
+    rd:domain n2:Agent;
+    rd:isDefinedBy n1:aco;
+    rd:label "author";
+    rd:range n0:AudioManifestation.
 n0:availableAs
     a owl:ObjectProperty;
     rd:comment
@@ -300,6 +309,24 @@ n0:compiled
     rd:isDefinedBy n1:aco;
     rd:label "compiled";
     rd:range n0:AudioManifestation.
+n0:containerNode
+    a owl:ObjectProperty;
+    rd:comment
+        "Associates an audio manifestation with the collection nodes that contain it.";
+    rd:domain n0:AudioManifestation;
+    rd:isDefinedBy n1:aco;
+    rd:label "container node";
+    rd:range n0:AudioCollectionNode;
+    owl:inverseOf n0:nodeContent.
+n0:defaultContainerNode
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:comment
+        "Associates an audio manifestation with a node in the default parent collection (e.g., a musical track to the album it has been published it), if there is such a thing.";
+    rd:domain n0:AudioManifestation;
+    rd:isDefinedBy n1:aco;
+    rd:label "default container node";
+    rd:range n0:AudioCollectionNode;
+    rd:subPropertyOf n0:containerNode.
 n0:DigitalSignal
     a owl:Class;
     rd:comment "A digital signal.";
@@ -313,7 +340,7 @@ n0:duration
     rd:domain [ a owl:Class; owl:unionOf [] ];
     rd:isDefinedBy n1:aco;
     rd:label "duration";
-    rd:range XML:int;
+    rd:range XML:float;
     owl:propertyChainAxiom
             [
                 rdf:first n0:isEncodedBy;
@@ -344,7 +371,7 @@ n0:homepage
     rd:isDefinedBy n1:aco;
     rd:label "homepage";
     rd:range n2:Document;
-    rd:subPropertyOf n2:isPrimaryTopicOf.
+    rd:subPropertyOf n2:isPrimaryTopicOf, <schema:subjectOf>.
 n0:image
     a owl:ObjectProperty;
     rd:comment
@@ -352,8 +379,8 @@ n0:image
 """;
     rd:isDefinedBy n1:aco;
     rd:label "image";
-    rd:range n2:Image;
-    rd:subPropertyOf n2:depiction.
+    rd:range ebu:Picture, n2:Image;
+    rd:subPropertyOf ebu:hasRelatedPicture, n2:depiction.
 n0:isEncodedBy
     a owl:ObjectProperty;
     rd:comment
@@ -545,7 +572,7 @@ n0:signalDuration
     rd:domain n0:AudioItem, [ a owl:Restriction; owl:onProperty n0:encodes ];
     rd:isDefinedBy n1:aco;
     rd:label "signal duration";
-    rd:range XML:int;
+    rd:range XML:float;
     owl:propertyChainAxiom
             [
                 rdf:first n0:encodes;

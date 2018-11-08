@@ -127,55 +127,55 @@
       {
          "id": "_:b1xb0",
          "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b1xb1",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b1xb2",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b1xb3",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b2xb0",
-         "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b2xb1",
+         "id": "_:b1xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b2xb2",
+         "id": "_:b1xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b2xb3",
+         "id": "_:b1xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b2xb4",
+         "id": "_:b1xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b3xb0",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb1",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb2",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb3",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
       },
       {
          "id": "mo:AnalogSignal",
@@ -314,7 +314,7 @@
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
          "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
-         "versionInfo": "Revision: 1.2.0",
+         "versionInfo": "Revision: 1.2.2",
          "maker": [
             {
                "id": "mailto:g.fazekas@qmul.ac.uk"
@@ -395,11 +395,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b2xb0",
-            "_:b2xb1",
-            "_:b2xb2",
-            "_:b2xb3",
-            "_:b2xb4"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2",
+            "_:b1xb3",
+            "_:b1xb4"
          ],
          "disjointUnionOf": [
             {
@@ -581,6 +581,17 @@
          }
       },
       {
+         "id": "#author",
+         "type": "owl:ObjectProperty",
+         "comment": "Used to relate a person or a group of people who authored an audio manifestation.\n",
+         "domain": "foaf:Agent",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "author",
+         "range": "#AudioManifestation"
+      },
+      {
          "id": "#availableAs",
          "type": "owl:ObjectProperty",
          "comment": "Relates an audio manifestation to an audio item (e.g., a media file).\n",
@@ -651,6 +662,33 @@
          "range": "#AudioManifestation"
       },
       {
+         "id": "#containerNode",
+         "type": "owl:ObjectProperty",
+         "comment": "Associates an audio manifestation with the collection nodes that contain it.",
+         "domain": "#AudioManifestation",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "container node",
+         "range": "#AudioCollectionNode",
+         "inverseOf": "#nodeContent"
+      },
+      {
+         "id": "#defaultContainerNode",
+         "type": [
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "comment": "Associates an audio manifestation with a node in the default parent collection (e.g., a musical track to the album it has been published it), if there is such a thing.",
+         "domain": "#AudioManifestation",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "default container node",
+         "range": "#AudioCollectionNode",
+         "subPropertyOf": "#containerNode"
+      },
+      {
          "id": "#duration",
          "type": [
             "owl:DatatypeProperty",
@@ -662,7 +700,7 @@
             "id": "aco"
          },
          "label": "duration",
-         "range": "xsd:int",
+         "range": "xsd:float",
          "propertyChainAxiom": {
             "@list": [
                "#isEncodedBy",
@@ -708,7 +746,10 @@
          },
          "label": "homepage",
          "range": "foaf:Document",
-         "subPropertyOf": "foaf:isPrimaryTopicOf"
+         "subPropertyOf": [
+            "foaf:isPrimaryTopicOf",
+            "schema:subjectOf"
+         ]
       },
       {
          "id": "#image",
@@ -718,8 +759,14 @@
             "id": "aco"
          },
          "label": "image",
-         "range": "foaf:Image",
-         "subPropertyOf": "foaf:depiction"
+         "range": [
+            "ebu:Picture",
+            "foaf:Image"
+         ],
+         "subPropertyOf": [
+            "ebu:hasRelatedPicture",
+            "foaf:depiction"
+         ]
       },
       {
          "id": "#isEncodedBy",
@@ -941,7 +988,7 @@
          "comment": "Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature\n",
          "domain": [
             "#AudioItem",
-            "_:b1xb3"
+            "_:b3xb3"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -964,7 +1011,7 @@
          "comment": "The number of channels the digital signal holds (mono \\u2192 1, stereo \\u2192 2). Shortcut for ac:encodes/ac:channels\n",
          "domain": [
             "#AudioItem",
-            "_:b1xb1"
+            "_:b3xb1"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -987,13 +1034,13 @@
          "comment": "The duration of the signal in ms. Shortcut for ac:encodes/ac:duration\n",
          "domain": [
             "#AudioItem",
-            "_:b1xb2"
+            "_:b3xb2"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
          "label": "signal duration",
-         "range": "xsd:int",
+         "range": "xsd:float",
          "propertyChainAxiom": {
             "@list": [
                "#encodes",
@@ -1010,7 +1057,7 @@
          "comment": "The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate\n",
          "domain": [
             "#AudioItem",
-            "_:b1xb0"
+            "_:b3xb0"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
