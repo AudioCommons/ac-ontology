@@ -18,16 +18,16 @@
   },
   "homepage": "https://github.com/AudioCommons/ac-ontology#readme",
   "devDependencies": {
-    "async": "^2.6.0",
-    "ejs": "^2.5.7",
+    "async": "^2.6.1",
+    "ejs": "^2.6.1",
     "fs": "0.0.1-security",
-    "js-yaml": "^3.10.0",
+    "js-yaml": "^3.12.0",
     "jsld": "^1.0.3",
     "jsonld": "^0.4.12",
     "path": "^0.12.7",
-    "rdflib": "^0.16.5"
+    "rdflib": "^0.16.9"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.4"
   }
 }
