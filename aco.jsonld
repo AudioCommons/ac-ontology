@@ -121,41 +121,41 @@
    "@graph": [
       {
          "id": "_:b0xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b0xb1"
-      },
-      {
-         "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b1xb1",
+         "id": "_:b0xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb2",
+         "id": "_:b0xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b1xb3",
+         "id": "_:b0xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b1xb4",
+         "id": "_:b0xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b1xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b1xb1"
       },
       {
          "id": "_:b3xb0",
@@ -395,11 +395,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b1xb0",
-            "_:b1xb1",
-            "_:b1xb2",
-            "_:b1xb3",
-            "_:b1xb4"
+            "_:b0xb0",
+            "_:b0xb1",
+            "_:b0xb2",
+            "_:b0xb3",
+            "_:b0xb4"
          ],
          "disjointUnionOf": [
             {
@@ -695,7 +695,7 @@
             "owl:FunctionalProperty"
          ],
          "comment": "The duration of an audio clip or a signal in ms.",
-         "domain": "_:b0xb0",
+         "domain": "_:b1xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
