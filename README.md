@@ -11,8 +11,20 @@ Refer to https://w3id.org/ac-ontology/aco for documentation and downloading the 
 ## Development
 
 The ontology source code is split among a set of JSON-LD files in YAML format:
-- [ac-ontology.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology.jsonld.yaml)
-- [ac-ontology-collection.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology-collection.jsonld.yaml)
+- [src/ac-ontology.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology.jsonld.yaml) - main concepts;
+- [src/ac-ontology-collection.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology-collection.jsonld.yaml) - formalisation of AudioCollection;
+- [src/ac-ontology-events.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology-events.jsonld.yaml) - concepts related to events in music recording/generation/production;
+- [src/ac-ontology-shortcuts-fileToSignal.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology-shortcuts-fileToSignal.jsonld.yaml) - some shortcuts.
+
+They all share the same in context, defined in - [src/ac-ontology-context.jsonld.yaml](https://github.com/AudioCommons/ac-ontology/tree/master/src/ac-ontology-context.jsonld.yaml)
 
 The HTML documentation is generated through the [EJS](https://ejs.co/) template
-[ontology.ejs](https://github.com/AudioCommons/ac-ontology/src/tree/master/ontology.ejs).
+[src/ontology.ejs](https://github.com/AudioCommons/ac-ontology/src/tree/master/ontology.ejs).
+
+## Build
+
+To regenerate the HTML documentation and ontology serialisations execute the following command.
+
+`node lib/dist.js`
+
+It regenerates the following files:
