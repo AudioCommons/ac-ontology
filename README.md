@@ -29,7 +29,7 @@ To regenerate the HTML documentation and ontology serialisations execute the fol
 
 It regenerates the following files:
 - [aco.html](https://github.com/AudioCommons/ac-ontology/tree/master/aco.html) - ontology documentation webpage (HTML);
-- [aco.ttl](https://github.com/AudioCommons/ac-ontology/tree/master/aco.html) - ontology in [Turtle](https://www.w3.org/TR/turtle/);
+- [aco.ttl](https://github.com/AudioCommons/ac-ontology/tree/master/aco.ttl) - ontology in [Turtle](https://www.w3.org/TR/turtle/);
 - [aco.jsonld](https://github.com/AudioCommons/ac-ontology/tree/master/aco.jsonld) - ontology in [JSON-LD](https://www.w3.org/TR/json-ld/);
 - [aco.nt](https://github.com/AudioCommons/ac-ontology/tree/master/aco.nt) - ontology as [N-Triples](https://www.w3.org/TR/n-triples/);
 - [aco.rdf](https://github.com/AudioCommons/ac-ontology/tree/master/aco.rdf) - ontology as [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/);
