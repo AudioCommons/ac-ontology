@@ -110,7 +110,7 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.2.2</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.2.3</owl:versionInfo>
         <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
@@ -277,6 +277,16 @@
         <rd:label>Audio manifestation</rd:label>
         <rd:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
         <rd:subClassOf rdf:resource="http://web.resource.org/cc/Work"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#audioMd5">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>MD5 checksum computed on the audio content of the file.
+</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioFile"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rd:label>audio MD5 checksum</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#AudioPublication">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>

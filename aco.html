@@ -63,7 +63,7 @@
       <strong>Preferred Prefix</strong>: <code>ac:</code>
   <br/>
             
-      <strong>Version Info</strong>: Revision: 1.2.2
+      <strong>Version Info</strong>: Revision: 1.2.3
   <br/>
             
       <strong>Authors</strong>:
@@ -83,13 +83,13 @@
           <p>
             
       <strong>Object Properties</strong>:
-      <a href="#nodeContent">node content</a>, <a href="#encodes">encodes</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#audioFeature">audio feature</a>, <a href="#isEncodedBy">is encoded by</a>, <a href="#signalAudioFeature">signal audio feature</a>, <a href="#author">author</a>, <a href="#availableItemOf">available item of</a>, <a href="#containerNode">container node</a>, <a href="#defaultContainerNode">default container node</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#originalFile">original file</a>, <a href="#productionFrom">production from</a>.
+      <a href="#encodes">encodes</a>, <a href="#nodeContent">node content</a>, <a href="#availableAs">available as</a>, <a href="#compiled">compiled</a>, <a href="#audioCategory">is in audio category</a>, <a href="#homepage">homepage</a>, <a href="#image">image</a>, <a href="#producedSignal">produced signal</a>, <a href="#publicationOf">publication of</a>, <a href="#published">published</a>, <a href="#publishedAs">published as</a>, <a href="#recordingOf">recording of</a>, <a href="#publishedAudioManifestation">published audio manifestation</a>, <a href="#audioFeature">audio feature</a>, <a href="#isEncodedBy">is encoded by</a>, <a href="#signalAudioFeature">signal audio feature</a>, <a href="#author">author</a>, <a href="#availableItemOf">available item of</a>, <a href="#containerNode">container node</a>, <a href="#defaultContainerNode">default container node</a>, <a href="#firstNode">first node</a>, <a href="#memberNode">member node</a>, <a href="#lastNode">last node</a>, <a href="#nextNode">next node</a>, <a href="#previousNode">previous node</a>, <a href="#originalFile">original file</a>, <a href="#productionFrom">production from</a>.
   
           </p>
           <p>
             
       <strong>Datatype Properties</strong>:
-      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#signalChannels">signal channels</a>, <a href="#signalDuration">signal duration</a>, <a href="#nodeIndex">node index</a>, <a href="#signalSampleRate">signal sample rate</a>.
+      <a href="#bitsPerSample">bits per sample</a>, <a href="#channels">channels</a>, <a href="#duration">duration</a>, <a href="#sampleRate">sample rate</a>, <a href="#audioMd5">audio MD5 checksum</a>, <a href="#signalChannels">signal channels</a>, <a href="#signalDuration">signal duration</a>, <a href="#nodeIndex">node index</a>, <a href="#signalSampleRate">signal sample rate</a>.
   
           </p>
 
@@ -175,7 +175,7 @@
                   
                   
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b0">_:b0</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b6">_:b6</a>, <a href="_:b7">_:b7</a>, <a href="_:b8">_:b8</a>, <a href="_:b9">_:b9</a>, <a href="_:b10">_:b10</a>.
   
                   
       <strong>Sub-Classes</strong>:
@@ -209,7 +209,7 @@
                     <p class="card-text">
                       
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b0">_:b0</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b6">_:b6</a>, <a href="_:b7">_:b7</a>, <a href="_:b8">_:b8</a>, <a href="_:b9">_:b9</a>, <a href="_:b10">_:b10</a>.
   
                       
       <strong>Sub-Classes</strong>:
@@ -301,6 +301,9 @@
       <a href="http://purl.org/ontology/mo/AudioFile">mo:AudioFile</a>.
   
                   
+      <strong>Domain of</strong>:
+      <a href="#audioMd5">audio MD5 checksum</a>.
+  
                   
       <strong>Range of</strong>:
       <a href="#originalFile">original file</a>.
@@ -331,6 +334,9 @@
       <a href="http://purl.org/ontology/mo/AudioFile">mo:AudioFile</a>.
   
                       
+      <strong>Domain of</strong>:
+      <a href="#audioMd5">audio MD5 checksum</a>.
+  
                       
       <strong>Range of</strong>:
       <a href="#originalFile">original file</a>.
@@ -1300,37 +1306,6 @@
 
           <h2 id="objPropList">Object properties</h2>
           
-            <div id="nodeContent" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2">node content</span>
-                  <small class="text-muted"><code>ac:nodeContent</code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                
-                  <p class="card-text">
-                    Associates a node with the actual content (an audio manifestation).
-                  </p>
-                
-                <p class="card-text">
-                  
-      <strong>Super-Properties</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">rdf:first</a>.
-  
-                  
-                  
-      <strong>Domain</strong>:
-      <a href="#AudioCollectionNode">Node</a>.
-  
-                  
-      <strong>Range</strong>:
-      <a href="#AudioManifestation">Audio manifestation</a>.
-  
-                </p>
-              </div>
-            </div>
-          
             <div id="encodes" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1358,6 +1333,37 @@
                   
       <strong>Range</strong>:
       <a href="#DigitalSignal">Digital signal</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="nodeContent" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">node content</span>
+                  <small class="text-muted"><code>ac:nodeContent</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates a node with the actual content (an audio manifestation).
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">rdf:first</a>.
+  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioCollectionNode">Node</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#AudioManifestation">Audio manifestation</a>.
   
                 </p>
               </div>
@@ -1796,7 +1802,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b10">_:b10</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b5">_:b5</a>.
   
                   
       <strong>Range</strong>:
@@ -2233,7 +2239,7 @@
   
                   
       <strong>Domain</strong>:
-      <a href="_:b5">_:b5</a>.
+      <a href="_:b0">_:b0</a>.
   
                   
       <strong>Range</strong>:
@@ -2274,6 +2280,35 @@
               </div>
             </div>
           
+            <div id="audioMd5" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">audio MD5 checksum</span>
+                  <small class="text-muted"><code>ac:audioMd5</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    MD5 checksum computed on the audio content of the file.
+
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#AudioFile">Audio file</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="signalChannels" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -2293,7 +2328,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b8">_:b8</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b3">_:b3</a>.
   
                   
       <strong>Range</strong>:
@@ -2322,7 +2357,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b9">_:b9</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b4">_:b4</a>.
   
                   
       <strong>Range</strong>:
@@ -2379,7 +2414,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b7">_:b7</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b2">_:b2</a>.
   
                   
       <strong>Range</strong>:

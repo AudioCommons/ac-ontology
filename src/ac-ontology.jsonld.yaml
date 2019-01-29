@@ -10,7 +10,7 @@ descr: >
   The Audio Commons Ontology provides main concepts and properties for
   describing audio content, both musical and non-musical, on the Semantic Web.
 title: The Audio Commons Ontology
-versionInfo: 'Revision: 1.2.2'
+versionInfo: 'Revision: 1.2.3'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
   - {name: George Fazekas, label: George Fazekas, id: mailto:g.fazekas@qmul.ac.uk}
@@ -234,6 +234,14 @@ defines:
     type: owl:Class
     subClassOf: ebu:MediaResource
     superClassOf: mo:AudioFile
+
+  - id: ac:audioMd5
+    label: audio MD5 checksum
+    comment: >
+      MD5 checksum computed on the audio content of the file.
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    domain: ac:AudioFile
+    range: xsd:string
 
   - id: ac:encodes
     label: encodes

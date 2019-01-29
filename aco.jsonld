@@ -121,61 +121,61 @@
    "@graph": [
       {
          "id": "_:b0xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b0xb1"
+      },
+      {
+         "id": "_:b2xb0",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b2xb1",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b2xb2",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b2xb3",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
          "onProperty": "rdf:first"
       },
       {
-         "id": "_:b0xb1",
+         "id": "_:b3xb1",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "rdf:first",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb2",
+         "id": "_:b3xb2",
          "type": "owl:Restriction",
          "onClass": "#AudioManifestation",
          "onProperty": "#nodeContent",
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b0xb3",
+         "id": "_:b3xb3",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioCollectionNode",
          "onProperty": "rdf:rest"
       },
       {
-         "id": "_:b0xb4",
+         "id": "_:b3xb4",
          "type": "owl:Restriction",
          "onClass": "#AudioCollectionNode",
          "onProperty": "rdf:rest",
          "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:b1xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b1xb1"
-      },
-      {
-         "id": "_:b3xb0",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b3xb1",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b3xb2",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b3xb3",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
       },
       {
          "id": "mo:AnalogSignal",
@@ -314,7 +314,7 @@
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
          "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
-         "versionInfo": "Revision: 1.2.2",
+         "versionInfo": "Revision: 1.2.3",
          "maker": [
             {
                "id": "mailto:g.fazekas@qmul.ac.uk"
@@ -395,11 +395,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b0xb0",
-            "_:b0xb1",
-            "_:b0xb2",
-            "_:b0xb3",
-            "_:b0xb4"
+            "_:b3xb0",
+            "_:b3xb1",
+            "_:b3xb2",
+            "_:b3xb3",
+            "_:b3xb4"
          ],
          "disjointUnionOf": [
             {
@@ -581,6 +581,20 @@
          }
       },
       {
+         "id": "#audioMd5",
+         "type": [
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "comment": "MD5 checksum computed on the audio content of the file.\n",
+         "domain": "#AudioFile",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "label": "audio MD5 checksum",
+         "range": "xsd:string"
+      },
+      {
          "id": "#author",
          "type": "owl:ObjectProperty",
          "comment": "Used to relate a person or a group of people who authored an audio manifestation.\n",
@@ -695,7 +709,7 @@
             "owl:FunctionalProperty"
          ],
          "comment": "The duration of an audio clip or a signal in ms.",
-         "domain": "_:b1xb0",
+         "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -988,7 +1002,7 @@
          "comment": "Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature\n",
          "domain": [
             "#AudioItem",
-            "_:b3xb3"
+            "_:b2xb3"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1011,7 +1025,7 @@
          "comment": "The number of channels the digital signal holds (mono \\u2192 1, stereo \\u2192 2). Shortcut for ac:encodes/ac:channels\n",
          "domain": [
             "#AudioItem",
-            "_:b3xb1"
+            "_:b2xb1"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1034,7 +1048,7 @@
          "comment": "The duration of the signal in ms. Shortcut for ac:encodes/ac:duration\n",
          "domain": [
             "#AudioItem",
-            "_:b3xb2"
+            "_:b2xb2"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1057,7 +1071,7 @@
          "comment": "The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate\n",
          "domain": [
             "#AudioItem",
-            "_:b3xb0"
+            "_:b2xb0"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"

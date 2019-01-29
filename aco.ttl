@@ -88,7 +88,7 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 1.2.2";
+    owl:versionInfo "Revision: 1.2.3";
     n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
@@ -240,6 +240,15 @@ n0:AudioManifestation
     rd:isDefinedBy n1:aco;
     rd:label "Audio manifestation";
     rd:subClassOf core:Manifestation, cc:Work.
+n0:audioMd5
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment
+        """MD5 checksum computed on the audio content of the file.
+""";
+    rd:domain n0:AudioFile;
+    rd:isDefinedBy n1:aco;
+    rd:label "audio MD5 checksum";
+    rd:range XML:string.
 n0:AudioPublication
     a owl:Class;
     rd:comment
