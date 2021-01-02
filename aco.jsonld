@@ -120,9 +120,37 @@
    },
    "@graph": [
       {
-         "id": "_:b0xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b0xb1"
+         "id": "_:b1xb0",
+         "type": "owl:Restriction",
+         "allValuesFrom": "#AudioManifestation",
+         "onProperty": "rdf:first"
+      },
+      {
+         "id": "_:b1xb1",
+         "type": "owl:Restriction",
+         "onClass": "#AudioManifestation",
+         "onProperty": "rdf:first",
+         "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b1xb2",
+         "type": "owl:Restriction",
+         "onClass": "#AudioManifestation",
+         "onProperty": "#nodeContent",
+         "qualifiedCardinality": "1"
+      },
+      {
+         "id": "_:b1xb3",
+         "type": "owl:Restriction",
+         "allValuesFrom": "#AudioCollectionNode",
+         "onProperty": "rdf:rest"
+      },
+      {
+         "id": "_:b1xb4",
+         "type": "owl:Restriction",
+         "onClass": "#AudioCollectionNode",
+         "onProperty": "rdf:rest",
+         "qualifiedCardinality": "1"
       },
       {
          "id": "_:b2xb0",
@@ -146,36 +174,8 @@
       },
       {
          "id": "_:b3xb0",
-         "type": "owl:Restriction",
-         "allValuesFrom": "#AudioManifestation",
-         "onProperty": "rdf:first"
-      },
-      {
-         "id": "_:b3xb1",
-         "type": "owl:Restriction",
-         "onClass": "#AudioManifestation",
-         "onProperty": "rdf:first",
-         "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:b3xb2",
-         "type": "owl:Restriction",
-         "onClass": "#AudioManifestation",
-         "onProperty": "#nodeContent",
-         "qualifiedCardinality": "1"
-      },
-      {
-         "id": "_:b3xb3",
-         "type": "owl:Restriction",
-         "allValuesFrom": "#AudioCollectionNode",
-         "onProperty": "rdf:rest"
-      },
-      {
-         "id": "_:b3xb4",
-         "type": "owl:Restriction",
-         "onClass": "#AudioCollectionNode",
-         "onProperty": "rdf:rest",
-         "qualifiedCardinality": "1"
+         "type": "owl:Class",
+         "unionOf": "_:b3xb1"
       },
       {
          "id": "mo:AnalogSignal",
@@ -395,11 +395,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b3xb0",
-            "_:b3xb1",
-            "_:b3xb2",
-            "_:b3xb3",
-            "_:b3xb4"
+            "_:b1xb0",
+            "_:b1xb1",
+            "_:b1xb2",
+            "_:b1xb3",
+            "_:b1xb4"
          ],
          "disjointUnionOf": [
             {
@@ -709,7 +709,7 @@
             "owl:FunctionalProperty"
          ],
          "comment": "The duration of an audio clip or a signal in ms.",
-         "domain": "_:b0xb0",
+         "domain": "_:b3xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
