@@ -23,9 +23,9 @@
     "fs": "0.0.1-security",
     "js-yaml": "^3.14.1",
     "jsld": "^1.0.3",
-    "jsonld": "^0.4.12",
+    "jsonld": "^3.2.0",
     "path": "^0.12.7",
-    "rdflib": "^0.16.9"
+    "rdflib": "^2.1.3"
   },
   "dependencies": {
     "express": "^4.17.1"

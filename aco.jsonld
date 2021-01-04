@@ -120,6 +120,11 @@
    },
    "@graph": [
       {
+         "id": "_:b0xb0",
+         "type": "owl:Class",
+         "unionOf": "_:b0xb1"
+      },
+      {
          "id": "_:b1xb0",
          "type": "owl:Restriction",
          "allValuesFrom": "#AudioManifestation",
@@ -153,29 +158,24 @@
          "qualifiedCardinality": "1"
       },
       {
-         "id": "_:b2xb0",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b2xb1",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b2xb2",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
-         "id": "_:b2xb3",
-         "type": "owl:Restriction",
-         "onProperty": "#encodes"
-      },
-      {
          "id": "_:b3xb0",
-         "type": "owl:Class",
-         "unionOf": "_:b3xb1"
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb1",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb2",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
+      },
+      {
+         "id": "_:b3xb3",
+         "type": "owl:Restriction",
+         "onProperty": "#encodes"
       },
       {
          "id": "mo:AnalogSignal",
@@ -439,7 +439,7 @@
       {
          "id": "#AudioExpression",
          "type": "owl:Class",
-         "comment": "The specific intellectual or artistic form that a work takes each time it is \t\\u201crealized\\u201d, in the audio domain (e.g., the recording or synthesis of music or sounds).\n",
+         "comment": "The specific intellectual or artistic form that a work takes each time it is \t“realized”, in the audio domain (e.g., the recording or synthesis of music or sounds).\n",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -650,7 +650,7 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "comment": "Associates a signal to the number of channels it holds (mono \\u2192 1, stereo \\u2192 2).\n",
+         "comment": "Associates a signal to the number of channels it holds (mono → 1, stereo → 2).\n",
          "domain": "#DigitalSignal",
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -709,7 +709,7 @@
             "owl:FunctionalProperty"
          ],
          "comment": "The duration of an audio clip or a signal in ms.",
-         "domain": "_:b3xb0",
+         "domain": "_:b0xb0",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -1002,7 +1002,7 @@
          "comment": "Associates the signal encoded by an audio item to an extracted audio feature. Shortcut for ac:encodes/ac:audioFeature\n",
          "domain": [
             "#AudioItem",
-            "_:b2xb3"
+            "_:b3xb3"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1022,10 +1022,10 @@
             "owl:DatatypeProperty",
             "owl:FunctionalProperty"
          ],
-         "comment": "The number of channels the digital signal holds (mono \\u2192 1, stereo \\u2192 2). Shortcut for ac:encodes/ac:channels\n",
+         "comment": "The number of channels the digital signal holds (mono → 1, stereo → 2). Shortcut for ac:encodes/ac:channels\n",
          "domain": [
             "#AudioItem",
-            "_:b2xb1"
+            "_:b3xb1"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1048,7 +1048,7 @@
          "comment": "The duration of the signal in ms. Shortcut for ac:encodes/ac:duration\n",
          "domain": [
             "#AudioItem",
-            "_:b2xb2"
+            "_:b3xb2"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
@@ -1071,7 +1071,7 @@
          "comment": "The sample rate of the digital signal. Shortcut for ac:encodes/ac:sampleRate\n",
          "domain": [
             "#AudioItem",
-            "_:b2xb0"
+            "_:b3xb0"
          ],
          "rdfs:isDefinedBy": {
             "id": "aco"
