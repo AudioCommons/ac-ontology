@@ -1,6 +1,6 @@
 {
   "name": "ac-ontology",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "The Audio Commons ontology (http://www.audiocommons.org/)",
   "main": "index.js",
   "scripts": {

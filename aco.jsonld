@@ -76,7 +76,8 @@
       },
       "unionOf": {
          "@id": "owl:unionOf",
-         "@type": "@id"
+         "@type": "@id",
+         "@container": "@list"
       },
       "disjointUnionOf": {
          "@id": "owl:disjointUnionOf",
@@ -122,7 +123,10 @@
       {
          "id": "_:b0xb0",
          "type": "owl:Class",
-         "unionOf": "_:b0xb1"
+         "unionOf": [
+            "#AudioClip",
+            "#Signal"
+         ]
       },
       {
          "id": "_:b1xb0",
@@ -314,7 +318,7 @@
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
          "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
-         "versionInfo": "Revision: 1.2.3",
+         "versionInfo": "Revision: 1.2.4",
          "maker": [
             {
                "id": "mailto:g.fazekas@qmul.ac.uk"

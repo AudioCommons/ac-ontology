@@ -63,7 +63,7 @@
       <strong>Preferred Prefix</strong>: <code>ac:</code>
   <br/>
             
-      <strong>Version Info</strong>: Revision: 1.2.3
+      <strong>Version Info</strong>: Revision: 1.2.4
   <br/>
             
       <strong>Authors</strong>:
@@ -77,7 +77,7 @@
           <p>
             
       <strong>Classes</strong>:
-      <a href="#AudioManifestation">Audio manifestation</a>, <a href="#AudioCollectionNode">Node</a>, <a href="#AnalogSignal">Analog signal</a>, <a href="#AudioFile">Audio file</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="#AudioCategory">Audio category</a>, <a href="#AudioExpression">Audio expression</a>, <a href="#AudioItem">Audio item</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#Recording">Recording</a>, <a href="#AudioPublication">Audio publication</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>, <a href="#AudioClip">Audio clip</a>, <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>, <a href="#SignalProduction">Signal production</a>, <a href="#Syntesis">Syntesis</a>.
+      <a href="#AudioClip">Audio clip</a>, <a href="#Signal">Signal</a>, <a href="#AudioManifestation">Audio manifestation</a>, <a href="#AudioCollectionNode">Node</a>, <a href="#AnalogSignal">Analog signal</a>, <a href="#AudioFile">Audio file</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="#AudioCategory">Audio category</a>, <a href="#AudioExpression">Audio expression</a>, <a href="#AudioItem">Audio item</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#Recording">Recording</a>, <a href="#AudioPublication">Audio publication</a>, <a href="#Sound">Physical sound</a>, <a href="#AudioCollectionFirstNode">First node</a>, <a href="#AudioCollectionLastNode">Last node</a>, <a href="#AudioCollectionNonFirstNode">Any node but the first</a>, <a href="#AudioCollectionNonLastNode">Any node but the last</a>, <a href="#SignalProduction">Signal production</a>, <a href="#Syntesis">Syntesis</a>.
   
           </p>
           <p>
@@ -96,6 +96,134 @@
           <h2 id="classList">Classes</h2>
           
             <div class="row"><div class="col-12">
+              <!-- <div id="AudioClip" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Audio clip</h3>
+                  <code>ac:AudioClip</code>
+                </div>
+                <div class="panel-body">
+                  
+                    An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label&#39;s repository or a sound in an audio repository, library or archive).
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#AudioManifestation">Audio manifestation</a>.
+  
+                  
+      <strong>Sub-Classes</strong>:
+      <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
+  
+                  
+      <strong>Domain of</strong>:
+      <a href="#originalFile">original file</a>.
+  
+                  
+                </div>
+              </div> -->
+
+                <div id="AudioClip" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Audio clip</span>
+                      <small class="text-muted"><code>ac:AudioClip</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label&#39;s repository or a sound in an audio repository, library or archive).
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#AudioManifestation">Audio manifestation</a>.
+  
+                      
+      <strong>Sub-Classes</strong>:
+      <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
+  
+                      
+      <strong>Domain of</strong>:
+      <a href="#originalFile">original file</a>.
+  
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Signal" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Signal</h3>
+                  <code>ac:Signal</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#AudioExpression">Audio expression</a>.
+  
+                  
+      <strong>Sub-Classes</strong>:
+      <a href="#AnalogSignal">Analog signal</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="http://purl.org/ontology/mo/Signal">mo:Signal</a>.
+  
+                  
+      <strong>Domain of</strong>:
+      <a href="#audioFeature">audio feature</a>.
+  
+                  
+      <strong>Range of</strong>:
+      <a href="#producedSignal">produced signal</a>.
+  
+                </div>
+              </div> -->
+
+                <div id="Signal" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Signal</span>
+                      <small class="text-muted"><code>ac:Signal</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#AudioExpression">Audio expression</a>.
+  
+                      
+      <strong>Sub-Classes</strong>:
+      <a href="#AnalogSignal">Analog signal</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="http://purl.org/ontology/mo/Signal">mo:Signal</a>.
+  
+                      
+      <strong>Domain of</strong>:
+      <a href="#audioFeature">audio feature</a>.
+  
+                      
+      <strong>Range of</strong>:
+      <a href="#producedSignal">produced signal</a>.
+  
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
               <!-- <div id="AudioManifestation" class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Audio manifestation</h3>
@@ -112,7 +240,7 @@
   
                   
       <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#AudioClip">Audio clip</a>.
+      <a href="#AudioClip">Audio clip</a>, <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>.
   
                   
       <strong>Domain of</strong>:
@@ -146,7 +274,7 @@
   
                       
       <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>, <a href="#AudioClip">Audio clip</a>.
+      <a href="#AudioClip">Audio clip</a>, <a href="http://purl.org/ontology/mo/MusicalManifestation">mo:MusicalManifestation</a>, <a href="#AudioCollection">Audio collection</a>.
   
                       
       <strong>Domain of</strong>:
@@ -175,7 +303,7 @@
                   
                   
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>, <a href="_:b5">_:b5</a>, <a href="_:b6">_:b6</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>, <a href="_:b5">_:b5</a>.
   
                   
       <strong>Sub-Classes</strong>:
@@ -209,7 +337,7 @@
                     <p class="card-text">
                       
       <strong>Super-Classes</strong>:
-      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>, <a href="_:b5">_:b5</a>, <a href="_:b6">_:b6</a>.
+      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>, <a href="_:b1">_:b1</a>, <a href="_:b2">_:b2</a>, <a href="_:b3">_:b3</a>, <a href="_:b4">_:b4</a>, <a href="_:b5">_:b5</a>.
   
                       
       <strong>Sub-Classes</strong>:
@@ -488,7 +616,7 @@
   
                   
       <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>.
+      <a href="#Signal">Signal</a>, <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Sound">Physical sound</a>.
   
                   
       <strong>Domain of</strong>:
@@ -522,7 +650,7 @@
   
                       
       <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Signal">Signal</a>, <a href="#Sound">Physical sound</a>.
+      <a href="#Signal">Signal</a>, <a href="http://purl.org/ontology/mo/MusicalExpression">mo:MusicalExpression</a>, <a href="#Sound">Physical sound</a>.
   
                       
       <strong>Domain of</strong>:
@@ -785,73 +913,6 @@
             </div></div>
           
             <div class="row"><div class="col-12">
-              <!-- <div id="Signal" class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Signal</h3>
-                  <code>ac:Signal</code>
-                </div>
-                <div class="panel-body">
-                  
-                    A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.
-
-                  
-                  
-      <strong>Super-Classes</strong>:
-      <a href="#AudioExpression">Audio expression</a>.
-  
-                  
-      <strong>Sub-Classes</strong>:
-      <a href="#AnalogSignal">Analog signal</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="http://purl.org/ontology/mo/Signal">mo:Signal</a>.
-  
-                  
-      <strong>Domain of</strong>:
-      <a href="#audioFeature">audio feature</a>.
-  
-                  
-      <strong>Range of</strong>:
-      <a href="#producedSignal">produced signal</a>.
-  
-                </div>
-              </div> -->
-
-                <div id="Signal" class="card mb-3">
-                  <div class="card-header">
-                    <h5 class="mb-0">
-                      <span class="mr-2">Signal</span>
-                      <small class="text-muted"><code>ac:Signal</code></small>
-                    </h5>
-                  </div>
-                  <div class="card-body">
-                    
-                      <p class="card-text">
-                        A subclass of AudioExpression, representing a signal, for example a master signal produced by a performance and a recording.
-
-                      </p>
-                    
-                    <p class="card-text">
-                      
-      <strong>Super-Classes</strong>:
-      <a href="#AudioExpression">Audio expression</a>.
-  
-                      
-      <strong>Sub-Classes</strong>:
-      <a href="#AnalogSignal">Analog signal</a>, <a href="#DigitalSignal">Digital signal</a>, <a href="http://purl.org/ontology/mo/Signal">mo:Signal</a>.
-  
-                      
-      <strong>Domain of</strong>:
-      <a href="#audioFeature">audio feature</a>.
-  
-                      
-      <strong>Range of</strong>:
-      <a href="#producedSignal">produced signal</a>.
-  
-                    </p>
-                  </div>
-                </div>
-
-            </div></div>
-          
-            <div class="row"><div class="col-12">
               <!-- <div id="Sound" class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Physical sound</h3>
@@ -904,67 +965,6 @@
       <strong>Range of</strong>:
       <a href="#recordingOf">recording of</a>, <a href="#productionFrom">production from</a>.
   
-                    </p>
-                  </div>
-                </div>
-
-            </div></div>
-          
-            <div class="row"><div class="col-12">
-              <!-- <div id="AudioClip" class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Audio clip</h3>
-                  <code>ac:AudioClip</code>
-                </div>
-                <div class="panel-body">
-                  
-                    An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label&#39;s repository or a sound in an audio repository, library or archive).
-
-                  
-                  
-      <strong>Super-Classes</strong>:
-      <a href="#AudioManifestation">Audio manifestation</a>.
-  
-                  
-      <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
-  
-                  
-      <strong>Domain of</strong>:
-      <a href="#originalFile">original file</a>.
-  
-                  
-                </div>
-              </div> -->
-
-                <div id="AudioClip" class="card mb-3">
-                  <div class="card-header">
-                    <h5 class="mb-0">
-                      <span class="mr-2">Audio clip</span>
-                      <small class="text-muted"><code>ac:AudioClip</code></small>
-                    </h5>
-                  </div>
-                  <div class="card-body">
-                    
-                      <p class="card-text">
-                        An audio segment that has been somehow published or uploaded for consumption (e.g., a track in a music label&#39;s repository or a sound in an audio repository, library or archive).
-
-                      </p>
-                    
-                    <p class="card-text">
-                      
-      <strong>Super-Classes</strong>:
-      <a href="#AudioManifestation">Audio manifestation</a>.
-  
-                      
-      <strong>Sub-Classes</strong>:
-      <a href="http://purl.org/ontology/mo/Track">mo:Track</a>.
-  
-                      
-      <strong>Domain of</strong>:
-      <a href="#originalFile">original file</a>.
-  
-                      
                     </p>
                   </div>
                 </div>
@@ -1802,7 +1802,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b10">_:b10</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b9">_:b9</a>.
   
                   
       <strong>Range</strong>:
@@ -2328,7 +2328,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b8">_:b8</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b7">_:b7</a>.
   
                   
       <strong>Range</strong>:
@@ -2357,7 +2357,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b9">_:b9</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b8">_:b8</a>.
   
                   
       <strong>Range</strong>:
@@ -2414,7 +2414,7 @@
                   
                   
       <strong>Domain</strong>:
-      <a href="#AudioItem">Audio item</a>, <a href="_:b7">_:b7</a>.
+      <a href="#AudioItem">Audio item</a>, <a href="_:b6">_:b6</a>.
   
                   
       <strong>Range</strong>:

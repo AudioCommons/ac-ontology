@@ -37,7 +37,7 @@ hasValue: {'@id': owl:hasValue}
 someValuesFromValue: {'@id': owl:someValuesFromValue, '@type': '@id'}
 allValuesFrom: {'@id': owl:allValuesFrom, '@type': '@id'}
 
-unionOf: {'@id': owl:unionOf, '@type': '@id'}
+unionOf: {'@id': owl:unionOf, '@type': '@id', '@container': '@list'}
 disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
 intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
 equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}

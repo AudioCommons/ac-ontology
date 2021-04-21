@@ -110,7 +110,7 @@
         <v:preferredNamespacePrefix>ac</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.2.3</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.2.4</owl:versionInfo>
         <n0:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
@@ -395,6 +395,11 @@
         <rd:domain rdf:parseType="Resource">
                 <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
                 <owl:unionOf rdf:parseType="Resource">
+                        <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#AudioClip"/>
+                        <rdf:rest rdf:parseType="Resource">
+                                <rdf:first rdf:resource="https://w3id.org/ac-ontology/aco#Signal"/>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:rest>
                     </owl:unionOf>
             </rd:domain>
         <rd:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>

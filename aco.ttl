@@ -88,7 +88,7 @@ n1:aco
     terms:title "The Audio Commons Ontology";
     v:preferredNamespacePrefix "ac";
     v:preferredNamespaceUri "https://w3id.org/ac-ontology/aco#";
-    owl:versionInfo "Revision: 1.2.3";
+    owl:versionInfo "Revision: 1.2.4";
     n2:maker <mailto:g.fazekas@qmul.ac.uk>, <mailto:miguel.ceriani@gmail.com>.
 n0:AnalogSignal
     a owl:Class;
@@ -346,7 +346,15 @@ n0:DigitalSignal
 n0:duration
     a owl:DatatypeProperty, owl:FunctionalProperty;
     rd:comment "The duration of an audio clip or a signal in ms.";
-    rd:domain [ a owl:Class; owl:unionOf [] ];
+    rd:domain
+            [
+                a owl:Class;
+                owl:unionOf
+                        [
+                            rdf:first n0:AudioClip;
+                            rdf:rest [ rdf:first n0:Signal; rdf:rest rdf:nil ]
+                        ]
+            ];
     rd:isDefinedBy n1:aco;
     rd:label "duration";
     rd:range XML:float;
