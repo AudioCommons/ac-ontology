@@ -1,0 +1,76 @@
+{
+  "@context": {
+     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "ac": "https://w3id.org/ac-ontology/aco#",
+     "afo": "https://w3id.org/afo/onto/1.1#",
+     "afv": "https://w3id.org/afo/vocab/1.1#",
+     "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
+     "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#"
+  },
+
+  "ac:availableItemOf": {
+    "@id": "...",
+    "@type": "ac:AudioClip"
+  },
+
+  "@type": "ac:AudioFile",
+  "ac:signalSamplerate": 44100.0,
+  "ac:signalChannels": 1,
+  "ac:signalDuration": 2403.8774967193604,
+
+  "ebucore:bitrate": 705600.0,
+  "ebucore:filesize": 212142,
+  "ebucore:hasCodec": {
+    "@type": "ebucore:AudioCodec",
+    "ebucore:codecId": "pcm_s16le"
+  },
+  "nfo:compressionType": "nfo:losslessCompressionType",
+
+  "ac:signalAudioFeature": [ {
+    "@type": "afv:Tempo",
+    "afo:value": 199,
+    "afo:confidence": 0.0
+  }, {
+    "@type": "afv:Tempo",
+    "afo:value": 134,
+    "afo:confidence": 0.540368914604187,
+    "afo:computed_by": {
+      "@id": "#LoopTempoExtractor",
+      "@type": "afo:FeatureExtractor"
+    }
+  }, {
+    "@type": "afv:Key",
+    "afo:value": "F minor",
+    "afo:confidence": 0.321540892124176
+  }, {
+    "@type": "afv:Loudness",
+    "afo:value": -16.782115936279297
+  }, {
+    "@type": "afv:LoudnessRange",
+    "afo:value": 0.0
+  }, {
+    "@type": "afv:TemporalCentroid",
+    "afo:value": 0.38495683670043945
+  }, {
+    "@type": "afv:LogAttackTime",
+    "afo:value": -1.7823072671890259
+  }, {
+    "@type": "afv:MIDINote",
+    "afo:value": 62,
+    "afo:confidence": 0.2558099627494812
+  }, {
+    "@type": "afv:Note",
+    "afo:value": "C#4",
+    "afo:confidence": 0.2558099627494812
+  }, {
+    "@type": "afv:Pitch",
+    "afo:value": 289.3584330203451,
+    "afo:confidence": 0.2558099627494812
+  }, {
+    "@type": "afv:SingleEvent",
+    "afo:value": false
+  } ],
+
+  "ac:audio_md5": "5d7cf25412fa872c9d7b3e1cf1fdc37c"
+
+}

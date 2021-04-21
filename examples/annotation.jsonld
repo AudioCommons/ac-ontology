@@ -1,0 +1,67 @@
+{
+    "@id": "...",
+    "@type": "ac:AudioClip",
+    "@context": "...",
+    "ac:duration": 2403.8774967193604,
+
+    "ac:publicationOf": {
+      "@type": "ac:DigitalSignal",
+      "ac:samplerate": 44100.0,
+      "ac:channels": 1,
+
+      "afo:signal_feature": [ {
+        "@type": "afv:Tempo",
+        "afo:value": 199,
+        "afo:confidence": 0.0
+      }, {
+        "@type": "?bpm_loop?",
+        "afo:value": 134,
+        "afo:confidence": 0.540368914604187
+      }, {
+        "@type": "afv:Key",
+        "afo:value": "F minor",
+        "afo:confidence": 0.321540892124176
+      }, {
+        "@type": "afv:Loudness",
+        "afo:value": -16.782115936279297
+      }, {
+        "@type": "?dynamic_range?", CrestFactor (or afv:Crest?)
+        "afo:value": 0.0
+      }, {
+        "@type": "afv:TemporalCentroid",
+        "afo:value": 0.38495683670043945
+      }, {
+        "@type": "afv:LogAttackTime",
+        "afo:value": -1.7823072671890259
+      }, {
+        "@type": "afv:MIDINote",
+        "afo:value": 62,
+        "afo:confidence": 0.2558099627494812
+      }, {
+        "@type": "afv:Note",
+        "afo:value": "C#4",
+        "afo:confidence": 0.2558099627494812
+      }, {
+        "@type": "afv:Pitch",
+        "afo:value": 289.3584330203451,
+        "afo:confidence": 0.2558099627494812
+      } ],
+
+      "?audio_md5?": "5d7cf25412fa872c9d7b3e1cf1fdc37c"
+
+    },
+
+    "ac:availableAs": {
+      "@type": "ac:AudioFile",
+      "ebucore:bitrate": 705600.0,
+      "ebucore:filesize": 212142,
+      "ebucore:hasCodec": {
+        "@type": "ebucore:AudioCodec",
+        "ebucore:codecId": "pcm_s16le"
+      },
+      "?lossless?": 1.0,
+    },
+
+    "?single_event?": 0,
+
+}
