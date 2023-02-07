@@ -46,20 +46,20 @@ The Audio Commons ontology works also in conjunction with
 
 The figure above shows the most general classes and properties of the Audio Commons ontology and their relationship with classes of the FRBR and the Music Ontology:
 - **`ac:AudioExpression`**, the specific intellectual or artistic form that a work takes each time it is _realised_, in the audio domain, e.g., the recording or synthesis of music or sounds;
-- `ac:AudioManifestation`, the physical embodiment of an audio expression, e.g., a musical track, a sound, an album; 
-- `ac:AudioItem`, a single exemplar of an audio manifestation, e.g., a copy of a CD or a specific media file.
+- **`ac:AudioManifestation`**, the physical embodiment of an audio expression, e.g., a musical track, a sound, an album; 
+- **`ac:AudioItem`**, a single exemplar of an audio manifestation, e.g., a copy of a CD or a specific media file.
 
 The FRBR class Work, representing a distinct intellectual or artistic creation on a more conceptual level, has not been specialised in Audio Commons.
 
-The Audio Commons ontology provides a generic schema for audio classification through the property [`ac:audioCategory`](#audioCategory) that associates any audio expression, manifestation, or item to some generic [`ac:AudioCategory`](#AudioCategory). These two terms can be specialised to provide spefic categorisations.
+The Audio Commons ontology provides a generic schema for audio classification through the property **`ac:audioCategory`** that associates any audio expression, manifestation, or item to some generic **`ac:AudioCategory`**. These two terms can be specialised to provide spefic categorisations.
 
 ### Manifestations: audio clips and collections
 
 ![A diagram showing the main classes of the Audio Commons ontology](./img/AC-Ontology-Manifestation.png)
 
-The figure above shows classes and properties related to audio manifestations. An instance of [`ac:AudioClip`](#AudioClip), a subclass of `ac:AudioManifestation`, is any audio segment that has been published in some form or uploaded for consumption, for example, a track in a music label's repository or a sound in an audio repository, library or archive.
+The figure above shows classes and properties related to audio manifestations. An instance of **`ac:AudioClip`**, a subclass of `ac:AudioManifestation`, is any audio segment that has been published in some form or uploaded for consumption, for example, a track in a music label's repository or a sound in an audio repository, library or archive.
 
-The class [`ac:AudioCollection`](#AudioCollection), another subclass of `ac:AudioManifestation`, is used to represent collections of audio clips. The class [`ac:AudioCollectionNode`](#AudioCollectionNode) is used to represent single nodes of a collection, offering local information like the index in the collection and pointers to previous and next nodes. The separation between the collection node and its actual content (e.g., an `ac:AudioClip`) permits the same content to be shared in multiple collections.
+The class **`ac:AudioCollection`**, another subclass of `ac:AudioManifestation`, is used to represent collections of audio clips. The class **`ac:AudioCollectionNode`** is used to represent single nodes of a collection, offering local information like the index in the collection and pointers to previous and next nodes. The separation between the collection node and its actual content (e.g., an `ac:AudioClip`) permits the same content to be shared in multiple collections.
 
 The content of each node of a collection is not limited to an `ac:AudioClip`, but may contain any `ac:AudioManifestation`. Collections can thus contain other collections to support specific cases, e.g. a mapping to the Music Ontology model where an `mo:Release` can contain multiple `mo:Record`(s) that can in turn contain multiple `mo:Track`(s).
 ### Items: audio files
@@ -67,12 +67,12 @@ The content of each node of a collection is not limited to an `ac:AudioClip`, bu
 
 An `ac:AudioItem` is a concrete exemplar of an audio manifestation. In our domain, the main exemplars are the actual audio files. 
 
-The corresponding class [`ac:AudioFile`](#AudioItem) is a subclass of `ac:AudioItem`. It is subclass of `ebu:MediaResource` too and the corresponging properties of EBU Core can be used to describe the file (e.g., `ebu:hasEncodingFormat`, `ebu:fileSize`).
+The corresponding class **`ac:AudioFile`** is a subclass of `ac:AudioItem`. It is subclass of `ebu:MediaResource` too and the corresponging properties of EBU Core can be used to describe the file (e.g., `ebu:hasEncodingFormat`, `ebu:fileSize`).
 
 ### Expressions: audio signals
 ![A diagram showing ac:Expression class and related class and properties](./img/AC-Ontology-Expression.png)
 
-While `ac:AudioFile` represents a concrete file encoded in a certain format, [`ac:DigitalSignal`](#DigitalSignal) is the representation of the corresponding digital signal. `ac:DigitalSignal` is a subclass of `ac:MusicalExpression`. 
+While `ac:AudioFile` represents a concrete file encoded in a certain format, **`ac:DigitalSignal`** is the representation of the corresponding digital signal. `ac:DigitalSignal` is a subclass of `ac:MusicalExpression`. 
 
 The data properties `ac:sampleRate`, `ac:bitsPerSample`, and `ac:channels`, associate a signal with its basic features specific to digital representations.
 
@@ -85,12 +85,12 @@ The description of temporal events is crucial to formalise and document transiti
 
 Using the `event:Event` class, details of an event such as its location in time and space, its factor and its products may be explicitly described. Moreover, events can be composed using the property `event:sub_event`, to build complex events.
 
-The class `ac:SignalProduction` represents the act of producing a `ac:Signal`, which could be either an `ac:AnalogSignal` or a `ac:DigitalSignal`. This is complemented by `ac:Recording`, representing the process of recording a sound (`ac:Sound`) or the product of `ac:Synthesis`, in case of artificially generated sounds. 
+The class `ac:SignalProduction` represents the act of producing a `ac:Signal`, which could be either an `ac:AnalogSignal` or a `ac:DigitalSignal`. This is complemented by **`ac:Recording`**, representing the process of recording a sound (`ac:Sound`) or the product of **`ac:Synthesis`**, in case of artificially generated sounds. 
 
 ### Events (continued): publication
 ![A diagram showing ac:Publication class and related class and properties!](./img/AC-Ontology-Publication.png)
 
-The event `ac:AudioPublication` represents the public release of a piece of work, e.g., the release of a new album by a band.
+The event **`ac:AudioPublication`** represents the public release of a piece of work, e.g., the release of a new album by a band.
 
 ### Usage Example
 ![A diagram showing an example of ontology usage!](./img/AC_Example-AudioClip.png)
