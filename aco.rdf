@@ -188,7 +188,7 @@ The figure above shows an example of use of the Audio Commons ontology to repres
         <v:preferredNamespaceUri>https://w3id.org/ac-ontology/aco#</v:preferredNamespaceUri>
         <rdfs:comment>The Audio Commons Ontology provides classes and properties for describing audio content, both musical and non-musical, on the Semantic Web. It is a specialisation of a bibliographic model called [Functional Requirements for Bibliographic Records (FRBR)](https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records). Furthermore, it contains the generalisation of some concepts from the [Music Ontology](http://musicontology.com/).
 </rdfs:comment>
-        <owl:versionInfo>Revision: 1.3.1</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.3.0</owl:versionInfo>
         <foaf:maker rdf:resource="mailto:g.fazekas@qmul.ac.uk"/>
         <foaf:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </owl:Ontology>
