@@ -3,6 +3,7 @@
   "version": "1.2.4",
   "description": "The Audio Commons ontology (http://www.audiocommons.org/)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/AudioCommons/ac-ontology#readme",
   "devDependencies": {
-    "ejs": "^2.7.4",
+    "ejs": "^3.1.8",
     "fs": "0.0.1-security",
     "js-yaml": "^3.14.1",
     "jsld": "^1.0.3",
