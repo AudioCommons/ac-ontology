@@ -12,16 +12,28 @@ defines:
       nested.
       An audio collection is composed of nodes.
     type: owl:Class
-    subClassOf: ac:AudioManifestation
+    subClassOf:
+      - ac:AudioManifestation
+      - type: owl:Restriction
+        onProperty: ac:firstNode
+        cardinality: 1
+      - type: owl:Restriction
+        onProperty: ac:lastNode
+        cardinality: 1
+
     superClassOf: [mo:Record, mo:Release]
     seeAlso: ac:AudioCollectionNode
 
   - id: ac:memberNode
     label: member node
     comment: Associates an audio collection to its nodes.
-    type: owl:ObjectProperty
+    type: [owl:ObjectProperty, owl:InverseFunctionalProperty]
     domain: ac:AudioCollection
     range: ac:AudioCollectionNode
+    propertyChainAxiom:
+      - '@list':
+        - id: ac:memberNode
+        - id: ac:nextNode
 
   - id: ac:firstNode
     label: first node
@@ -48,25 +60,22 @@ defines:
       (ac:previousNode and ac:nextNode).
     type: owl:Class
     subClassOf:
+      - type: owl:Restriction
+        onProperty: ac:nodeContent
+        cardinality: 1
+      - type: owl:Restriction
+        onProperty: ac:nodeIndex
+        cardinality: 1
       - id: rdf:List
       - type: owl:Restriction
         onProperty: rdf:first
         allValuesFrom: ac:AudioManifestation
       - type: owl:Restriction
         onProperty: rdf:first
-        onClass: ac:AudioManifestation
-        qualifiedCardinality: 1
-      - type: owl:Restriction
-        onProperty: ac:nodeContent
-        onClass: ac:AudioManifestation
-        qualifiedCardinality: 1
+        cardinality: 1
       - type: owl:Restriction
         onProperty: rdf:rest
-        allValuesFrom: ac:AudioCollectionNode
-      - type: owl:Restriction
-        onProperty: rdf:rest
-        onClass: ac:AudioCollectionNode
-        qualifiedCardinality: 1
+        cardinality: 1
     disjointUnionOf:
       - '@list':
         - id: ac:AudioCollectionFirstNode
@@ -74,44 +83,66 @@ defines:
       - '@list':
         - id: ac:AudioCollectionLastNode
         - id: ac:AudioCollectionNonLastNode
+    disjointWith: rdf:nil
 
   - id: ac:AudioCollectionFirstNode
     label: First node
     comment: A node that is the first in the containing audio collection
     type: owl:Class
-    subClassOf: ac:AudioCollectionNode
+    subClassOf:
+      - id: ac:AudioCollectionNode
+      - type: owl:Restriction
+        onProperty:
+          inverseOf: ac:firstNode
+        cardinality: 1
 
   - id: ac:AudioCollectionLastNode
     label: Last node
     comment: A node that is the last in the containing audio collection
     type: owl:Class
-    subClassOf: ac:AudioCollectionNode
-  #   intersectionOf:
-  #     - '@list':
-  #       - id: ac:AudioCollectionNode
-  #       - type: owl:Restriction
-  #         onProperty: rdf:rest
-  #         hasValue: rdf:nil
+    subClassOf:
+      - id: ac:AudioCollectionNode
+      - type: owl:Restriction
+        onProperty:
+          inverseOf: ac:lastNode
+        cardinality: 1
+      - type: owl:Restriction
+        onProperty: rdf:rest
+        hasValue: rdf:nil
+    # intersectionOf:
+    #   - '@list':
+    #     - id: ac:AudioCollectionNode
+    #     - type: owl:Restriction
+    #       onProperty: rdf:rest
+    #       hasValue: rdf:nil
 
   - id: ac:AudioCollectionNonFirstNode
     label: Any node but the first
     comment: A node that is not the first in the containing audio collection
     type: owl:Class
-    subClassOf: ac:AudioCollectionNode
-  #   equivalentClass:
-  #     type: owl:Restriction
-  #     onProperty: ac:previousNode
-  #     someValuesFrom: ac:AudioCollectionNode
+    subClassOf:
+      - id: ac:AudioCollectionNode
+      - type: owl:Restriction
+        onProperty: ac:previousNode
+        cardinality: 1
+    # equivalentClass:
+    #   type: owl:Restriction
+    #   onProperty: ac:previousNode
+    #   someValuesFrom: ac:AudioCollectionNode
 
   - id: ac:AudioCollectionNonLastNode
     label: Any node but the last
     comment: A node that is not the last in the containing audio collection
     type: owl:Class
-    subClassOf: ac:AudioCollectionNode
-  #   equivalentClass:
-  #     type: owl:Restriction
-  #     onProperty: ac:nextNode
-  #     someValuesFrom: ac:AudioCollectionNode
+    subClassOf:
+      - id: ac:AudioCollectionNode
+      - type: owl:Restriction
+        onProperty: ac:nextNode
+        cardinality: 1
+    # equivalentClass:
+    #   type: owl:Restriction
+    #   onProperty: ac:nextNode
+    #   someValuesFrom: ac:AudioCollectionNode
 
   - id: ac:nodeContent
     label: node content
@@ -160,3 +191,6 @@ defines:
     subPropertyOf: ac:containerNode
     domain: ac:AudioManifestation
     range: ac:AudioCollectionNode
+
+  - id: ac:collectionAsList
+    equivalentProperty: ac:firstNode

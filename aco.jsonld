@@ -17,6 +17,7 @@
       "ebu": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
       "afo": "https://w3id.org/afo/onto/1.1#",
       "afv": "https://w3id.org/afo/vocab/1.1#",
+      "schema": "https://schema.org/",
       "id": "@id",
       "type": "@type",
       "subClassOf": {
@@ -59,6 +60,10 @@
          "@id": "owl:onClass",
          "@type": "@id"
       },
+      "cardinality": {
+         "@id": "owl:cardinality",
+         "@type": "xsd:nonNegativeInteger"
+      },
       "qualifiedCardinality": {
          "@id": "owl:qualifiedCardinality",
          "@type": "xsd:nonNegativeInteger"
@@ -66,8 +71,8 @@
       "hasValue": {
          "@id": "owl:hasValue"
       },
-      "someValuesFromValue": {
-         "@id": "owl:someValuesFromValue",
+      "someValuesFrom": {
+         "@id": "owl:someValuesFrom",
          "@type": "@id"
       },
       "allValuesFrom": {
@@ -95,6 +100,18 @@
          "@id": "owl:disjointWith",
          "@type": "@id"
       },
+      "AllDisjointClasses": {
+         "@id": "owl:AllDisjointClasses",
+         "@type": "@id"
+      },
+      "members": {
+         "@id": "owl:members",
+         "@type": "@id"
+      },
+      "equivalentProperty": {
+         "@id": "owl:equivalentProperty",
+         "@type": "@id"
+      },
       "inverseOf": {
          "@id": "owl:inverseOf",
          "@type": "@id"
@@ -117,7 +134,8 @@
       "descr": "dcterms:description",
       "title": "dcterms:title",
       "created": "dcterms:created",
-      "date": "dcterms:date"
+      "date": "dcterms:date",
+      "description": "dc:description"
    },
    "@graph": [
       {
@@ -131,54 +149,105 @@
       {
          "id": "_:b1xb0",
          "type": "owl:Restriction",
-         "allValuesFrom": "#AudioManifestation",
-         "onProperty": "rdf:first"
+         "cardinality": "1",
+         "onProperty": "#firstNode"
       },
       {
          "id": "_:b1xb1",
          "type": "owl:Restriction",
-         "onClass": "#AudioManifestation",
-         "onProperty": "rdf:first",
-         "qualifiedCardinality": "1"
+         "cardinality": "1",
+         "onProperty": "#lastNode"
+      },
+      {
+         "id": "_:b1xb10",
+         "inverseOf": "#lastNode"
+      },
+      {
+         "id": "_:b1xb11",
+         "type": "owl:Restriction",
+         "hasValue": "rdf:nil",
+         "onProperty": "rdf:rest"
+      },
+      {
+         "id": "_:b1xb12",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "#previousNode"
+      },
+      {
+         "id": "_:b1xb13",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "#nextNode"
       },
       {
          "id": "_:b1xb2",
          "type": "owl:Restriction",
-         "onClass": "#AudioManifestation",
-         "onProperty": "#nodeContent",
-         "qualifiedCardinality": "1"
+         "cardinality": "1",
+         "onProperty": "#nodeContent"
       },
       {
          "id": "_:b1xb3",
          "type": "owl:Restriction",
-         "allValuesFrom": "#AudioCollectionNode",
-         "onProperty": "rdf:rest"
+         "cardinality": "1",
+         "onProperty": "#nodeIndex"
       },
       {
          "id": "_:b1xb4",
          "type": "owl:Restriction",
-         "onClass": "#AudioCollectionNode",
-         "onProperty": "rdf:rest",
-         "qualifiedCardinality": "1"
+         "allValuesFrom": "#AudioManifestation",
+         "onProperty": "rdf:first"
+      },
+      {
+         "id": "_:b1xb5",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "rdf:first"
+      },
+      {
+         "id": "_:b1xb6",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "rdf:rest"
+      },
+      {
+         "id": "_:b1xb7",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "_:b1xb8"
+      },
+      {
+         "id": "_:b1xb8",
+         "inverseOf": "#firstNode"
+      },
+      {
+         "id": "_:b1xb9",
+         "type": "owl:Restriction",
+         "cardinality": "1",
+         "onProperty": "_:b1xb10"
       },
       {
          "id": "_:b3xb0",
          "type": "owl:Restriction",
+         "cardinality": "1",
          "onProperty": "#encodes"
       },
       {
          "id": "_:b3xb1",
          "type": "owl:Restriction",
+         "cardinality": "1",
          "onProperty": "#encodes"
       },
       {
          "id": "_:b3xb2",
          "type": "owl:Restriction",
+         "cardinality": "1",
          "onProperty": "#encodes"
       },
       {
          "id": "_:b3xb3",
          "type": "owl:Restriction",
+         "cardinality": "1",
          "onProperty": "#encodes"
       },
       {
@@ -278,10 +347,6 @@
          "subPropertyOf": "#image"
       },
       {
-         "id": "mo:instrument",
-         "subPropertyOf": "#audioCategory"
-      },
-      {
          "id": "mo:produced_signal",
          "subPropertyOf": "#producedSignal"
       },
@@ -312,13 +377,15 @@
       {
          "id": "aco",
          "type": "owl:Ontology",
+         "description": "The Audio Commons Ontology has been created in the context of the European project [Audio Commons](https://www.audiocommons.org/), which were aimed at favouring sharing and reuse of audio content (both of musical and non-musical nature), specially using [Creative Commons](https://creativecommons.org/) licenses.\n\nIt is designed specifically to integrate access to multiple heterogeneously structured audio content providers. In particular the following ones have been considered in the project:\n- [Freesound](https://freesound.org/), a collaborative database of Creative Commons Licensed sounds;\n- [Jamendo](https://www.jamendo.com/), a music website for independent artists;\n- [Europeana Sounds](https://www.eusounds.eu/), a European project collecting and sharing data from several archives of sounds and sound-related media;\n- [Internet Archive](https://archive.org/), a non-profit library of millions of freely accessible media contents.\n\n### The base model\n<center> ![A diagram showing the entities Work, Expression, Manifestation, Item](./img/FRBR-Group-1-entities-and-basic-relations.svg.png) </center>\nThe Audio Commons ontology is based on [Functional Requirements for Bibliographic Records (FRBR)](https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records), a bibliographic model designed for user tasks of retrieval and access in online library catalogues and bibliographic databases. FRBR distinguish the products of intellectual or artistic endeavor in four main classes: work, expression, manifestation, item. It is available as RDF vocabulary at https://vocab.org/frbr/core. For further information on FRBR, check the [standard](https://repository.ifla.org/handle/123456789/811).\n\nAnother important model related to audio is the [Music Ontology](http://musicontology.com/), which is also based on the FRBR model. Our ontology is more generic than the Music Ontology but is interoperable with it to support the specificities of music-related audio content.\n\nThe Audio Commons ontology works also in conjunction with\n- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) for basic metadata,\n- [EBU Core](https://www.ebu.ch/metadata/ontologies/ebucore/) for technical properties of audio files,\n- [SKOS](https://www.w3.org/TR/skos-primer/) to support taxonomic classifications,\n- [Creative Commons Licensing schema](https://creativecommons.org/ns) to represent media licensing,\n- [Event ontology](http://motools.sf.net/event/event.html) for the formalisation of events,\n- [Audio Features Ontology](https://w3id.org/afo/onto/) for the characterisation of audio features.\n\n### Ontology overview\n\n![A diagram showing the main classes of the Audio Commons ontology](./img/AC-Ontology-Skeleton.png)\n\nThe figure above shows the most general classes and properties of the Audio Commons ontology and their relationship with classes of the FRBR and the Music Ontology:\n- [`ac:AudioExpression`](https://w3id.org/ac-ontology/aco#AudioExpression), the specific intellectual or artistic form that a work takes each time it is _realised_, in the audio domain, e.g., the recording or synthesis of music or sounds;\n- [`ac:AudioManifestation`](#AudioManifestation), the physical embodiment of an audio expression, e.g., a musical track, a sound, an album; \n- [`ac:AudioItem`](#AudioItem), a single exemplar of an audio manifestation, e.g., a copy of a CD or a specific media file.\n\nThe FRBR class Work, representing a distinct intellectual or artistic creation on a more conceptual level, has not been specialised in Audio Commons.\n\nThe Audio Commons ontology provides a generic schema for audio classification through the property [`ac:audioCategory`](#audioCategory) that associates any audio expression, manifestation, or item to some generic [`ac:AudioCategory`](#AudioCategory). These two terms can be specialised to provide spefic categorisations.\n\n### Manifestations: audio clips and collections\n\n![A diagram showing the main classes of the Audio Commons ontology](./img/AC-Ontology-Manifestation.png)\n\nThe figure above shows classes and properties related to audio manifestations. An instance of [`ac:AudioClip`](#AudioClip), a subclass of `ac:AudioManifestation`, is any audio segment that has been published in some form or uploaded for consumption, for example, a track in a music label's repository or a sound in an audio repository, library or archive.\n\nThe class [`ac:AudioCollection`](#AudioCollection), another subclass of `ac:AudioManifestation`, is used to represent collections of audio clips. The class [`ac:AudioCollectionNode`](#AudioCollectionNode) is used to represent single nodes of a collection, offering local information like the index in the collection and pointers to previous and next nodes. The separation between the collection node and its actual content (e.g., an `ac:AudioClip`) permits the same content to be shared in multiple collections.\n\nThe content of each node of a collection is not limited to an `ac:AudioClip`, but may contain any `ac:AudioManifestation`. Collections can thus contain other collections to support specific cases, e.g. a mapping to the Music Ontology model where an `mo:Release` can contain multiple `mo:Record`(s) that can in turn contain multiple `mo:Track`(s).\n### Items: audio files\n![A diagram showing ac:Item class and related class and properties](./img/AC-Ontology-Item.png)\n\nAn `ac:AudioItem` is a concrete exemplar of an audio manifestation. In our domain, the main exemplars are the actual audio files. \n\nThe corresponding class [`ac:AudioFile`](#AudioItem) is a subclass of `ac:AudioItem`. It is subclass of `ebu:MediaResource` too and the corresponging properties of EBU Core can be used to describe the file (e.g., `ebu:hasEncodingFormat`, `ebu:fileSize`).\n\n### Expressions: audio signals\n![A diagram showing ac:Expression class and related class and properties](./img/AC-Ontology-Expression.png)\n\nWhile `ac:AudioFile` represents a concrete file encoded in a certain format, [`ac:DigitalSignal`](#DigitalSignal) is the representation of the corresponding digital signal. `ac:DigitalSignal` is a subclass of `ac:MusicalExpression`. \n\nThe data properties `ac:sampleRate`, `ac:bitsPerSample`, and `ac:channels`, associate a signal with its basic features specific to digital representations.\n\nThe property `ac:publicationOf` can be used to associate an `ac:AudioClip` with the corresponding digital signal. The property `ac:encodes` instead, associates an `ac:AudioFile` with the encoded digital signal.\n\n### Events: recording/syntesis\n![A diagram showing ac:SignalProduction class and related class and properties!](./img/AC-Ontology-SignalProduction.png)\n\nThe description of temporal events is crucial to formalise and document transitions in the workflow of audio production and publication. The class `event:Event` of the Event Ontology is thus specialised for specific actions that are interesting for the audio domain.\n\nUsing the `event:Event` class, details of an event such as its location in time and space, its factor and its products may be explicitly described. Moreover, events can be composed using the property `event:sub_event`, to build complex events.\n\nThe class `ac:SignalProduction` represents the act of producing a `ac:Signal`, which could be either an `ac:AnalogSignal` or a `ac:DigitalSignal`. This is complemented by `ac:Recording`, representing the process of recording a sound (`ac:Sound`) or the product of `ac:Synthesis`, in case of artificially generated sounds. \n\n### Events (continued): publication\n![A diagram showing ac:Publication class and related class and properties!](./img/AC-Ontology-Publication.png)\n\nThe event `ac:AudioPublication` represents the public release of a piece of work, e.g., the release of a new album by a band.\n\n### Usage Example\n![A diagram showing an example of ontology usage!](./img/AC_Example-AudioClip.png)\n\nThe figure above shows an example of use of the Audio Commons ontology to represent a sound from the Freesound database. For simplicity only the classes `ac:AudioClip`, `ac:AudioFile`, and `ac:AudioCategory` are used in this case.\n",
          "created": "2017/07/27 11:09:00",
          "date": "2017/07/27 11:09:00",
-         "descr": "The Audio Commons Ontology provides main concepts and properties for describing audio content, both musical and non-musical, on the Semantic Web.\n",
+         "descr": "The Audio Commons Ontology provides classes and properties for describing audio content, both musical and non-musical, on the Semantic Web. It is a specialisation of a bibliographic model called Functional Requirements for Bibliographic Records (FRBR). Furthermore, it contains the generalisation of some concepts from the Music Ontology.\n",
          "title": "The Audio Commons Ontology",
          "preferredNamespacePrefix": "ac",
          "preferredNamespaceUri": "https://w3id.org/ac-ontology/aco#",
-         "versionInfo": "Revision: 1.2.4",
+         "comment": "The Audio Commons Ontology provides classes and properties for describing audio content, both musical and non-musical, on the Semantic Web. It is a specialisation of a bibliographic model called [Functional Requirements for Bibliographic Records (FRBR)](https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records). Furthermore, it contains the generalisation of some concepts from the [Music Ontology](http://musicontology.com/).\n",
+         "versionInfo": "Revision: 1.3.1",
          "maker": [
             {
                "id": "mailto:g.fazekas@qmul.ac.uk"
@@ -367,7 +434,11 @@
             "id": "aco"
          },
          "label": "Audio collection",
-         "subClassOf": "#AudioManifestation"
+         "subClassOf": [
+            "#AudioManifestation",
+            "_:b1xb0",
+            "_:b1xb1"
+         ]
       },
       {
          "id": "#AudioCollectionFirstNode",
@@ -377,7 +448,10 @@
             "id": "aco"
          },
          "label": "First node",
-         "subClassOf": "#AudioCollectionNode"
+         "subClassOf": [
+            "#AudioCollectionNode",
+            "_:b1xb7"
+         ]
       },
       {
          "id": "#AudioCollectionLastNode",
@@ -387,7 +461,11 @@
             "id": "aco"
          },
          "label": "Last node",
-         "subClassOf": "#AudioCollectionNode"
+         "subClassOf": [
+            "#AudioCollectionNode",
+            "_:b1xb11",
+            "_:b1xb9"
+         ]
       },
       {
          "id": "#AudioCollectionNode",
@@ -399,11 +477,11 @@
          "label": "Node",
          "subClassOf": [
             "rdf:List",
-            "_:b1xb0",
-            "_:b1xb1",
             "_:b1xb2",
             "_:b1xb3",
-            "_:b1xb4"
+            "_:b1xb4",
+            "_:b1xb5",
+            "_:b1xb6"
          ],
          "disjointUnionOf": [
             {
@@ -418,7 +496,10 @@
                   "#AudioCollectionNonLastNode"
                ]
             }
-         ]
+         ],
+         "disjointWith": {
+            "@list": []
+         }
       },
       {
          "id": "#AudioCollectionNonFirstNode",
@@ -428,7 +509,10 @@
             "id": "aco"
          },
          "label": "Any node but the first",
-         "subClassOf": "#AudioCollectionNode"
+         "subClassOf": [
+            "#AudioCollectionNode",
+            "_:b1xb12"
+         ]
       },
       {
          "id": "#AudioCollectionNonLastNode",
@@ -438,7 +522,10 @@
             "id": "aco"
          },
          "label": "Any node but the last",
-         "subClassOf": "#AudioCollectionNode"
+         "subClassOf": [
+            "#AudioCollectionNode",
+            "_:b1xb13"
+         ]
       },
       {
          "id": "#AudioExpression",
@@ -669,6 +756,13 @@
          }
       },
       {
+         "id": "#collectionAsList",
+         "rdfs:isDefinedBy": {
+            "id": "aco"
+         },
+         "equivalentProperty": "#firstNode"
+      },
+      {
          "id": "#compiled",
          "type": "owl:ObjectProperty",
          "comment": "Used to relate a person or a group of people who compiled an audio manifestation.\n",
@@ -815,14 +909,23 @@
       },
       {
          "id": "#memberNode",
-         "type": "owl:ObjectProperty",
+         "type": [
+            "owl:InverseFunctionalProperty",
+            "owl:ObjectProperty"
+         ],
          "comment": "Associates an audio collection to its nodes.",
          "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
          "label": "member node",
-         "range": "#AudioCollectionNode"
+         "range": "#AudioCollectionNode",
+         "propertyChainAxiom": {
+            "@list": [
+               "#memberNode",
+               "#nextNode"
+            ]
+         }
       },
       {
          "id": "#nextNode",

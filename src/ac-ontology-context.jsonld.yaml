@@ -18,6 +18,7 @@ frbr: http://purl.org/vocab/frbr/core#
 ebu: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
 afo: https://w3id.org/afo/onto/1.1#
 afv: https://w3id.org/afo/vocab/1.1#
+schema: https://schema.org/
 
 id: '@id'
 type: '@type'
@@ -32,9 +33,10 @@ rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
 
 onProperty: {'@id': owl:onProperty, '@type': '@id'}
 onClass: {'@id': owl:onClass, '@type': '@id'}
+cardinality: {'@id': owl:cardinality, '@type': 'xsd:nonNegativeInteger'}
 qualifiedCardinality: {'@id': owl:qualifiedCardinality, '@type': 'xsd:nonNegativeInteger'}
 hasValue: {'@id': owl:hasValue}
-someValuesFromValue: {'@id': owl:someValuesFromValue, '@type': '@id'}
+someValuesFrom: {'@id': owl:someValuesFrom, '@type': '@id'}
 allValuesFrom: {'@id': owl:allValuesFrom, '@type': '@id'}
 
 unionOf: {'@id': owl:unionOf, '@type': '@id', '@container': '@list'}
@@ -42,7 +44,10 @@ disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
 intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
 equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}
 disjointWith: {'@id': owl:disjointWith, '@type': '@id'}
+AllDisjointClasses: {'@id': owl:AllDisjointClasses, '@type': '@id'}
+members: {'@id': owl:members, '@type': '@id'}
 
+equivalentProperty: {'@id': owl:equivalentProperty, '@type': '@id'}
 inverseOf: {'@id': owl:inverseOf, '@type': '@id'}
 propertyChainAxiom: {'@id': owl:propertyChainAxiom, '@type': '@id'}
 
@@ -59,3 +64,4 @@ descr: dcterms:description
 title: dcterms:title
 created: dcterms:created
 date: dcterms:date
+description: dc:description

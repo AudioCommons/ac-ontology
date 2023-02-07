@@ -34,3 +34,4 @@ node_modules
 
 # Jekyll output folder
 _site
+.DS_Store
