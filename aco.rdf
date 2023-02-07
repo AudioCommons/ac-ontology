@@ -200,7 +200,8 @@ The figure above shows an example of use of the Audio Commons ontology to repres
         <owl:disjointWith rdf:resource="https://w3id.org/ac-ontology/aco#DigitalSignal"/>
     </owl:Class>
     <owl:ObjectProperty rdf:about="https://w3id.org/ac-ontology/aco#audioCategory">
-        <rdfs:comment>Classify a piece of audio content in a category.</rdfs:comment>
+        <rdfs:comment>Classify some audio-related thing in a category.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rdfs:label>is in audio category</rdfs:label>
         <rdfs:range rdf:resource="https://w3id.org/ac-ontology/aco#AudioCategory"/>
@@ -567,6 +568,7 @@ The figure above shows an example of use of the Audio Commons ontology to repres
     <owl:ObjectProperty rdf:about="https://w3id.org/ac-ontology/aco#homepage">
         <rdfs:comment>Links a sound, an artist, a record, etc. to a corresponding webpage.
 </rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rdfs:label>homepage</rdfs:label>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
@@ -576,6 +578,7 @@ The figure above shows an example of use of the Audio Commons ontology to repres
     <owl:ObjectProperty rdf:about="https://w3id.org/ac-ontology/aco#image">
         <rdfs:comment>Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.
 </rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
         <rdfs:label>image</rdfs:label>
         <rdfs:range rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture"/>

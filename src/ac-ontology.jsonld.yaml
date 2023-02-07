@@ -269,6 +269,7 @@ defines:
     type: owl:ObjectProperty
     subPropertyOf: [foaf:isPrimaryTopicOf, schema:subjectOf]
     superPropertyOf: mo:homepage
+    domain: owl:Thing
     range: foaf:Document
 
   - id: ac:image
@@ -279,6 +280,7 @@ defines:
     type: owl:ObjectProperty
     subPropertyOf: [foaf:depiction, ebu:hasRelatedPicture]
     superPropertyOf: mo:image
+    domain: owl:Thing
     range: [foaf:Image, ebu:Picture]
 
   - id: ac:author
@@ -435,7 +437,8 @@ defines:
 
   - id: ac:audioCategory
     label: is in audio category
-    comment: Classify a piece of audio content in a category.
+    comment: Classify some audio-related thing in a category.
     type: owl:ObjectProperty
     superPropertyOf: mo:genre
+    domain: owl:Thing
     range: ac:AudioCategory

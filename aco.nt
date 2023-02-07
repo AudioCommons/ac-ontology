@@ -149,7 +149,8 @@
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#label> "Syntesis" .
 <https://w3id.org/ac-ontology/aco#Syntesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ac-ontology/aco#SignalProduction> .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Classify a piece of audio content in a category." .
+<https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Classify some audio-related thing in a category." .
+<https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#label> "is in audio category" .
 <https://w3id.org/ac-ontology/aco#audioCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ac-ontology/aco#AudioCategory> .
@@ -251,6 +252,7 @@
 <https://w3id.org/ac-ontology/aco#firstNode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ac-ontology/aco#memberNode> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a sound, an artist, a record, etc. to a corresponding webpage.\n" .
+<https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#label> "homepage" .
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
@@ -258,6 +260,7 @@
 <https://w3id.org/ac-ontology/aco#homepage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/subjectOf> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.\n" .
+<https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
 <https://w3id.org/ac-ontology/aco#image> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture> .

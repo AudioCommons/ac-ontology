@@ -647,7 +647,8 @@
       {
          "id": "#audioCategory",
          "type": "owl:ObjectProperty",
-         "comment": "Classify a piece of audio content in a category.",
+         "comment": "Classify some audio-related thing in a category.",
+         "domain": "owl:Thing",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -853,6 +854,7 @@
          "id": "#homepage",
          "type": "owl:ObjectProperty",
          "comment": "Links a sound, an artist, a record, etc. to a corresponding webpage.\n",
+         "domain": "owl:Thing",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
@@ -867,6 +869,7 @@
          "id": "#image",
          "type": "owl:ObjectProperty",
          "comment": "Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.\n",
+         "domain": "owl:Thing",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },

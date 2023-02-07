@@ -182,7 +182,8 @@ n0:AnalogSignal
     owl:disjointWith n0:DigitalSignal.
 n0:audioCategory
     a owl:ObjectProperty;
-    rdfs:comment "Classify a piece of audio content in a category.";
+    rdfs:comment "Classify some audio-related thing in a category.";
+    rdfs:domain owl:Thing;
     rdfs:isDefinedBy n1:aco;
     rdfs:label "is in audio category";
     rdfs:range n0:AudioCategory.
@@ -505,6 +506,7 @@ n0:homepage
     rdfs:comment
         """Links a sound, an artist, a record, etc. to a corresponding webpage.
 """;
+    rdfs:domain owl:Thing;
     rdfs:isDefinedBy n1:aco;
     rdfs:label "homepage";
     rdfs:range foaf:Document;
@@ -514,6 +516,7 @@ n0:image
     rdfs:comment
         """Indicates a pictorial image (JPEG, GIF, PNG, Etc.) associated to a sound, an artist, a record, etc.
 """;
+    rdfs:domain owl:Thing;
     rdfs:isDefinedBy n1:aco;
     rdfs:label "image";
     rdfs:range ebu:Picture, foaf:Image;
