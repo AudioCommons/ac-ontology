@@ -478,10 +478,15 @@ The figure above shows an example of use of the Audio Commons ontology to repres
             </rdf:Description>
         </owl:propertyChainAxiom>
     </owl:DatatypeProperty>
-    <rdf:Description rdf:about="https://w3id.org/ac-ontology/aco#collectionAsList">
+    <owl:FunctionalProperty rdf:about="https://w3id.org/ac-ontology/aco#collectionAsList">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:comment>Convenience alias of ac:firstNode to attache an ac:AudioCollection to an rdf:List that holds the members</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/ac-ontology/aco#AudioCollection"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ac-ontology/aco"/>
+        <rdfs:label>collection as list</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
         <owl:equivalentProperty rdf:resource="https://w3id.org/ac-ontology/aco#firstNode"/>
-    </rdf:Description>
+    </owl:FunctionalProperty>
     <owl:ObjectProperty rdf:about="https://w3id.org/ac-ontology/aco#compiled">
         <rdfs:comment>Used to relate a person or a group of people who compiled an audio manifestation.
 </rdfs:comment>

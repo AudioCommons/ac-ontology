@@ -428,8 +428,15 @@ n0:channels
                 rdf:first n0:isEncodedBy;
                 rdf:rest [ rdf:first n0:signalChannels; rdf:rest rdf:nil ]
             ].
-n0:collectionAsList rdfs:isDefinedBy n1:aco; owl:equivalentProperty n0:firstNode.
-
+n0:collectionAsList
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rdfs:comment
+        "Convenience alias of ac:firstNode to attache an ac:AudioCollection to an rdf:List that holds the members";
+    rdfs:domain n0:AudioCollection;
+    rdfs:isDefinedBy n1:aco;
+    rdfs:label "collection as list";
+    rdfs:range rdf:List;
+    owl:equivalentProperty n0:firstNode.
 n0:compiled
     a owl:ObjectProperty;
     rdfs:comment

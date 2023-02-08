@@ -193,4 +193,9 @@ defines:
     range: ac:AudioCollectionNode
 
   - id: ac:collectionAsList
+    label: collection as list
+    comment: Convenience alias of ac:firstNode to attache an ac:AudioCollection to an rdf:List that holds the members
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
     equivalentProperty: ac:firstNode
+    domain: ac:AudioCollection
+    range: rdf:List

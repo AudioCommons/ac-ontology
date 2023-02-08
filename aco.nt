@@ -204,7 +204,13 @@
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#label> "channels" .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/ac-ontology/aco#channels> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:b3xb6 .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2000/01/rdf-schema#comment> "Convenience alias of ac:firstNode to attache an ac:AudioCollection to an rdf:List that holds the members" .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ac-ontology/aco#AudioCollection> .
 <https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ac-ontology/aco> .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2000/01/rdf-schema#label> "collection as list" .
+<https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://w3id.org/ac-ontology/aco#collectionAsList> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/ac-ontology/aco#firstNode> .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ac-ontology/aco#compiled> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to relate a person or a group of people who compiled an audio manifestation.\n" .

@@ -758,9 +758,17 @@
       },
       {
          "id": "#collectionAsList",
+         "type": [
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "comment": "Convenience alias of ac:firstNode to attache an ac:AudioCollection to an rdf:List that holds the members",
+         "domain": "#AudioCollection",
          "rdfs:isDefinedBy": {
             "id": "aco"
          },
+         "label": "collection as list",
+         "range": "rdf:List",
          "equivalentProperty": "#firstNode"
       },
       {
